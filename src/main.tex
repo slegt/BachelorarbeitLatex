@@ -1,0 +1,26 @@
+%! Author = slegt
+%! Date = 20.08.2024
+
+\documentclass[12pt,titlepage]{article}
+
+\usepackage[a4paper, portrait, margin=1in]{geometry}
+
+\usepackage{graphicx}
+\usepackage[version=4]{mhchem}
+\usepackage[style=authortitle, autocite=footnote]{biblatex}
+\usepackage[ngerman]{babel}
+\usepackage{caption}
+\usepackage{booktabs}
+\usepackage{siunitx}
+
+\captionsetup{justification=centering}
+\setlength{\parindent}{0pt}
+\addbibresource{literature.bib}
+
+
+\newcommand{\imcite}[2][]{\newline Aus: \cite[#1]{#2}}
+
+% Document
+\begin{document}
+	\input{Chapters/2_theory.tex}
+\end{document}

@@ -1,0 +1,23 @@
+\section{Theorie}
+\subsection{Kristallgitter}
+Um das Material \ce{(MgCoNiCuZn)O}, sowie die Messtechnik XRD verstehen zu können, ist ein grundlegendes Verständnis über die Struktur von kristallinen Festkörpern unerlässlich. Die nachfolgenden Seiten dienen also als Zusammenfassung für die relevanten Konzepte der Festkörperphysik. 
+
+\subsubsection{Bravaisgitter, Elementarzelle und Basis}
+Als Idealisierung vieler Festkörper wird als Modell des idealen Kristalls herangezogen. Ein idealer Kristall ist eine dreidimensionale, unendlich ausgedehnte Anordnung, die sich aus identischen, periodischen wiederkehrenden Baueinheiten zusammensetzt. Diese Baueinheiten werden als Basis bezeichnet. Sie können einzelne Atome, aber auch komplexe Atomstrukturen repräsentieren. Reduziert man jede Baueinheit auf einen einzigen Punkt, so entsteht ein einfach zu beschreibendes Punktgitter. \autocite[49]{Hunklinger} Dieses unterliegt verschiedenen Symmetrien, sodass das Gitter in unterschiedliche Kristallsysteme eingeteilt werden kann. Eine einfache Einteilung kann mithilfe von Drehachsen erfolgen. Hierbei betrachtet man diejenigen Rotationsoperatoren $R_{\hat{e}}(2\pi / n)$ für eine beliebige Achse $\hat{e}$ um einen Winkel $2 \pi /n$, die das Punktgitter auf sich selbst abbilden. Der Parameter $n$ wird als Zähligkeit bezeichnet und teilt die Punktgitter in sieben verschiedene Kristallklassen ein: \autocite[53]{Hunklinger}
+\begin{table}[h]
+	\centering
+	\begin{tabular}{c c c c}
+		\toprule
+		     Kristallsystem      & Gitterkonstanten  & Winkel                                       & Zähligkeit \\ \midrule
+		        triklin          & $a \neq b \neq c$ & $\alpha \neq\beta \neq\gamma$                & 1          \\
+		        monoklin         & $a \neq b \neq c$ & $\alpha=\gamma=\ang{90},\beta \neq \ang{90}$ & 2          \\
+		     orthorhombisch      & $a \neq b \neq c$ & $\alpha=\beta=\gamma=\ang{90}$               & 2 (zwei)   \\
+		       tetragonal        & $a = b \neq c$    & $\alpha=\beta=\gamma=\ang{90}$               & 4          \\
+		       hexagonal         & $a = b \neq c$    & $\alpha=\beta=\ang{90}, \gamma=\ang{120}$    & 6          \\
+		trigonal (rhomboedrisch) & $a=b=c$           & $\alpha=\beta=\gamma \neq \ang{90}$          & 3          \\
+		        kubisch          & $a=b=c$           & $\alpha=\beta=\gamma=\ang{90}$               & 3 (vier)   \\ \bottomrule
+	\end{tabular}
+	\caption{Klassifikation der verschiedenen Kristallsysteme. \imcite[65]{Hunklinger} }
+\end{table}
+Eine weitere wichtige Symmetrie ist die Translationssymmetrie. Betrachtet man diejenigen Translationsoperatoren $T(\mathbf{R})$, die das Gitter auf sich selbst abbilden, dann erkennt man aufgrund der Periodizität des Gitters den Zusammenhang $\mathbf{R} = n_{1}\mathbf{a}_{1}+n_{2}\mathbf{a}_{2}+n_{3}\mathbf{a}_{3}$, wobei $\mathbf{a}_{i}\in\mathbb{R}^{3}, n_{i}\in\mathbb{Z}$. \autocite[50]{Hunklinger} Die Vektoren $\mathbf{a}_{i}$ 
+definieren ein schiefwinkliges Koordinatensystem und werden als primitive Gittervektoren bezeichnet. Sie spannen ein dreidimensionales Bravaisgitter auf. Die Abstände zwischen zwei benachbarten Gitterpunkten, also die Größen  $\lvert \mathbf{a}_{i} \rvert$, werden Gitterkonstanten genannt. \autocite[82]{Ashcroft}
