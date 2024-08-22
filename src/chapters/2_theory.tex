@@ -78,7 +78,9 @@ Der Abstand $d$ dieser Ebenen ist an den Betrag den kleinsten parallelen Vektor 
 Gittervektoren eindeutig zu identifizieren. \autocite[113]{Ashcroft}
 
 Nun können wir die sogenannten Millerschen Indizes verwenden, um Gitterebenenscharen eindeutig zu bestimmen. Sei 
-dazu $\mathbf{k}$  der kürzeste reziproke Gittervektor, welcher senkrecht auf der zu charakterisierenden Ebene steht. Dieser lässt sich darstellen durch $ \mathbf{K} = h \mathbf{b_1} + k \mathbf{b_2} + l \mathbf{b_3}$. Das Tupel (h\, k\,l) sind die Millerschen Indizes, welche per Definition aus ganzen Zahlen 
+dazu $\mathbf{k}$  der kürzeste reziproke Gittervektor, welcher senkrecht auf der zu charakterisierenden Ebene steht. Dieser 
+lässt sich darstellen durch $ \mathbf{K} = h \mathbf{b_1} + k \mathbf{b_2} + l \mathbf{b_3}$. Das Tupel (h\, k\,l) sind 
+die Millerschen Indizes, welche per Definition aus ganzen Zahlen 
 bestehen müssen. Für die Millerschen Indizes existiert eine geometrische Interpretation, die es erlaubt, die 
 Indizes im Ortsraum zu visualisieren. Für jede Gitterebene findet man ein entsprechendes $A$, sodass  die 
 Ebenengleichung $\mathbf{K} \cdot \mathbf{r} = A$ erfüllt ist. Nun definieren wir die Durchstoßpunkte zwischen den 
@@ -95,4 +97,58 @@ kleinstmöglich wählt, sodass $h$, $k$ und $l$ ganzzahlig sind. \autocite[115]{
 
 Nicht nur Gitterebenen, sondern auch Gitterrichtungen lassen sich in ähnlicher Weise indizieren. Das Tupel
 $[h\,k\,l]$ beschreibt diejenige Richtung, die durch den Vektor $\mathbf{R} = h\mathbf{a}_{1}+k\mathbf{a}_{2}+
-l\mathbf{a}_{3}$ 
+l\mathbf{a}_{3}$ dargestellt werden. Zu beachten ist, dass Richtungsvektoren in unserem Kontext im Ortsraum leben, 
+währenddessen Ebenennormalenvektoren durch Vektoren im reziproken Raum dargestellt werden. Um dies zu verdeutlichen werden 
+eckige anstelle der runden Klammern verwendet. Es existiert weiterhin eine besondere Notation zur Kennzeichnung äquivalenter 
+Gitterebenenscharen und Raumrichtungen. In diesem Kontext bedeutet das, dass die Möglichkeit besteht, äquivalente 
+Gitterebenenscharen und Raumrichtung durch Symmetrieoperationen ineinander zu überführen. Äquivalente Ebenen notiert man 
+mit $\{h \,k\, l $, für Richtungen gilt entsprechend $\langle h\, k \, l \rangle$.
+
+\subsubsection{Röntgenbeugung und die Laue Bedingung}
+Ziel ist es, mithilfe von elektromagnetischer Strahlung und den bisherigen Überlegungen, Aussagen über die Kristallstruktur 
+eines Festkörpers zu gewinnen. Genauer gesagt sucht man einen Formalismus, um die elastische Streuung am Kristallgitter zu 
+beschreiben. Für eine geeignete Wellenlänge der Photonen betrachtet man die typische zwischenatomare Entfernung von circa 
+\qty{1}{\angstrom}. Aus der Optik ist bekannt, dass mindestens eine Wellenlänge in der gleichen Größenordnung genutzt werden 
+muss, um beide Punkte hinreichend genau aufzulösen. Entsprechend muss die Photonenenergie in der Ordnung von 
+$\hbar \omega=hc / \lambda \simeq 12.3 \mathrm{eV}$ liegen. Solche Energien sind charakteristisch für Röntgenstrahlung. 
+\autocite[115]{Ashcroft}
+
+Laue und Bragg entwickelten zwei Formalismen, um die Physik hinter der Gitterstreuung zu verstehen. Im Folgenden wird der 
+Laue-Formalismus erklärt und die Äquivalenz zur Bragg-Bedingung gezeigt.
+
+\paragraph{Beugungsbedingung nach Laue}
+Zuerst betrachtet man die Bestrahlung eines Kristalls mit Licht. Dabei ist die Einfallende Strahlung durch den 
+Wellenzahlvektor  $\mathbf{k}$ charakterisiert. Es gilt die Dispersionsrelation:
+\begin{equation}
+	\lvert \mathbf{k} \rvert =\frac{2\pi}{\lambda}
+\end{equation}
+Die gestreute Strahlung wird durch den Wellenvektor $\mathbf{k}'$ beschrieben. Da nur elastische Streuung betrachtet wird, gilt 
+$\lvert \mathbf{k} \rvert=\lvert \mathbf{k}' \rvert$ Somit sind die Frequenzen ($\omega$ und $\omega'$) beider Wellen gleich.
+Nun ist die Wegunterschied zwischen den Randstrahlen gesucht. Aus der Skizze erhält man:
+\begin{align*}
+	\Delta s &= \Delta s_{1} + \Delta s_{2} = \underbrace{ \mathbf{T} \cdot \frac{\mathbf{k}}{\lvert \mathbf{k} \rvert }-
+	\mathbf{T}\cdot \frac{\mathbf{k}'}{\lvert \mathbf{k}' \rvert}  }_{ \text{Projektion von T auf } 
+	\mathbf{k}/\mathbf{k'} } \\
+	\Delta s &=  \frac{\lambda}{2\pi} \mathbf{T}\cdot\Delta \mathbf{k}
+\end{align*}
+Hierbei ist $\Delta \mathbf{k} = \mathbf{k}-\mathbf{k}'$. Für die konstruktive Interferenz ergibt sich erneut die Bedingung $\Delta s = n \lambda$, sodass folgender Zusammenhang für konstruktive Interferenz gelten muss: 
+\begin{equation}
+	\mathbf{T}\cdot\Delta \mathbf{k} =2\pi n
+\end{equation}
+
+\paragraph{Beschreibung durch Kugelwellen}
+Betrachtet man nun die Überlagerung zweier Streuzentren, die durch den Vektor $\mathbf{T}$ voneinander verschoben sind, so findet man folgenden Ausdruck:
+\begin{align*}
+	\Phi &= C \frac{\Phi_{0}}{r'}\exp(\mathrm{i}(\lvert \mathbf{k}' \rvert r'-\omega t)) + C\frac{\Phi_{0}}{r'}
+	\exp(\mathrm{i}(\lvert \mathbf{k}' \rvert r'-\omega t- \underbrace{ \Delta \mathbf{k}\cdot \mathbf{T} }_{ 
+	\substack{\text{Phasendifferenz} \\ \Delta\varphi=(2\pi / \lambda) \cdot \Delta s  }})) \\
+	&=C \frac{\Phi_{0}}{r'}\exp(\mathrm{i}(\lvert \mathbf{k}' \rvert r'-\omega t))\cdot\underbrace{ (1+\exp(-i \Delta 
+	\mathbf{k}\cdot \mathbf{R})) }_{ \coloneqq A }
+\end{align*}
+$A$ definiert die sogenannte Streuamplitude. Nun möchte man nicht über zwei Streuzentren, sondern über alle Gittervektoren 
+im Kristall summieren. Diese sind gegeben durch $\mathbf{r}_{mnp}=m\mathbf{a}_{1}+n\mathbf{a}_{2}+p\mathbf{a}_{3}$. Dabei 
+ändert sich nur der zweite Produktterm, sodass für diesen gilt:
+\begin{equation}
+	A = \sum_{mnp}\exp(-\mathrm{i} \Delta \mathbf{k}\cdot \mathbf{r}_{mnp})
+\end{equation}
+Die Streuung erfolgt eigentlich kontinuierlich d
