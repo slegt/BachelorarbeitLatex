@@ -1,0 +1,103 @@
+\section{Messmethoden}\label{sec:messmethoden}
+\subsection{PLD}
+%TODO
+\subsection{XRD}\label{subsec:xrd}
+Nachdem die Dünnfilme hergestellt wurden, ist der nächste Schritt, ihre Struktur zu charakterisieren.
+Zwischen Dünnfilmen und ihren korrespondierenden Massivkörpern existieren signifikante Unterschiede.
+Diese resultieren vorrangig aus dem Verhältnis von Oberfläche zu Volumen, sowie den jeweiligen
+Wachstumsbedingungen, wie Temperatur, Druck und Substrat.
+Sie zeigen sich beispielsweise in der Qualität der Kristallinität, sowie in Kompositionsgradienten.
+Da Proben mit unterschiedlichen Wachstumsbedingungen hergestellt wurden und deren Eigenschaften dadurch
+maßgeblich beeinflusst werden, ist es notwendig, die Kristallinität der Dünnfilme zu charakterisieren.
+Röntgendiffraktometrie (XRD, engl. \textit{X-Ray diffraction}) ist eine weit verbreitete Methode, um die
+Kristallstruktur von Dünnfilmen zu bestimmen.
+Dabei wird ein Röntgendiffraktometer verwendet.
+
+\subsubsection{Röntgendiffraktometer}
+Das Röntgendiffraktometer besteht aus fünf Hauptkomponenten: Röntgenquelle und Detektor, Ein- und Ausfallsoptik,
+sowie dem Goniometer.
+Zusätzlich ist das Diffraktometer durch eine Strahlungsschutzverkleidung abgeschirmt und mit einer Steuerungssoftware
+verbunden.
+Im Folgenden werden die einzelnen Komponenten näher erläutert.
+
+\paragraph{Röntgenquelle}
+Die Röntgenstrahlen werden in einer Röntgenröhre erzeugt.
+In dieser werden Elektronen aus einer Wolfram-Glühkathode emittiert und durch das elektrische Feld auf eine Anode
+beschleunigt.
+Die Anode besteht meist aus hochreinem Kupfer.
+Stromstärke und Beschleunigungsspannung der Röntgenröhre müssen so gewählt werden, dass die Energie beim Auftreffen der
+Elektronen auf die Anode ausreicht, um die gebundenen Elektronen der Atome auf das nächsthöhere Energieniveau anzuregen.
+Aufgrund der daraus resultierende Wärme muss die Anode ständig wassergekühlt werden.
+Im hauseigenen Röntgendiffraktometer wird eine Beschleunigungsspannung von \qty{40}{\kilo\volt} und eine Stromstärke
+von \qty{40}{\milli\ampere} verwendet.
+
+Nach der Kollision zwischen Kupferatom und Elektron relaxiert das Elektron unter Bildung eines Röntgenphotons.
+Man erhält ein Spektrum, welches durch die charakteristische Strahlung der Anode sowie durch Bremsstrahlung
+geprägt ist.
+Die charakteristische Strahlung wird vorrangig durch die K-Linien, insbesondere $K_{\alpha_1}$, $K_{\alpha_2}$
+und K$_{\beta}$, dominiert.
+Da $K_{\alpha_1}$ und $K_{\alpha_2}$ energetisch sehr nahe beieinander liegen, können sie nicht immer einzeln
+aufgelöst werden.
+Die $K_{\beta}$ Strahlung ist größtenteils unerwünscht und kann durch geeignete Filter unterdrückt werden.
+
+
+Die Wolfram-Glühkathode emittiert unerwüschterweise nicht nur Elektronen, sondern auch Wolfram-Atome in kleinen Mengen.
+Über längere Zeiträume führt dies zu einer nicht mehr zu vernachlässigenden Kontamination der Anode.
+Dadurch können bei Elektronenstößen auch Wolfram-Atome angeregt werden, was zu einer zusätzlichen Wellenlänge im
+Spektrum führt
+In den späteren Messergebnissen sind diese Beiträge erkennbar.
+Abschließend gelangen die Röntgenstrahlen durch ein Berylliumfenster in die Einfallsoptik.
+
+\paragraph{Röntgendetektor}
+Die durch die Röntgenquelle erzeugten Strahlen gelangen nach Reflektion an der Probe in den Detektor.
+Dieser dient dazu, den reflektierten Strahl in ein elektrisches Signal umzuwandeln.
+Kategorisieren kann man Röntgendektektoren nach ihrer Funktionsweise.
+Eine weitere Unterteilung erfolgt nach der Dimensionalität des Detektors.
+Es können Punktdetektoren (0D), Linien- (1D) oder Flächendetektoren (2D) verwendet werden.
+Im hauseigenen Röntgendiffraktometer ist ein Halbleiterdetektor verbaut, der in verschiedenen Dimensionalitäten
+arbeiten kann.
+Wichtig ist, dass die maximale Zählrate des Detektors nicht überschritten wird.
+Das führt zu nichtlinearen Antworten und kann den Sensor beschädigen.
+Um das zu vermeiden, können Filter und Attenuatoren verwendet werden.
+
+\paragraph{Goniometer}
+Das Goniometer ist die mechanische Komponente des Röntgendiffraktometers.
+Es besteht aus mehreren Drehachsen, die es ermöglichen, die Probe in unterschiedlichsten Winkeln auszurichten.
+Nach der Braggschen Beugungstheorie ergeben sich konstruktive Interferenzen an denjenigen Winkeln, die der
+Bragg-Bedingung genügen.
+Existieren Möglichkeit, die Winkel für Quelle und Detektor zu variieren, kann diese Interferenz beobachtet werden.
+Im Allgemeinen ist die Röntgenquelle jedoch fest, eine äquivalente Drehung von Probe und Detektor ist deshalb gängig.
+In der einfachsten Betrachtungsweise muss das Goniometer also den Winkel zwischen Probe und Quelle ($\omega$) und dem
+Winkel zwischen Probe und Detektor ($2\theta$) einstellen können.
+Diese Freiheit reicht zwar für Pulverproben, jedoch nicht für Dünnfilme.
+Zwar kann man mit beiden Freiheitsgraden Messungen durchführen, welche die out-of-plane Orientierung charakterisieren,
+jedoch ist es nicht möglich, die in-plane Orientierung zu bestimmen.
+Dafür werden weitere Achsen, wie $\varphi$ und $\chi$, benötigt.
+Eine Konstruktion mit den vier Achsen wird Euler-Wiege genannt.
+%%TODO
+
+
+
+\subsection{AFM}
+Das Raster-Kraft-Mikroskop ist ein hochpräzises Messinstrument zum Erfassen von Oberflächenstrukturen.
+Anders als bei Licht- oder Elektronenmikroskopie wird hierbei eine mechanische Funktionsweise umgesetzt.
+Dabei fährt eine Messapparatur, der Cantilever, rasterweise über eine Oberfläche und tastet diese ab.
+Die auf den Cantilever wirkenden atomaren oder magnetischen Kräfte werden gemessen, woraus eine Topographiekarte der
+Oberfläche erstellt wird.
+
+\subsubsection{Schematischer Aufbau und Funktionsweise}
+Die grundlegende Funktionsweise ist in Abbildung 1 dargestellt.
+Markierung 1 zeigt den Cantilever, der mit einer Messspitze mit Dimensionen im Nanometerbereich ausgestattet ist.
+Fährt diese über die Probe, siehe Markierung 2, so wirken Kräfte auf die Spitze, welche den Cantilever auslenken.
+Diese Auslenkung wird mittels eines Ablenkungserkennungssystems, Markierung 3, ausgewertet.
+Hierbei wird ein Laserstrahl an der Rückseite des Cantilevers reflektiert, welcher anschließend auf einen Photodetektor
+trifft.
+Dieser Detektor kann nun anhand der Intensitätsverteilung auf den einzelnen Sektoren die Auslenkung und Torsion des
+Cantilevers messen.
+Die gemessene Auslenkung wird an das Feedback System übergeben, was Markierung 4 zeigt.
+Basierend auf dem gewählten Betriebsmodus wird versucht, die gemessene Kraft oder Amplitude konstant zu halten.
+Mithilfe dieser Regulation wird ein Korrektursignal ausgegeben, welches die Position des Cantilevers anpasst.
+Dies geschieht mithilfe von Piezoelementen, wodurch der Cantilever in x, y oder z-Richtung bewegt werden kann.
+Die z-Position des Cantilevers wird aufgezeichnet und als Topographiesignal am Computer ausgewertet, siehe Markierung 5.
+
+\subsubsection{PID-System}
