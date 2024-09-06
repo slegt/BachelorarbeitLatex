@@ -1,6 +1,60 @@
-\section{Messmethoden}\label{sec:messmethoden}
-\subsection{PLD}
-%TODO
+\section{Probenherstellung und Messmethoden}\label{sec:messmethoden}
+\subsection{Pulsed Laser Deposition}\label{subsec:pld}
+Die erste Aufgabe des Versuchs besteht darin, \heo-Dünnfilme herzustellen, die eine Dicke von wenigen hundert
+Nanometern aufweisen.
+Um das zu erreichen, verwendet man Pulsed Laser Deposition (PLD).
+Dafür wird ein Laserstrahl auf einen Festkörper, dem Target, ausgerichtet, welches beginnt zu
+verdampfen und sich auf ein Substrat absetzt.
+Im Folgenden soll dieser Mechanismus genauer beschrieben werden.
+
+\subsubsection{Aufbau}
+Ein PLD-System besteht aus einem Laser, einer Vakuumkammer und den darin befindlichen Komponenten.
+\paragraph{Laser}
+Der Laser (Light Amplification by Stimulated Emission of Radiation) bildet das Herzstück des gesamten PLD Prozesses.
+In diesem wechselwirken Gasatome mit einem elektrischen Feld, sodass sie in einen angeregten Zustand übergehen.
+Anschließend wird das Prinzip der stimulierten Emission genutzt.
+Das angeregte Elektron verweilt vergleichsweise lange im angeregten Zustand und relaxiert durch ein
+weiteres Photon von außerhalb zurück in den Grundzustand.
+Bemerkenswerterweise haben beide Photonen dadurch identische Eigenschaften wie Phase, Amplitude und Frequenz.
+Somit wird ein Lichtstrahl erzeugt, der sich durch Kohärenz und Monochromatizität auszeichnet.
+Durch einen Satz von Spiegeln im Inneren des Lasers kann der Strahl durch die Stimulierung weiterer Gasatome
+verstärkt werden.
+Abschließend wird der Strahl durch ein halbdurchlässiges Fenster emittiert. \autocite[2296-2297]{pld}
+\paragraph{Vakuumkammer}
+Der Laserstrahl wird anschließend durch ein Fenster in die Vakuumkammer, dem nächsten Bestandteil des PLD Prozesses,
+geleitet.
+In dieser kann mithilfe von Vor- und Turbomolekularpumpen ein Vakuum in der Größenordnung von
+\qty{e-4}{\milli\bar} erzeugt werden.
+Zusätzlich können auch Hintergrundgase wie Sauerstoff, Stickstoff oder Argon in die Kammer eingelassen werden.
+Das Vakuumlevel beeinflusst einerseits die Zusammensetzung der Plasmawolke, andererseits auch die
+Zeit, die benötigt wird, um eine einzelne Schicht von Adsorbaten auf dem Substrat abzuscheiden.
+Eine Reduktion des Drucks führt damit zu einer stabileren Umgebung für die Dünnfilmabscheidung.\autocite[2297-2298]{pld}
+\paragraph{Targethalter, Substrathalter, Heizer}
+In der Vakuumkammer ist ein scheibenförmiges Target an einer Halterung montiert, welches aus dem Material besteht, aus
+dem der Dünnfilm hergestellt werden soll.
+Da das Target durch den Laserstrahl nur an einer kleinen Stelle erhitzt wird, ist es notwendig,
+dass sich das Target relativ zum Laserstrahl bewegt, um eine gleichmäßige Abtragung zu gewährleisten.
+Dafür reicht eine einfache Rotation aus.
+
+Hinzu kommt ein Substrathalter, auf dem das Substrat montiert wird.
+Dieses kann durch einen Widerstandsheizer auf eine Temperatur von bis zu \qty{1000}{\celsius} beziehungsweise
+mithilfe eines Laserheizers auf circa \qty{1500}{\celsius} erhitzt werden.
+Das Substrat selbst hat üblicherweise die Maße von circa \qty{10}{\milli\meter\squared}.\autocite[2299]{pld}
+
+\subsubsection{Abscheidungsprozess}
+Mithilfe der oben genannten Komponenten kann der Abscheidungsprozess durchgeführt werden.
+Die Laserphotonen treffen auf das Target und regen dort Elektronen an.
+Diese erfahren einen Intraband-Übergang, wodurch sie in einen angeregten Zustand übergehen.
+Durch die Elektron-Phonon-Wechselwirkung relaxiert das Elektron und gibt dabei Energie in Form von Phononen ab.
+Dies führt zur Erhitzung des Targets, welche nicht nur an der Oberfläche, sondern auch im Inneren stattfindet.
+Durch die hohe Temperatur beginnt das Target zu Verdampfen.
+
+Auch die verdampften Konstituenten des Targets wechselwirken mit den Laserphotonen.
+Durch Photoionisation werden Elektronen herausgelöst, sodass eine Plasmawolke entsteht.
+Diese breitet sich in der Vakuumkammer in Richtung Substrat aus und beginnt sich auf dem diesem abzusetzen.
+Durch Adsorptionsprozesse beginnt die Bildung eines Dünnfilms.\autocite[2299-2301]{pld}
+
+
 \subsection{XRD}\label{subsec:xrd}
 Nachdem die Dünnfilme hergestellt wurden, ist der nächste Schritt, ihre Struktur zu charakterisieren.
 Zwischen Dünnfilmen und ihren korrespondierenden Massivkörpern existieren signifikante Unterschiede.
@@ -78,7 +132,7 @@ Eine Konstruktion mit den vier Achsen wird Euler-Wiege genannt.
 
 
 
-\subsection{AFM}
+\subsection{AFM}\label{subsec:afm}
 Das Raster-Kraft-Mikroskop ist ein hochpräzises Messinstrument zum Erfassen von Oberflächenstrukturen.
 Anders als bei Licht- oder Elektronenmikroskopie wird hierbei eine mechanische Funktionsweise umgesetzt.
 Dabei fährt eine Messapparatur, der Cantilever, rasterweise über eine Oberfläche und tastet diese ab.
@@ -99,5 +153,78 @@ Basierend auf dem gewählten Betriebsmodus wird versucht, die gemessene Kraft od
 Mithilfe dieser Regulation wird ein Korrektursignal ausgegeben, welches die Position des Cantilevers anpasst.
 Dies geschieht mithilfe von Piezoelementen, wodurch der Cantilever in x, y oder z-Richtung bewegt werden kann.
 Die z-Position des Cantilevers wird aufgezeichnet und als Topographiesignal am Computer ausgewertet, siehe Markierung 5.
+\subsubsection{PID System}
+Damit eine möglichst genaue Topografiekarte aufgezeichnet werden kann, ist ein schnelles und präzises Regelsystem von großer Bedeutung.
+Daraus resultiert ein Fehlersignal $\Delta S(t) = S(t)-S_0$, welches auf folgende Weise ausgewertet wird:
+\begin{align*}
+    \Delta S_{reg}(t) = \underbrace{ K_p * \Delta S(t) }_{\text{Proportional (1)}} + \underbrace{K_i * \integral{0}{t}{\Delta S(\tau)}{\tau}}_{\text{Integral (2)}}
+    + \underbrace{K_d * \derivative{t}{\Delta S(t)}}_{\text{Differential (3)}}
+\end{align*}
 
-\subsubsection{PID-System}
+\textbf{1. Proportional:}
+Das Ausgabesignal wird Proportional zum Eingabesignal mit Proportionalitätskonstante $K_p$ ausgegeben.
+Dies ist die einfachste Art der Regulation, welche nur auf den aktuellen Zustand reagiert.
+Der P-Regler zeichnet sich durch ein typisches Einschwingsignal aus, welches durch die Trägheit des Systems zustande kommt.
+Durch die Phasendifferenz zwischen Eingangssignal und Ausgangsreaktion des Systems entsteht oft eine Überreaktion,
+Diese Überschreitung ruft eine Gegenreaktion hervor, welche sich rekursiv zu einer Schwingung entwickelt.
+Da schwache Eingabesignale auch nur schwache Ausgangssignale erzeugen, kann es bei dem P-Regler auch zu einem permanenten Offset zwischen
+Ist- und Sollwert kommen.
+
+\textbf{2. Integral:}
+Um dieses Problem zu lösen, wird ein I-Regler verbaut.
+Hierbei wird das Ausgangssignal proportional zum Integral des Eingabesignals mit Proportionalitätskonstante $K_i$ ausgegeben.
+
+\textbf{3. Differential:}
+Um die Güte des Reglers weiter zu verbessern, werden D-Regler verwendet.
+Dabei wird das Ausgangssignal proportional zur Ableitung des Eingabesignals mit Proportionalitätskonstante $K_d$ ausgegeben.
+
+In diesem Versuch genügt es, P und I-Regler anzupassen.
+
+
+\subsubsection{wirkende Kräfte}
+Die auf den Cantilever wirkenden Kräfte finden auf atomarer Ebene statt und werden durch unterschiedliche Ansätze modelliert.
+Dabei lässt sich die resultierende Kraft als Summe einer attraktiven und repulsiven Wechselwirkung schreiben.
+\begin{align*}
+    F(r) \propto \left[ - \left( \frac{\sigma}{r} \right)^2 + \frac{1}{30} \left( \frac{\sigma}{r} \right)^8 \right]
+\end{align*}
+Die attraktive Komponente hat dabei ihren Ursprung in der Van-der-Waals Wechselwirkung, die repulsive ist auf das Pauli-Prinzip zurückzuführen.
+Je nach Betriebsmodi wird der passende Kräftebereich gewählt.
+
+
+\subsubsection{Betriebsmodi}
+Das Raster-Kraft-Mikroskop verfügt über unterschiedliche Betriebsmodi. \vspace{\baselineskip}
+
+\textbf{1. statischer Modus}
+Beim statischen Modus ist die Spitze des Cantilevers in stetigem Kontakt mit der Probe, sodass die abstoßende Wechselwirkung dominiert.
+Dabei wird versucht, mit konstanter Kraft über die Probe zu fahren.
+Die durch das PID-System hervorgerufene Höhenverstellung wird als Topografiesignal aufgezeichnet und an den PC weitergegeben.
+Dadurch, dass sich die Spitze in stetigem Kontakt mit der Oberfläche befindet, müssen die Wechselwirkungskräfte möglichst klein gehalten werden,
+da ansonsten die Spitze leicht kontaminiert oder beschädigt werden kann.
+
+\textbf{2. dynamischer Modus}
+Der Cantilever wird durch eine periodische Kraft in eine erzwungene Schwingung nahe der Resonanzfrequenz $f_0$ versetzt.
+Diese lässt sich folgendermaßen darstellen:
+\begin{align*}
+    f_0 = \sqrt{ \frac{k_0}{m}}
+\end{align*}
+Dabei schwingt der Cantilever mit Amplitude $A_0$, welche gemessen werden kann.
+Wirkt nun eine zusätzliche Kraft, so verschiebt sich die Frequenz, was eine Amplitudenabnahme zur Folge hat.
+\begin{align*}
+    k_{eff} = k_0 - \frac{\partial F}{ \partial r}, \qquad f = \sqrt{\frac{k_{eff}}{m}}
+\end{align*}
+
+
+In diesem Modus wird, analog zur konstanten Kraft, eine konstante Amplitude $A_k$ gefordert,
+die mithilfe des Prozentwertes $s = A_k / A_0$ festgelegt wird.
+
+
+\textbf{3. Phasenkontrastmodus}
+Unterschiedliche Materialien einer Probe können durch den Phasenkontrastmodus stärker hervorgehoben werden.
+Dabei wird die Phase des Ausgangssignals des Antriebs mit der Phase des gemessenen Signals verglichen.
+Die resultierende Phasendifferenz entsteht durch Oberflächeneigenschaften wie Elastizität, Steifigkeit und Adhäsion und gibt somit Auskunft über die Zusammensetzung der Probe.
+
+
+\textbf{4. Magnetkraftmikroskopie}
+Um magnetische Felder zu überprüfen, verwendet man einen magnetisch beschichteten Cantilever, welcher mit einem größeren Abstand die Probe analysiert.
+
+

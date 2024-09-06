@@ -15,15 +15,22 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathtools}
+
 \captionsetup{justification=centering}
 \setlength{\parindent}{0pt}
 \addbibresource{literature.bib}
 
 
 \newcommand{\imcite}[2][]{\newline Aus: \cite[#1]{#2}}
+\newcommand{\integral}[4]{\int_{#1}^{#2} #3 \mathrm{d} #4}
+\newcommand{\derivative}[2]{\frac{\mathrm{d}}{\mathrm{d} #1} #2}
+\newcommand{\heo}{\ce{(MgCoNiCuZn)O}}
+
+\DeclareSIUnit\angstrom{\text {Å}}
+\DeclareSIUnit\bar{bar}
 
 % Document
 \begin{document}
-	\input{chapters/2_theorie}
-	\input{chapters/3_messmethoden.tex}
+	\include{chapters/2_theorie}
+	\include{chapters/3_messmethoden}
 \end{document}
