@@ -1,4 +1,5 @@
 \section{Probenherstellung und Messmethoden}\label{sec:messmethoden}
+
 \subsection{Pulsed Laser Deposition}\label{subsec:pld}
 Die erste Aufgabe des Versuchs besteht darin, \heo-Dünnfilme herzustellen, die eine Dicke von wenigen hundert
 Nanometern aufweisen.
@@ -9,6 +10,7 @@ Im Folgenden soll dieser Mechanismus genauer beschrieben werden.
 
 \subsubsection{Aufbau}
 Ein PLD-System besteht aus einem Laser, einer Vakuumkammer und den darin befindlichen Komponenten.
+
 \paragraph{Laser}
 Der Laser (Light Amplification by Stimulated Emission of Radiation) bildet das Herzstück des gesamten PLD Prozesses.
 In diesem wechselwirken Gasatome mit einem elektrischen Feld, sodass sie in einen angeregten Zustand übergehen.
@@ -20,6 +22,7 @@ Somit wird ein Lichtstrahl erzeugt, der sich durch Kohärenz und Monochromatizit
 Durch einen Satz von Spiegeln im Inneren des Lasers kann der Strahl durch die Stimulierung weiterer Gasatome
 verstärkt werden.
 Abschließend wird der Strahl durch ein halbdurchlässiges Fenster emittiert. \autocite[2296-2297]{pld}
+
 \paragraph{Vakuumkammer}
 Der Laserstrahl wird anschließend durch ein Fenster in die Vakuumkammer, dem nächsten Bestandteil des PLD Prozesses,
 geleitet.
@@ -29,6 +32,7 @@ Zusätzlich können auch Hintergrundgase wie Sauerstoff, Stickstoff oder Argon i
 Das Vakuumlevel beeinflusst einerseits die Zusammensetzung der Plasmawolke, andererseits auch die
 Zeit, die benötigt wird, um eine einzelne Schicht von Adsorbaten auf dem Substrat abzuscheiden.
 Eine Reduktion des Drucks führt damit zu einer stabileren Umgebung für die Dünnfilmabscheidung.\autocite[2297-2298]{pld}
+
 \paragraph{Targethalter, Substrathalter, Heizer}
 In der Vakuumkammer ist ein scheibenförmiges Target an einer Halterung montiert, welches aus dem Material besteht, aus
 dem der Dünnfilm hergestellt werden soll.
@@ -53,7 +57,6 @@ Auch die verdampften Konstituenten des Targets wechselwirken mit den Laserphoton
 Durch Photoionisation werden Elektronen herausgelöst, sodass eine Plasmawolke entsteht.
 Diese breitet sich in der Vakuumkammer in Richtung Substrat aus und beginnt sich auf dem diesem abzusetzen.
 Durch Adsorptionsprozesse beginnt die Bildung eines Dünnfilms.\autocite[2299-2301]{pld}
-
 
 \subsection{XRD}\label{subsec:xrd}
 Nachdem die Dünnfilme hergestellt wurden, ist der nächste Schritt, ihre Struktur zu charakterisieren.
@@ -130,101 +133,148 @@ Dafür werden weitere Achsen, wie $\varphi$ und $\chi$, benötigt.
 Eine Konstruktion mit den vier Achsen wird Euler-Wiege genannt.
 %%TODO
 
-
-
-\subsection{AFM}\label{subsec:afm}
-Das Raster-Kraft-Mikroskop ist ein hochpräzises Messinstrument zum Erfassen von Oberflächenstrukturen.
+\subsection{Rasterkraftmikroskopie}\label{subsec:afm}
+Nachdem die Kristallinität mithilfe von XRD untersucht wurde, kann durch Rasterkraftmikroskopie (AFM, engl.
+\textit{Atomic Force Microscopy}) die Oberflächenstruktur der Dünnfilme charakterisiert werden.
+Das Rasterkraftmikroskop ist ein hochpräzises Messinstrument zum Erfassen von Oberflächenstrukturen.
 Anders als bei Licht- oder Elektronenmikroskopie wird hierbei eine mechanische Funktionsweise umgesetzt.
 Dabei fährt eine Messapparatur, der Cantilever, rasterweise über eine Oberfläche und tastet diese ab.
 Die auf den Cantilever wirkenden atomaren oder magnetischen Kräfte werden gemessen, woraus eine Topographiekarte der
 Oberfläche erstellt wird.
 
 \subsubsection{Schematischer Aufbau und Funktionsweise}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{../assets/messmethoden/afm/01_aufbau.png}
+    \caption{Schematischer Aufbau eines Rasterkraftmikroskops. \imcitetwo[12]{afm-handbuch}}
+    \label{fig:afm_aufbau}
+\end{figure}
 Die grundlegende Funktionsweise ist in Abbildung 1 dargestellt.
 Markierung 1 zeigt den Cantilever, der mit einer Messspitze mit Dimensionen im Nanometerbereich ausgestattet ist.
-Fährt diese über die Probe, siehe Markierung 2, so wirken Kräfte auf die Spitze, welche den Cantilever auslenken.
-Diese Auslenkung wird mittels eines Ablenkungserkennungssystems, Markierung 3, ausgewertet.
-Hierbei wird ein Laserstrahl an der Rückseite des Cantilevers reflektiert, welcher anschließend auf einen Photodetektor
-trifft.
-Dieser Detektor kann nun anhand der Intensitätsverteilung auf den einzelnen Sektoren die Auslenkung und Torsion des
-Cantilevers messen.
-Die gemessene Auslenkung wird an das Feedback System übergeben, was Markierung 4 zeigt.
+Fährt diese über die Probe, so wirken Kräfte auf die Spitze, welche den Cantilever auslenken.
+Diese Auslenkung wird mittels eines Ablenkungserkennungssystems, Markierung 2, ausgewertet.
+Die gemessene Auslenkung wird an das Feedback System übergeben, was Markierung 3 zeigt.
 Basierend auf dem gewählten Betriebsmodus wird versucht, die gemessene Kraft oder Amplitude konstant zu halten.
 Mithilfe dieser Regulation wird ein Korrektursignal ausgegeben, welches die Position des Cantilevers anpasst.
-Dies geschieht mithilfe von Piezoelementen, wodurch der Cantilever in x, y oder z-Richtung bewegt werden kann.
+Dies geschieht mithilfe von Piezoelementen, wodurch der Cantilever in x, y oder z-Richtung bewegt werden kann, siehe Markierung 4.
 Die z-Position des Cantilevers wird aufgezeichnet und als Topographiesignal am Computer ausgewertet, siehe Markierung 5.
-\subsubsection{PID System}
-Damit eine möglichst genaue Topografiekarte aufgezeichnet werden kann, ist ein schnelles und präzises Regelsystem von großer Bedeutung.
-Daraus resultiert ein Fehlersignal $\Delta S(t) = S(t)-S_0$, welches auf folgende Weise ausgewertet wird:
-\begin{align*}
-    \Delta S_{reg}(t) = \underbrace{ K_p * \Delta S(t) }_{\text{Proportional (1)}} + \underbrace{K_i * \integral{0}{t}{\Delta S(\tau)}{\tau}}_{\text{Integral (2)}}
-    + \underbrace{K_d * \derivative{t}{\Delta S(t)}}_{\text{Differential (3)}}
-\end{align*}
+Im Folgenden werden die einzelnen Komponenten näher erläutert.\autocite[8-10]{afm-buch}
 
-\textbf{1. Proportional:}
-Das Ausgabesignal wird Proportional zum Eingabesignal mit Proportionalitätskonstante $K_p$ ausgegeben.
+\subsubsection{Wirkende Kräfte}
+Zuerst wird die Wechselwirkung zwischen Cantileverspitze und Probe betrachtet.
+Die auf die Spitze wirkende Gesamtkraft setzt sich aus verschiedenen Komponenten zusammen.
+Der wichtigste und weitreichendste Beitrag entspringt der Van-der-Waals Wechselwirkung.
+Diese ist eine attraktive Kraft, welche durch spontane Formationen fluktuierender Dipole entsteht.
+Für einzelne Edelgasatome lässt sich das Potential der Wechselwirkungen durch
+$U_{\mathrm{vdW}}\propto-r^{-6}$ annähern.
+Obwohl diese Näherung für einzelne Atome gilt, kann sie durch Integration über das Probe-Spitze System genutzt
+werden, um es zu beschreiben.
+Für Distanzen zwischen Probe und Spitze größer als \qty{1}{\nano\meter} ist die Van-der-Waals Wechselwirkung
+dominierend.
+
+Für kleinere Distanzen müssen zwei weitere Interaktionen berücksichtigt werden.
+Überlappen die äußeren Elektronenhüllen von Proben- und Spitzenatomen, so können chemische Bindungen entstehen, welche
+eine attraktive oder repulsive Kraft hervorrufen.
+Betrachtet man noch kleinere Distanzen, so wird die Pauli-Abstoßung zwischen den Elektronen der Atome relevant.
+Da die geschlossenen Elektronenschalen der Atome nicht überlappen können, müssen die zusätzlichen Elektronen auf ein
+höheres Energieniveau gehoben werden.
+Dadurch entsteht eine effektive repulsive Kraft.
+
+Obwohl das System quantenmechanisch präzise beschrieben werden kann, ist die Lösung für solch komplexe Systeme
+nicht trivial.
+Aus diesem Grund werden Modellpotentiale genutzt, die die Interaktionen zwischen Probe und Spitze approximieren.
+Ein beliebtes ist das Lennard-Jones-Potential, welches sowohl die Van-der-Waals Wechselwirkung als auch die repulsiven
+Anteile berücksichtigt.
+\begin{equation*}
+    U_{\mathrm{LJ}}=4U_{0}\left[ \left( \frac{R_{\mathrm{a}}}{r} \right)^{12} -\left( \frac{R_{\mathrm{a}}}{r}
+    \right)^{6}\right]
+\end{equation*}
+Hierbei ist $U_{0}$ die Tiefe des Potentials, $R_{\mathrm{a}}$ der Gleichgewichtsabstand und $r$ der Abstand zwischen
+den Atomen.
+Auch wenn das Lennard-Jones-Potential für atomare Wechselwirkungen entwickelt wurde, erklärt es die relevanten
+Kräfte zwischen Probe und Spitze. \autocite[161-164]{afm-buch}
+
+\subsubsection{Auslenkungserkennungssystem}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{../assets/messmethoden/afm/02_beam.png}
+    \caption{Schematischer Aufbau eines Auslenkungserkennungssystems. \imcitetwo[17]{afm-handbuch}}
+    \label{fig:afm-beam}
+\end{figure}
+Nachdem der Cantilever durch die Wechselwirkungskräfte ausgelenkt wurde, muss diese Auslenkung gemessen werden.
+Das System ist in \cref{fig:afm-beam} dargestellt.
+Ein Laserstrahl wird aus einer Laserdiode emittiert und auf die Rückseite des Cantilevers gerichtet.
+Dieser besitzt eine reflektierende Rückseite, sodass der Strahl am Cantilever zum beweglichen Spiegel reflektiert wird.
+Über diesen Lässt sich die Potition des Strahls auf den folgenden Spiegel steuern.
+Der letzte Spiegel reflektiert den Strahl auf einen positionsabhängigen Photodetektor.
+Dieser besitzt vier Segmente, die die Intensität des reflektierten Strahls messen.
+Im unausgelenkten Zustand, muss der bewegliche Spiegel so eingestellt werden, dass der Strahl mittig auf die vier
+Segmente trifft.
+Kommt es zur Auslenkung, ändert sich der Winkel des Cantilevers und damit auch die Position des Strahls auf dem
+Photodetektor.
+Über die vier Segmente kann die Auslenkung und Torsion des Cantilevers bestimmt werden.
+
+\subsubsection{Feedback Controller}
+Damit eine möglichst genaue Topografiekarte aufgezeichnet werden kann, ist ein schnelles und präzises Regelsystem von großer Bedeutung.
+Ziel ist es, eine vorgegebene Kenngröße möglichst konstant zu halten, beispielsweise die Auslenkung des Cantilevers.
+Dafür wird ein geschlossenes Regelkreissystem verwendet, welches in \cref{fig:afm_controller} dargestellt ist.
+Der Ausgabewert des Systems $x(t)$, beispielsweise die Cantileverauslenkung, wird gemessen, zunächst mit dem
+Sollwert $w$ verglichen und das Fehlersignal $e(t)=w-x(t)$ berechnet.
+Dieses Fehlersignal wird an den Controller übergeben, der daraufhin ein Korrektursignal $y(t)$ ausgibt.
+Dieses Korrektursignal wird vom System aufgenommen und intrinsisch verarbeitet, sodass der Ausgabewert $x(t)$ näher am
+Sollwert $w$ liegt.\autocite[99-101]{afm-buch}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{../assets/messmethoden/afm/03_controller.png}
+    \caption{Blockschaltbild eines Feedback-Controllers. \imcitetwo[14]{afm-buch}}
+    \label{fig:afm_controller}
+\end{figure}
+Von besonderem Interesse ist nun die genaue Gestalt der Korrekturfunktion $y(t)$.
+In der Regel wird diese durch einen Proportional-Integral-Controller (PI-Controller) realisiert und hat folgende Form:
+\begin{equation*}
+    y(t)=\underbrace{ K_{\mathrm{P}}(w-x(t)) }_{ \text{1. Proportional} }+\underbrace{ K_{\mathrm{I}}\int_{0}^{t}
+        (w-x(\tau)) \, \mathrm{d}\tau }_{ \text{2. Integral} }
+\end{equation*}
+
+\paragraph{1. Proportional:}
+Das Ausgabesignal wird Proportional zum Eingabesignal mit Proportionalitätskonstante $K_{\mathrm{P}}$ ausgegeben.
 Dies ist die einfachste Art der Regulation, welche nur auf den aktuellen Zustand reagiert.
 Der P-Regler zeichnet sich durch ein typisches Einschwingsignal aus, welches durch die Trägheit des Systems zustande kommt.
-Durch die Phasendifferenz zwischen Eingangssignal und Ausgangsreaktion des Systems entsteht oft eine Überreaktion,
-Diese Überschreitung ruft eine Gegenreaktion hervor, welche sich rekursiv zu einer Schwingung entwickelt.
-Da schwache Eingabesignale auch nur schwache Ausgangssignale erzeugen, kann es bei dem P-Regler auch zu einem permanenten Offset zwischen
-Ist- und Sollwert kommen.
+Durch die Verzögerung zwischen Eingangssignal und Ausgangsreaktion des Systems entsteht oft eine Überreaktion,
+diese Überschreitung ruft eine Gegenreaktion hervor, welche sich rekursiv zu einer Schwingung entwickelt.
+Der größte Nachteil des P-Reglers ist, dass er nicht in der Lage ist, den Sollwert unter konstanter Störung
+exakt zu erreichen.
+Um diesen Nachteil zu beheben, wird zusätzlich ein I-Regler hinzugefügt.\autocite[101-102]{afm-buch}
 
 \textbf{2. Integral:}
-Um dieses Problem zu lösen, wird ein I-Regler verbaut.
-Hierbei wird das Ausgangssignal proportional zum Integral des Eingabesignals mit Proportionalitätskonstante $K_i$ ausgegeben.
+Der Integralanteil des Reglers reagiert auf die Summe der bisherigen Abweichungen mit Proportionalitätskonstante
+$K_{\mathrm{I}}$.
+Damit eliminiert er alle konstanten Störungen, die durch den P-Regler nicht beseitigt werden konnten.
+Dadurch, dass das Integral der Abweichung über die Zeit gebildet wird, ist der I-Regler am Anfang sehr langsam.
+In einigen Varianten wird nicht über das gesamte, sondern übern ein konstantes Zeitintervall integriert.\autocite[102-104]{afm-buch}
 
-\textbf{3. Differential:}
-Um die Güte des Reglers weiter zu verbessern, werden D-Regler verwendet.
-Dabei wird das Ausgangssignal proportional zur Ableitung des Eingabesignals mit Proportionalitätskonstante $K_d$ ausgegeben.
-
-In diesem Versuch genügt es, P und I-Regler anzupassen.
-
-
-\subsubsection{wirkende Kräfte}
-Die auf den Cantilever wirkenden Kräfte finden auf atomarer Ebene statt und werden durch unterschiedliche Ansätze modelliert.
-Dabei lässt sich die resultierende Kraft als Summe einer attraktiven und repulsiven Wechselwirkung schreiben.
-\begin{align*}
-    F(r) \propto \left[ - \left( \frac{\sigma}{r} \right)^2 + \frac{1}{30} \left( \frac{\sigma}{r} \right)^8 \right]
-\end{align*}
-Die attraktive Komponente hat dabei ihren Ursprung in der Van-der-Waals Wechselwirkung, die repulsive ist auf das Pauli-Prinzip zurückzuführen.
-Je nach Betriebsmodi wird der passende Kräftebereich gewählt.
-
+Kombiniert man nun Proportional- und Integralregler, so können kurzzeitige Abweichungen durch den schnellen
+P-Regler und langzeitige Abweichungen durch den langsamen I-Regler korrigiert werden.\autocite[104-105]{afm-buch}
 
 \subsubsection{Betriebsmodi}
-Das Raster-Kraft-Mikroskop verfügt über unterschiedliche Betriebsmodi. \vspace{\baselineskip}
-
-\textbf{1. statischer Modus}
-Beim statischen Modus ist die Spitze des Cantilevers in stetigem Kontakt mit der Probe, sodass die abstoßende Wechselwirkung dominiert.
-Dabei wird versucht, mit konstanter Kraft über die Probe zu fahren.
-Die durch das PID-System hervorgerufene Höhenverstellung wird als Topografiesignal aufgezeichnet und an den PC weitergegeben.
+Das Raster-Kraft-Mikroskop verfügt über unterschiedliche Betriebsmodi.
+In der vorliegenden Arbeit wurde im statischen Kontaktmodus verwendet, um die Oberflächenstruktur zu erfassen.
+Dabei wird die Probe in $xy$-Richtung bewegt, während die Spitze des Cantilevers einen so kleinen Abstand zur Probe hat,
+dass die repulsiven Kräfte dominieren.
+Diese bewirken eine Auslenkung $\Delta z$ des Cantilevers, welche durch das Erkennungssystem aufgezeichnet wird.
+Mithilfe eines \textit{setpoint}-Parameters wird eine konstante Auslenkung festgelegt, die vom Feedback-System eingehalten
+wird.
+Scannt man über eine Erhöhung, so ändert sich die Auslenkung und das Feedback-System versucht, den Cantilever erneut
+auszurichten, indem es die Höhe anpasst.
+Dadurch entsteht eine Topografiekarte der Oberfläche.
 Dadurch, dass sich die Spitze in stetigem Kontakt mit der Oberfläche befindet, müssen die Wechselwirkungskräfte möglichst klein gehalten werden,
-da ansonsten die Spitze leicht kontaminiert oder beschädigt werden kann.
+da ansonsten die Spitze leicht kontaminiert oder beschädigt werden kann.\autocite[199-201]{afm-buch}
 
-\textbf{2. dynamischer Modus}
-Der Cantilever wird durch eine periodische Kraft in eine erzwungene Schwingung nahe der Resonanzfrequenz $f_0$ versetzt.
-Diese lässt sich folgendermaßen darstellen:
-\begin{align*}
-    f_0 = \sqrt{ \frac{k_0}{m}}
-\end{align*}
-Dabei schwingt der Cantilever mit Amplitude $A_0$, welche gemessen werden kann.
-Wirkt nun eine zusätzliche Kraft, so verschiebt sich die Frequenz, was eine Amplitudenabnahme zur Folge hat.
-\begin{align*}
-    k_{eff} = k_0 - \frac{\partial F}{ \partial r}, \qquad f = \sqrt{\frac{k_{eff}}{m}}
-\end{align*}
+Nicht nur statische, sondern auch dynamische Betriebsmodi existieren.
+Dabei wird der Cantilever mit einer bestimmten Frequenz und Amplitude angeregt, während er über die Probe fährt.
+Ändert sich die Kraft, ändert die Resonanzfrequenz und damit auch die Amplitude.
+Das Topografiesignal wird durch die Forderung einer konstanten Amplitude erzeugt.\autocite[209]{afm-buch}
 
-
-In diesem Modus wird, analog zur konstanten Kraft, eine konstante Amplitude $A_k$ gefordert,
-die mithilfe des Prozentwertes $s = A_k / A_0$ festgelegt wird.
-
-
-\textbf{3. Phasenkontrastmodus}
-Unterschiedliche Materialien einer Probe können durch den Phasenkontrastmodus stärker hervorgehoben werden.
-Dabei wird die Phase des Ausgangssignals des Antriebs mit der Phase des gemessenen Signals verglichen.
-Die resultierende Phasendifferenz entsteht durch Oberflächeneigenschaften wie Elastizität, Steifigkeit und Adhäsion und gibt somit Auskunft über die Zusammensetzung der Probe.
-
-
-\textbf{4. Magnetkraftmikroskopie}
-Um magnetische Felder zu überprüfen, verwendet man einen magnetisch beschichteten Cantilever, welcher mit einem größeren Abstand die Probe analysiert.
+\subsubsection{Positionierung von }
 
 

@@ -1,7 +1,7 @@
 %! Author = slegt
 %! Date = 20.08.2024
 
-\documentclass[12pt,titlepage]{article}
+\documentclass[12pt,titlepage,ngerman]{article}
 
 \usepackage[a4paper, portrait, margin=1in]{geometry}
 
@@ -15,13 +15,19 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{cleveref}
 
-\captionsetup{justification=centering}
+\captionsetup{
+    justification=centering,
+}
 \setlength{\parindent}{0pt}
 \addbibresource{literature.bib}
 
 
-\newcommand{\imcite}[2][]{\newline Aus: \cite[#1]{#2}}
+\newcommand{\imcite}[2][]{\\ Aus: \cite[#1]{#2}}
+\newcommand{\imcitetwo}[2][]{\\ Nach: \cite[#1]{#2}}
+
 \newcommand{\integral}[4]{\int_{#1}^{#2} #3 \mathrm{d} #4}
 \newcommand{\derivative}[2]{\frac{\mathrm{d}}{\mathrm{d} #1} #2}
 \newcommand{\heo}{\ce{(MgCoNiCuZn)O}}
@@ -31,6 +37,6 @@
 
 % Document
 \begin{document}
-	\include{chapters/2_theorie}
-	\include{chapters/3_messmethoden}
+    \include{chapters/2_theorie}
+    \include{chapters/3_messmethoden}
 \end{document}
