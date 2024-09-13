@@ -97,25 +97,12 @@ Da $K_{\alpha_1}$ und $K_{\alpha_2}$ energetisch sehr nahe beieinander liegen, k
 aufgelöst werden.
 Die $K_{\beta}$ Strahlung ist größtenteils unerwünscht und kann durch geeignete Filter unterdrückt werden.
 
-
-Die Wolfram-Glühkathode emittiert unerwüschterweise nicht nur Elektronen, sondern auch Wolfram-Atome in kleinen Mengen.
+Die Wolfram-Glühkathode emittiert unerwünschterweise nicht nur Elektronen, sondern auch Wolfram-Atome in kleinen Mengen.
 Über längere Zeiträume führt dies zu einer nicht mehr zu vernachlässigenden Kontamination der Anode.
 Dadurch können bei Elektronenstößen auch Wolfram-Atome angeregt werden, was zu einer zusätzlichen Wellenlänge im
 Spektrum führt
 In den späteren Messergebnissen sind diese Beiträge erkennbar.
 Abschließend gelangen die Röntgenstrahlen durch ein Berylliumfenster in die Einfallsoptik.
-
-\paragraph{Röntgendetektor}
-Die durch die Röntgenquelle erzeugten Strahlen gelangen nach Reflektion an der Probe in den Detektor.
-Dieser dient dazu, den reflektierten Strahl in ein elektrisches Signal umzuwandeln.
-Kategorisieren kann man Röntgendektektoren nach ihrer Funktionsweise.
-Eine weitere Unterteilung erfolgt nach der Dimensionalität des Detektors.
-Es können Punktdetektoren (0D), Linien- (1D) oder Flächendetektoren (2D) verwendet werden.
-Im hauseigenen Röntgendiffraktometer ist ein Halbleiterdetektor verbaut, der in verschiedenen Dimensionalitäten
-arbeiten kann.
-Wichtig ist, dass die maximale Zählrate des Detektors nicht überschritten wird.
-Das führt zu nichtlinearen Antworten und kann den Sensor beschädigen.
-Um das zu vermeiden, können Filter und Attenuatoren verwendet werden.
 
 \paragraph{Goniometer}
 Das Goniometer ist die mechanische Komponente des Röntgendiffraktometers.
@@ -131,6 +118,63 @@ Zwar kann man mit beiden Freiheitsgraden Messungen durchführen, welche die out-
 jedoch ist es nicht möglich, die in-plane Orientierung zu bestimmen.
 Dafür werden weitere Achsen, wie $\varphi$ und $\chi$, benötigt.
 Eine Konstruktion mit den vier Achsen wird Euler-Wiege genannt.
+
+\paragraph{Ein- und Ausfallsoptik}
+Es existieren zwei primäre Möglichkeiten, um den Strahlengang zwischen Quelle, Probe und Detektor zu modifizieren:
+Bragg-Brentano-Geometrie und parallele Geometrie.
+In der Bragg-Brentano-Geometrie wird ein hochintensiver, divergierender Röntgenstrahl auf die Probe gerichtet,
+welcher unter Ausnutzung bestimmter Geometrien zurück auf den Detektor fokussiert werden kann.
+Aufgrund der Divergenz des Strahls ist diese Methode fehleranfällig und gerade für $\varphi$ und $\omega$ scans
+ist eine Parallelstrahloptik, wie in \cref{fig:xrd_parallel} gezeigt, von Vorteil.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{../assets/messmethoden/xrd/paralleloptik}
+    \caption{Aufbau der Parallelstrahloptik \imcitetwo[146]{btb-xrd}}
+    \label{fig:xrd_parallel}
+\end{figure}
+Die aus der Quelle austretenden divergierenden Strahlen werden durch einen Göbel-Spiegel
+parallelisiert und durchlaufen anschließend einen Eingangs- und Axialspalt, die den Winkelbereich
+festlegen.
+Dazwischen liegt ein Soller Spalt, der die Divergenz in axialer Richtung begrenzt, da diese
+nicht durch den Göbel-Spiegel eliminiert werden kann.
+Anschließend reflektiert der Strahl an der Probe und gelangt über weitere Spalte zum Detektor.
+
+\paragraph{Detektor}
+Der Röntgendetektor dient dazu, die Intensität der reflektierten Röntgenstrahlen zu messen und
+in elektrische Signale umzuwandeln.
+Im hauseigenen Röntgendiffraktometer wird ein Halbleiterdetektor verwendet
+Die Grundidee eines Halbleiterdetektors ist, das Material durch Photonen zu ionisieren und dabei freie Ladungsträger zu
+erzeugen.
+Diese werden über ein elektrisches Feld extrahiert und elektronisch gezählt.
+Durch die matrixartige Anordnung einzelner Halbleiterzellen kann die Intensität in Abhängigkeit der Position bestimmt
+werden.
+Somit können unterschiedliche Detektormodi realisiert werden, wie 0D Punktdetektion,
+1D Linien- oder 2D Flächendetektion.
+Wichtig ist, dass die maximale Zählrate des Detektors nicht überschritten wird.
+Das führt zu nicht linearen Antworten und kann den Sensor beschädigen.
+Um das zu vermeiden, können Filter und Attenuatoren verwendet werden.
+
+\subsubsection{Scanmethoden}
+Durch den hohen Freiheitsgrad des Goniometers können unterschiedliche Scanmethoden realisiert werden.
+Diejenigen, die in dieser Arbeit verwendet wurden, sind im Folgenden beschrieben.
+
+\paragraph{$2\theta/\omega$ scan}
+Ein $2\theta/\omega$ scan ist eine einfache Methode, um die Kristallstruktur von Dünnfilmen zu bestimmen
+und bildet die Grundlage für weitere Messungen.
+Die Probe wird auf den Probenhalter montiert und in das Goniometer eingesetzt.
+Der Winkel zwischen Probenoberfläche und Quelle wird als $\omega$ und der Winkel zwischen Probenoberfläche und Detektor
+als $2\theta$ bezeichnet.
+Als Anfangsbedingung legt man Messdauer und ein Intervall für $\omega$ fest und startet die Messung.
+Nun fahren Goniometer und Detektor über den angegebenen Winkelbereich mit der Bedingung $\omega = \theta$.
+Als Ausgabe bekommt man ein Intensitätsprofil in Abhängigkeit von $2\theta$, in denen im Idealfall charakteristische
+Peaks erkennbar sind.
+Diese Peaks entstammen der Bragg-Reflexion von Kristallebenen, die parallel zur Probenoberfläche liegen.
+Kennt man die Wellenlänge der Röntgenstrahlung, so kann mam mithilfe des Peaks den Gitterabstand bestimmen.
+Somit ist es möglich, Rückschlüsse auf die vorhandenen Kristallstrukturen im Dünnfilm zu ziehen.
+
+\paragraph{$\omega$ scan}
+
+\paragraph{$\varphi$ scan}
 %%TODO
 
 \subsection{Rasterkraftmikroskopie}\label{subsec:afm}
@@ -145,22 +189,23 @@ Oberfläche erstellt wird.
 \subsubsection{Schematischer Aufbau und Funktionsweise}
 \begin{figure}
     \centering
-    \includegraphics[width=0.6\textwidth]{../assets/messmethoden/afm/01_aufbau.png}
+    \includegraphics[width=0.6\textwidth]{../assets/messmethoden/afm/01_aufbau}
     \caption{Schematischer Aufbau eines Rasterkraftmikroskops. \imcitetwo[12]{afm-handbuch}}
     \label{fig:afm_aufbau}
 \end{figure}
-Die grundlegende Funktionsweise ist in Abbildung 1 dargestellt.
+Die grundlegende Funktionsweise ist in \cref{fig:afm_aufbau} dargestellt.
 Markierung 1 zeigt den Cantilever, der mit einer Messspitze mit Dimensionen im Nanometerbereich ausgestattet ist.
 Fährt diese über die Probe, so wirken Kräfte auf die Spitze, welche den Cantilever auslenken.
 Diese Auslenkung wird mittels eines Ablenkungserkennungssystems, Markierung 2, ausgewertet.
 Die gemessene Auslenkung wird an das Feedback System übergeben, was Markierung 3 zeigt.
 Basierend auf dem gewählten Betriebsmodus wird versucht, die gemessene Kraft oder Amplitude konstant zu halten.
 Mithilfe dieser Regulation wird ein Korrektursignal ausgegeben, welches die Position des Cantilevers anpasst.
-Dies geschieht mithilfe von Piezoelementen, wodurch der Cantilever in x, y oder z-Richtung bewegt werden kann, siehe Markierung 4.
+Dies geschieht mithilfe von Piezoelementen, wodurch der Cantilever in $x$, $y$ oder $z$-Richtung bewegt werden kann,
+siehe Markierung 4.
 Die z-Position des Cantilevers wird aufgezeichnet und als Topographiesignal am Computer ausgewertet, siehe Markierung 5.
 Im Folgenden werden die einzelnen Komponenten näher erläutert.\autocite[8-10]{afm-buch}
 
-\subsubsection{Wirkende Kräfte}
+\subsubsection{Interaktion zwischen Probe und Spitze}
 Zuerst wird die Wechselwirkung zwischen Cantileverspitze und Probe betrachtet.
 Die auf die Spitze wirkende Gesamtkraft setzt sich aus verschiedenen Komponenten zusammen.
 Der wichtigste und weitreichendste Beitrag entspringt der Van-der-Waals Wechselwirkung.
@@ -197,7 +242,7 @@ Kräfte zwischen Probe und Spitze. \autocite[161-164]{afm-buch}
 \subsubsection{Auslenkungserkennungssystem}
 \begin{figure}
     \centering
-    \includegraphics[width=0.6\textwidth]{../assets/messmethoden/afm/02_beam.png}
+    \includegraphics[width=0.6\textwidth]{../assets/messmethoden/afm/02_beam}
     \caption{Schematischer Aufbau eines Auslenkungserkennungssystems. \imcitetwo[17]{afm-handbuch}}
     \label{fig:afm-beam}
 \end{figure}
@@ -215,7 +260,8 @@ Photodetektor.
 Über die vier Segmente kann die Auslenkung und Torsion des Cantilevers bestimmt werden.
 
 \subsubsection{Feedback Controller}
-Damit eine möglichst genaue Topografiekarte aufgezeichnet werden kann, ist ein schnelles und präzises Regelsystem von großer Bedeutung.
+Damit eine möglichst genaue Topografiekarte aufgezeichnet werden kann, ist ein schnelles und präzises Regelsystem von
+großer Bedeutung.
 Ziel ist es, eine vorgegebene Kenngröße möglichst konstant zu halten, beispielsweise die Auslenkung des Cantilevers.
 Dafür wird ein geschlossenes Regelkreissystem verwendet, welches in \cref{fig:afm_controller} dargestellt ist.
 Der Ausgabewert des Systems $x(t)$, beispielsweise die Cantileverauslenkung, wird gemessen, zunächst mit dem
@@ -225,7 +271,7 @@ Dieses Korrektursignal wird vom System aufgenommen und intrinsisch verarbeitet, 
 Sollwert $w$ liegt.\autocite[99-101]{afm-buch}
 \begin{figure}
     \centering
-    \includegraphics[width=0.6\textwidth]{../assets/messmethoden/afm/03_controller.png}
+    \includegraphics[width=0.6\textwidth]{../assets/messmethoden/afm/03_controller}
     \caption{Blockschaltbild eines Feedback-Controllers. \imcitetwo[14]{afm-buch}}
     \label{fig:afm_controller}
 \end{figure}
@@ -234,12 +280,13 @@ In der Regel wird diese durch einen Proportional-Integral-Controller (PI-Control
 \begin{equation*}
     y(t)=\underbrace{ K_{\mathrm{P}}(w-x(t)) }_{ \text{1. Proportional} }+\underbrace{ K_{\mathrm{I}}\int_{0}^{t}
         (w-x(\tau)) \, \mathrm{d}\tau }_{ \text{2. Integral} }
-\end{equation*}
+\end{equation*}\autocite[104-105]{afm-buch}
 
 \paragraph{1. Proportional:}
-Das Ausgabesignal wird Proportional zum Eingabesignal mit Proportionalitätskonstante $K_{\mathrm{P}}$ ausgegeben.
+Das Ausgabesignal wird Proportional zum Fehlersignal mit Proportionalitätskonstante $K_{\mathrm{P}}$ ausgegeben.
 Dies ist die einfachste Art der Regulation, welche nur auf den aktuellen Zustand reagiert.
-Der P-Regler zeichnet sich durch ein typisches Einschwingsignal aus, welches durch die Trägheit des Systems zustande kommt.
+Der P-Regler zeichnet sich durch ein typisches Einschwingsignal aus, welches durch die Trägheit des Systems zustande
+kommt.
 Durch die Verzögerung zwischen Eingangssignal und Ausgangsreaktion des Systems entsteht oft eine Überreaktion,
 diese Überschreitung ruft eine Gegenreaktion hervor, welche sich rekursiv zu einer Schwingung entwickelt.
 Der größte Nachteil des P-Reglers ist, dass er nicht in der Lage ist, den Sollwert unter konstanter Störung
@@ -250,24 +297,56 @@ Um diesen Nachteil zu beheben, wird zusätzlich ein I-Regler hinzugefügt.\autoc
 Der Integralanteil des Reglers reagiert auf die Summe der bisherigen Abweichungen mit Proportionalitätskonstante
 $K_{\mathrm{I}}$.
 Damit eliminiert er alle konstanten Störungen, die durch den P-Regler nicht beseitigt werden konnten.
-Dadurch, dass das Integral der Abweichung über die Zeit gebildet wird, ist der I-Regler am Anfang sehr langsam.
-In einigen Varianten wird nicht über das gesamte, sondern übern ein konstantes Zeitintervall integriert.\autocite[102-104]{afm-buch}
+Da das Integral des Fehlersignals über die Zeit gebildet wird, ist der I-Regler am Anfang sehr langsam.
+In einigen Varianten wird nicht über das gesamte, sondern übern ein konstantes Zeitintervall integriert.
+\autocite[102-104]{afm-buch}
 
 Kombiniert man nun Proportional- und Integralregler, so können kurzzeitige Abweichungen durch den schnellen
-P-Regler und langzeitige Abweichungen durch den langsamen I-Regler korrigiert werden.\autocite[104-105]{afm-buch}
+P-Regler und langzeitige Abweichungen durch den langsamen I-Regler korrigiert werden.
+
+\subsubsection{Piezoelemente und Positionierung}
+Um den Cantilever in $z$, sowie die Probe in $xy$-Richtung zu bewegen, werden Piezoelemente verwendet.
+Um diesen Mechanismus zu beschreiben, muss der Piezoeffekt betrachtet werden.
+Setzt man Kristalle wie Quartz, die bestimmte Symmetrieeigenschaften aufweisen, unter mechanische Spannung,
+so kann unter bestimmten Bedingungen elektrische Spannung induziert werden.
+Diesen Effekt sieht man beispielsweise in Feuerzeugen.
+Nun kann auch die Umkehrung des Effekts genutzt werden.
+Legt man eine Spannung an einen Piezokristall an, kann dieser deformiert werden.
+Für kleine Spannungen kann man so Deformationen im Bereich von \qty{0.1}{\nano\meter} erreichen.
+\autocite[35-36]{afm-buch}
+
+Um den Piezoeffekt zu nutzen, werden nun spezielle Metallbiegeelemente verwendet.
+Das sind Metallblöcke, die sich in einer Richtung durch kleine Einschnitte federähnlich verformen lassen, während
+sie in anderen Richtungen starr sind.
+In diese können Piezoelemente eingebettet werden, sodass sich beim Anlegen einer Spannung der Block in eine Richtung
+verformt und sich somit die Probe oder der Cantilever bewegt.
+Wie in \cref{fig:afm_stage} dargestellt, lassen sich zwei orthogonale Piezoelemente kombinieren, um eine Bewegung in
+$xy$-Richtung zu erreichen.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{../assets/messmethoden/afm/04_stage}
+    \caption{Aufbau eines Biegeelements. \imcitetwo[74]{afm-buch}}
+    \label{fig:afm_stage}
+\end{figure}
+\cref{fig:afm_aufbau} zeigt, zeigt eine Grobpositionsbühne, die
+mithilfe von Stellschrauben motorisiert gesteuert wird.
+Die Feinpositionierung und die Scanbewegung erfolgt dann mit den darauf montierten Piezo-Biegeelementen.
+Der Cantilever samt Detektor wird unterhalb eines Piezoelements montiert, sodass er in $z$-Richtung bewegt werden kann.
+\autocite[79-80]{afm-buch}
 
 \subsubsection{Betriebsmodi}
-Das Raster-Kraft-Mikroskop verfügt über unterschiedliche Betriebsmodi.
+Das Rasterkraftmikroskop verfügt über unterschiedliche Betriebsmodi.
 In der vorliegenden Arbeit wurde im statischen Kontaktmodus verwendet, um die Oberflächenstruktur zu erfassen.
 Dabei wird die Probe in $xy$-Richtung bewegt, während die Spitze des Cantilevers einen so kleinen Abstand zur Probe hat,
 dass die repulsiven Kräfte dominieren.
 Diese bewirken eine Auslenkung $\Delta z$ des Cantilevers, welche durch das Erkennungssystem aufgezeichnet wird.
-Mithilfe eines \textit{setpoint}-Parameters wird eine konstante Auslenkung festgelegt, die vom Feedback-System eingehalten
-wird.
+Mithilfe eines \textit{setpoint}-Parameters wird eine konstante Auslenkung festgelegt, die vom Feedback-System
+eingehalten wird.
 Scannt man über eine Erhöhung, so ändert sich die Auslenkung und das Feedback-System versucht, den Cantilever erneut
 auszurichten, indem es die Höhe anpasst.
 Dadurch entsteht eine Topografiekarte der Oberfläche.
-Dadurch, dass sich die Spitze in stetigem Kontakt mit der Oberfläche befindet, müssen die Wechselwirkungskräfte möglichst klein gehalten werden,
+Dadurch, dass sich die Spitze in stetigem Kontakt mit der Oberfläche befindet, müssen die Wechselwirkungskräfte
+möglichst klein gehalten werden,
 da ansonsten die Spitze leicht kontaminiert oder beschädigt werden kann.\autocite[199-201]{afm-buch}
 
 Nicht nur statische, sondern auch dynamische Betriebsmodi existieren.
@@ -275,6 +354,6 @@ Dabei wird der Cantilever mit einer bestimmten Frequenz und Amplitude angeregt, 
 Ändert sich die Kraft, ändert die Resonanzfrequenz und damit auch die Amplitude.
 Das Topografiesignal wird durch die Forderung einer konstanten Amplitude erzeugt.\autocite[209]{afm-buch}
 
-\subsubsection{Positionierung von }
+
 
 
