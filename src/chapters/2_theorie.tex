@@ -1,8 +1,8 @@
 \section{Theorie}
 
 \subsection{Kristallgitter}
-Um das Material \heo, sowie die Messtechnik XRD verstehen zu können, ist ein grundlegendes Verständnis
-über die Struktur von kristallinen Festkörpern unerlässlich.
+Um das Material \heo, sowie die Röntgendiffraktometrie verstehen zu können, ist ein grundlegendes Verständnis
+über die Struktur kristalliner Festkörpern unerlässlich.
 Die nachfolgenden Seiten dienen also als Zusammenfassung für die relevanten Konzepte der Festkörperphysik.
 
 \subsubsection{Bravaisgitter, Elementarzelle und Basis}
@@ -11,17 +11,16 @@ Ein idealer Kristall ist eine dreidimensionale, unendlich ausgedehnte Anordnung,
 wiederkehrenden Baueinheiten zusammensetzt.
 Diese Baueinheiten werden als Basis bezeichnet.
 Sie können einzelne Atome, aber auch komplexe Atomstrukturen repräsentieren.
-reduziert man jede Baueinheit auf einen einzigen Punkt, so entsteht ein einfach zu beschreibendes Punktgitter.
+Reduziert man jede Baueinheit auf einen einzigen Punkt, so entsteht ein einfach zu beschreibendes Punktgitter.
 \autocite[49]{Hunklinger}
 Dieses unterliegt verschiedenen Symmetrien, sodass das Gitter in unterschiedliche Kristallsysteme eingeteilt werden
 kann.
 Eine einfache Einteilung kann mithilfe von Drehachsen erfolgen.
 Hierbei betrachtet man diejenigen Rotationsoperatoren $R_{\hat{e}}(2\pi / n)$ für eine beliebige Achse $\hat{e}$ um
 einen Winkel $2 \pi /n$, die das Punktgitter auf sich selbst abbilden.
-Der Parameter $n$ wird als Zähligkeit bezeichnet und teilt die Punktgitter in sieben verschiedene Kristallklassen ein:
+Der Parameter $n$ wird als Zähligkeit bezeichnet und teilt die Punktgitter in sieben verschiedene Kristallklassen ein,
+die in Tabelle \cref{tab:krystallsysteme} aufgeführt sind.
 \autocite[53]{Hunklinger}
-
-
 \begin{table}[h]
     \centering
     \begin{tabular}{c c c c}
@@ -35,7 +34,8 @@ Der Parameter $n$ wird als Zähligkeit bezeichnet und teilt die Punktgitter in s
         trigonal (rhomboedrisch) & $a=b=c$           & $\alpha=\beta=\gamma \neq \ang{90}$          & 3          \\
         kubisch                  & $a=b=c$           & $\alpha=\beta=\gamma=\ang{90}$               & 3 (vier)   \\ \bottomrule
     \end{tabular}
-    \caption{Klassifikation der verschiedenen Kristallsysteme. \imcite[65]{Hunklinger} }\label{tab:table}
+    \caption{Klassifikation der verschiedenen Kristallsysteme. \imcite[65]{Hunklinger} }\label
+    {tab:krystallsysteme}
 \end{table}
 
 
@@ -49,8 +49,10 @@ definieren ein schiefwinkliges Koordinatensystem und werden als primitive Gitter
 Sie spannen ein dreidimensionales Bravaisgitter auf.
 Die Abstände zwischen zwei benachbarten Gitterpunkten, also die Größen
 $\lvert \mathbf{a}_{i} \rvert$, werden Gitterkonstanten genannt. \autocite[82]{Ashcroft}
+Je nachdem, wie sich das Kristallsystem unter Symmetrieoperationen verhält, ergeben sich unterschiedliche Bedingungen für
+Gitterkonstanten und die Winkel zwischen den Gittervektoren.
 Mithilfe der Definition einer Basis und eines Bravaisgitters lässt sich jeder ideale Kristall beschreiben.
-Eine Kristallstruktur wird also durch identische Kopien der Basis an jedem Punkt des Bravaisgitters aufgebaut.
+Eine Kristallstruktur wird durch identische Kopien der Basis an jedem Punkt des Bravaisgitters aufgebaut.
 \autocite[94-95]{Ashcroft}
 Man kann Teilmengen des Ortsraumes geschickt wählen, die durch Aneinanderreihung den gesamten Raum lückenlos und
 überlappungsfrei überdecken.
@@ -70,7 +72,85 @@ wählt geschickt nicht-primitive Elementarzellen, die möglichst viele Punktsymm
 Das führt zu einer Einteilung in 14 Bravaisgitter. \autocite[51]{Hunklinger}
 
 \subsubsection{Relevante Gittertypen}
-%TODO
+\begin{figure}
+    \centering
+    \begin{subfigure}[t]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../assets/theorie/fcc.pdf}
+        \caption{fcc-Gitter.} \label{fcc}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../assets/theorie/rocksalt.pdf}
+        \caption{NaCl-Gitter} \label{nacl}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../assets/theorie/CuO.pdf}
+        \caption{\ce{CuO}-Gitter} \label{cuo}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../assets/theorie/hex.pdf}
+        \caption{hexagonales Gitter} \label{hex}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../assets/theorie/hcp.pdf}
+        \caption{hcp-Gitter} \label{hcp}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../assets/theorie/wurzite.pdf}
+        \caption{Wurtzit-Gitter} \label{wurtzit}
+    \end{subfigure}
+    \caption{Relevante Gitterstrukturen für die Untersuchung von \heo.} \label{gitterstrukturen}
+\end{figure}
+
+\paragraph{Natriumchloridstruktur}
+Die erste und wichtigste Kristallstruktur ist die Natriumchloridstruktur.
+Um diese zu verstehen, betrachtet man zuerst ein kubisch-flächen\-zen\-trier\-tes Gitter (fcc, engl.
+\textit{face-centered cubic}) welches durch die primitiven Vektoren
+\begin{equation*}
+    \mathbf{a}_1 = a / 2 (\hat{x} + \hat{y}), \quad
+    \mathbf{a}_2 = a / 2 (\hat{y} + \hat{z}), \quad
+    \mathbf{a}_3 = a / 2 (\hat{x} + \hat{z})
+\end{equation*}
+definiert ist.
+Die Gitterpunkte liegen an Würfelecken und den dazugehörigen Flächenmittelpunkten, wie in \cref{fcc} dargestellt.
+\autocite[37-38]{Grundmann}
+Die Natriumchloridstruktur entsteht aus einem fcc-Gitter mit zweiatomiger Basis.
+Dabei ist das erste Basisatom an der Gitterposition $(0,0,0)$ und das zweite an der Position $(a/2,a/2,a/2)$, wie in
+\cref{nacl} dargestellt.\autocite[45]{Grundmann}
+Sowohl Magnesiumoxid \ce{MgO}, Kobaltoxid \ce{CoO} und Nickeloxid \ce{NiO} kristallisieren in dieser Struktur.
+Das zu untersuchende hochentropische Metalloxid \heo\ soll ebenfalls in dieser Struktur kristallisieren, wenn
+Sauerstoff als erstes Basisatom und ein zufällig ausgewähltes Metall als zweites Basisatom betrachtet wird.
+
+\paragraph{Kupferoxidstruktur}
+Kupferoxid kristallisiert in einer monoklinen Kristall\-struk\-tur mit achtatomiger Basis.
+Dabei sind vier dieser Basisatome Kupferatome und vier Sauerstoffatome.
+Die Struktur ist in \cref{cuo} dargestellt.\autocite[7]{kupferoxid}
+
+\paragraph{Wurtzitstruktur}
+Um die Wurtzitstruktur zu verstehen, betrachtet man zuerst die einfach-hexagonale Struktur, die durch die primitiven
+Vektoren
+\begin{equation*}
+    \mathbf{a}_1 = a\hat{x}, \quad
+    \mathbf{a}_2 = a/2 (\hat{x} + \sqrt{3} \hat{y}), \quad
+    \mathbf{a}_3 = c \hat{z}
+\end{equation*}
+definiert ist.
+Es entsteht ein Gitter, welches an den Ecken eines Sechsecks und den dazugehörigen Flächenmittelpunkten Gitterpunkte
+besitzt, wie in \cref{hex} dargestellt.
+Aus der einfach-hexagonalen Struktur ergibt sich die hexagonal dichtest gepackte Struktur
+(hcp, engl. \textit{hexagonal-closed packet}).
+Diese liegt ein einfach-hexagonales Gitter mit zweiatomiger Basis bei den Gitterpositionen $(0,0,0)$ und
+$(\mathbf{a}_1/3 + \mathbf{a}_2/3 + \mathbf{a}_3/2)$ zugrunde, wie in \cref{hcp} dargestellt.\autocite[97-98]{Ashcroft}
+Die Wurtzitstruktur besteht aus einem einfach-hexagonalen Gitter mit vieratomiger Basis.
+Eine bessere Vorstellung ergibt sich jedoch aus der Betrachtung zweier übereinander liegender hcp-Gitter, die um
+die Höhe $\sqrt {3 / 8} a$ gegeneinander verschoben sind, wie in \cref{wurtzit} dargestellt.
+Zinkoxid \ce{ZnO} kristallisiert in dieser Struktur.
+
 \subsubsection{Reziprokes Gitter}
 Das reziproke Gitter spielt für die weitere Betrachtung von periodischen Strukturen eine fundamentale Rolle.
 Ziel ist es, eine Funktion zu konstruieren, die gitterperiodisch im Bravaisgitter ist.

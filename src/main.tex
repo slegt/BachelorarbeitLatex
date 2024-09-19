@@ -9,18 +9,16 @@
 \usepackage[version=4]{mhchem}
 \usepackage[style=authortitle, autocite=footnote]{biblatex}
 \usepackage[ngerman]{babel}
-\usepackage{caption}
+\usepackage[justification=centering]{caption}
+\usepackage{subcaption}
 \usepackage{booktabs}
 \usepackage{siunitx}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathtools}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{cleveref}
 
-\captionsetup{
-    justification=centering,
-}
 \setlength{\parindent}{0pt}
 \addbibresource{literature.bib}
 
@@ -35,8 +33,13 @@
 \DeclareSIUnit\angstrom{\text {Å}}
 \DeclareSIUnit\bar{bar}
 
+
+
 % Document
 \begin{document}
+    \include{chapters/1_titel}
+    \tableofcontents
     \include{chapters/2_theorie}
     \include{chapters/3_messmethoden}
+    \printbibliography
 \end{document}
