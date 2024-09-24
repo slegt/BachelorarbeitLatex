@@ -1,6 +1,6 @@
-\section{Theorie}
+\section{Theorie}\label{sec:theorie}
 
-\subsection{Kristallgitter}
+\subsection{Kristallgitter}\label{subsec:kristallgitter}
 Um das Material \heo, sowie die Röntgendiffraktometrie verstehen zu können, ist ein grundlegendes Verständnis
 über die Struktur kristalliner Festkörpern unerlässlich.
 Die nachfolgenden Seiten dienen also als Zusammenfassung für die relevanten Konzepte der Festkörperphysik.
@@ -76,35 +76,35 @@ Das führt zu einer Einteilung in 14 Bravaisgitter. \autocite[51]{Hunklinger}
     \centering
     \begin{subfigure}[t]{0.3\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../assets/theorie/fcc.pdf}
+        \includegraphics[width=\textwidth]{../assets/theorie/fcc}
         \caption{fcc-Gitter.} \label{fcc}
     \end{subfigure}
     \begin{subfigure}[t]{0.3\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../assets/theorie/rocksalt.pdf}
+        \includegraphics[width=\textwidth]{../assets/theorie/rocksalt}
         \caption{NaCl-Gitter} \label{nacl}
     \end{subfigure}
     \begin{subfigure}[t]{0.3\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../assets/theorie/CuO.pdf}
+        \includegraphics[width=\textwidth]{../assets/theorie/CuO}
         \caption{\ce{CuO}-Gitter} \label{cuo}
     \end{subfigure}
     \begin{subfigure}[t]{0.3\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../assets/theorie/hex.pdf}
+        \includegraphics[width=\textwidth]{../assets/theorie/hex}
         \caption{hexagonales Gitter} \label{hex}
     \end{subfigure}
     \begin{subfigure}[t]{0.3\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../assets/theorie/hcp.pdf}
+        \includegraphics[width=\textwidth]{../assets/theorie/hcp}
         \caption{hcp-Gitter} \label{hcp}
     \end{subfigure}
     \begin{subfigure}[t]{0.3\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{../assets/theorie/wurzite.pdf}
+        \includegraphics[width=\textwidth]{../assets/theorie/wurzite}
         \caption{Wurtzit-Gitter} \label{wurtzit}
     \end{subfigure}
-    \caption{Relevante Gitterstrukturen für die Untersuchung von \heo.} \label{gitterstrukturen}
+    \caption{Relevante Gitterstrukturen für die Untersuchung von \heo.} \label{fig:gitterstrukturen}
 \end{figure}
 
 \paragraph{Natriumchloridstruktur}
@@ -155,15 +155,13 @@ Zinkoxid \ce{ZnO} kristallisiert in dieser Struktur.
 Das reziproke Gitter spielt für die weitere Betrachtung von periodischen Strukturen eine fundamentale Rolle.
 Ziel ist es, eine Funktion zu konstruieren, die gitterperiodisch im Bravaisgitter ist.
 Für diese Funktion soll also gelten
-$f(\mathbf{x})=f(\mathbf{x}+\mathbf{O})$ falls $\mathbf{O}=\sum_{i=1}^{3} \alpha_{i}\mathbf{a}_{i}$.
+$f(\mathbf{x})=f(\mathbf{x}+\mathbf{O})$, falls $\mathbf{O}=\sum_{i=1}^{3} \alpha_{i}\mathbf{a}_{i}$.
 Mithilfe einer Reihenentwicklung erhalten wir die folgende, allgemeine Form:
-
 \begin{align*}
     f(\mathbf{x})&=\sum_{\mathbf{R}}a_{\mathbf{R}}\cdot \exp(\mathrm{i}\mathbf{R}\cdot\mathbf{x}) \\
     f(\mathbf{x}+\mathbf{O})&=\sum_{\mathbf{R}}a_{\mathbf{R}}\cdot \exp(\mathrm{i}\mathbf{R}\cdot \mathbf{x})\cdot
     \underbrace{ \exp(\mathrm{i}\mathbf{R}\cdot \mathbf{O}) }_{ \stackrel{!}{=}1 }  \stackrel{!}{=} f(\mathbf{x})
 \end{align*}
-
 Erkennbar ist die notwendige Bedingung $\exp(\mathrm{i}\mathbf{R}\cdot \mathbf{O})=1$.
 Dies ist äquivalent zur Aussage $\mathbf{R}\cdot \mathbf{O}=2\pi n$ mit $n \in \mathbb{N}_{0}$.
 Damit lässt sich das reziproke Gitter durch die Menge
@@ -185,11 +183,11 @@ Hierbei ist $\delta_{ij}$ das Kronecker-Delta.
 Die erste wichtige Anwendung des reziproken Gitters ist die Charakterisierung von Gitterebenen.
 Eine Gitterebene ist eine beliebige, im Bravaisgitter liegende Ebene, die mindestens drei nicht kollineare Gitterpunkte
 enthält.
-Aufgrund der Kristallsymmetrie liegen damit unendlich viele weitere Gitterpunkte innerhalb der Ebene.
+Aufgrund der Kristallsymmetrie liegen damit unendlich viele weitere Gitterpunkte innerhalb dieser Ebene.
 Mithilfe der Translationssymmetrie findet man parallele Gitterebenen im Abstand $d$.
 Diese fasst man als Gitterebenenscharen zusammen.
 
-Nun kann man diese Gitterebenenscharen mithilfe des reziproken Gitters charakterisieren, denn für jede
+Nun kann man Gitterebenenscharen mithilfe des reziproken Gitters charakterisieren, denn für jede
 Gitterebenenschar im Abstand $d$ existieren Vektoren des reziproken Gitters, welche senkrecht auf den Ebenen stehen.
 Für die eindeutige Beschreibung wählt man den kleinsten dieser Vektoren, stets welche die Länge $2 \pi / d$ besitzt.
 Auch die Umkehrung gilt: Für jeden Vektor $\mathbf{R}$ aus dem reziproken Gitter, existiert eine Schar von senkrechten
@@ -199,7 +197,7 @@ Der Abstand $d$ dieser Ebenen ist an den Betrag den kleinsten parallelen Vektor 
 Es existiert also eine einfache Möglichkeit, Gitterebenen mithilfe von reziproken Gittervektoren eindeutig zu
 identifizieren. \autocite[113]{Ashcroft}
 
-Nun können wir die sogenannten Millerschen Indizes verwenden, um Gitterebenenscharen eindeutig zu bestimmen.
+Nun können die sogenannten Millerschen Indizes verwendet werden, um Gitterebenenscharen eindeutig zu bestimmen.
 Sei dazu $\mathbf{r}$ der kürzeste reziproke Gittervektor, welcher senkrecht auf der zu charakterisierenden Ebene steht.
 Dieser lässt sich darstellen durch $ \mathbf{r} = h \mathbf{b_1} + k \mathbf{b_2} + l \mathbf{b_3}$.
 Das Tupel $(h\, k\,l)$ sind die Millerschen Indizes, welche definitionsgemäß aus ganzen Zahlen bestehen müssen.
@@ -217,83 +215,99 @@ $ \mathbf{K}\cdot \mathbf{a}_{3}=2\pi l$ folgenden Zusammenhang:
 \begin{equation*}
     x_{1}=\frac{A}{2\pi h}, \quad x_{2}=\frac{A}{2\pi k}, \quad x_{3} =\frac{A}{2\pi l}
 \end{equation*}
-Kennt man die Achsendurchstoßpunkte, kann man die Millerschen Indizes finden, indem man den Parameter $A$
+Kennt man die Achsendurchstoßpunkte $x_i$, kann man die Millerschen Indizes finden, indem man den Parameter $A$
 kleinstmöglich wählt, sodass $h$, $k$ und $l$ ganzzahlig sind. \autocite[115]{Ashcroft}
 
-Nicht nur Gitterebenen, sondern auch Gitterrichtungen lassen sich in ähnlicher Weise indizieren. Das Tupel
-$[h\,k\,l]$ beschreibt diejenige Richtung, die durch den Vektor $\mathbf{R} = h\mathbf{a}_{1}+k\mathbf{a}_{2}+
-l\mathbf{a}_{3}$ dargestellt werden. Zu beachten ist, dass Richtungsvektoren in unserem Kontext im Ortsraum leben,
-währenddessen Ebenennormalenvektoren durch Vektoren im reziproken Raum dargestellt werden. Um dies zu verdeutlichen werden
-eckige anstelle der runden Klammern verwendet. Es existiert weiterhin eine besondere Notation zur Kennzeichnung äquivalenter
-Gitterebenenscharen und Raumrichtungen. In diesem Kontext bedeutet das, dass die Möglichkeit besteht, äquivalente
-Gitterebenenscharen und Raumrichtung durch Symmetrieoperationen ineinander zu überführen. Äquivalente Ebenen notiert man
-mit $\{h \,k\, l $, für Richtungen gilt entsprechend $\langle h\, k \, l \rangle$.
+Nicht nur Gitterebenen, sondern auch Gitterrichtungen lassen sich in ähnlicher Weise indizieren.
+Das Tupel $[h\,k\,l]$ beschreibt diejenige Richtung, die durch den Vektor $\mathbf{O} = h\mathbf{a}_{1}+k\mathbf{a}_{2}+
+l\mathbf{a}_{3}$ dargestellt werden.
+Zu beachten ist, dass Richtungsvektoren in unserem Kontext im Ortsraum leben,
+währenddessen Ebenennormalenvektoren durch Vektoren im reziproken Raum dargestellt werden.
+Um dies zu verdeutlichen werden eckige anstelle der runden Klammern verwendet.
+Es existiert weiterhin eine besondere Notation zur Kennzeichnung äquivalenter Gitterebenenscharen und Raumrichtungen.
+In diesem Kontext bedeutet das, dass die Möglichkeit besteht, äquivalente Gitterebenenscharen und Raumrichtung durch
+Symmetrieoperationen ineinander zu überführen.
+Äquivalente Ebenen notiert man mit $\{h \,k\, l \}$, für Richtungen gilt entsprechend $\langle h\, k \, l \rangle$.
+\autocite[116]{Ashcroft}
 
 \subsubsection{Röntgenbeugung und die Laue Bedingung}
-Ziel ist es, mithilfe von elektromagnetischer Strahlung und den bisherigen Überlegungen, Aussagen über die Kristallstruktur
-eines Festkörpers zu gewinnen.
+Ziel ist es, mithilfe von elektromagnetischer Strahlung und den bisherigen Überlegungen, Aussagen über die
+Kristallstruktur eines Festkörpers zu gewinnen.
 Genauer gesagt sucht man einen Formalismus, um die elastische Streuung am Kristallgitter zu beschreiben.
 Für eine geeignete Wellenlänge der Photonen betrachtet man die typische zwischenatomare Entfernung von circa
 \qty{1}{\angstrom}.
-Aus der Optik ist bekannt, dass mindestens eine Wellenlänge in der gleichen Größenordnung genutzt werden
+Aus der Optik ist bekannt, dass mindestens eine Wellenlänge gleicher Größenordnung genutzt werden
 muss, um beide Punkte hinreichend genau aufzulösen.
 Entsprechend muss die Photonenenergie in der Ordnung von
 $\hbar \omega=hc / \lambda \simeq \qty{12.3}{\electronvolt}$ liegen.
+Hierbei ist $\omega$ die Kreisfrequenz, $\lambda$ die Wellenlänge, $h$ das Plancksche Wirkungsquantum und $c$ die
+Lichtgeschwindigkeit.
 Solche Energien sind charakteristisch für Röntgenstrahlung.
-\autocite[115]{Ashcroft}
 
-Laue und Bragg entwickelten zwei Formalismen, um die Physik hinter der Gitterstreuung zu verstehen. Im Folgenden wird der
-Laue-Formalismus erklärt und die Äquivalenz zur Bragg-Bedingung gezeigt.
+Laue und Bragg entwickelten zwei Formalismen, um die Physik hinter der Gitterstreuung zu verstehen.
+Im Folgenden wird der Laue-Formalismus erklärt und die Äquivalenz zur Bragg-Bedingung gezeigt.
 
 \paragraph{Beugungsbedingung nach Laue}
-Zuerst betrachtet man die Bestrahlung zweier Gitterpunkte mit Photonen unter Annahme elastischer Streuung.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{../assets/theorie/lauebeugung}
+    \caption{Skizze zur Erklärung der Laue-Bedingung. \imcitetwo[123]{Ashcroft}} \label{fig:laue}
+\end{figure}
+Zuerst betrachtet man die Bestrahlung zweier Gitterpunkte, deren Differenz durch den Vektor $\mathbf{O}$ gegeben ist,
+mit Photonen unter Annahme elastischer Streuung.
 Dabei ist die einfallende Strahlung durch den Wellenzahlvektor  $\mathbf{k}$ charakterisiert.
-Es gilt die Dispersionsrelation:
-\begin{equation*}
-    \lvert \mathbf{k} \rvert =\frac{2\pi}{\lambda}
-\end{equation*}
+Es gilt die Dispersionsrelation $\lvert \mathbf{k} \rvert = 2 \pi / \lambda$.
 Die gestreute Strahlung wird durch den Wellenvektor $\mathbf{k}'$ beschrieben.
 Da nur elastische Streuung betrachtet wird, gilt $\lvert \mathbf{k} \rvert=\lvert \mathbf{k}' \rvert$.
 Somit sind die Frequenzen ($\omega$ und $\omega'$) beider Wellen gleich.
-Für den Wegunterschied findet man anhand der Skizze den Zusammenhang:
-\begin{align*}
-    \Delta s &= \Delta s_{1} + \Delta s_{2} = \underbrace{ \mathbf{T} \cdot \frac{\mathbf{k}}{\lvert \mathbf{k} \rvert }-
-    \mathbf{T}\cdot \frac{\mathbf{k}'}{\lvert \mathbf{k}' \rvert}  }_{ \text{Projektion von T auf }
-    \mathbf{k}/\mathbf{k'} } \\
-    \Delta s &=  \frac{\lambda}{2\pi} \mathbf{T}\cdot\Delta \mathbf{k}
-\end{align*}
+Für den Wegunterschied findet man anhand \cref{fig:laue} den Zusammenhang:
+\begin{equation*}
+    \Delta s = \Delta s_{1} + \Delta s_{2} = \underbrace{ \mathbf{T} \cdot \frac{\mathbf{k}}{\lvert \mathbf{k} \rvert }
+    -\mathbf{O}\cdot \frac{\mathbf{k}'}{\lvert \mathbf{k}' \rvert}  }_{ \text{Projektion von } \mathbf{O} \text{ auf }
+    \mathbf{k} \text{ bzw. }\mathbf{k'} } =  \frac{\lambda}{2\pi} \mathbf{O}\cdot\Delta \mathbf{k}
+\end{equation*}
 Hierbei ist $\Delta \mathbf{k} = \mathbf{k}-\mathbf{k}'$.
-Für konstruktive Interferenz ergibt sich die bekannte Bedingung $\Delta s = n \lambda$, sodass man durch gleichsetzen
-die Beziehung $\mathbf{T}\cdot\Delta \mathbf{k} =2\pi n$ erhält.
+Für konstruktive Interferenz ergibt sich die bekannte Bedingung $\Delta s = n \lambda$, sodass man durch Gleichsetzen
+die Beziehung $\mathbf{O}\cdot\Delta \mathbf{k} =2\pi n$ erhält.
+Aus der geometrischen Anordnungen der Gitterpunkte ergibt sich ein Wegunterschied, der äquivalent
+zu einer Phasendifferenz von $\Delta\varphi=(2\pi / \lambda) \cdot \Delta s = \Delta \mathbf{k}\cdot \mathbf{O}$ ist.
+\autocite[122-123]{Ashcroft}
 
 \paragraph{Beschreibung durch Kugelwellen}
-Betrachtet man nun die Überlagerung zweier Streuzentren, die durch den Vektor $\mathbf{T}$ voneinander verschoben sind,
+Betrachtet man nun die Überlagerung zweier Streuzentren, die durch den Vektor $\mathbf{O}$ voneinander verschoben sind,
 so findet man folgenden Ausdruck:
 \begin{align*}
-    \Phi &= C \frac{\Phi_{0}}{r'}\exp(\mathrm{i}(\lvert \mathbf{k}' \rvert r'-\omega t)) + C\frac{\Phi_{0}}{r'}
-    \exp(\mathrm{i}(\lvert \mathbf{k}' \rvert r'-\omega t- \underbrace{ \Delta \mathbf{k}\cdot \mathbf{T} }_{
-        \substack{\text{Phasendifferenz} \\ \Delta\varphi=(2\pi / \lambda) \cdot \Delta s  }})) \\
-    &=C \frac{\Phi_{0}}{r'}\exp(\mathrm{i}(\lvert \mathbf{k}' \rvert r'-\omega t))\cdot\underbrace{ (1+\exp(-i \Delta
-    \mathbf{k}\cdot \mathbf{R})) }_{ \coloneqq A }
+    u(\mathbf{r},t)=u_{0}(\mathbf{r})\cdot \exp(\mathrm{i}\omega t+\mathrm{i}\lvert \mathbf{k}
+    \rvert r) + u_{1}(\mathbf{r}) \cdot \exp(\mathrm{i}\omega t + \mathrm{i}\lvert \mathbf{k}
+    \rvert r+\mathrm{i}\Delta\varphi)
 \end{align*}
-$A$ definiert die sogenannte Streuamplitude.
+Die Überlagerung der beiden Wellen führt zu einer Interferenz, die durch die Phasendifferenz $\Delta\varphi$ bestimmt
+wird.
 Nun möchte man nicht über zwei Streuzentren, sondern über alle Gittervektoren im Kristall summieren.
-Diese sind gegeben durch $\mathbf{o}_{mnp}=m\mathbf{a}_{1}+n\mathbf{a}_{2}+p\mathbf{a}_{3}$.
-Dabei ändert sich nur der zweite Produktterm, sodass für diesen gilt:
-\begin{equation*}
-    A = \sum_{mnp}\exp(-\mathrm{i} \Delta \mathbf{k}\cdot \mathbf{r}_{mnp})
-\end{equation*}
+Diese sind gegeben durch $\mathbf{O}_{pqr}=p\mathbf{a}_{1}+q\mathbf{a}_{2}+r\mathbf{a}_{3}$.
+Dabei ändert Amplitude und Phase der einzelnen Kugelwellen, sodass man findet:
+\begin{align*}
+    u(\mathbf{r},t)
+    &=\sum_{pqr} u_{pqr}(\mathbf{r})\cdot \exp(\mathrm{i}\omega t+\mathrm{i}
+    \lvert \mathbf{k} \rvert r+\mathrm{i}\underbrace{ \Delta\varphi_{pqr} }_{ = \Delta
+    \mathbf{k}\cdot \mathbf{O}_{pqr}})) \\
+    &=\exp(\mathrm{i}\omega t+\mathrm{i}\lvert \mathbf{k} \rvert r)\cdot
+    \underbrace{ \sum_{pqr}u_{pqr}(\mathbf{r})\cdot \exp(\mathrm{i}\Delta \mathbf{k}
+    \cdot \mathbf{O}_{pqr}) }_{ \coloneqq A }
+\end{align*}
+Die Größe $A$ wird als Streuamplitude bezeichnet.
 Die tatsächliche Streuung erfolgt an der Elektronenverteilung.
 Das führt zu zusätzlichen Effekten wie den Atomformfaktor und den Strukturfaktor,
 welche für weitere Betrachtungen jedoch vernachlässigt werden können.
-\begin{align*}
-    A \propto \int n(\mathbf{r}) \exp(-\mathrm{i} \Delta \mathbf{k}\cdot \mathbf{r}) \, \mathrm{d}\lambda^{3}
-\end{align*}
+\begin{equation*}
+    A \propto \int n(\mathbf{r}) \exp(-\mathrm{i} \Delta \mathbf{k}\cdot
+    \mathbf{r}) \, \mathrm{d}V(\mathbf{r})
+\end{equation*}
 
 \paragraph{Schlussfolgerung}
-Damit die Streuamplitude maximal wird, muss die Interferenzbedingung $\mathbf{r}_{mnp}\cdot\Delta \mathbf{k} =2\pi n$i
-für alle $m$, $n$, $p$ gelten.
-Zerlegt man $\mathbf{r}_{mnp}$ in seine Komponenten, erhält man folgende Gleichungen:
+Damit die Streuamplitude maximal wird, muss die Interferenzbedingung $\mathbf{O}_{pqr}\cdot\Delta \mathbf{k} =2\pi n$
+für alle $p$, $q$, $r$ gelten.
+Zerlegt man $\mathbf{O}_{mnp}$ in seine Komponenten, erhält man folgende Gleichungen:
 \begin{align*}
     \mathbf{a}_{1}\cdot\Delta \mathbf{k} &= 2\pi h \\
     \mathbf{a}_{2}\cdot\Delta \mathbf{k} &= 2\pi k \\
@@ -303,7 +317,7 @@ Dies sind die Laue Gleichungen für Beugungsmaxima.
 Sie sind erfüllt, falls $\Delta \mathbf{k}$ ein reziproker Gittervektor ist.
 Für die Strukturamplitude ergibt sich anschließend:
 \begin{equation*}
-    A \propto \sum_{mnp} \underbrace{ \exp(-\mathrm{i}
+    A \propto \sum_{pqr} u_{pqr}(\mathbf{r}) \cdot\underbrace{ \exp(-\mathrm{i}
     \cdot2\pi\cdot(\underbrace{ mh+nk+pl }_{ \in\mathbb{Z} })) }_{ =1 }
 \end{equation*}
 
