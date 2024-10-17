@@ -18,10 +18,14 @@
 \usepackage{mathtools}
 \usepackage[hidelinks]{hyperref}
 \usepackage{cleveref}
+\usepackage{currfile}
+\usepackage{pgf}
+\usepackage{lmodern}
+\usepackage{import}
+\usepackage{pgffor}
 
 \setlength{\parindent}{0pt}
 \addbibresource{literature.bib}
-
 
 \newcommand{\imcite}[2][]{\\ Aus: \cite[#1]{#2}}
 \newcommand{\imcitetwo}[2][]{\\ Nach: \cite[#1]{#2}}
@@ -34,12 +38,13 @@
 \DeclareSIUnit\bar{bar}
 
 
-
 % Document
 \begin{document}
     \include{chapters/1_titel}
     \tableofcontents
     \include{chapters/2_theorie}
-    \include{chapters/3_messmethoden}
+    \include{./chapters/3_messmethoden}
+    \input{./chapters/4_auswertung}
+    \input{./chapters/5_appendix}
     \printbibliography
 \end{document}

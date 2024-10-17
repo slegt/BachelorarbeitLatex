@@ -1,0 +1,119 @@
+\section{Auswertung}\label{sec:auswertung}
+
+\subsection{Sauerstoff Ausheizvorgang}\label{subsec:sauerstoff-ausheizvorgang2}
+
+\subsubsection{Initialzustand}
+\begin{figure}[ht]
+    \foreach \i in {W6821-1B,W6822-1B,W6823-1B,W6824-1B}{
+        \begin{subfigure}[t]{0.40\textwidth}
+            \includegraphics[width=\textwidth]
+            {../plots/AFM/XG-Sauerstoff/XG-pre/\i/\i_XG_Sauerstoff_pre_Topography_1}
+            \caption{\i}
+        \end{subfigure}
+    }
+    \label{fig: AFM, Sauerstoff, Initialzustand}
+\end{figure}
+
+\subsubsection{Probe W6821-1B}
+\begin{figure}
+    \centering
+    \foreach \i in {pre,600,700,750,800,875}{
+        \begin{subfigure}[t]{0.40\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]
+            {../plots/AFM/XG-Sauerstoff/XG-\i/W6821-1B/W6821-1B_XG_Sauerstoff_\i_Topography_1}
+            \caption{W6821-1B, \i}
+        \end{subfigure}
+    }
+    \label{fig: AFM, Sauerstoff, W6821-1B}
+\end{figure}
+
+\subsubsection{Probe W6822-1B}
+\begin{figure}
+    \centering
+    \foreach \i in {pre,600,700,750,800,875}{
+        \begin{subfigure}[t]{0.40\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]
+            {../plots/AFM/XG-Sauerstoff/XG-\i/W6822-1B/W6822-1B_XG_Sauerstoff_\i_Topography_1}
+            \caption{W6822-1B, \i}
+        \end{subfigure}
+    }
+    \label{fig: AFM, Sauerstoff, W6822-1B}
+\end{figure}
+
+\subsection{Rauigkeit}\label{subsec:rauigkeit}
+\begin{figure}
+    \centering
+    \import{../plots/AFM}{sauerstoff.pgf}
+    \caption{AFM, Sauerstoff}
+    \label{fig: AFM, Sauerstoff}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \import{../plots/AFM}{vakuum.pgf}
+    \caption{AFM, Vakuum}
+    \label{fig: AFM, Vakuum}
+\end{figure}
+
+\subsection{XRD}\label{subsec:xrd2}
+
+\subsubsection{Sauerstoff}
+\begin{figure}
+    \centering
+    \import{../plots/XRD}{W6821-1B_Sauerstoff.pgf}
+    \caption{W6821-1B, Sauerstoff}
+    \label{fig: XRD, W6821-1B, Sauerstoff}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \import{../plots/XRD}{W6822-1B_Sauerstoff.pgf}
+    \caption{W6822-1B, Sauerstoff}
+    \label{fig: XRD, W6822-1B, Sauerstoff}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \import{../plots/XRD}{W6823-1B_Sauerstoff.pgf}
+    \caption{W6823-1B, Sauerstoff}
+    \label{fig: XRD, W6823-1B, Sauerstoff}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \import{../plots/XRD}{W6824-1B_Sauerstoff.pgf}
+    \caption{W6824-1B, Sauerstoff}
+    \label{fig: XRD, W6824-1B, Sauerstoff}
+\end{figure}
+
+\subsubsection{Vakuum}
+\begin{figure}
+    \centering
+    \import{../plots/XRD}{W6821-1C_Vakuum.pgf}
+    \caption{W6821-1C, Vakuum}
+    \label{fig: XRD, W6821-1C, Vakuum}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \import{../plots/XRD}{W6822-1C_Vakuum.pgf}
+    \caption{W6822-1C, Vakuum}
+    \label{fig: XRD, W6822-1C, Vakuum}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \import{../plots/XRD}{W6823-1C_Vakuum.pgf}
+    \caption{W6823-1C, Vakuum}
+    \label{fig: XRD, W6823-1C, Vakuum}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \import{../plots/XRD}{W6824-1C_Vakuum.pgf}
+    \caption{W6824-1C, Vakuum}
+    \label{fig: XRD, W6824-1C, Vakuum}
+\end{figure}
+
