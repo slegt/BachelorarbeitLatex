@@ -24,6 +24,8 @@
 \usepackage{import}
 \usepackage{pgffor}
 
+
+\sisetup{separate-uncertainty=true}
 \setlength{\parindent}{0pt}
 \addbibresource{literature.bib}
 
@@ -40,6 +42,7 @@
 
 % Document
 \begin{document}
+    \the\textwidth
     \include{chapters/1_titel}
     \tableofcontents
     \include{chapters/2_theorie}

@@ -1,22 +1,22 @@
-import os
-import gwy
 import csv
+import os
+import sys
+
+import gwy
+
+settings = gwy.gwy_app_settings_get()
+settings['/module/linematch/direction'] = int(gwy.ORIENTATION_HORIZONTAL)
+settings['/module/linematch/do_extract'] = False
+settings['/module/linematch/do_plot'] = False
+settings['/module/linematch/method'] = 0
+settings['/module/linematch/max_degree'] = 1
+settings['/module/linematch/trim_fraction'] = 0.05
+settings['/module/linematch/masking'] = 2
 
 
 def process_tiff(src_path, dest_path):
     # get container, data_field  and settings
     container = gwy.gwy_app_file_load(src_path)
-    settings = gwy.gwy_app_settings_get()
-
-    # set align_rows settings
-    settings['/modules/linematch/direction'] = 0 
-    settings['/modules/linematch/do_extract'] = False
-    settings['/modules/linematch/do_plot'] = False
-    settings['/modules/linematch/method'] = 0    # Polynomial
-    settings['/modules/linematch/max_degree'] = 2
-    settings['/modules/linematch/trim_fraction'] = 0.05
-    settings['/modules/linematch/masking'] = 2
-
     # get Topography channel and set fokus
     topo_id = gwy.gwy_app_data_browser_find_data_by_title(container, 'Topography')[0]
     topo_field = container[gwy.gwy_app_get_data_key_for_id(topo_id)]
@@ -24,11 +24,11 @@ def process_tiff(src_path, dest_path):
 
     # execute transformations
     gwy.gwy_process_func_run("align_rows", container, gwy.RUN_IMMEDIATE)
-    gwy.gwy_process_func_run('flatten_base', container, gwy.RUN_IMMEDIATE)
-    topo_field.add(-topo_field.get_min())
+    gwy.gwy_process_func_run("scars_remove", container, gwy.RUN_IMMEDIATE)
+    gwy.gwy_process_func_run("fix_zero", container, gwy.RUN_IMMEDIATE)
     container["/0/base/palette"] = "Gwyddion.net"
 
-    #save file
+    # save file
     dest_path = dest_path.rsplit(".", 1)[0] + ".pdf"
     gwy.gwy_file_save(container, dest_path, gwy.RUN_NONINTERACTIVE)
 
@@ -45,7 +45,7 @@ def replicate_folder_structure(src_path, dest_path, rows):
         if str(item).startswith('_'):
             continue
 
-        src_item  = os.path.join(src_path, item)
+        src_item = os.path.join(src_path, item)
         dest_item = os.path.join(dest_path, item)
 
         if os.path.isdir(src_item):
@@ -57,7 +57,7 @@ def replicate_folder_structure(src_path, dest_path, rows):
                 rows.append(process_tiff(src_item, dest_item))
                 print("File " + str(src_item) + " converted")
     return rows
- 
+
 
 src_dir = "./data/AFM"
 dest_dir = "./plots/AFM"

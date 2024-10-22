@@ -1,9 +1,116 @@
 \section{Auswertung}\label{sec:auswertung}
 
+\subsection{Temperaturkalibrierung der A-Kammer}\label{subsec:temperaturkalibrierung}
+\begin{figure}
+    \centering
+    \begin{subfigure}[b]{0.49\textwidth}
+        \import{../plots/calibration}{furnace_calibration_1.pgf}
+        \caption{Kalibrierung des Lithografiesensors, Bild 1}
+        \label{fig:furnace_calibration_1}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \import{../plots/calibration}{furnace_calibration_2.pgf}
+        \caption{Kalibrierung des Lithografiesensors, Bild 2}
+        \label{fig:furnace_calibration_2}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \import{../plots/calibration}{a_chamber_calibration.pgf}
+        \caption{Kalibrierung der A-Kammer}
+        \label{fig:a_chamber_calibration}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \import{../plots/calibration}{final_calibration.pgf}
+        \caption{Abhängigkeit zwischen $T_{\mathrm{Pyro}}$ und $T_{\mathrm{Lit}}$, Bild 1}
+        \label{fig:final_calibration}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \import{../plots/calibration}{quenching_time.pgf}
+        \caption{Kalibrierung der A-Kammer, Bild 1}
+        \label{fig:quenching_time}
+    \end{subfigure}
+    \label{fig:temperature_calibration_1}
+\end{figure}
+Zentrales Thema der vorliegenden Arbeit ist das Ausheizen der \heo-Dünnfilme.
+Dabei ist es wichtig, einen entsprechend großen Temperaturbereich von \qtyrange{300}{1000}{\degreeCelsius} zu erreichen
+und die Temperatur des Dünnfilms möglichst genau zu bestimmen.
+Ein geeigneter Kandidat für diesen Prozess ist die A-Kammer, die mithilfe eines Heizlasers die Rückseite des
+Substrathalters erhitzt.
+Um die Temperatur des Dünnfilms zu bestimmen, wird ein Pyrometer verwendet, welches die Rückseite des Substrathalters
+misst.
+Mithilfe eines PID-Reglers wird die Temperatur auf den eingestellten Wert geregelt.
+
+Nun stellt sich die Frage, wie genau die Temperatur des Dünnfilms bestimmt werden kann.
+Dazu wurde von Tim Düvel ein Temperatursensor durch Lithografie auf ein C-Saphir Substrat fabriziert.
+Dieser wird im folgenden als Lithografiesensor bezeichnet.
+
+In Zusammenarbeit mit Tim Düvel wurde eine Kalibrierung des Lithografiesensors durchgeführt.
+Dazu wurde ein PT1000 Temperatursensor mithilfe von Wärmeleitpaste thermisch mit dem Lithografiesensor verbunden und
+im Muffelofen ausgeheizt.
+Beide Widerstände wurden in Abhängigkeit der Temperatur gemessen und sind in Abbildung \ref{fig:furnace_calibration_1}
+dargestellt.
+Da jedem Zeitpunkt zwei Widerstände zugeordnet werden können, kann durch diese Parametrisierung auch die Abhängigkeit
+beider Widerstände voneinander bestimmt werden, siehe \ref{fig:furnace_calibration_2}.
+Wie erwartet ist die Abhängigkeit $R_\mathrm{Lit}(R_\mathrm{Pt})$ linear und kann durch
+einen linearen Fit beschrieben werden.
+
+Im nächsten Schritt wird der Lithografiesensor in den Probenhalter der A-Kammer eingebaut und eine Temperaturserie
+aufgenommen.
+Dabei wird die Temperatur des Heizlasers eingestellt und nach einer festen Zeitspanne Pyrometertemperatur
+$T_\mathrm{Pyro}$ und Lithografiewiderstand $R_\mathrm{Lit}$ gemessen.
+Auch hier ist eine lineare Abhängigkeit zwischen beiden Größen erkennbar und kann durch einen linearen Fit
+beschrieben werden.
+
+Die Temperatur des Dünnfilms $T_\mathrm{Real}$ kann nun durch folgende Gesamtfunktion bestimmt werden:
+\begin{equation}
+    T_{\mathrm{Real}}=\underbrace{ T_{\mathrm{Real}}(R_{\mathrm{Pt}}) }_{ \substack{\text{quadratic} \\ \text{dependency}} }
+    =T_{\mathrm{Real}}(\underbrace{ R_{\mathrm{Pt}}(R_{\mathrm{Lit}}) }_{  \substack{\text{linear} \\ \text{dependency}}  })
+    =T_{\mathrm{Real}}(R_{\mathrm{Pt}}(\underbrace{ R_{\mathrm{Lit}}(T_{\mathrm{Pyro}}) }_{    \substack{\text{linear} \\
+    \text{dependency}}  }))
+    \label{eq:temperature_calibration}
+\end{equation}
+Da alle Funktionen bekannt sind, ergibt sich folgender Zusammenhang zwischen $T_{\mathrm{Pyro}}$ und $T_{\mathrm{Real}}$.
+Dieser ist in Abbildung \ref{fig:final_calibration} dargestellt.
+
+Wichtig für das Ausheizen ist außerdem die Abkühlzeit der A-Kammer.
+Dazu wurde eine Zeitserie aufgenommen, die den Lithografiewiderstand in Abhängigkeit der Zeit zeigt, siehe
+Abbildung \ref{fig:quenching_time}.
+Für einen Temperaurabfall von circa \qty{350}{\degreeCelsius} auf circa \qty{25}{\degreeCelsius}
+benötigt die A-Kammer etwa \qty{4}{\minute}.
+
+
+
+\subsection{Probenherstellung}\label{subsec:probenherstellung}
+- jeweils 20000 Laserpule
+- mit Frequenz 20 Hz
+- Energie von 650 mJ
+- ohne Heating power
+- QM 17
+- Exzentrität 2
+
+Unterschiede
+\begin{table}[h]
+    \centering
+    \begin{tabular}{c c c c}
+        \toprule
+        Probenname & Abscheidedruck in \unit{\milli \bar} & Dicke des Dünnfilms in \unit{\nano\meter} \\
+        \midrule
+        W6821-1    & 0.01                                 & \num{95(7)}                               \\
+        W6822-1    & 0.001                                & \num{160(12)}                             \\
+        W6823-1    & 0.1                                  & \num{65(4)}                               \\
+        W6824-1    & 0.0005                               & \num{135(16)}                             \\
+        \bottomrule
+    \end{tabular}
+    \caption{Klassifikation der verschiedenen Kristallsysteme. \imcite[65]{Hunklinger} }
+    \label{tab:samples}
+\end{table}
+
+\subsection{EDX Analyse}\label{subsec:edx-analyse}
+
 \subsection{Sauerstoff Ausheizvorgang}\label{subsec:sauerstoff-ausheizvorgang2}
 
 \subsubsection{Initialzustand}
 \begin{figure}[ht]
+    \centering
     \foreach \i in {W6821-1B,W6822-1B,W6823-1B,W6824-1B}{
         \begin{subfigure}[t]{0.40\textwidth}
             \includegraphics[width=\textwidth]
@@ -11,24 +118,39 @@
             \caption{\i}
         \end{subfigure}
     }
+    \caption{Initialzustand der Proben vor dem Sauerstoff Ausheizvorgang}
     \label{fig: AFM, Sauerstoff, Initialzustand}
 \end{figure}
+\newpage
 
 \subsubsection{Probe W6821-1B}
 \begin{figure}
     \centering
+    \import{../plots/XRD}{W6821-1B_Sauerstoff.pgf}
+    \caption{W6821-1B, Sauerstoff}
+    \label{fig: XRD, W6821-1B, Sauerstoff}
+\end{figure}
+\begin{figure}
+    \centering
     \foreach \i in {pre,600,700,750,800,875}{
         \begin{subfigure}[t]{0.40\textwidth}
-            \centering
             \includegraphics[width=\textwidth]
             {../plots/AFM/XG-Sauerstoff/XG-\i/W6821-1B/W6821-1B_XG_Sauerstoff_\i_Topography_1}
             \caption{W6821-1B, \i}
         \end{subfigure}
     }
+    \caption{AFM, Sauerstoff, W6821-1B}
     \label{fig: AFM, Sauerstoff, W6821-1B}
 \end{figure}
+\newpage
 
 \subsubsection{Probe W6822-1B}
+\begin{figure}
+    \centering
+    \import{../plots/XRD}{W6822-1B_Sauerstoff.pgf}
+    \caption{W6822-1B, Sauerstoff}
+    \label{fig: XRD, W6822-1B, Sauerstoff}
+\end{figure}
 \begin{figure}
     \centering
     \foreach \i in {pre,600,700,750,800,875}{
@@ -39,8 +161,157 @@
             \caption{W6822-1B, \i}
         \end{subfigure}
     }
+    \caption{AFM, Sauerstoff, W6822-1B}
     \label{fig: AFM, Sauerstoff, W6822-1B}
 \end{figure}
+\newpage
+
+\subsubsection{Probe W6823-1B}
+\begin{figure}
+    \centering
+    \import{../plots/XRD}{W6823-1B_Sauerstoff.pgf}
+    \caption{W6823-1B, Sauerstoff}
+    \label{fig: XRD, W6823-1B, Sauerstoff}
+\end{figure}
+\begin{figure}
+    \centering
+    \foreach \i in {pre,600,700,750,800,875}{
+        \begin{subfigure}[t]{0.40\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]
+            {../plots/AFM/XG-Sauerstoff/XG-\i/W6823-1B/W6823-1B_XG_Sauerstoff_\i_Topography_1}
+            \caption{W6823-1B, \i}
+        \end{subfigure}
+    }
+    \caption{AFM, Sauerstoff, W6823-1B}
+    \label{fig: AFM, Sauerstoff, W6823-1B}
+\end{figure}
+\newpage
+
+\subsubsection{Probe W6824-1B}
+\begin{figure}
+    \centering
+    \import{../plots/XRD}{W6824-1B_Sauerstoff.pgf}
+    \caption{W6824-1B, Sauerstoff}
+    \label{fig: XRD, W6824-1B, Sauerstoff}
+\end{figure}
+\begin{figure}
+    \centering
+    \foreach \i in {pre,600,700,750,800,875}{
+        \begin{subfigure}[t]{0.40\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]
+            {../plots/AFM/XG-Sauerstoff/XG-\i/W6824-1B/W6824-1B_XG_Sauerstoff_\i_Topography_1}
+            \caption{W6824-1B, \i}
+        \end{subfigure}
+    }
+    \caption{AFM, Sauerstoff, W6824-1B}
+    \label{fig: AFM, Sauerstoff, W6824-1B}
+\end{figure}
+\newpage
+
+\subsection{Vakuum Ausheizvorgang}\label{subsec:Vakuum-ausheizvorgang2}
+
+\subsubsection{Initialzustand}
+\begin{figure}[ht]
+    \centering
+    \foreach \i in {W6821-1C,W6822-1C,W6823-1C,W6824-1C}{
+        \begin{subfigure}[t]{0.40\textwidth}
+            \includegraphics[width=\textwidth]
+            {../plots/AFM/XG-Vakuum/XG-pre/\i/\i_XG_Vakuum_pre_Topography_1}
+            \caption{\i}
+        \end{subfigure}
+    }
+    \label{fig: AFM, Vakuum, Initialzustand}
+\end{figure}
+\newpage
+
+\subsubsection{Probe W6821-1C}
+\begin{figure}
+    \centering
+    \import{../plots/XRD}{W6821-1C_Vakuum.pgf}
+    \caption{W6821-1C, Vakuum}
+    \label{fig: XRD, W6821-1C, Vakuum}
+\end{figure}
+\begin{figure}
+    \centering
+    ,\foreach \i in {pre,500,600,700,750}{
+        \begin{subfigure}[t]{0.40\textwidth}
+            \includegraphics[width=\textwidth]
+            {../plots/AFM/XG-Vakuum/XG-\i/W6821-1C/W6821-1C_XG_Vakuum_\i_Topography_1}
+            \caption{W6821-1C, \i}
+        \end{subfigure}
+    }
+    \caption{AFM, Vakuum, W6821-1C}
+    \label{fig: AFM, Vakuum, W6821-1C}
+\end{figure}
+\newpage
+
+\subsubsection{Probe W6822-1C}
+\begin{figure}
+    \centering
+    \import{../plots/XRD}{W6822-1C_Vakuum.pgf}
+    \caption{W6822-1C, Vakuum}
+    \label{fig: XRD, W6822-1C, Vakuum}
+\end{figure}
+\begin{figure}
+    \centering
+    ,\foreach \i in {pre,500,600,700,750}{
+        \begin{subfigure}[t]{0.40\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]
+            {../plots/AFM/XG-Vakuum/XG-\i/W6822-1C/W6822-1C_XG_Vakuum_\i_Topography_1}
+            \caption{W6822-1C, \i}
+        \end{subfigure}
+    }
+    \caption{AFM, Vakuum, W6822-1C}
+    \label{fig: AFM, Vakuum, W6822-1C}
+\end{figure}
+\newpage
+
+\subsubsection{Probe W6823-1C}
+\begin{figure}
+    \centering
+    \import{../plots/XRD}{W6823-1C_Vakuum.pgf}
+    \caption{W6823-1C, Vakuum}
+    \label{fig: XRD, W6823-1C, Vakuum}
+\end{figure}
+\begin{figure}
+    \centering
+    ,\foreach \i in {pre,500,600,700}{
+        \begin{subfigure}[t]{0.40\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]
+            {../plots/AFM/XG-Vakuum/XG-\i/W6823-1C/W6823-1C_XG_Vakuum_\i_Topography_1}
+            \caption{W6823-1C, \i}
+        \end{subfigure}
+    }
+    \caption{AFM, Vakuum, W6823-1C}
+    \label{fig: AFM, Vakuum, W6823-1C}
+\end{figure}
+\newpage
+
+\subsubsection{Probe W6824-1C}
+\begin{figure}
+    \centering
+    \import{../plots/XRD}{W6824-1C_Vakuum.pgf}
+    \caption{W6824-1C, Vakuum}
+    \label{fig: XRD, W6824-1C, Vakuum}
+\end{figure}
+\begin{figure}
+    \centering
+    ,\foreach \i in {pre,500,600,700,750}{
+        \begin{subfigure}[t]{0.40\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]
+            {../plots/AFM/XG-Vakuum/XG-\i/W6824-1C/W6824-1C_XG_Vakuum_\i_Topography_1}
+            \caption{W6824-1C, \i}
+        \end{subfigure}
+    }
+    \caption{AFM, Vakuum, W6824-1C}
+    \label{fig: AFM, Vakuum, W6824-1C}
+\end{figure}
+\newpage
 
 \subsection{Rauigkeit}\label{subsec:rauigkeit}
 \begin{figure}
@@ -56,64 +327,3 @@
     \caption{AFM, Vakuum}
     \label{fig: AFM, Vakuum}
 \end{figure}
-
-\subsection{XRD}\label{subsec:xrd2}
-
-\subsubsection{Sauerstoff}
-\begin{figure}
-    \centering
-    \import{../plots/XRD}{W6821-1B_Sauerstoff.pgf}
-    \caption{W6821-1B, Sauerstoff}
-    \label{fig: XRD, W6821-1B, Sauerstoff}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \import{../plots/XRD}{W6822-1B_Sauerstoff.pgf}
-    \caption{W6822-1B, Sauerstoff}
-    \label{fig: XRD, W6822-1B, Sauerstoff}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \import{../plots/XRD}{W6823-1B_Sauerstoff.pgf}
-    \caption{W6823-1B, Sauerstoff}
-    \label{fig: XRD, W6823-1B, Sauerstoff}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \import{../plots/XRD}{W6824-1B_Sauerstoff.pgf}
-    \caption{W6824-1B, Sauerstoff}
-    \label{fig: XRD, W6824-1B, Sauerstoff}
-\end{figure}
-
-\subsubsection{Vakuum}
-\begin{figure}
-    \centering
-    \import{../plots/XRD}{W6821-1C_Vakuum.pgf}
-    \caption{W6821-1C, Vakuum}
-    \label{fig: XRD, W6821-1C, Vakuum}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \import{../plots/XRD}{W6822-1C_Vakuum.pgf}
-    \caption{W6822-1C, Vakuum}
-    \label{fig: XRD, W6822-1C, Vakuum}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \import{../plots/XRD}{W6823-1C_Vakuum.pgf}
-    \caption{W6823-1C, Vakuum}
-    \label{fig: XRD, W6823-1C, Vakuum}
-\end{figure}
-
-\begin{figure}
-    \centering
-    \import{../plots/XRD}{W6824-1C_Vakuum.pgf}
-    \caption{W6824-1C, Vakuum}
-    \label{fig: XRD, W6824-1C, Vakuum}
-\end{figure}
-

@@ -5,15 +5,10 @@ import matplotlib.pyplot as plt
 import matplotlib.transforms as mtransforms
 import pandas as pd
 
+from python._states import RC_PARAMS
+
 mpl.use("pgf")
-plt.rcParams.update({
-    "font.size": 12,
-    "font.family": "serif",
-    "font.serif": [],
-    "pgf.preamble": "\n".join([
-        r"\usepackage{siunitx}",  # load additional packages
-    ])
-})
+plt.rcParams.update(RC_PARAMS)
 
 path = Path.cwd().parent / 'data' / 'AFM' / 'statistics.csv'
 export_path = Path.cwd().parent / 'plots' / 'AFM'
@@ -63,7 +58,6 @@ for sample_name in ["W6821-1B", "W6822-1B", "W6823-1B", "W6824-1B"]:
 
 ax2.legend()
 ax1.yaxis.get_major_locator().set_params(integer=True)
-# fig.show()
 plt.savefig(export_path / "sauerstoff.pgf")
 print(f"Saved {export_path / 'sauerstoff.pgf'}")
 
