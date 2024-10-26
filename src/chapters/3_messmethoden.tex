@@ -1,19 +1,25 @@
 \section{Probenherstellung und Messmethoden}\label{sec:messmethoden}
 
 \subsection{Pulsed Laser Deposition}\label{subsec:pld}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.3\textwidth]{../assets/messmethoden/pld/aufbau}
+    \caption{Schematischer Aufbau eines PLD-Systems. \imcitetwo[2297]{pld}}
+    \label{fig:pld}
+\end{figure}
 Die erste Aufgabe des Versuchs besteht darin, \heo-Dünnfilme herzustellen, die eine Dicke von wenigen hundert
 Nanometern aufweisen.
 Um das zu erreichen, verwendet man Pulsed Laser Deposition (PLD).
 Dafür wird ein Laserstrahl auf einen Festkörper, dem Target, ausgerichtet, welches beginnt zu
-verdampfen und sich auf ein Substrat absetzt.
+verdampfen und sich auf ein Substrat absetzt, siehe \cref{fig:pld}.
 Im Folgenden soll dieser Mechanismus genauer beschrieben werden.
 
 \subsubsection{Aufbau}
 Ein PLD-System besteht aus einem Laser, einer Vakuumkammer und den darin befindlichen Komponenten.
 
 \paragraph{Laser}
-Der Laser (Light Amplification by Stimulated Emission of Radiation) bildet das Herzstück des gesamten PLD Prozesses.
-In diesem wechselwirken Gasatome mit einem elektrischen Feld, sodass sie in einen angeregten Zustand übergehen.
+Der Laser bildet das Herzstück des gesamten PLD Prozesses.
+In diesem wechselwirken Argonatome mit einem elektrischen Feld, sodass sie in einen angeregten Zustand übergehen.
 Anschließend wird das Prinzip der stimulierten Emission genutzt.
 Das angeregte Elektron verweilt vergleichsweise lange im angeregten Zustand und relaxiert durch ein
 weiteres Photon von außerhalb zurück in den Grundzustand.
@@ -22,13 +28,14 @@ Somit wird ein Lichtstrahl erzeugt, der sich durch Kohärenz und Monochromatizit
 Durch einen Satz von Spiegeln im Inneren des Lasers kann der Strahl durch die Stimulierung weiterer Gasatome
 verstärkt werden.
 Abschließend wird der Strahl durch ein halbdurchlässiges Fenster emittiert. \autocite[2296-2297]{pld}
+Es kommt zu Laserpulsen mit Wellenlängen im Bereich von \qty{500}{\nano\meter}.
 
 \paragraph{Vakuumkammer}
 Der Laserstrahl wird anschließend durch ein Fenster in die Vakuumkammer, dem nächsten Bestandteil des PLD Prozesses,
 geleitet.
 In dieser kann mithilfe von Vor- und Turbomolekularpumpen ein Vakuum in der Größenordnung von
 \qty{e-4}{\milli\bar} erzeugt werden.
-Zusätzlich können auch Hintergrundgase wie Sauerstoff, Stickstoff oder Argon in die Kammer eingelassen werden.
+Zusätzlich können auch Hintergrundgase, unter anderem Sauerstoff und Stickstoff, in die Kammer eingelassen werden.
 Das Vakuumlevel beeinflusst einerseits die Zusammensetzung der Plasmawolke, andererseits auch die
 Zeit, die benötigt wird, um eine einzelne Schicht von Adsorbaten auf dem Substrat abzuscheiden.
 Eine Reduktion des Drucks führt damit zu einer stabileren Umgebung für die Dünnfilmabscheidung.\autocite[2297-2298]{pld}
@@ -36,14 +43,20 @@ Eine Reduktion des Drucks führt damit zu einer stabileren Umgebung für die Dü
 \paragraph{Targethalter, Substrathalter, Heizer}
 In der Vakuumkammer ist ein scheibenförmiges Target an einer Halterung montiert, welches aus dem Material besteht, aus
 dem der Dünnfilm hergestellt werden soll.
+Für die \heo Proben wurden die Binäroxide im equimolaren Verhältnis abgewogen, gemahlen, gepresst und anschließend
+für \qty{12}{\hour} bei \qty{1000}{\celsius} gesintert.
+Danach konnte es als Target verwendet werden.
 Da das Target durch den Laserstrahl nur an einer kleinen Stelle erhitzt wird, ist es notwendig,
 dass sich das Target relativ zum Laserstrahl bewegt, um eine gleichmäßige Abtragung zu gewährleisten.
 Dafür reicht eine einfache Rotation aus.
 
 Hinzu kommt ein Substrathalter, auf dem das Substrat montiert wird.
-Dieses kann durch einen Widerstandsheizer auf eine Temperatur von bis zu \qty{1000}{\celsius} beziehungsweise
-mithilfe eines Laserheizers auf circa \qty{1500}{\celsius} erhitzt werden.
-Das Substrat selbst hat üblicherweise die Maße von circa \qty{10}{\milli\meter\squared}.\autocite[2299]{pld}
+Für die Arbeit wurden Eagle-XG-Glassubstrate und C-Saphirsubstrate verwendet.
+Dieses kann durch einen Widerstandsheizer auf eine Temperatur von bis zu \qty{800}{\celsius} beziehungsweise
+mithilfe eines Laserheizers auf circa \qty{1000}{\celsius} erhitzt werden.
+Das Substrat selbst hat üblicherweise die Maße von circa \qty{10}{\milli\meter\squared}.
+
+\autocite[2299]{pld}
 
 \subsubsection{Abscheidungsprozess}
 Mithilfe der oben genannten Komponenten kann der Abscheidungsprozess durchgeführt werden.
@@ -58,6 +71,14 @@ Durch Photoionisation werden Elektronen herausgelöst, sodass eine Plasmawolke e
 Diese breitet sich in der Vakuumkammer in Richtung Substrat aus und beginnt sich auf dem diesem abzusetzen.
 Durch Adsorptionsprozesse beginnt die Bildung eines Dünnfilms.\autocite[2299-2301]{pld}
 
+Zwischen Dünnfilmen und ihren korrespondierenden Massivkörpern existieren signifikante Unterschiede.
+Diese resultieren vorrangig aus dem Verhältnis von Oberfläche zu Volumen, sowie den jeweiligen
+Wachstumsbedingungen.
+Sie zeigen sich beispielsweise in der Qualität der Kristallinität, sowie in Kompositionsgradienten.
+Da Proben mit unterschiedlichen Wachstumsbedingungen hergestellt wurden und deren Eigenschaften dadurch
+maßgeblich beeinflusst werden, ist es notwendig, die Kristallinität der Dünnfilme zu charakterisieren.
+
+\newpage
 \subsection{XRD}\label{subsec:xrd}
 Nachdem die Dünnfilme hergestellt wurden, ist der nächste Schritt, ihre Struktur zu charakterisieren.
 Zwischen Dünnfilmen und ihren korrespondierenden Massivkörpern existieren signifikante Unterschiede.
@@ -176,9 +197,10 @@ Somit ist es möglich, Rückschlüsse auf die vorhandenen Kristallstrukturen im 
 
 \paragraph{$\varphi$ scan}
 %%TODO
+\newpage
 
 \subsection{Rasterkraftmikroskopie}\label{subsec:afm}
-Nachdem die Kristallinität mithilfe von XRD untersucht wurde, kann durch Rasterkraftmikroskopie (AFM, engl.
+Nachdem die Kristallinität mithilfe von XRD-Messungen untersucht wurde, kann durch Rasterkraftmikroskopie (AFM, engl.
 \textit{Atomic Force Microscopy}) die Oberflächenstruktur der Dünnfilme charakterisiert werden.
 Das Rasterkraftmikroskop ist ein hochpräzises Messinstrument zum Erfassen von Oberflächenstrukturen.
 Anders als bei Licht- oder Elektronenmikroskopie wird hierbei eine mechanische Funktionsweise umgesetzt.
@@ -196,7 +218,7 @@ Oberfläche erstellt wird.
 Die grundlegende Funktionsweise ist in \cref{fig:afm_aufbau} dargestellt.
 Markierung 1 zeigt den Cantilever, der mit einer Messspitze mit Dimensionen im Nanometerbereich ausgestattet ist.
 Fährt diese über die Probe, so wirken Kräfte auf die Spitze, welche den Cantilever auslenken.
-Diese Auslenkung wird mittels eines Ablenkungserkennungssystems, Markierung 2, ausgewertet.
+Diese Auslenkung wird mittels eines Auslenkungserkennungssystems, Markierung 2, ausgewertet.
 Die gemessene Auslenkung wird an das Feedback System übergeben, was Markierung 3 zeigt.
 Basierend auf dem gewählten Betriebsmodus wird versucht, die gemessene Kraft oder Amplitude konstant zu halten.
 Mithilfe dieser Regulation wird ein Korrektursignal ausgegeben, welches die Position des Cantilevers anpasst.
@@ -250,22 +272,22 @@ Nachdem der Cantilever durch die Wechselwirkungskräfte ausgelenkt wurde, muss d
 Das System ist in \cref{fig:afm-beam} dargestellt.
 Ein Laserstrahl wird aus einer Laserdiode emittiert und auf die Rückseite des Cantilevers gerichtet.
 Dieser besitzt eine reflektierende Rückseite, sodass der Strahl am Cantilever zum beweglichen Spiegel reflektiert wird.
-Über diesen Lässt sich die Potition des Strahls auf den folgenden Spiegel steuern.
+Über diesen lässt sich die Potition des Strahls auf den folgenden Spiegel steuern.
 Der letzte Spiegel reflektiert den Strahl auf einen positionsabhängigen Photodetektor.
 Dieser besitzt vier Segmente, die die Intensität des reflektierten Strahls messen.
 Im unausgelenkten Zustand, muss der bewegliche Spiegel so eingestellt werden, dass der Strahl mittig auf die vier
 Segmente trifft.
 Kommt es zur Auslenkung, ändert sich der Winkel des Cantilevers und damit auch die Position des Strahls auf dem
 Photodetektor.
-Über die vier Segmente kann die Auslenkung und Torsion des Cantilevers bestimmt werden.
+Über die vier Segmente kann die Auslenkung und Torsion des Cantilevers bestimmt werden.\autocite[16-18]{afm-handbuch}
 
 \subsubsection{Feedback Controller}
 Damit eine möglichst genaue Topografiekarte aufgezeichnet werden kann, ist ein schnelles und präzises Regelsystem von
 großer Bedeutung.
 Ziel ist es, eine vorgegebene Kenngröße möglichst konstant zu halten, beispielsweise die Auslenkung des Cantilevers.
 Dafür wird ein geschlossenes Regelkreissystem verwendet, welches in \cref{fig:afm_controller} dargestellt ist.
-Der Ausgabewert des Systems $x(t)$, beispielsweise die Cantileverauslenkung, wird gemessen, zunächst mit dem
-Sollwert $w$ verglichen und das Fehlersignal $e(t)=w-x(t)$ berechnet.
+Der Ausgabewert des Systems $x(t)$, beispielsweise die Cantileverauslenkung, wird gemessen und mit dem
+Sollwert $w$ verglichen, damit das Fehlersignal $e(t)=w-x(t)$ berechnet werden kann.
 Dieses Fehlersignal wird an den Controller übergeben, der daraufhin ein Korrektursignal $y(t)$ ausgibt.
 Dieses Korrektursignal wird vom System aufgenommen und intrinsisch verarbeitet, sodass der Ausgabewert $x(t)$ näher am
 Sollwert $w$ liegt.\autocite[99-101]{afm-buch}
@@ -305,7 +327,7 @@ Kombiniert man nun Proportional- und Integralregler, so können kurzzeitige Abwe
 P-Regler und langzeitige Abweichungen durch den langsamen I-Regler korrigiert werden.
 
 \subsubsection{Piezoelemente und Positionierung}
-Um den Cantilever in $z$, sowie die Probe in $xy$-Richtung zu bewegen, werden Piezoelemente verwendet.
+Um den Cantilever in $\mathrm{z}$, sowie die Probe in $\mathrm{xy}$-Richtung zu bewegen, werden Piezoelemente verwendet.
 Um diesen Mechanismus zu beschreiben, muss der Piezoeffekt betrachtet werden.
 Setzt man Kristalle wie Quartz, die bestimmte Symmetrieeigenschaften aufweisen, unter mechanische Spannung,
 so kann unter bestimmten Bedingungen elektrische Spannung induziert werden.
@@ -315,12 +337,12 @@ Legt man eine Spannung an einen Piezokristall an, kann dieser deformiert werden.
 Für kleine Spannungen kann man so Deformationen im Bereich von \qty{0.1}{\nano\meter} erreichen.
 \autocite[35-36]{afm-buch}
 
-Um den Piezoeffekt zu nutzen, werden nun spezielle Metallbiegeelemente verwendet.
+Um den Piezoeffekt zu nutzen, werden spezielle Metallbiegeelemente verwendet.
 Das sind Metallblöcke, die sich in einer Richtung durch kleine Einschnitte federähnlich verformen lassen, während
 sie in anderen Richtungen starr sind.
 In diese können Piezoelemente eingebettet werden, sodass sich beim Anlegen einer Spannung der Block in eine Richtung
 verformt und sich somit die Probe oder der Cantilever bewegt.
-Wie in \cref{fig:afm_stage} dargestellt, lassen sich zwei orthogonale Piezoelemente kombinieren, um eine Bewegung in
+Wie in \cref{fig:afm_stage} dargestellt, lassen sich zwei orthogonale Biegelemente kombinieren, um eine Bewegung in
 $xy$-Richtung zu erreichen.
 \begin{figure}
     \centering
@@ -331,14 +353,15 @@ $xy$-Richtung zu erreichen.
 \cref{fig:afm_aufbau} zeigt, zeigt eine Grobpositionsbühne, die
 mithilfe von Stellschrauben motorisiert gesteuert wird.
 Die Feinpositionierung und die Scanbewegung erfolgt dann mit den darauf montierten Piezo-Biegeelementen.
-Der Cantilever samt Detektor wird unterhalb eines Piezoelements montiert, sodass er in $z$-Richtung bewegt werden kann.
+Der Cantilever samt Detektor wird unterhalb eines Piezoelements montiert, sodass er in $\mathrm{z}$-Richtung bewegt
+werden kann.
 \autocite[79-80]{afm-buch}
 
 \subsubsection{Betriebsmodi}
 Das Rasterkraftmikroskop verfügt über unterschiedliche Betriebsmodi.
 In der vorliegenden Arbeit wurde im statischen Kontaktmodus verwendet, um die Oberflächenstruktur zu erfassen.
-Dabei wird die Probe in $xy$-Richtung bewegt, während die Spitze des Cantilevers einen so kleinen Abstand zur Probe hat,
-dass die repulsiven Kräfte dominieren.
+Dabei wird die Probe in $\mathrm{xy}$-Richtung bewegt, während die Spitze des Cantilevers einen so kleinen Abstand zur
+Probe hat, dass die repulsiven Kräfte dominieren.
 Diese bewirken eine Auslenkung $\Delta z$ des Cantilevers, welche durch das Erkennungssystem aufgezeichnet wird.
 Mithilfe eines \textit{setpoint}-Parameters wird eine konstante Auslenkung festgelegt, die vom Feedback-System
 eingehalten wird.

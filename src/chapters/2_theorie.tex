@@ -63,7 +63,7 @@ Mit einer primitiven Elementarzelle lässt sich der Raum lückenlos und überlap
 entlang jedes Bravaisgittervektors verschiebt.
 Eine einfache Konstruktion liefert ein Parallelepiped, welches von den drei Basisvektoren aufgespannt wird.
 Das Volumen $V_\mathrm{EZ}= \lvert \mathbf{a}_1 \cdot (\mathbf{a}_2 \times  \mathbf{a}_3) \rvert$ dieses
-Parallelepipeds, gibt das effektive Volumen pro Gitterpunkt an.
+Parallelepipeds gibt das effektive Volumen pro Bravais-Gitterpunkt an.
 \autocite[90-91]{Ashcroft}
 
 Eine weitere Unterteilung der Kristallsysteme kann mithilfe der dreidimensionalen Bravaisgitter erfolgen.
@@ -126,6 +126,7 @@ Dabei ist das erste Basisatom an der Gitterposition $(0,0,0)$ und das zweite an 
 Sowohl Magnesiumoxid (\ce{MgO}), Kobaltoxid (\ce{CoO}) und Nickeloxid (\ce{NiO}) kristallisieren in dieser Struktur.
 Auch \heo\ kristallisiert in der Natriumchloridstruktur, wenn
 Sauerstoff als erstes Basisatom und ein zufällig ausgewähltes Metall als zweites Basisatom betrachtet wird.
+\autocite[5]{Rost2015}
 
 \paragraph{Tenoritstruktur}
 Kupferoxid kristallisiert in einer monoklinen Kristall\-struk\-tur mit achtatomiger Basis.
@@ -150,7 +151,7 @@ $(\mathbf{a}_1/3 + \mathbf{a}_2/3 + \mathbf{a}_3/2)$ zugrunde, wie in \cref{hcp}
 Die Wurtzitstruktur besteht aus einem einfach-hexagonalen Gitter mit vieratomiger Basis.
 Eine bessere Vorstellung ergibt sich jedoch aus der Betrachtung zweier übereinander liegender hcp-Gitter, die um
 die Höhe $\sqrt {3 / 8} a$ gegeneinander verschoben sind, wie in \cref{wurtzit} dargestellt.
-Zinkoxid (\ce{ZnO}) kristallisiert in dieser Struktur.
+Zinkoxid (\ce{ZnO}) kristallisiert in dieser Struktur.\autocite[47-48]{Grundmann}
 
 \subsubsection{Reziprokes Gitter}
 Das reziproke Gitter spielt für die weitere Betrachtung periodischer Strukturen eine fundamentale Rolle.
@@ -164,7 +165,7 @@ Mithilfe einer Reihenentwicklung ergibt sich die folgende, allgemeine Form:
     \underbrace{ \exp(\mathrm{i}\mathbf{R}\cdot \mathbf{O}) }_{ \stackrel{!}{=}1 }  \stackrel{!}{=} f(\mathbf{x}).
 \end{align}
 Erkennbar ist die notwendige Bedingung $\exp(\mathrm{i}\mathbf{R}\cdot \mathbf{O})=1$.
-Dies ist äquivalent zur Aussage $\mathbf{R}\cdot \mathbf{O}=2\pi n$ mit $n \in \mathbb{N}_{0}$.
+Dies ist äquivalent zur Aussage $\mathbf{R}\cdot \mathbf{O}=2\pi z$ mit $z \in \mathbb{Z}$.
 Damit lässt sich das reziproke Gitter durch die Menge
 $\{ \mathbf{R} \,\vert\, \exp(\mathrm{i}\mathbf{R}\cdot \mathbf{O})=1 \quad
 \forall \mathbf{O} \in \text{span}(\mathbf{a}_{i}) \}$ definieren. \autocite[108]{Ashcroft}
@@ -190,7 +191,7 @@ Diese fasst man als Gitterebenenscharen zusammen. \autocite[113]{Ashcroft}
 
 Gitterebenenscharen kann man mithilfe des reziproken Gitters charakterisieren, denn für jede
 Gitterebenenschar im Abstand $d$ existieren Vektoren des reziproken Gitters, welche senkrecht auf den Ebenen stehen.
-Für die eindeutige Beschreibung wählt man den kleinsten dieser Vektoren $\mathbf{r}$, stets welche die Länge $2 \pi / d$ besitzt.
+Für die eindeutige Beschreibung wählt man den kleinsten dieser Vektoren $\mathbf{r}$, welche stets die Länge $2 \pi / d$ besitzt.
 Auch die Umkehrung gilt: Für jeden Vektor $\mathbf{R}$ aus dem reziproken Gitter, existiert eine Schar von senkrechten
 Gitterebenen.
 Der Abstand $d$ dieser Ebenen ist an den Betrag des kleinsten parallelen Vektors $\mathbf{r}$ durch $\lvert \mathbf{r}
@@ -208,11 +209,11 @@ Für die Millerschen Indizes existiert eine geometrische Interpretation, die es 
 visualisieren.
 Für jede Gitterebene findet man ein entsprechendes $A$, sodass die Ebenengleichung $\mathbf{r} \cdot \mathbf{x} = A$
 erfüllt ist.
-Nun definieren wir die Durchstoßpunkte zwischen den durch die primitiven Vektoren $\mathbf{a}_i$ aufgespannten
+Nun definiert man die Durchstoßpunkte zwischen den durch die primitiven Vektoren $\mathbf{a}_i$ aufgespannten
 Koordinatenachsen und der Ebene durch die Zahlen $x_{1}\mathbf{a}_{1}, x_{2}\mathbf{a}_{2}, x_{3}\mathbf{a}_{3}$.
-Da die Durchstoßpunkte in der Ebene liegen, ist die Ebenengleichung $\mathbf{K}\cdot(x_{i}\mathbf{a}_{i})=A$ erfüllt und
-man findet mit $\mathbf{K}\cdot\mathbf{a}_{1}=2\pi h$, $\mathbf{K}\cdot \mathbf{a}_{2}=2\pi k$,
-$ \mathbf{K}\cdot \mathbf{a}_{3}=2\pi l$ folgenden Zusammenhang:
+Da die Durchstoßpunkte in der Ebene liegen, ist die Ebenengleichung $\mathbf{r}\cdot(x_{i}\mathbf{a}_{i})=A$ erfüllt und
+man findet mit $\mathbf{r}\cdot\mathbf{a}_{1}=2\pi h$, $\mathbf{r}\cdot \mathbf{a}_{2}=2\pi k$,
+$ \mathbf{r}\cdot \mathbf{a}_{3}=2\pi l$ folgenden Zusammenhang:
 \begin{equation*}
     x_{1}=\frac{A}{2\pi h}, \quad x_{2}=\frac{A}{2\pi k}, \quad x_{3} =\frac{A}{2\pi l}.
 \end{equation*}
@@ -232,7 +233,7 @@ Symmetrieoperationen ineinander zu überführen.
 \autocite[116]{Ashcroft}
 
 \subsubsection{Röntgenbeugung und die Laue Bedingung}
-Ziel ist es, mithilfe von elektromagnetischer Strahlung und den bisherigen Überlegungen, Aussagen über die
+Ziel ist es, mithilfe elektromagnetischer Strahlung und den bisherigen Überlegungen, Aussagen über die
 Kristallstruktur eines Festkörpers zu gewinnen.
 Genauer gesagt sucht man einen Formalismus, um die elastische Streuung von Licht am Kristallgitter zu beschreiben.
 Für eine geeignete Wellenlänge der Photonen betrachtet man die typische zwischenatomare Entfernung von circa
@@ -243,7 +244,7 @@ Entsprechend muss die Photonenenergie in der Ordnung von
 $\h f =\h \c / \lambda \simeq \qty{12.3}{\electronvolt}$ liegen.
 Hierbei ist $f$ die Frequenz, $\lambda$ die Wellenlänge, $\h$ das Plancksche Wirkungsquantum und $\c$ die
 Lichtgeschwindigkeit.
-Solche Energien sind charakteristisch für Röntgenstrahlung.
+Solche Energien sind charakteristisch für Röntgenstrahlung. \autocite[120]{Ashcroft}
 
 Laue und Bragg entwickelten zwei Formalismen, um elastischen Streuung elektromagnetischer Strahlung am Kristallgitter
 zu beschreiben.
@@ -307,17 +308,17 @@ ergibt sich:
 Die Größe $A$ wird als Streuamplitude bezeichnet.
 Die tatsächliche Streuung erfolgt an der Elektronenverteilung.
 Das führt zu zusätzlichen Effekten wie dem Atomformfaktor und dem Strukturfaktor,
-welche für weitere Betrachtungen jedoch vernachlässigt werden können.
+welche für weitere Betrachtungen jedoch vernachlässigt werden können.\autocite[66-69]{Spiess}
 \begin{equation*}
-    A \propto \int n(\mathbf{r}) \exp(-\mathrm{i} \Delta \mathbf{k}\cdot
+    A \propto \int n(\mathbf{r}) \exp(\mathrm{i} \Delta \mathbf{k}\cdot
     \mathbf{r}) \, \mathrm{d}V(\mathbf{r})
 \end{equation*}
 
 \paragraph{Beugungsbedingung}
 Die Bedingung für konstruktive Interferenz ist äquivalent zur Maximierung der Streuamplitude.
-Damit diese maximal wird, muss die Interferenzbedingung $\mathbf{O}_{pqr}\cdot\Delta \mathbf{k} =2\pi n$
+Damit diese maximal wird, muss die Interferenzbedingung $\mathbf{O}_{pqr}\cdot\Delta \mathbf{k} =2\pi z$
 für alle $p$, $q$, $r$ gelten.
-Zerlegt man $\mathbf{O}_{mnp}$ in seine Komponenten, erhält man folgende Gleichungen:
+Zerlegt man $\mathbf{O}_{pqr}$ in seine Komponenten, erhält man folgende Gleichungen:
 \begin{align}
     \mathbf{a}_{1}\cdot\Delta \mathbf{k} &= 2\pi h \\
     \mathbf{a}_{2}\cdot\Delta \mathbf{k} &= 2\pi k \\
@@ -326,7 +327,7 @@ Zerlegt man $\mathbf{O}_{mnp}$ in seine Komponenten, erhält man folgende Gleich
 Dies sind die Laue Gleichungen für Beugungsmaxima.
 Sie sind erfüllt, falls $\Delta \mathbf{k}$ ein reziproker Gittervektor ist.
 Dies stellt die Beugungsbedingung nach Laue dar, die besagt, dass konstruktive Interferenz genau dann auftritt,
-wenn $\Delta \mathbf{r}$ einem Vektor des reziproken Gitters entspricht.
+wenn $\Delta \mathbf{r}$ einem Vektor des reziproken Gitters entspricht.\autocite[125]{Ashcroft}
 
 Für die Strukturamplitude ergibt sich anschließend:
 \begin{equation}
@@ -335,6 +336,7 @@ Für die Strukturamplitude ergibt sich anschließend:
     = \sum_{pqr} u_{pqr}(\mathbf{r}).
     \label{eq:strukturamplitude}
 \end{equation}
+
 
 \paragraph{Bragg-Bedingung}
 Die Bragg Bedingung kann sowohl mithilfe der Laue-Bedingung als auch geometrisch hergeleitet werden.
@@ -353,7 +355,7 @@ $n\cdot \mathbf{g} =\Delta \mathbf{k}$.
 Aus \cref{subsection:indizierung} ist bekannt, dass $\mathbf{g}$ den Abstand der Netzebenen definiert
 mit $d = 2 \pi \cdot\lvert \mathbf{g} \rvert ^{-1}$.
 Daraus folgt $\lvert \Delta \mathbf{k} \rvert=n \lvert \mathbf{g} \rvert = 2\pi n/d$.
-Kombiniert man beide Gleichungen miteinander, ergibt sich die Bragg-Bedingung:
+Kombiniert man beide Gleichungen miteinander, ergibt sich die Bragg-Bedingung:\autocite[125-126]{Ashcroft}
 \begin{align}
     2k\sin(\nu)&=\frac{2\pi n}{d} \\
     2d\sin(\nu)&=n \lambda
