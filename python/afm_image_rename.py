@@ -48,6 +48,6 @@ def replicate_folder_structure(src_path, dest_path):
                     break
 
 
-src_dir = "../data/AFM"
+src_dir = "../data2/AFM"
 dest_dir = "../data_renamed/AFM"
 replicate_folder_structure(src_dir, dest_dir)

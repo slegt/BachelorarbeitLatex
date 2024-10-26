@@ -23,6 +23,7 @@
 \usepackage{lmodern}
 \usepackage{import}
 \usepackage{pgffor}
+\usepackage{ifthen}
 
 
 \sisetup{separate-uncertainty=true}
@@ -35,6 +36,8 @@
 \newcommand{\integral}[4]{\int_{#1}^{#2} #3 \mathrm{d} #4}
 \newcommand{\derivative}[2]{\frac{\mathrm{d}}{\mathrm{d} #1} #2}
 \newcommand{\heo}{\ce{(MgCoNiCuZn)O}}
+\newcommand{\h}{\mathrm{h}}
+\renewcommand{\c}{\mathrm{c}}
 
 \DeclareSIUnit\angstrom{\text {Å}}
 \DeclareSIUnit\bar{bar}

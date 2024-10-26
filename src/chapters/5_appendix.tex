@@ -2,632 +2,160 @@
 
 \subsection{Bildvergleich AFM}\label{subsec:bildvergleich-afm}
 
+\newcommand{\plotpath}{../plots/AFM}
+\newcommand{\samplesB}{W6821-1B, W6822-1B, W6823-1B, W6824-1B}
+\newcommand{\samplesC}{W6821-1C, W6822-1C, W6823-1C, W6824-1C}
+\newcommand{\samplesD}{W6821-1D, W6822-1D, W6823-1D, W6824-1D}
+
 \subsection{Sauerstoff Ausheizvorgang}\label{subsec:sauerstoff-ausheizvorgang}
 
 \subsubsection{Vor dem Ausheizen}
 \begin{figure}[ht]
-\centering
-% W6821-1B
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-pre/W6821-1B/W6821-1B_XG_Sauerstoff_pre_Topography_1}
-\caption{W6821-1B, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-pre/W6821-1B/W6821-1B_XG_Sauerstoff_pre_Topography_3}
-\caption{W6821-1B, Bild 2}
-\end{subfigure}
-% W6822-1B
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-pre/W6822-1B/W6822-1B_XG_Sauerstoff_pre_Topography_1}
-\caption{W6822-1B, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-pre/W6822-1B/W6822-1B_XG_Sauerstoff_pre_Topography_3}
-\caption{W6822-1B, Bild 2}
-\end{subfigure}
-% W6823-1B
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-pre/W6823-1B/W6823-1B_XG_Sauerstoff_pre_Topography_1}
-\caption{W6823-1B, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-pre/W6823-1B/W6823-1B_XG_Sauerstoff_pre_Topography_3}
-\caption{W6823-1B, Bild 2}
-\end{subfigure}
-% W6824-1B
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-pre/W6824-1B/W6824-1B_XG_Sauerstoff_pre_Topography_1}
-\caption{W6824-1B, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-pre/W6824-1B/W6824-1B_XG_Sauerstoff_pre_Topography_3}
-\caption{W6824-1B, Bild 2}
-\end{subfigure}
-\caption{AFM, Sauerstoff, pre}\label{fig: AFM, Sauerstoff, pre}
+    \centering
+    \foreach \sample in \samplesB {
+        \begin{subfigure}[t]{0.40\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]
+            {\plotpath/XG-Sauerstoff/XG-pre/\sample/\sample_XG_Sauerstoff_pre_Topography_1}
+            \caption{\sample, Bild 1}
+        \end{subfigure}
+        \begin{subfigure}[t]{0.40\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]
+            {\plotpath/XG-Sauerstoff/XG-pre/\sample/\sample_XG_Sauerstoff_pre_Topography_3}
+            \caption{\sample, Bild 2}
+        \end{subfigure}
+    }
+    \caption{AFM, Sauerstoff, pre}\label{fig: AFM, Sauerstoff, pre}
 \end{figure}
 
-\subsubsection{\qty{600}{\degreeCelsius}}
-\begin{figure}[ht]
-\centering
-% W6821-1B
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-600/W6821-1B/W6821-1B_XG_Sauerstoff_600_Topography_1}
-\caption{W6821-1B, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-600/W6821-1B/W6821-1B_XG_Sauerstoff_600_Topography_3}
-\caption{W6821-1B, Bild 2}
-\end{subfigure}
-% W6822-1B
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-600/W6822-1B/W6822-1B_XG_Sauerstoff_600_Topography_1}
-\caption{W6822-1B, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-600/W6822-1B/W6822-1B_XG_Sauerstoff_600_Topography_3}
-\caption{W6822-1B, Bild 2}
-\end{subfigure}
-% W6823-1B
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-600/W6823-1B/W6823-1B_XG_Sauerstoff_600_Topography_1}
-\caption{W6823-1B, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-600/W6823-1B/W6823-1B_XG_Sauerstoff_600_Topography_3}
-\caption{W6823-1B, Bild 2}
-\end{subfigure}
-% W6824-1B
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-600/W6824-1B/W6824-1B_XG_Sauerstoff_600_Topography_1}
-\caption{W6824-1B, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-600/W6824-1B/W6824-1B_XG_Sauerstoff_600_Topography_3}
-\caption{W6824-1B, Bild 2}
-\end{subfigure}
-\caption{AFM, Sauerstoff, \qty{600}{\degreeCelsius}}\label{fig: AFM, Sauerstoff, 600}
-\end{figure}
-
-\subsubsection{\qty{700}{\degreeCelsius}}
-\begin{figure}[ht]
-\centering
-% W6821-1B
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-700/W6821-1B/W6821-1B_XG_Sauerstoff_700_Topography_1}
-\caption{W6821-1B, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-700/W6821-1B/W6821-1B_XG_Sauerstoff_700_Topography_3}
-\caption{W6821-1B, Bild 2}
-\end{subfigure}
-% W6822-1B
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-700/W6822-1B/W6822-1B_XG_Sauerstoff_700_Topography_1}
-\caption{W6822-1B, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-700/W6822-1B/W6822-1B_XG_Sauerstoff_700_Topography_3}
-\caption{W6822-1B, Bild 2}
-\end{subfigure}
-% W6823-1B
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-700/W6823-1B/W6823-1B_XG_Sauerstoff_700_Topography_1}
-\caption{W6823-1B, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-700/W6823-1B/W6823-1B_XG_Sauerstoff_700_Topography_3}
-\caption{W6823-1B, Bild 2}
-\end{subfigure}
-% W6824-1B
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-700/W6824-1B/W6824-1B_XG_Sauerstoff_700_Topography_1}
-\caption{W6824-1B, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-700/W6824-1B/W6824-1B_XG_Sauerstoff_700_Topography_3}
-\caption{W6824-1B, Bild 2}
-\end{subfigure}
-\caption{AFM, Sauerstoff, \qty{700}{\degreeCelsius}}\label{fig: AFM, Sauerstoff, 700}
-\end{figure}
-
-\subsubsection{\qty{750}{\degreeCelsius}}
-\begin{figure}[ht]
-\centering
-% W6821-1B
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-750/W6821-1B/W6821-1B_XG_Sauerstoff_750_Topography_1}
-\caption{W6821-1B, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-750/W6821-1B/W6821-1B_XG_Sauerstoff_750_Topography_3}
-\caption{W6821-1B, Bild 2}
-\end{subfigure}
-% W6822-1B
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-750/W6822-1B/W6822-1B_XG_Sauerstoff_750_Topography_1}
-\caption{W6822-1B, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-750/W6822-1B/W6822-1B_XG_Sauerstoff_750_Topography_3}
-\caption{W6822-1B, Bild 2}
-\end{subfigure}
-% W6823-1B
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-750/W6823-1B/W6823-1B_XG_Sauerstoff_750_Topography_1}
-\caption{W6823-1B, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-750/W6823-1B/W6823-1B_XG_Sauerstoff_750_Topography_3}
-\caption{W6823-1B, Bild 2}
-\end{subfigure}
-% W6824-1B
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-750/W6824-1B/W6824-1B_XG_Sauerstoff_750_Topography_1}
-\caption{W6824-1B, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-750/W6824-1B/W6824-1B_XG_Sauerstoff_750_Topography_3}
-\caption{W6824-1B, Bild 2}
-\end{subfigure}
-\caption{AFM, Sauerstoff, \qty{750}{\degreeCelsius}}\label{fig: AFM, Sauerstoff, 750}
-\end{figure}
-
-\subsubsection{\qty{800}{\degreeCelsius}}
-\begin{figure}[ht]
-\centering
-% W6821-1B
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-800/W6821-1B/W6821-1B_XG_Sauerstoff_800_Topography_1}
-\caption{W6821-1B, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-800/W6821-1B/W6821-1B_XG_Sauerstoff_800_Topography_3}
-\caption{W6821-1B, Bild 2}
-\end{subfigure}
-% W6822-1B
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-800/W6822-1B/W6822-1B_XG_Sauerstoff_800_Topography_1}
-\caption{W6822-1B, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-800/W6822-1B/W6822-1B_XG_Sauerstoff_800_Topography_3}
-\caption{W6822-1B, Bild 2}
-\end{subfigure}
-% W6823-1B
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-800/W6823-1B/W6823-1B_XG_Sauerstoff_800_Topography_1}
-\caption{W6823-1B, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-800/W6823-1B/W6823-1B_XG_Sauerstoff_800_Topography_3}
-\caption{W6823-1B, Bild 2}
-\end{subfigure}
-% W6824-1B
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-800/W6824-1B/W6824-1B_XG_Sauerstoff_800_Topography_1}
-\caption{W6824-1B, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-800/W6824-1B/W6824-1B_XG_Sauerstoff_800_Topography_3}
-\caption{W6824-1B, Bild 2}
-\end{subfigure}
-\caption{AFM, Sauerstoff, \qty{800}{\degreeCelsius}}\label{fig: AFM, Sauerstoff, 800}
-\end{figure}
-
-\subsubsection{\qty{875}{\degreeCelsius}}
-\begin{figure}[ht]
-\centering
-% W6821-1B
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-875/W6821-1B/W6821-1B_XG_Sauerstoff_875_Topography_1}
-\caption{W6821-1B, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-875/W6821-1B/W6821-1B_XG_Sauerstoff_875_Topography_3}
-\caption{W6821-1B, Bild 2}
-\end{subfigure}
-% W6822-1B
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-875/W6822-1B/W6822-1B_XG_Sauerstoff_875_Topography_1}
-\caption{W6822-1B, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-875/W6822-1B/W6822-1B_XG_Sauerstoff_875_Topography_3}
-\caption{W6822-1B, Bild 2}
-\end{subfigure}
-% W6823-1B
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-875/W6823-1B/W6823-1B_XG_Sauerstoff_875_Topography_1}
-\caption{W6823-1B, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-875/W6823-1B/W6823-1B_XG_Sauerstoff_875_Topography_3}
-\caption{W6823-1B, Bild 2}
-\end{subfigure}
-% W6824-1B
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-875/W6824-1B/W6824-1B_XG_Sauerstoff_875_Topography_1}
-\caption{W6824-1B, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Sauerstoff/XG-875/W6824-1B/W6824-1B_XG_Sauerstoff_875_Topography_3}
-\caption{W6824-1B, Bild 2}
-\end{subfigure}
-\caption{AFM, Sauerstoff, \qty{875}{\degreeCelsius}}\label{fig: AFM, Sauerstoff, 875}
-\end{figure}
+\foreach \temp in {600, 700, 750, 800, 875} {
+    \subsubsection{\qty{\temp}{\degreeCelsius}}
+    \begin{figure}[ht]
+        \centering
+        \foreach \sample in \samplesB {
+            \begin{subfigure}[t]{0.40\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]
+                {\plotpath/XG-Sauerstoff/XG-\temp/\sample/\sample_XG_Sauerstoff_\temp_Topography_1}
+                \caption{\sample, Bild 1}
+            \end{subfigure}
+            \begin{subfigure}[t]{0.40\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]
+                {\plotpath/XG-Sauerstoff/XG-\temp/\sample/\sample_XG_Sauerstoff_\temp_Topography_3}
+                \caption{\sample, Bild 2}
+            \end{subfigure}
+        }
+        \caption{AFM, Sauerstoff, \qty{\temp}{\degreeCelsius}}\label{fig: AFM, Sauerstoff, \temp}
+    \end{figure}
+}
 
 \subsection{Vakuum Ausheizvorgang}\label{subsec:vacuum-ausheizvorgang}
 
 \subsubsection{Vor dem Ausheizen}
 \begin{figure}[ht]
-\centering
-% W6821-1B
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-pre/W6821-1C/W6821-1C_XG_Vakuum_pre_Topography_1}
-\caption{W6821-1C, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-pre/W6821-1C/W6821-1C_XG_Vakuum_pre_Topography_3}
-\caption{W6821-1C, Bild 2}
-\end{subfigure}
-% W6822-1C
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-pre/W6822-1C/W6822-1C_XG_Vakuum_pre_Topography_1}
-\caption{W6822-1C, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-pre/W6822-1C/W6822-1C_XG_Vakuum_pre_Topography_3}
-\caption{W6822-1C, Bild 2}
-\end{subfigure}
-% W6823-1C
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-pre/W6823-1C/W6823-1C_XG_Vakuum_pre_Topography_1}
-\caption{W6823-1C, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-pre/W6823-1C/W6823-1C_XG_Vakuum_pre_Topography_3}
-\caption{W6823-1C, Bild 2}
-\end{subfigure}
-% W6824-1C
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-pre/W6824-1C/W6824-1C_XG_Vakuum_pre_Topography_1}
-\caption{W6824-1C, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-pre/W6824-1C/W6824-1C_XG_Vakuum_pre_Topography_3}
-\caption{W6824-1C, Bild 2}
-\end{subfigure}
-\caption{AFM, Vakuum, pre}\label{fig: AFM, Vakuum, pre}
+    \centering
+    \foreach \sample in \samplesC {
+        \begin{subfigure}[t]{0.40\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]
+            {\plotpath/XG-Vakuum/XG-pre/\sample/\sample_XG_Vakuum_pre_Topography_1}
+            \caption{\sample, Bild 1}
+        \end{subfigure}
+        \begin{subfigure}[t]{0.40\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]
+            {\plotpath/XG-Vakuum/XG-pre/\sample/\sample_XG_Vakuum_pre_Topography_3}
+            \caption{\sample, Bild 2}
+        \end{subfigure}
+    }
+    \caption{AFM, Vakuum, pre}\label{fig: AFM, Vakuum, pre}
 \end{figure}
 
-\subsubsection{\qty{500}{\degreeCelsius}}
+\foreach \temp in {500, 600, 700, 750} {
+    \ifthenelse{\equal{\temp}{750}}{\renewcommand{\samplesC}{W6821-1C, W6822-1C, W6824-1C}}{}
+
+    \subsubsection{\qty{\temp}{\degreeCelsius}}
+    \begin{figure}[ht]
+        \centering
+        \foreach \sample in \samplesC {
+            \begin{subfigure}[t]{0.40\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]
+                {\plotpath/XG-Vakuum/XG-\temp/\sample/\sample_XG_Vakuum_\temp_Topography_1}
+                \caption{\sample, Bild 1}
+            \end{subfigure}
+            \begin{subfigure}[t]{0.40\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]
+                {\plotpath/XG-Vakuum/XG-\temp/\sample/\sample_XG_Vakuum_\temp_Topography_3}
+                \caption{\sample, Bild 2}
+            \end{subfigure}
+        }
+        \caption{AFM, Vakuum, \qty{\temp}{\degreeCelsius}}\label{fig: AFM, Vakuum, \temp}
+    \end{figure}
+}
+
+\subsection{Luft Ausheizvorgang}\label{subsec:luft-ausheizvorgang}
+
+\subsubsection{Vor dem Ausheizen}
 \begin{figure}[ht]
-\centering
-% W6821-1C
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-500/W6821-1C/W6821-1C_XG_Vakuum_500_Topography_1}
-\caption{W6821-1C, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-500/W6821-1C/W6821-1C_XG_Vakuum_500_Topography_3}
-\caption{W6821-1C, Bild 2}
-\end{subfigure}
-% W6822-1C
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-500/W6822-1C/W6822-1C_XG_Vakuum_500_Topography_1}
-\caption{W6822-1C, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-500/W6822-1C/W6822-1C_XG_Vakuum_500_Topography_3}
-\caption{W6822-1C, Bild 2}
-\end{subfigure}
-% W6823-1C
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-500/W6823-1C/W6823-1C_XG_Vakuum_500_Topography_1}
-\caption{W6823-1C, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-500/W6823-1C/W6823-1C_XG_Vakuum_500_Topography_3}
-\caption{W6823-1C, Bild 2}
-\end{subfigure}
-% W6824-1C
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-500/W6824-1C/W6824-1C_XG_Vakuum_500_Topography_1}
-\caption{W6824-1C, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-500/W6824-1C/W6824-1C_XG_Vakuum_500_Topography_3}
-\caption{W6824-1C, Bild 2}
-\end{subfigure}
-\caption{AFM, Vakuum, \qty{500}{\degreeCelsius}}\label{fig: AFM, Vakuum, 500}
+    \centering
+    \foreach \sample in \samplesD {
+        \begin{subfigure}[t]{0.40\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]
+            {\plotpath/XG-Luft/XG-pre/\sample/\sample_XG_Luft_pre_Topography_1}
+            \caption{\sample, Bild 1}
+        \end{subfigure}
+        \begin{subfigure}[t]{0.40\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]
+            {\plotpath/XG-Luft/XG-pre/\sample/\sample_XG_Luft_pre_Topography_3}
+            \caption{\sample, Bild 2}
+        \end{subfigure}
+    }
+    \caption{AFM, Luft, pre}\label{fig: AFM, Luft, pre}
 \end{figure}
 
-\subsubsection{\qty{600}{\degreeCelsius}}
-\begin{figure}[ht]
-\centering
-% W6821-1C
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-600/W6821-1C/W6821-1C_XG_Vakuum_600_Topography_1}
-\caption{W6821-1C, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-600/W6821-1C/W6821-1C_XG_Vakuum_600_Topography_3}
-\caption{W6821-1C, Bild 2}
-\end{subfigure}
-% W6822-1C
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-600/W6822-1C/W6822-1C_XG_Vakuum_600_Topography_1}
-\caption{W6822-1C, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-600/W6822-1C/W6822-1C_XG_Vakuum_600_Topography_3}
-\caption{W6822-1C, Bild 2}
-\end{subfigure}
-% W6823-1C
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-600/W6823-1C/W6823-1C_XG_Vakuum_600_Topography_1}
-\caption{W6823-1C, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-600/W6823-1C/W6823-1C_XG_Vakuum_600_Topography_3}
-\caption{W6823-1C, Bild 2}
-\end{subfigure}
-% W6824-1C
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-600/W6824-1C/W6824-1C_XG_Vakuum_600_Topography_1}
-\caption{W6824-1C, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-600/W6824-1C/W6824-1C_XG_Vakuum_600_Topography_3}
-\caption{W6824-1C, Bild 2}
-\end{subfigure}
-\caption{AFM, Vakuum, \qty{600}{\degreeCelsius}}\label{fig: AFM, Vakuum, 600}
-\end{figure}
 
-\subsubsection{\qty{700}{\degreeCelsius}}
-\begin{figure}[ht]
-\centering
-% W6821-1C
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-700/W6821-1C/W6821-1C_XG_Vakuum_700_Topography_1}
-\caption{W6821-1C, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-700/W6821-1C/W6821-1C_XG_Vakuum_700_Topography_3}
-\caption{W6821-1C, Bild 2}
-\end{subfigure}
-% W6822-1C
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-700/W6822-1C/W6822-1C_XG_Vakuum_700_Topography_1}
-\caption{W6822-1C, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-700/W6822-1C/W6822-1C_XG_Vakuum_700_Topography_3}
-\caption{W6822-1C, Bild 2}
-\end{subfigure}
-% W6823-1C
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-700/W6823-1C/W6823-1C_XG_Vakuum_700_Topography_1}
-\caption{W6823-1C, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-700/W6823-1C/W6823-1C_XG_Vakuum_700_Topography_3}
-\caption{W6823-1C, Bild 2}
-\end{subfigure}
-% W6824-1C
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-700/W6824-1C/W6824-1C_XG_Vakuum_700_Topography_1}
-\caption{W6824-1C, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-700/W6824-1C/W6824-1C_XG_Vakuum_700_Topography_3}
-\caption{W6824-1C, Bild 2}
-\end{subfigure}
-\caption{AFM, Vakuum, \qty{700}{\degreeCelsius}}\label{fig: AFM, Vakuum, 700}
-\end{figure}
+\foreach \temp in {600} {
+    \subsubsection{\qty{\temp}{\degreeCelsius}}
+    \begin{figure}[ht]
+        \centering
+        \foreach \sample in \samplesD {
+            \begin{subfigure}[t]{0.40\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]
+                {\plotpath/XG-Luft/XG-\temp/\sample/\sample_XG_Luft_\temp_Topography_1}
+                \caption{\sample, Bild 1}
+            \end{subfigure}
+            \begin{subfigure}[t]{0.40\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]
+                {\plotpath/XG-Luft/XG-\temp/\sample/\sample_XG_Luft_\temp_Topography_3}
+                \caption{\sample, Bild 2}
+            \end{subfigure}
+        }
+        \caption{AFM, Luft, \qty{\temp}{\degreeCelsius}}\label{fig: AFM, Luft, \temp}
+    \end{figure}
+}
 
-\subsubsection{\qty{750}{\degreeCelsius}}
-\begin{figure}[ht]
-\centering
-% W6821-1C
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-750/W6821-1C/W6821-1C_XG_Vakuum_750_Topography_1}
-\caption{W6821-1C, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-750/W6821-1C/W6821-1C_XG_Vakuum_750_Topography_3}
-\caption{W6821-1C, Bild 2}
-\end{subfigure}
-% W6822-1C
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-750/W6822-1C/W6822-1C_XG_Vakuum_750_Topography_1}
-\caption{W6822-1C, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-750/W6822-1C/W6822-1C_XG_Vakuum_750_Topography_3}
-\caption{W6822-1C, Bild 2}
-\end{subfigure}
-% W6824-1C
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-750/W6824-1C/W6824-1C_XG_Vakuum_750_Topography_1}
-\caption{W6824-1C, Bild 1}
-\end{subfigure}
-\begin{subfigure}[t]{0.40\textwidth}
-\centering
-\includegraphics[width=\textwidth]
-{../plots/AFM/XG-Vakuum/XG-750/W6824-1C/W6824-1C_XG_Vakuum_750_Topography_3}
-\caption{W6824-1C, Bild 2}
-\end{subfigure}
-\caption{AFM, Vakuum, \qty{750}{\degreeCelsius}}\label{fig: AFM, Vakuum, 750}
-\end{figure}
+\subsection{EDX Bilder}\label{subsec:edx-bilder}
+\newcommand{\samplesEDX}{W6822-3D, W6823-3D, W6824-3D}
 
+\foreach \sample in \samplesEDX {
+    \subsubsection{\sample}
+    \begin{figure}
+        \centering
+        \foreach \i/\desc in {map/Oberfläche, Mg/Magnesium, Co/Kobalt, Ni/Nickel), Cu/Kupfer, Zn/Zink}{
+            \begin{subfigure}[t]{0.40\textwidth}
+                \includegraphics[width=\textwidth]{../plots/EDX/\sample/\i}
+                \caption{\desc}
+            \end{subfigure}
+        }
+        \caption{EDX Aufnahmen der Probe \sample}
+        \label{fig:edx1}
+    \end{figure}
+}

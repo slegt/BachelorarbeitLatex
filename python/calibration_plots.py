@@ -8,6 +8,10 @@ from scipy.optimize import curve_fit
 
 from python._states import RC_PARAMS, LINEWIDTH
 
+
+# sixth plot
+
+
 mpl.use("pgf")
 plt.rcParams.update(RC_PARAMS)
 plt.rcParams.update({"figure.figsize": (LINEWIDTH * 0.49, LINEWIDTH * 0.35),
@@ -180,3 +184,16 @@ plt.ylim(3, 5)
 plt.xlim(0, 6)
 plt.savefig(base_export_path / "quenching_time.pgf")
 plt.close()
+
+
+df = pd.read_csv(base_path / "furnace_heating_rate.csv", sep=',')
+t = df["t"].to_numpy()
+T = df["T"].to_numpy()
+
+plt.plot(t, T)
+plt.xlabel(r"$t \text{ in } \unit{\minute} $")
+plt.ylabel(r"$T \text{ in } \unit{\degreeCelsius}$")
+plt.savefig(base_export_path / "furnace_heating_rate.pgf")
+plt.close()
+
+

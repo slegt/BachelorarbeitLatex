@@ -34,6 +34,6 @@ def replicate_folder_structure(src_path, dest_path):
 
 
 
-src_dir = "../data/XRD"
+src_dir = "../data2/XRD"
 dest_dir = "../data_renamed/XRD"
 replicate_folder_structure(src_dir, dest_dir)

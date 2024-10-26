@@ -1,9 +1,7 @@
-import colorsys
 import pathlib
 import xml.etree.ElementTree as ET
 
 import matplotlib as mpl
-import matplotlib.colors as mc
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import matplotlib.transforms as mtransforms
@@ -15,6 +13,7 @@ plt.rcParams.update({
     "font.family": "serif",
     "font.serif": [],
 })
+
 
 def get_data(path):
     ns = {'': 'http://www.xrdml.com/XRDMeasurement/2.1'}
@@ -28,15 +27,6 @@ def get_data(path):
     intensities_relative = intensities / np.max(intensities) * 100
     angles = np.linspace(start_position, end_position, len(intensities))
     return angles, intensities_relative
-
-
-def adjust_lightness(color, amount=0.5):
-    try:
-        c = mc.cnames[color]
-    except:
-        c = color
-    c = colorsys.rgb_to_hls(*mc.to_rgb(c))
-    return colorsys.hls_to_rgb(c[0], max(0, min(1, amount * c[1])), c[2])
 
 
 def create_plot(gas, temperature_array, sample_name):
@@ -88,7 +78,17 @@ for sample in sauerstoff_samples:
     create_plot("Sauerstoff", sauerstoff_temperature_array, sample)
 
 vakuum_samples = ["W6821-1C", "W6822-1C", "W6823-1C", "W6824-1C"]
-vakuum_temperature_array = ["pre", "500", "600", "700", "750"]
+vakuum_temperature_array = ["pre", "500", "600", "700", "750", "800", "875"]
+vakuum_temperature_array_23 = ["pre", "500", "600", "700", "750"]
 
 for sample in vakuum_samples:
-    create_plot("Vakuum", vakuum_temperature_array, sample)
+    if sample == "W6823-1C":
+        create_plot("Vakuum", vakuum_temperature_array_23, sample)
+    else:
+        create_plot("Vakuum", vakuum_temperature_array, sample)
+
+air_samples = ["W6821-1D", "W6822-1D", "W6823-1D", "W6824-1D"]
+air_temperature_array = ["pre", "600", "700"]
+
+for sample in air_samples:
+    create_plot("Luft", air_temperature_array, sample)

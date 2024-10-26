@@ -3,33 +3,23 @@
 \subsection{Temperaturkalibrierung der A-Kammer}\label{subsec:temperaturkalibrierung}
 \begin{figure}
     \centering
-    \begin{subfigure}[b]{0.49\textwidth}
-        \import{../plots/calibration}{furnace_calibration_1.pgf}
-        \caption{Kalibrierung des Lithografiesensors, Bild 1}
-        \label{fig:furnace_calibration_1}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.49\textwidth}
-        \import{../plots/calibration}{furnace_calibration_2.pgf}
-        \caption{Kalibrierung des Lithografiesensors, Bild 2}
-        \label{fig:furnace_calibration_2}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.49\textwidth}
-        \import{../plots/calibration}{a_chamber_calibration.pgf}
-        \caption{Kalibrierung der A-Kammer}
-        \label{fig:a_chamber_calibration}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.49\textwidth}
-        \import{../plots/calibration}{final_calibration.pgf}
-        \caption{Abhängigkeit zwischen $T_{\mathrm{Pyro}}$ und $T_{\mathrm{Lit}}$, Bild 1}
-        \label{fig:final_calibration}
-    \end{subfigure}
-    \begin{subfigure}[b]{0.49\textwidth}
-        \import{../plots/calibration}{quenching_time.pgf}
-        \caption{Kalibrierung der A-Kammer, Bild 1}
-        \label{fig:quenching_time}
-    \end{subfigure}
+    \foreach \i/\desc in {
+        furnace_calibration_1.pgf/{Kalibrierung des Lithografiesensors, Bild 1},
+        furnace_calibration_2.pgf/{Kalibrierung des Lithografiesensors, Bild 2},
+        a_chamber_calibration.pgf/{Kalibrierung der A-Kammer},
+        final_calibration.pgf/{Abhängigkeit zwischen $T_{\mathrm{Pyro}}$ und $T_{\mathrm{Lit}}$, Bild 1},
+        quenching_time.pgf/{Abschreckzeit der A-Kammer}
+    }{
+        \begin{subfigure}[t]{0.49\textwidth}
+            \import{../plots/calibration}{\i}
+            \caption{\desc}
+            \label{fig:\i}
+        \end{subfigure}
+    }
+    \caption{Abhängigkeiten zur Temperaturbestimmung der A-Kammer}
     \label{fig:temperature_calibration_1}
 \end{figure}
+
 Zentrales Thema der vorliegenden Arbeit ist das Ausheizen der \heo-Dünnfilme.
 Dabei ist es wichtig, einen entsprechend großen Temperaturbereich von \qtyrange{300}{1000}{\degreeCelsius} zu erreichen
 und die Temperatur des Dünnfilms möglichst genau zu bestimmen.
@@ -77,8 +67,6 @@ Abbildung \ref{fig:quenching_time}.
 Für einen Temperaurabfall von circa \qty{350}{\degreeCelsius} auf circa \qty{25}{\degreeCelsius}
 benötigt die A-Kammer etwa \qty{4}{\minute}.
 
-
-
 \subsection{Probenherstellung}\label{subsec:probenherstellung}
 - jeweils 20000 Laserpule
 - mit Frequenz 20 Hz
@@ -104,142 +92,68 @@ Unterschiede
     \label{tab:samples}
 \end{table}
 
-\subsection{EDX Analyse}\label{subsec:edx-analyse}
-
-\subsection{Sauerstoff Ausheizvorgang}\label{subsec:sauerstoff-ausheizvorgang2}
-
-\subsubsection{Initialzustand}
-\begin{figure}[ht]
+\subsection{EDX Analyse}\label{subsec:edx-analyse}a
+\begin{figure}
     \centering
-    \foreach \i in {W6821-1B,W6822-1B,W6823-1B,W6824-1B}{
+    \foreach \i/\desc in {map/Oberfläche, Mg/Magnesium, Co/Kobalt, Ni/Nickel), Cu/Kupfer, Zn/Zink}{
         \begin{subfigure}[t]{0.40\textwidth}
-            \includegraphics[width=\textwidth]
-            {../plots/AFM/XG-Sauerstoff/XG-pre/\i/\i_XG_Sauerstoff_pre_Topography_1}
-            \caption{\i}
+            \includegraphics[width=\textwidth]{../plots/EDX/W6821-3D/\i}
+            \caption{\desc}
         \end{subfigure}
     }
-    \caption{Initialzustand der Proben vor dem Sauerstoff Ausheizvorgang}
-    \label{fig: AFM, Sauerstoff, Initialzustand}
+    \caption{EDX Aufnahmen der Probe W6821-3D}
+    \label{fig:edx1}
 \end{figure}
+
+% AUSHEIZVORGÄNGE %
+\newcommand{\temperaturesS}{pre,600,700,750,800,875}
+\newcommand{\temperaturesV}{pre,500,600,700,750, 800}
+\newcommand{\temperaturesVV}{pre,500,600,700}
+\newcommand{\temperaturesL}{pre,600}
+
+% PROBE W6821-1 %
+
 \newpage
 
-\subsubsection{Probe W6821-1B}
+\subsection{Probe W6821-1}\label{subsec:probe-W6821-1}
+
+\subsubsection{Sauerstoff Ausheizvorgang}\label{subsec:sauerstoff-ausheizvorgang-1}
 \begin{figure}
     \centering
     \import{../plots/XRD}{W6821-1B_Sauerstoff.pgf}
-    \caption{W6821-1B, Sauerstoff}
-    \label{fig: XRD, W6821-1B, Sauerstoff}
+    \caption{W6821-1B, Sauerstoff, XRD}
+    \label{fig:W6821-1B, Sauerstoff, XRD}
 \end{figure}
 \begin{figure}
     \centering
-    \foreach \i in {pre,600,700,750,800,875}{
+    \foreach \i in \temperaturesS{
         \begin{subfigure}[t]{0.40\textwidth}
             \includegraphics[width=\textwidth]
             {../plots/AFM/XG-Sauerstoff/XG-\i/W6821-1B/W6821-1B_XG_Sauerstoff_\i_Topography_1}
-            \caption{W6821-1B, \i}
+            \caption{\ifthenelse{\equal{\i}{pre}}{Initialzustand}{\qty{\i}{\degreeCelsius}}}
+            \label{W6821-1B, Sauerstoff, AFM, \i}
         \end{subfigure}
     }
-    \caption{AFM, Sauerstoff, W6821-1B}
-    \label{fig: AFM, Sauerstoff, W6821-1B}
+    \caption{W6821-1B, Sauerstoff, AFM}
+    \label{fig:W6821-1B, Sauerstoff, AFM}
 \end{figure}
 \newpage
 
-\subsubsection{Probe W6822-1B}
-\begin{figure}
-    \centering
-    \import{../plots/XRD}{W6822-1B_Sauerstoff.pgf}
-    \caption{W6822-1B, Sauerstoff}
-    \label{fig: XRD, W6822-1B, Sauerstoff}
-\end{figure}
-\begin{figure}
-    \centering
-    \foreach \i in {pre,600,700,750,800,875}{
-        \begin{subfigure}[t]{0.40\textwidth}
-            \centering
-            \includegraphics[width=\textwidth]
-            {../plots/AFM/XG-Sauerstoff/XG-\i/W6822-1B/W6822-1B_XG_Sauerstoff_\i_Topography_1}
-            \caption{W6822-1B, \i}
-        \end{subfigure}
-    }
-    \caption{AFM, Sauerstoff, W6822-1B}
-    \label{fig: AFM, Sauerstoff, W6822-1B}
-\end{figure}
-\newpage
-
-\subsubsection{Probe W6823-1B}
-\begin{figure}
-    \centering
-    \import{../plots/XRD}{W6823-1B_Sauerstoff.pgf}
-    \caption{W6823-1B, Sauerstoff}
-    \label{fig: XRD, W6823-1B, Sauerstoff}
-\end{figure}
-\begin{figure}
-    \centering
-    \foreach \i in {pre,600,700,750,800,875}{
-        \begin{subfigure}[t]{0.40\textwidth}
-            \centering
-            \includegraphics[width=\textwidth]
-            {../plots/AFM/XG-Sauerstoff/XG-\i/W6823-1B/W6823-1B_XG_Sauerstoff_\i_Topography_1}
-            \caption{W6823-1B, \i}
-        \end{subfigure}
-    }
-    \caption{AFM, Sauerstoff, W6823-1B}
-    \label{fig: AFM, Sauerstoff, W6823-1B}
-\end{figure}
-\newpage
-
-\subsubsection{Probe W6824-1B}
-\begin{figure}
-    \centering
-    \import{../plots/XRD}{W6824-1B_Sauerstoff.pgf}
-    \caption{W6824-1B, Sauerstoff}
-    \label{fig: XRD, W6824-1B, Sauerstoff}
-\end{figure}
-\begin{figure}
-    \centering
-    \foreach \i in {pre,600,700,750,800,875}{
-        \begin{subfigure}[t]{0.40\textwidth}
-            \centering
-            \includegraphics[width=\textwidth]
-            {../plots/AFM/XG-Sauerstoff/XG-\i/W6824-1B/W6824-1B_XG_Sauerstoff_\i_Topography_1}
-            \caption{W6824-1B, \i}
-        \end{subfigure}
-    }
-    \caption{AFM, Sauerstoff, W6824-1B}
-    \label{fig: AFM, Sauerstoff, W6824-1B}
-\end{figure}
-\newpage
-
-\subsection{Vakuum Ausheizvorgang}\label{subsec:Vakuum-ausheizvorgang2}
-
-\subsubsection{Initialzustand}
-\begin{figure}[ht]
-    \centering
-    \foreach \i in {W6821-1C,W6822-1C,W6823-1C,W6824-1C}{
-        \begin{subfigure}[t]{0.40\textwidth}
-            \includegraphics[width=\textwidth]
-            {../plots/AFM/XG-Vakuum/XG-pre/\i/\i_XG_Vakuum_pre_Topography_1}
-            \caption{\i}
-        \end{subfigure}
-    }
-    \label{fig: AFM, Vakuum, Initialzustand}
-\end{figure}
-\newpage
-
-\subsubsection{Probe W6821-1C}
+\subsubsection{Vakuum Ausheizvorgang}\label{subsec:vakuum-ausheizvorgang-1}
 \begin{figure}
     \centering
     \import{../plots/XRD}{W6821-1C_Vakuum.pgf}
-    \caption{W6821-1C, Vakuum}
-    \label{fig: XRD, W6821-1C, Vakuum}
+    \caption{W6821-1C, Vakuum, XRD}
+    \label{fig:W6821-1C, Vakuum, XRD}
 \end{figure}
 \begin{figure}
     \centering
-    ,\foreach \i in {pre,500,600,700,750}{
+    ,\foreach \i in \temperaturesV{
         \begin{subfigure}[t]{0.40\textwidth}
             \includegraphics[width=\textwidth]
             {../plots/AFM/XG-Vakuum/XG-\i/W6821-1C/W6821-1C_XG_Vakuum_\i_Topography_1}
-            \caption{W6821-1C, \i}
+            \caption{\ifthenelse{\equal{\i}{pre}}{Initialzustand}{\qty{\i}{\degreeCelsius}}}
+            \label{W6821-1C, Vakuum, AFM, \i}
         \end{subfigure}
     }
     \caption{AFM, Vakuum, W6821-1C}
@@ -247,21 +161,71 @@ Unterschiede
 \end{figure}
 \newpage
 
-\subsubsection{Probe W6822-1C}
+\subsubsection{Luft Ausheizvorgang}\label{subsec:luft-ausheizvorgang-1}
 \begin{figure}
     \centering
-    \import{../plots/XRD}{W6822-1C_Vakuum.pgf}
-    \caption{W6822-1C, Vakuum}
-    \label{fig: XRD, W6822-1C, Vakuum}
+    \import{../plots/XRD}{W6821-1D_Luft.pgf}
+    \caption{W6821-1D, Luft, XRD}
+    \label{fig:W6821-1D, Luft, XRD}
 \end{figure}
 \begin{figure}
     \centering
-    ,\foreach \i in {pre,500,600,700,750}{
+    ,\foreach \i in \temperaturesL{
         \begin{subfigure}[t]{0.40\textwidth}
-            \centering
+            \includegraphics[width=\textwidth]
+            {../plots/AFM/XG-Luft/XG-\i/W6821-1D/W6821-1D_XG_Luft_\i_Topography_1}
+            \caption{\ifthenelse{\equal{\i}{pre}}{Initialzustand}{\qty{\i}{\degreeCelsius}}}
+            \label{W6821-1D, Luft, AFM, \i}
+        \end{subfigure}
+    }
+    \caption{AFM, Luft, W6821-1D}
+    \label{fig: AFM, Luft, W6821-1D}
+\end{figure}
+\newpage
+
+% PROBE W6822-1 %
+
+\newpage
+
+\subsection{Probe W6822-1}\label{subsec:probe-W6822-1}
+
+\subsubsection{Sauerstoff Ausheizvorgang}\label{subsec:sauerstoff-ausheizvorgang-1}
+\begin{figure}
+    \centering
+    \import{../plots/XRD}{W6822-1B_Sauerstoff.pgf}
+    \caption{W6822-1B, Sauerstoff, XRD}
+    \label{fig:W6822-1B, Sauerstoff, XRD}
+\end{figure}
+\begin{figure}
+    \centering
+    \foreach \i in \temperaturesS{
+        \begin{subfigure}[t]{0.40\textwidth}
+            \includegraphics[width=\textwidth]
+            {../plots/AFM/XG-Sauerstoff/XG-\i/W6822-1B/W6822-1B_XG_Sauerstoff_\i_Topography_1}
+            \caption{\ifthenelse{\equal{\i}{pre}}{Initialzustand}{\qty{\i}{\degreeCelsius}}}
+            \label{W6822-1B, Sauerstoff, AFM, \i}
+        \end{subfigure}
+    }
+    \caption{W6822-1B, Sauerstoff, AFM}
+    \label{fig:W6822-1B, Sauerstoff, AFM}
+\end{figure}
+\newpage
+
+\subsubsection{Vakuum Ausheizvorgang}\label{subsec:vakuum-ausheizvorgang-1}
+\begin{figure}
+    \centering
+    \import{../plots/XRD}{W6822-1C_Vakuum.pgf}
+    \caption{W6822-1C, Vakuum, XRD}
+    \label{fig:W6822-1C, Vakuum, XRD}
+\end{figure}
+\begin{figure}
+    \centering
+    ,\foreach \i in \temperaturesV{
+        \begin{subfigure}[t]{0.40\textwidth}
             \includegraphics[width=\textwidth]
             {../plots/AFM/XG-Vakuum/XG-\i/W6822-1C/W6822-1C_XG_Vakuum_\i_Topography_1}
-            \caption{W6822-1C, \i}
+            \caption{\ifthenelse{\equal{\i}{pre}}{Initialzustand}{\qty{\i}{\degreeCelsius}}}
+            \label{W6822-1C, Vakuum, AFM, \i}
         \end{subfigure}
     }
     \caption{AFM, Vakuum, W6822-1C}
@@ -269,21 +233,71 @@ Unterschiede
 \end{figure}
 \newpage
 
-\subsubsection{Probe W6823-1C}
+\subsubsection{Luft Ausheizvorgang}\label{subsec:luft-ausheizvorgang-1}
 \begin{figure}
     \centering
-    \import{../plots/XRD}{W6823-1C_Vakuum.pgf}
-    \caption{W6823-1C, Vakuum}
-    \label{fig: XRD, W6823-1C, Vakuum}
+    \import{../plots/XRD}{W6822-1D_Luft.pgf}
+    \caption{W6822-1D, Luft, XRD}
+    \label{fig:W6822-1D, Luft, XRD}
 \end{figure}
 \begin{figure}
     \centering
-    ,\foreach \i in {pre,500,600,700}{
+    ,\foreach \i in \temperaturesL{
         \begin{subfigure}[t]{0.40\textwidth}
-            \centering
+            \includegraphics[width=\textwidth]
+            {../plots/AFM/XG-Luft/XG-\i/W6822-1D/W6822-1D_XG_Luft_\i_Topography_1}
+            \caption{\ifthenelse{\equal{\i}{pre}}{Initialzustand}{\qty{\i}{\degreeCelsius}}}
+            \label{W6822-1D, Luft, AFM, \i}
+        \end{subfigure}
+    }
+    \caption{AFM, Luft, W6822-1D}
+    \label{fig: AFM, Luft, W6822-1D}
+\end{figure}
+\newpage
+
+% PROBE W6823-1 %
+
+\newpage
+
+\subsection{Probe W6823-1}\label{subsec:probe-W6823-1}
+
+\subsubsection{Sauerstoff Ausheizvorgang}\label{subsec:sauerstoff-ausheizvorgang-1}
+\begin{figure}
+    \centering
+    \import{../plots/XRD}{W6823-1B_Sauerstoff.pgf}
+    \caption{W6823-1B, Sauerstoff, XRD}
+    \label{fig:W6823-1B, Sauerstoff, XRD}
+\end{figure}
+\begin{figure}
+    \centering
+    \foreach \i in \temperaturesS{
+        \begin{subfigure}[t]{0.40\textwidth}
+            \includegraphics[width=\textwidth]
+            {../plots/AFM/XG-Sauerstoff/XG-\i/W6823-1B/W6823-1B_XG_Sauerstoff_\i_Topography_1}
+            \caption{\ifthenelse{\equal{\i}{pre}}{Initialzustand}{\qty{\i}{\degreeCelsius}}}
+            \label{W6823-1B, Sauerstoff, AFM, \i}
+        \end{subfigure}
+    }
+    \caption{W6823-1B, Sauerstoff, AFM}
+    \label{fig:W6823-1B, Sauerstoff, AFM}
+\end{figure}
+\newpage
+
+\subsubsection{Vakuum Ausheizvorgang}\label{subsec:vakuum-ausheizvorgang-1}
+\begin{figure}
+    \centering
+    \import{../plots/XRD}{W6823-1C_Vakuum.pgf}
+    \caption{W6823-1C, Vakuum, XRD}
+    \label{fig:W6823-1C, Vakuum, XRD}
+\end{figure}
+\begin{figure}
+    \centering
+    ,\foreach \i in \temperaturesVV{
+        \begin{subfigure}[t]{0.40\textwidth}
             \includegraphics[width=\textwidth]
             {../plots/AFM/XG-Vakuum/XG-\i/W6823-1C/W6823-1C_XG_Vakuum_\i_Topography_1}
-            \caption{W6823-1C, \i}
+            \caption{\ifthenelse{\equal{\i}{pre}}{Initialzustand}{\qty{\i}{\degreeCelsius}}}
+            \label{W6823-1C, Vakuum, AFM, \i}
         \end{subfigure}
     }
     \caption{AFM, Vakuum, W6823-1C}
@@ -291,21 +305,71 @@ Unterschiede
 \end{figure}
 \newpage
 
-\subsubsection{Probe W6824-1C}
+\subsubsection{Luft Ausheizvorgang}\label{subsec:luft-ausheizvorgang-1}
 \begin{figure}
     \centering
-    \import{../plots/XRD}{W6824-1C_Vakuum.pgf}
-    \caption{W6824-1C, Vakuum}
-    \label{fig: XRD, W6824-1C, Vakuum}
+    \import{../plots/XRD}{W6823-1D_Luft.pgf}
+    \caption{W6823-1D, Luft, XRD}
+    \label{fig:W6823-1D, Luft, XRD}
 \end{figure}
 \begin{figure}
     \centering
-    ,\foreach \i in {pre,500,600,700,750}{
+    ,\foreach \i in \temperaturesL{
         \begin{subfigure}[t]{0.40\textwidth}
-            \centering
+            \includegraphics[width=\textwidth]
+            {../plots/AFM/XG-Luft/XG-\i/W6823-1D/W6823-1D_XG_Luft_\i_Topography_1}
+            \caption{\ifthenelse{\equal{\i}{pre}}{Initialzustand}{\qty{\i}{\degreeCelsius}}}
+            \label{W6823-1D, Luft, AFM, \i}
+        \end{subfigure}
+    }
+    \caption{AFM, Luft, W6823-1D}
+    \label{fig: AFM, Luft, W6823-1D}
+\end{figure}
+\newpage
+
+% PROBE W6824-1 %
+
+\newpage
+
+\subsection{Probe W6824-1}\label{subsec:probe-W6824-1}
+
+\subsubsection{Sauerstoff Ausheizvorgang}\label{subsec:sauerstoff-ausheizvorgang-1}
+\begin{figure}
+    \centering
+    \import{../plots/XRD}{W6824-1B_Sauerstoff.pgf}
+    \caption{W6824-1B, Sauerstoff, XRD}
+    \label{fig:W6824-1B, Sauerstoff, XRD}
+\end{figure}
+\begin{figure}
+    \centering
+    \foreach \i in \temperaturesS{
+        \begin{subfigure}[t]{0.40\textwidth}
+            \includegraphics[width=\textwidth]
+            {../plots/AFM/XG-Sauerstoff/XG-\i/W6824-1B/W6824-1B_XG_Sauerstoff_\i_Topography_1}
+            \caption{\ifthenelse{\equal{\i}{pre}}{Initialzustand}{\qty{\i}{\degreeCelsius}}}
+            \label{W6824-1B, Sauerstoff, AFM, \i}
+        \end{subfigure}
+    }
+    \caption{W6824-1B, Sauerstoff, AFM}
+    \label{fig:W6824-1B, Sauerstoff, AFM}
+\end{figure}
+\newpage
+
+\subsubsection{Vakuum Ausheizvorgang}\label{subsec:vakuum-ausheizvorgang-1}
+\begin{figure}
+    \centering
+    \import{../plots/XRD}{W6824-1C_Vakuum.pgf}
+    \caption{W6824-1C, Vakuum, XRD}
+    \label{fig:W6824-1C, Vakuum, XRD}
+\end{figure}
+\begin{figure}
+    \centering
+    ,\foreach \i in \temperaturesV{
+        \begin{subfigure}[t]{0.40\textwidth}
             \includegraphics[width=\textwidth]
             {../plots/AFM/XG-Vakuum/XG-\i/W6824-1C/W6824-1C_XG_Vakuum_\i_Topography_1}
-            \caption{W6824-1C, \i}
+            \caption{\ifthenelse{\equal{\i}{pre}}{Initialzustand}{\qty{\i}{\degreeCelsius}}}
+            \label{W6824-1C, Vakuum, AFM, \i}
         \end{subfigure}
     }
     \caption{AFM, Vakuum, W6824-1C}
@@ -313,7 +377,29 @@ Unterschiede
 \end{figure}
 \newpage
 
-\subsection{Rauigkeit}\label{subsec:rauigkeit}
+\subsubsection{Luft Ausheizvorgang}\label{subsec:luft-ausheizvorgang-1}
+\begin{figure}
+    \centering
+    \import{../plots/XRD}{W6824-1D_Luft.pgf}
+    \caption{W6824-1D, Luft, XRD}
+    \label{fig:W6824-1D, Luft, XRD}
+\end{figure}
+\begin{figure}
+    \centering
+    ,\foreach \i in \temperaturesL{
+        \begin{subfigure}[t]{0.40\textwidth}
+            \includegraphics[width=\textwidth]
+            {../plots/AFM/XG-Luft/XG-\i/W6824-1D/W6824-1D_XG_Luft_\i_Topography_1}
+            \caption{\ifthenelse{\equal{\i}{pre}}{Initialzustand}{\qty{\i}{\degreeCelsius}}}
+            \label{W6824-1D, Luft, AFM, \i}
+        \end{subfigure}
+    }
+    \caption{AFM, Luft, W6824-1D}
+    \label{fig: AFM, Luft, W6824-1D}
+\end{figure}
+\newpage
+
+\subsection{Rauigkeiten}\label{subsec:rauigkeit}
 \begin{figure}
     \centering
     \import{../plots/AFM}{sauerstoff.pgf}
