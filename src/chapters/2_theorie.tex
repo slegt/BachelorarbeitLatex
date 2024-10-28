@@ -42,7 +42,7 @@ Eine weitere wichtige Symmetrie ist die Translationssymmetrie.
 Betrachtet man diejenigen Translationsoperatoren $T(\mathbf{O})$, die das Gitter auf sich selbst abbilden, dann erkennt
 man aufgrund der Periodizität des Gitters den Zusammenhang
 $\mathbf{O} = n_{1}\mathbf{a}_{1}+n_{2}\mathbf{a}_{2}+n_{3}\mathbf{a}_{3}$, wobei
-$\mathbf{a}_{i}\in\mathbb{R}^{3}, n_{i}\in\mathbb{Z}, i=\{1,2,3\}$. \autocite[50]{Hunklinger}
+$\mathbf{a}_{i}\in\mathbb{R}^{3}, n_{i}\in\mathbb{Z}, i\in \{1,2,3\}$. \autocite[50]{Hunklinger}
 Die Vektoren $\mathbf{a}_{i}$
 definieren ein schiefwinkliges Koordinatensystem und werden als primitive Gittervektoren bezeichnet.
 Sie spannen ein dreidimensionales Bravaisgitter auf.
@@ -71,7 +71,7 @@ Diese lassen sich durch Operationen der Punktgruppe erzeugen und kategorisieren 
 in 14 verschiedene Bravaisgitter. \autocite[37]{Grundmann}
 Die für die Arbeit relevanten Gitter werden im Folgenden vorgestellt.
 
-\subsubsection{Ausgewählte Kristallgitter}
+\subsubsection{Ausgewählte Kristallgitter}\label{subsubsec:kristallgitter}
 \begin{figure}
     \centering
     \begin{subfigure}[t]{0.3\textwidth}
@@ -129,7 +129,7 @@ Sauerstoff als erstes Basisatom und ein zufällig ausgewähltes Metall als zweit
 \autocite[5]{Rost2015}
 
 \paragraph{Tenoritstruktur}
-Kupferoxid kristallisiert in einer monoklinen Kristall\-struk\-tur mit achtatomiger Basis.
+Kupferoxid (\ce{CuO}) kristallisiert in einer monoklinen Kristall\-struk\-tur mit achtatomiger Basis.
 Dabei sind vier dieser Basisatome Kupferatome und vier Sauerstoffatome.
 Die Struktur ist in \cref{cuo} dargestellt.\autocite[7]{kupferoxid}
 
@@ -140,6 +140,7 @@ Vektoren
     \mathbf{a}_1 = a\hat{x}, \quad
     \mathbf{a}_2 = a/2 (\hat{x} + \sqrt{3} \hat{y}), \quad
     \mathbf{a}_3 = c \hat{z}
+    \label{eq:hex}
 \end{equation}
 definiert ist.
 Es entsteht ein Gitter, welches an den Ecken eines Sechsecks und den dazugehörigen Flächenmittelpunkten Gitterpunkte
@@ -160,9 +161,11 @@ Für diese Funktion soll also gelten
 $f(\mathbf{x})=f(\mathbf{x}+\mathbf{O})$, falls $\mathbf{O}=\sum_{i=1}^{3} \alpha_{i}\mathbf{a}_{i}$.
 Mithilfe einer Reihenentwicklung ergibt sich die folgende, allgemeine Form:
 \begin{align}
-    f(\mathbf{x})&=\sum_{\mathbf{R}}a_{\mathbf{R}}\cdot \exp(\mathrm{i}\mathbf{R}\cdot\mathbf{x}),\\
-    f(\mathbf{x}+\mathbf{O})&=\sum_{\mathbf{R}}a_{\mathbf{R}}\cdot \exp(\mathrm{i}\mathbf{R}\cdot \mathbf{x})\cdot
-    \underbrace{ \exp(\mathrm{i}\mathbf{R}\cdot \mathbf{O}) }_{ \stackrel{!}{=}1 }  \stackrel{!}{=} f(\mathbf{x}).
+    \begin{split}
+        f(\mathbf{x})&=\sum_{\mathbf{R}}a_{\mathbf{R}}\cdot \exp(\mathrm{i}\mathbf{R}\cdot\mathbf{x}),\\
+        f(\mathbf{x}+\mathbf{O})&=\sum_{\mathbf{R}}a_{\mathbf{R}}\cdot \exp(\mathrm{i}\mathbf{R}\cdot \mathbf{x})\cdot
+        \underbrace{ \exp(\mathrm{i}\mathbf{R}\cdot \mathbf{O}) }_{ \stackrel{!}{=}1 }  \stackrel{!}{=} f(\mathbf{x}).
+    \end{split}
 \end{align}
 Erkennbar ist die notwendige Bedingung $\exp(\mathrm{i}\mathbf{R}\cdot \mathbf{O})=1$.
 Dies ist äquivalent zur Aussage $\mathbf{R}\cdot \mathbf{O}=2\pi z$ mit $z \in \mathbb{Z}$.
@@ -175,8 +178,8 @@ Analog zum Ortsraum lassen sich auch hier primitiven Vektoren mit folgender Vors
     \mathbf{b}_{2} = 2\pi \cdot \frac{\mathbf{a}_{3} \times \mathbf{a}_{1}}{V_{\mathrm{EZ}}} \quad
     \mathbf{b}_{3} = 2\pi \cdot \frac{\mathbf{a}_{1} \times \mathbf{a}_{2}}{V_{\mathrm{EZ}}}.
 \end{align*}
-Jeder Punkt im reziproken Gitter kann durch $\sum_{i=1}^{3} \beta_{i}\mathbf{b}_{i}$ mit $\beta_i \in \mathbb{Z}, i=\{1,2,3\}$
-beschrieben werden.
+Jeder Punkt im reziproken Gitter kann durch $\sum_{i=1}^{3} \beta_{i}\mathbf{b}_{i}$ mit $\beta_i \in \mathbb{Z},
+i\in\{1,2,3\}$ beschrieben werden.
 Es gilt die Relation $\mathbf{b}_{i}\cdot \mathbf{a}_{j}=2 \pi \delta_{ij}$.
 Hierbei ist $\delta_{ij}$ das Kronecker-Delta.
 \autocite[109]{Ashcroft}
@@ -205,7 +208,7 @@ Dieser lässt sich darstellen durch $ \mathbf{r} = h \mathbf{b_1} + k \mathbf{b_
 Das Tupel $(h\, k\,l)$ sind die Millerschen Indizes, welche definitionsgemäß aus ganzen Zahlen bestehen müssen.
 
 
-Für die Millerschen Indizes existiert eine geometrische Interpretation, die es erlaubt, die Indizes im Ortsraum zu
+Es existiert eine geometrische Interpretation, die es erlaubt, die Indizes im Ortsraum zu
 visualisieren.
 Für jede Gitterebene findet man ein entsprechendes $A$, sodass die Ebenengleichung $\mathbf{r} \cdot \mathbf{x} = A$
 erfüllt ist.
@@ -257,7 +260,7 @@ Im Folgenden wird der Laue-Formalismus erklärt und die Äquivalenz zur Bragg-Be
     \caption{Skizze zur Erklärung der Laue-Bedingung. \imcitetwo[123]{Ashcroft}} \label{fig:laue}
 \end{figure}
 Zur Herleitung der Beugungsbedingung nach Laue betrachtet man die Bestrahlung zweier Gitterpunkte mit Photonen unter
-der Annahme der elastischen Streuung.
+Annahme von elastischen Streuung.
 Der Abstand der Gitterpunkte ist durch den Vektor $\mathbf{O}$ gegeben.
 Dabei ist die einfallende Strahlung durch den Wellenzahlvektor  $\mathbf{k}$ charakterisiert.
 Es gilt der Zusammenhang $\lvert \mathbf{k} \rvert = 2 \pi / \lambda$ und die Dispersionsrelation
@@ -268,23 +271,23 @@ Somit sind die Frequenzen ($\omega$ und $\omega'$) beider Wellen gleich.
 Für den Wegunterschied $\Delta s$ findet man anhand \cref{fig:laue} den Zusammenhang:
 \begin{equation}
     \Delta s = \Delta s_{1} + \Delta s_{2} = \underbrace{ \mathbf{O} \cdot \frac{\mathbf{k}}{\lvert \mathbf{k} \rvert }
-    -\mathbf{O}\cdot \frac{\mathbf{k}'}{\lvert \mathbf{k}' \rvert}  }_{ \text{Projektion von } \mathbf{O} \text{ auf }
-    \mathbf{k} \text{ bzw. }\mathbf{k'} } =  \frac{\lambda}{2\pi} \mathbf{O}\cdot\Delta \mathbf{k}.
+    -\mathbf{O}\cdot \frac{\mathbf{k}'}{\lvert \mathbf{k}' \rvert}  }_{\substack{\text{Projektion von } \\ \mathbf{O} \text{ auf }
+    \mathbf{k} \text{ bzw. }\mathbf{k'} }} =  \frac{\lambda}{2\pi} \mathbf{O}\cdot\Delta \mathbf{k}.
     \label{eq:laue}
 \end{equation}
-Hierbei ist $\Delta \mathbf{k} = \mathbf{k}-\mathbf{k}'$.
-Für konstruktive Interferenz muss die Bedingung $\Delta s = n \lambda, n \in \mathbb{N}$ erfüllt sein, sodass durch Gleichsetzen
-die Beziehung $\mathbf{O}\cdot\Delta \mathbf{k} =2\pi n$ folgt.
+Hierbei ist $\Delta \mathbf{k} = \mathbf{k}-\mathbf{k}'$ der Differenzvektor der Wellenzahlvektoren.
+Für konstruktive Interferenz muss die Bedingung $\Delta s = n \lambda, n \in \mathbb{N}$ erfüllt sein, sodass durch
+Gleichsetzen die Beziehung $\mathbf{O}\cdot\Delta \mathbf{k} =2\pi n$ folgt.
 Aus der geometrischen Anordnung der Gitterpunkte ergibt sich ein Wegunterschied, der äquivalent
 zu einer Phasendifferenz von $\Delta\varphi=(2\pi / \lambda) \cdot \Delta s = \Delta \mathbf{k}\cdot \mathbf{O}$ ist.
 \autocite[122-123]{Ashcroft}
 
-Unter der Annahme, dass beide Gitterpunkte Kugelwellen mit Amplituden $u_{0}(\mathbf{r}, t)$ und $u_{1}(\mathbf{r}, t)$
+Unter der Annahme, dass beide Gitterpunkte Kugelwellen mit Amplituden $u_{0}(\mathbf{r})$ und $u_{1}(\mathbf{r})$
 ausstrahlen, ergibt sich für die Überlagerung beider Wellen die folgende Form:
 \begin{align}
     u(\mathbf{r},t)=u_{0}(\mathbf{r})\cdot \exp(\mathrm{i}\omega t+\mathrm{i}\lvert \mathbf{k}
     \rvert r) + u_{1}(\mathbf{r}) \cdot \exp(\mathrm{i}\omega t + \mathrm{i}\lvert \mathbf{k}
-    \rvert r+\mathrm{i}\Delta\varphi)
+    \rvert r+\mathrm{i}\Delta\varphi).
 \end{align}
 Die Überlagerung der beiden Wellen führt zu einer Interferenz, die durch die Phasendifferenz $\Delta\varphi$ bestimmt
 wird.
@@ -296,38 +299,42 @@ Diese sind gegeben durch $\mathbf{O}_{pqr}=p\mathbf{a}_{1}+q\mathbf{a}_{2}+r\mat
 Für die Superposition aller Wellen mit Amplitude $u_{pqr}(\mathbf{r})$ und Phasendifferenz $\Delta\varphi_{pqr}$
 ergibt sich:
 \begin{align}
-    u(\mathbf{r}, t)
-    &=\sum_{pqr} u_{pqr}(\mathbf{r})\cdot \exp(\mathrm{i}\omega t+\mathrm{i}
-    \lvert \mathbf{k} \rvert r+\mathrm{i}\underbrace{ \Delta\varphi_{pqr} }_{ = \Delta
-    \mathbf{k}\cdot \mathbf{O}_{pqr}})) \\
-    &=\exp(\mathrm{i}\omega t+\mathrm{i}\lvert \mathbf{k} \rvert r)\cdot
-    \underbrace{ \sum_{pqr}u_{pqr}(\mathbf{r})\cdot \exp(\mathrm{i}\Delta \mathbf{k}
-    \cdot \mathbf{O}_{pqr}) }_{ \coloneqq A }.
+    \begin{split}
+        u(\mathbf{r}, t)
+        &=\sum_{pqr} u_{pqr}(\mathbf{r})\cdot \exp(\mathrm{i}\omega t+\mathrm{i}
+        \lvert \mathbf{k} \rvert r+\mathrm{i}\underbrace{ \Delta\varphi_{pqr} }_{ = \Delta
+        \mathbf{k}\cdot \mathbf{O}_{pqr}})) \\
+        &=\exp(\mathrm{i}\omega t+\mathrm{i}\lvert \mathbf{k} \rvert r)\cdot
+        \underbrace{ \sum_{pqr}u_{pqr}(\mathbf{r})\cdot \exp(\mathrm{i}\Delta \mathbf{k}
+        \cdot \mathbf{O}_{pqr}) }_{ \coloneqq A }.
+    \end{split}
     \label{eq:amplitude}
 \end{align}
 Die Größe $A$ wird als Streuamplitude bezeichnet.
 Die tatsächliche Streuung erfolgt an der Elektronenverteilung.
 Das führt zu zusätzlichen Effekten wie dem Atomformfaktor und dem Strukturfaktor,
-welche für weitere Betrachtungen jedoch vernachlässigt werden können.\autocite[66-69]{Spiess}
-\begin{equation*}
+welche für weitere Betrachtungen jedoch vernachlässigt werden können:\autocite[66-69]{Spiess}
+\begin{equation}
     A \propto \int n(\mathbf{r}) \exp(\mathrm{i} \Delta \mathbf{k}\cdot
-    \mathbf{r}) \, \mathrm{d}V(\mathbf{r})
-\end{equation*}
+    \mathbf{r}) \, \mathrm{d}V(\mathbf{r}).
+    \label{eq:atomformfaktor}
+\end{equation}
 
 \paragraph{Beugungsbedingung}
 Die Bedingung für konstruktive Interferenz ist äquivalent zur Maximierung der Streuamplitude.
 Damit diese maximal wird, muss die Interferenzbedingung $\mathbf{O}_{pqr}\cdot\Delta \mathbf{k} =2\pi z$
 für alle $p$, $q$, $r$ gelten.
 Zerlegt man $\mathbf{O}_{pqr}$ in seine Komponenten, erhält man folgende Gleichungen:
-\begin{align}
-    \mathbf{a}_{1}\cdot\Delta \mathbf{k} &= 2\pi h \\
-    \mathbf{a}_{2}\cdot\Delta \mathbf{k} &= 2\pi k \\
-    \mathbf{a}_{3}\cdot\Delta \mathbf{k} &= 2\pi l \\
-\end{align}
+\begin{equation}
+    \mathbf{a}_{1}\cdot\Delta \mathbf{k} = 2\pi h, \quad
+    \mathbf{a}_{2}\cdot\Delta \mathbf{k} = 2\pi k, \quad
+    \mathbf{a}_{3}\cdot\Delta \mathbf{k} = 2\pi l
+    \label{eq:lauebedingung}
+\end{equation}
 Dies sind die Laue Gleichungen für Beugungsmaxima.
 Sie sind erfüllt, falls $\Delta \mathbf{k}$ ein reziproker Gittervektor ist.
-Dies stellt die Beugungsbedingung nach Laue dar, die besagt, dass konstruktive Interferenz genau dann auftritt,
-wenn $\Delta \mathbf{r}$ einem Vektor des reziproken Gitters entspricht.\autocite[125]{Ashcroft}
+Es stellt die Beugungsbedingung nach Laue dar, die besagt, dass konstruktive Interferenz genau dann auftritt,
+wenn $\Delta \mathbf{k}$ einem Vektor des reziproken Gitters entspricht.\autocite[125]{Ashcroft}
 
 Für die Strukturamplitude ergibt sich anschließend:
 \begin{equation}
@@ -337,7 +344,6 @@ Für die Strukturamplitude ergibt sich anschließend:
     \label{eq:strukturamplitude}
 \end{equation}
 
-
 \paragraph{Bragg-Bedingung}
 Die Bragg Bedingung kann sowohl mithilfe der Laue-Bedingung als auch geometrisch hergeleitet werden.
 Um die Äquivalenz zur Laue-Bedingung zu zeigen, wird die Bragg-Bedingung im Folgenden aus der Laue-Bedingung
@@ -345,23 +351,191 @@ hergeleitet.
 Betrachtet man die einen Differenzvektor $\Delta \mathbf{k}=\mathbf{k}'-\mathbf{k}$, wobei $\mathbf{k}$ und
 $\mathbf{k'}$ den Winkel $\alpha$ einschließen,so ist sein Betrag gegeben durch:
 \begin{align}
-    \lvert \Delta \mathbf{k} \rvert ^{2}&=\langle \Delta \mathbf{k} ,\Delta \mathbf{k}\rangle =\langle \mathbf{k}-\mathbf{k}', \mathbf{k}-\mathbf{k}' \rangle = k^{2}+k'^{2}-2kk'\cos(\alpha)  \\
-    &=2{k}^{2}(1-\cos(\alpha))=4k^{2}\sin ^{2}\left( \frac{\alpha}{2} \right)
+    \begin{split}
+        \lvert \Delta \mathbf{k} \rvert ^{2}&=\langle \Delta \mathbf{k} ,\Delta \mathbf{k}\rangle =\langle
+        \mathbf{k}-\mathbf{k}', \mathbf{k}-\mathbf{k}' \rangle = k^{2}+k'^{2}-2kk'\cos(\alpha)  \\
+        &=2{k}^{2}(1-\cos(\alpha))=4k^{2}\sin ^{2}\left( \frac{\alpha}{2} \right)
+    \end{split}
 \end{align}
-Hierbei ist $\nu = \alpha / 2$ der Bragg-Winkel und $\langle \cdot , \cdot \rangle$ das Skalarprodukt.
+Hierbei ist $\nu = \alpha / 2$ der Bragg-Winkel und $\langle \cdot , \cdot \rangle$ das Standardskalarprodukt.
 Da $\Delta \mathbf{k}$ ein Vektor aus dem reziproken Raum ist und senkrecht auf der Gitterebene
 steht, an welcher er gestreut wird, existiert ein kürzester Vektor $\mathbf{g}$, sodass
 $n\cdot \mathbf{g} =\Delta \mathbf{k}$.
-Aus \cref{subsection:indizierung} ist bekannt, dass $\mathbf{g}$ den Abstand der Netzebenen definiert
+Aus \cref{subsubsec:indizierung} ist bekannt, dass $\mathbf{g}$ den Abstand der Netzebenen definiert
 mit $d = 2 \pi \cdot\lvert \mathbf{g} \rvert ^{-1}$.
 Daraus folgt $\lvert \Delta \mathbf{k} \rvert=n \lvert \mathbf{g} \rvert = 2\pi n/d$.
 Kombiniert man beide Gleichungen miteinander, ergibt sich die Bragg-Bedingung:\autocite[125-126]{Ashcroft}
 \begin{align}
-    2k\sin(\nu)&=\frac{2\pi n}{d} \\
-    2d\sin(\nu)&=n \lambda
+    \begin{split}
+        2k\sin(\nu)&=\frac{2\pi n}{d} \\
+        2d\sin(\nu)&=n \lambda
+    \end{split}
 \end{align}
 
 \subsection{Entropiestabilisierte Metalloxide}\label{subsec:hochentropische-metalloxide}
-Entropiestabilisierte Metalloxide bilden eine neuere Klasse von Materialien, die durch die Kombination unterschiedlicher
-zufällig ausgewählter Metallkationen in einem Sauerstoff Anionengitter entstehen.
-Wie der Name bereits andeutet, ist die Entropie ein entscheidender Faktor für die Stabilität dieser Materialien.
+Die Suche nach neuen fortschrittlichen Materialien, welche die Bedürfnisse moderner Technologien erfüllen, ist ein
+wichtiger Bestandteil der Materialwissenschaften.
+Ein vielversprechender alternativer Ansatz, der sich in den letzten Jahren etablierte, ist die Herstellung und
+Untersuchung hochentropischer Materialien.
+Bereits Cantor et al.\ untersuchte 2004 die Eigenschaften von Mehrkomponentenlegierungen, bestehend aus 20,
+beziehungsweise 16 equimolar verteilten Elementen.
+Beide Systeme zeigten mehrere Phasen, aber auch eine gemeinsame fcc Struktur.
+Mithilfe dieser Beobachtung konnte Cantor das Fünf-Komponenten-System \ce{CrMnFeCoNi} entwickeln, welches in einphasiger
+fcc-Struktur kristallisiert und schaffte damit den Grundstein für
+die Entwicklung mehrkomponentiger Legierungen.\autocite{cantor}
+
+Yeh et al.\ konnten das Phänomen mithilfe der Mischungsentropie erklären und führten den Begriff der
+hochentropischen Legierungen (HEAs, engl. \textit{high entropy alloys}) ein.
+Dabei klassifizierten sie Legierungen als HEAs, falls diese mindestens fünf oder mehr Komponenten besitzen
+und das molare Verhältnis jedes Konstituenten zwischen \qty{5}{\percent} und \qty{35}{\percent} liegt.\autocite{yeh}
+
+Rost et al.\ erweiterten 2015 das Konzept der HEAs auf Metalloxide und führten den Begriff der hochentropischen
+Metalloxide (HEOs, engl. \textit{high entropy oxides}) ein.
+Sie synthetisierte das Material \heo\ und untersuchten dessen Struktur und Eigenschaften.
+Dabei fand sie heraus, dass \heo\ in einer einzigen Phase kristallisiert und
+schuf damit die Grundlage für ein neues Forschungsfeld in der Materialwissenschaft.\autocite{Rost2015}
+
+\subsubsection{Struktur von \heo}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.3\textwidth]{../assets/theorie/heo}
+    \caption{Struktur von \heo. Rot: Sauerstoff, Bunt: Metallkationen.}
+    \label{fig:heo}
+\end{figure}
+In Analogie zu den HEAs ist \heo\ ein Mehrkomponentenoxid, welches in einer Natriumchloridstruktur kristallisiert.
+Die Kationenstelle ist durch ein zufälliges Metallkationen \ce{Mg^{2+}}, \ce{Co^{2+}}, \ce{Ni^{2+}},
+\ce{Cu^{2+}} oder \ce{Zn^{2+}} besetzt.
+Im Kontrast zu den HEAs existiert ein geordnetes Anionengitter, welches durch Sauerstoffionen besetzt ist.
+Die Struktur von \heo\ ist in \cref{fig:heo} dargestellt.\autocite[5]{Rost2015}
+Es ist bemerkenswert, dass diese Phase stabil synthetisiert werden konnte, insbesondere angesichts der Änderungen in der
+Kristallstruktur von \ce{ZnO} und \ce{CuO} sowie der damit verbundenen Energie.
+Um dieses Phänomen zu verstehen, muss die Rolle der Gibbs-Energie und der darin auftretenden Entropie
+erläutert werden.
+
+\subsubsection{Gibbs-Energie und Phasenstabilität}
+Aus der Thermodynamik ist bekannt, dass ein Prozess genau dann freiwillig abläuft, falls die Gesamtentropie des
+Systems und seiner Umgebung zunimmt.
+Beschränkt man sich auf Prozesse, die bei konstantem Druck und Temperatur ablaufen, dann ist diese Aussage äquivalent
+zur Minimierung der Gibbs-Energie $G$.
+In der einfachsten Betrachtung ist diese folgendermaßen definiert:
+\begin{align}
+    \begin{split}
+        G(T,p, \{ n_{i} \})&=H(T,p,\{ n_{i} \})-TS(T,p,\{ n_{i} \}), \\
+        \Delta G(T, p, \{ n_{i} \})&=\Delta H(T,p, \{ n_{i} \})-T \Delta S(T,p, \{ n_{i} \})
+    \end{split}
+    \label{eq:gibbs}
+\end{align}
+Hierbei ist $H$ die Enthalpie, $S$ die Entropie, $T$ die Temperatur, $p$ der Druck und $n_{i}$ die Stoffmengen jener
+Komponenten, die am Prozess beteiligt sind.
+Das $\Delta$ symbolisiert die Änderung der jeweiligen Größe.
+Die Gibbs-Energie ist eine Zustandsgröße und hängt nur von den Größen $T$, $p$ und $\{ n_{i} \}$ ab.
+Die Änderung der Gibbs Energie $\Delta G$ ist ein Maß für die Spontanität eines Prozesses.
+Ist $\Delta G < 0$, so läuft der Prozess freiwillig in einen energetisch günstigeren Zustand ab.
+Aus dieser Forderung ist ersichtlich, dass der stabilste Zustand die Gibbs-Energie minimiert.\autocite[7]{rost_phd}
+
+
+Die Gibbs-Energie ist maßgeblich von Enthalpie, Temperatur und Entropie abhängig.
+Für vergleichsweise niedrige Temperaturen ist die Enthalpie der dominierende Faktor.
+Nicht selten sind Enthalpie-minimierte Zustände diejenigen, die auch die Gibbs-Energie minimieren.
+Für hochentropische Materialien ist das in der Regel nicht der Fall.
+Diese zeichnen sich dadurch aus, dass sie eine hohe Entropie besitzen, sodass das System
+bei entsprechend hohen Temperaturen in einen anderen, als den Enthalpie-minimalen Zustand übergeht.
+Dieser Zustand ist dann durch die Entropie stabilisiert.\autocite[2]{Rost2015}
+
+\subsubsection{Mischungsentropie}
+Nun stellt sich die Frage nach der genauen Form der Entropie, die die Phasenstabilität von \heo\ beeinflusst.
+Für diese Beschreibung zieht man das Modell der idealen Lösung heran.
+Dies ist eine Mischung aus zwei oder mehreren Komponenten, deren Entstehung nicht mit einer Änderung der
+Wärme oder Volumenänderung verbunden ist.
+Dabei wird die Entropie der Mischung mithilfe der Mischungsentropie von Idealgasen beschrieben.
+Für diese findet man die folgende Form:
+\begin{equation}
+    \Delta S_{\text{Misch}} = -\mathrm{R} \sum_{i=1}^N x_{i} \ln(x_{i}).
+    \label{eq:Mischungsentropie}
+\end{equation}
+Hierbei ist $\mathrm{R}$ die allgemeine Gaskonstante, $x_{i}$ die Stoffmengenanteile der Komponenten und $N$ die Anzahl
+der Komponenten.
+Das Maximum der Entropie wird erreicht, wenn alle Komponenten gleichmäßig verteilt sind.
+Dann gilt $x_{i}=1/N$ und $\max(S_{\text{Misch}}) = \mathrm{R} \ln(N)$.\autocite[7]{rost_phd}
+
+Eine weitere Möglichkeit zur Visualisierung der Mischungsentropie ergibt sich, indem man die Konzentration eines
+Konstituenten variiert und alle anderen konstant hält.
+Mit der Parametrisierung $x_{1} = x$ und $x_{j} = (1-x) / (N-1)$ für $j=2, \dots, N$ ergibt sich für die
+Mischungsentropie:
+
+\begin{equation}
+    \Delta S_{\text{Misch}} = -R \left( x \ln(x) + (1-x) \ln \left( \frac{1-x}{N-1} \right) \right).
+    \label{eq:Mischungsentropie2}
+\end{equation}
+
+\begin{figure}
+    \centering
+    \import{../plots/theory}{mixing_entropy.pgf}
+    \caption{Darstellung der Mischungsentropie in Abhängigkeit der Konzentration bei $N$ Komponenten und Variation einer
+    Komponente unter equimolarer Verteilung der übrigen Komponenten.
+    \imcitetwo[3]{Rost2015}}
+    \label{fig:Mischungsentropie}
+\end{figure}
+
+Diese ist in \cref{fig:Mischungsentropie} dargestellt.
+Hieraus ist erneut erkennbar, dass die Mischungsentropie maximal wird, wenn alle Komponenten gleichmäßig verteilt sind.
+\autocite[3]{Rost2015}
+
+Im Bezug auf die Gibbs-Energie impliziert dies, das die für den Phasenübergang nötige Temperatur umso niedriger sein
+kann, je höher die Mischungsentropie ist.
+Für eine äquimolare Verteilung ist die geringste Temperatur notwendig, um den Phasenübergang zu erreichen.
+
+\subsubsection{Ideale und reale Lösungen}
+Mithilfe der idealen Lösung konnte die Mischungsentropie von \heo\ beschrieben werden.
+Problem ist, dass in diesem Modell die Enthalpie der Mischung nicht verändert wird.
+Für die ideale Lösung gilt $\Delta H_\mathrm{Misch} = 0$.
+In der Realität ändern sich jedoch Bindungsenergien der Atome.
+Wie in \cref{subsubsec:kristallgitter} erläutert, kristallisiert $\ce{CuO}$ in der Tenoritstruktur, $\ce{ZnO}$ in der
+Wurtzitstruktur wohingegen \heo\ in der Natriumchloridstruktur kristallisiert.
+Auch die übrigen Konstituenden ändern ihre Gitterkonstanten leicht.
+Die Änderungen solcher Bindungsenergien ändern die Enthalpie der Mischung und damit auch die Gibbs-Energie.
+Um eine Erweiterung zu finden, die auch die Enthalpie der Mischung berücksichtigt, betrachtet man ein
+Zweikomponentensystem, welches gemischt wird:
+\begin{equation}
+    \mathrm{A} + \mathrm{B} \longrightarrow \mathrm{AB}.
+    \label{eq:reaktion}
+\end{equation}
+Die Mischungsentropie ist nach vorherigem Abschnitt gegeben durch:
+\begin{equation}
+    \Delta S_{\mathrm{mix}}=-R[x_{\mathrm{A}}\ln(x_{\mathrm{A}})+x_{\mathrm{B}}\ln(x_{\mathrm{B}})].
+    \label{eq:Mischungsentropie3}
+\end{equation}
+Im einfachsten Modell einer realen Lösung besitzt die Mischungsenthalpie die einfache Form:
+\begin{equation}
+    \Delta H_{\mathrm{Misch}}= a x_{\mathrm{A}} x_{\mathrm{B}}.
+    \label{eq:Mischungsenthalpie}
+\end{equation}
+Hierbei ist $a$ eine Konstante, die die Bindungsenergie der Mischung beschreibt.
+Unter dieser Annahme wird die Enthalpie eine Kompositionsfunktion.
+Je nach Vorzeichen von $a$ können entweder gleichatomige Bindungen ($a > 0$) oder ungleichatomige Bindungen
+($a < 0$) enthalpisch bevorzugt sein.
+In den meisten Fällen ist $a > 0$, da energetisch ungünstigere Bindungen durch die Mischung entstehen.
+Der Sonderfall $a=0$ entspricht der idealen Lösung.
+Somit kann eine Erweiterung der Änderung der Gibbs-Energie gefunden werden:
+
+\begin{equation}
+    \Delta G_{\mathrm{Misch}}=\Delta H_{\mathrm{Misch}}-T\Delta S_{\mathrm{Misch}}=a x_{\mathrm{A}} x_{\mathrm{B}}
+    +RT[x_{\mathrm{A}}\ln(x_{\mathrm{A}})+x_{\mathrm{B}}\ln(x_{\mathrm{B}})]
+    \label{eq:mischgibbs}
+\end{equation}
+
+\begin{figure}
+    \centering
+    \import{../plots/theory}{mixing_properties.pgf}
+    \caption{Darstellung von Mischungsenthalpie, Mischungsentropie und Gibbs Energie der Mischung.
+    \imcitetwo[10]{rost_phd}}
+    \label{fig:mixing_properties}
+\end{figure}
+
+Diese Änderung, zusammen mit Enthalpie- und Entropieänderung, ist in \cref{fig:mixing_properties} dargestellt.
+Es ist zu erkennen, dass für niedrige Temperaturen die Gibbs-Energie durch die Enthalpie dominiert wird.
+Das Minima bei $x=0$ beziehungsweise $x=1$ weißt darauf hin, dass die Gibbs-Energie minimal ist, wenn die
+Komponenten rein sind.
+Erst mit steigender Temperatur beginnt die Mischungsentropie zu dominieren.
+Dies sorgt für eine stabile Mischphase bei hohen Temperaturen, sodass das Minimum der Gibbs-Energie bei $x=0.5$ liegt.
+\autocite[7-9]{rost_phd}
