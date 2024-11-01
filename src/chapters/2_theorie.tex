@@ -226,7 +226,7 @@ kleinstmöglich wählt, sodass $h$, $k$ und $l$ ganzzahlig sind. \autocite[115]{
 Nicht nur Gitterebenen, sondern auch Gitterrichtungen lassen sich in ähnlicher Weise indizieren.
 Das Tupel $[h\,k\,l]$ beschreibt diejenige Richtung, die durch den Vektor $\mathbf{O} = h\mathbf{a}_{1}+k\mathbf{a}_{2}+
 l\mathbf{a}_{3}$ vorgegeben wird.
-Zu beachten ist, dass Richtungsvektoren in unserem Kontext im Ortsraum leben,
+Zu beachten ist, dass Richtungsvektoren in diesem Kontext im Ortsraum leben,
 währenddessen Ebenennormalenvektoren durch Vektoren im reziproken Raum dargestellt werden.
 Um dies zu verdeutlichen werden eckige anstelle der runden Klammern verwendet.
 Es existiert weiterhin eine besondere Notation zur Kennzeichnung äquivalenter Gitterebenenscharen und Raumrichtungen.
@@ -348,13 +348,14 @@ Für die Strukturamplitude ergibt sich anschließend:
 Die Bragg Bedingung kann sowohl mithilfe der Laue-Bedingung als auch geometrisch hergeleitet werden.
 Um die Äquivalenz zur Laue-Bedingung zu zeigen, wird die Bragg-Bedingung im Folgenden aus der Laue-Bedingung
 hergeleitet.
-Betrachtet man die einen Differenzvektor $\Delta \mathbf{k}=\mathbf{k}'-\mathbf{k}$, wobei $\mathbf{k}$ und
+Betrachtet man einen Differenzvektor $\Delta \mathbf{k}=\mathbf{k}'-\mathbf{k}$, wobei $\mathbf{k}$ und
 $\mathbf{k'}$ den Winkel $\alpha$ einschließen,so ist sein Betrag gegeben durch:
 \begin{align}
     \begin{split}
         \lvert \Delta \mathbf{k} \rvert ^{2}&=\langle \Delta \mathbf{k} ,\Delta \mathbf{k}\rangle =\langle
         \mathbf{k}-\mathbf{k}', \mathbf{k}-\mathbf{k}' \rangle = k^{2}+k'^{2}-2kk'\cos(\alpha)  \\
         &=2{k}^{2}(1-\cos(\alpha))=4k^{2}\sin ^{2}\left( \frac{\alpha}{2} \right)
+        =4k^{2}\sin ^{2}( \nu).
     \end{split}
 \end{align}
 Hierbei ist $\nu = \alpha / 2$ der Bragg-Winkel und $\langle \cdot , \cdot \rangle$ das Standardskalarprodukt.
@@ -367,48 +368,68 @@ Daraus folgt $\lvert \Delta \mathbf{k} \rvert=n \lvert \mathbf{g} \rvert = 2\pi 
 Kombiniert man beide Gleichungen miteinander, ergibt sich die Bragg-Bedingung:\autocite[125-126]{Ashcroft}
 \begin{align}
     \begin{split}
-        2k\sin(\nu)&=\frac{2\pi n}{d} \\
-        2d\sin(\nu)&=n \lambda
+        2k\sin(\nu)&=\frac{2\pi n}{d}, \\
+        2d\sin(\nu)&=n \lambda.
     \end{split}
 \end{align}
 
 \subsection{Entropiestabilisierte Metalloxide}\label{subsec:hochentropische-metalloxide}
-Die Suche nach neuen fortschrittlichen Materialien, welche die Bedürfnisse moderner Technologien erfüllen, ist ein
+Die Suche nach neuen und funktionalen Materialien, welche die Bedürfnisse moderner Technologien erfüllen, ist ein
 wichtiger Bestandteil der Materialwissenschaften.
 Ein vielversprechender alternativer Ansatz, der sich in den letzten Jahren etablierte, ist die Herstellung und
 Untersuchung hochentropischer Materialien.
-Bereits Cantor et al.\ untersuchte 2004 die Eigenschaften von Mehrkomponentenlegierungen, bestehend aus 20,
+Cantor et al.\ untersuchten 2004 die Eigenschaften von Mehrkomponentenlegierungen, bestehend aus 20,
 beziehungsweise 16 equimolar verteilten Elementen.
 Beide Systeme zeigten mehrere Phasen, aber auch eine gemeinsame fcc Struktur.
-Mithilfe dieser Beobachtung konnte Cantor das Fünf-Komponenten-System \ce{CrMnFeCoNi} entwickeln, welches in einphasiger
-fcc-Struktur kristallisiert und schaffte damit den Grundstein für
-die Entwicklung mehrkomponentiger Legierungen.\autocite{cantor}
+Mithilfe dieser Beobachtung konnte Cantor das equimolare Fünf-Komponenten-System \ce{CrMnFeCoNi} entwickeln, welches in
+einphasiger fcc-Struktur kristallisiert.\autocite{cantor}
+Die Fähigkeit, ein stabiles, einphasiges fcc Kristallgitter zu erreichen, war bemerkenswert.
+In der Regel neigen Legierungen mit vielen Komponenten dazu, verschiedene Phasen zu bilden, was die
+Vorhersagbarkeit der Eigenschaften erschwert.
+Cantors Entdeckung zeigte, dass eine geeignete Kombination von Elementen die Bildung einer stabilen Phase ermöglicht
+und schuf damit die Grundlage für die Entwicklung mehrkomponentiger Legierungen.
 
 Yeh et al.\ konnten das Phänomen mithilfe der Mischungsentropie erklären und führten den Begriff der
 hochentropischen Legierungen (HEAs, engl. \textit{high entropy alloys}) ein.
 Dabei klassifizierten sie Legierungen als HEAs, falls diese mindestens fünf oder mehr Komponenten besitzen
 und das molare Verhältnis jedes Konstituenten zwischen \qty{5}{\percent} und \qty{35}{\percent} liegt.\autocite{yeh}
+Das war ein Wendepunkt in der Materialwissenschaft, da es die Möglichkeit eröffnete, neue Materialien mithilfe
+der Entropie zu stabilisieren, die aus enthalpischer Sicht instabil wären.
 
-Rost et al.\ erweiterten 2015 das Konzept der HEAs auf Metalloxide und führten den Begriff der hochentropischen
+
+Rost et al.\ erweiterten 2015 das Konzept der HEAs auf Metalloxide und führten den Begriff der entropiestabilisierten
 Metalloxide (HEOs, engl. \textit{high entropy oxides}) ein.
-Sie synthetisierte das Material \heo\ und untersuchten dessen Struktur und Eigenschaften.
-Dabei fand sie heraus, dass \heo\ in einer einzigen Phase kristallisiert und
-schuf damit die Grundlage für ein neues Forschungsfeld in der Materialwissenschaft.\autocite{Rost2015}
+Sie synthetisierten das Material \heo\ und untersuchten dessen Struktur und Eigenschaften.
+Dabei haben sie mehrere experimentelle Hinweise dafür geliefert, dass eine reine Mischphase entsteht und diese tatsächlich
+durch die Entropie stabilisiert wird.
+Sie schufen damit die Grundlage für ein neues Forschungsfeld in der Materialwissenschaft.\autocite{Rost2015}
+Durch diese bahnbrechende Entdeckung wurden nicht nur verschiedenste entropiestabilisierte Metalloxide synthetisiert,
+sondern auch Fluoride, Carbide, etc.
+Eine riesiege Materialbibliothek wurde erschlossen, die eine Vielzahl von Anwendungen in der Materialwissenschaft
+ermöglicht.
 
-\subsubsection{Struktur von \heo}
+\subsubsection{Synthese und Struktur von \heo}
 \begin{figure}
     \centering
     \includegraphics[width=0.3\textwidth]{../assets/theorie/heo}
     \caption{Struktur von \heo. Rot: Sauerstoff, Bunt: Metallkationen.}
     \label{fig:heo}
 \end{figure}
-In Analogie zu den HEAs ist \heo\ ein Mehrkomponentenoxid, welches in einer Natriumchloridstruktur kristallisiert.
+Für die Herstellung von \heo wurden die einzelnen binären Oxidpulver \ce{MgO}, \ce{CoO}, \ce{NiO}, \ce{CuO} und \ce{ZnO}
+zu equimolaren Anteilen gemahlen, in Pellets gepresst und anschließend bei den Temperaturen
+\qtylist{750;800;850;900;1000}{\celsius} für \qty{2}{\hour} gesintert.
+Bei den Temperaturen \qtylist{750;800;850}{\celsius} wurden mithilfe von Röntgenbeugungsmessungen die
+Natriumchloridstruktur und die Tenoritstruktur identifiziert.
+Vollständige Transformation in die Natriumchloridstruktur erfolgte zwischen \qty{850}{\celsius} und \qty{900}{\celsius}.
+In Analogie zu den HEAs ist \heo\ demzufolge ein Mehrkomponentenoxid, welches in einer Natriumchloridstruktur
+kristallisiert.
 Die Kationenstelle ist durch ein zufälliges Metallkationen \ce{Mg^{2+}}, \ce{Co^{2+}}, \ce{Ni^{2+}},
 \ce{Cu^{2+}} oder \ce{Zn^{2+}} besetzt.
 Im Kontrast zu den HEAs existiert ein geordnetes Anionengitter, welches durch Sauerstoffionen besetzt ist.
 Die Struktur von \heo\ ist in \cref{fig:heo} dargestellt.\autocite[5]{Rost2015}
+
 Es ist bemerkenswert, dass diese Phase stabil synthetisiert werden konnte, insbesondere angesichts der Änderungen in der
-Kristallstruktur von \ce{ZnO} und \ce{CuO} sowie der damit verbundenen Energie.
+Kristallstruktur von \ce{ZnO} und \ce{CuO} sowie der damit verbundenen positiven Enthalpie.
 Um dieses Phänomen zu verstehen, muss die Rolle der Gibbs-Energie und der darin auftretenden Entropie
 erläutert werden.
 
@@ -427,14 +448,13 @@ In der einfachsten Betrachtung ist diese folgendermaßen definiert:
 \end{align}
 Hierbei ist $H$ die Enthalpie, $S$ die Entropie, $T$ die Temperatur, $p$ der Druck und $n_{i}$ die Stoffmengen jener
 Komponenten, die am Prozess beteiligt sind.
-Das $\Delta$ symbolisiert die Änderung der jeweiligen Größe.
+Das $\Delta$ symbolisiert die Änderung der jeweiligen Größe bei Betrachtung zweier Zustände.
 Die Gibbs-Energie ist eine Zustandsgröße und hängt nur von den Größen $T$, $p$ und $\{ n_{i} \}$ ab.
 Die Änderung der Gibbs Energie $\Delta G$ ist ein Maß für die Spontanität eines Prozesses.
 Ist $\Delta G < 0$, so läuft der Prozess freiwillig in einen energetisch günstigeren Zustand ab.
 Aus dieser Forderung ist ersichtlich, dass der stabilste Zustand die Gibbs-Energie minimiert.\autocite[7]{rost_phd}
 
-
-Die Gibbs-Energie ist maßgeblich von Enthalpie, Temperatur und Entropie abhängig.
+Die Gibbs-Energie ist maßgeblich von der Enthalpie, der Temperatur und der Entropie abhängig.
 Für vergleichsweise niedrige Temperaturen ist die Enthalpie der dominierende Faktor.
 Nicht selten sind Enthalpie-minimierte Zustände diejenigen, die auch die Gibbs-Energie minimieren.
 Für hochentropische Materialien ist das in der Regel nicht der Fall.
@@ -443,25 +463,26 @@ bei entsprechend hohen Temperaturen in einen anderen, als den Enthalpie-minimale
 Dieser Zustand ist dann durch die Entropie stabilisiert.\autocite[2]{Rost2015}
 
 \subsubsection{Mischungsentropie}
-Nun stellt sich die Frage nach der genauen Form der Entropie, die die Phasenstabilität von \heo\ beeinflusst.
+Die Entropie nimmt zentrale Bedeutung in der Stabilität von hochentropischen Materialien ein.
 Für diese Beschreibung zieht man das Modell der idealen Lösung heran.
 Dies ist eine Mischung aus zwei oder mehreren Komponenten, deren Entstehung nicht mit einer Änderung der
 Wärme oder Volumenänderung verbunden ist.
 Dabei wird die Entropie der Mischung mithilfe der Mischungsentropie von Idealgasen beschrieben.
-Für diese findet man die folgende Form:
+Für diese findet man die folgende Form:\autocite[7]{rost_phd}
 \begin{equation}
     \Delta S_{\text{Misch}} = -\mathrm{R} \sum_{i=1}^N x_{i} \ln(x_{i}).
     \label{eq:Mischungsentropie}
 \end{equation}
+\autocite[7]{rost_phd}
 Hierbei ist $\mathrm{R}$ die allgemeine Gaskonstante, $x_{i}$ die Stoffmengenanteile der Komponenten und $N$ die Anzahl
 der Komponenten.
 Das Maximum der Entropie wird erreicht, wenn alle Komponenten gleichmäßig verteilt sind.
-Dann gilt $x_{i}=1/N$ und $\max(S_{\text{Misch}}) = \mathrm{R} \ln(N)$.\autocite[7]{rost_phd}
+Dann gilt $x_{i}=1/N$ und $\max(S_{\text{Misch}}) = \mathrm{R} \ln(N)$.
 
 Eine weitere Möglichkeit zur Visualisierung der Mischungsentropie ergibt sich, indem man die Konzentration eines
 Konstituenten variiert und alle anderen konstant hält.
 Mit der Parametrisierung $x_{1} = x$ und $x_{j} = (1-x) / (N-1)$ für $j=2, \dots, N$ ergibt sich für die
-Mischungsentropie:
+Mischungsentropie:\autocite[3]{Rost2015}
 
 \begin{equation}
     \Delta S_{\text{Misch}} = -R \left( x \ln(x) + (1-x) \ln \left( \frac{1-x}{N-1} \right) \right).
@@ -473,17 +494,18 @@ Mischungsentropie:
     \import{../plots/theory}{mixing_entropy.pgf}
     \caption{Darstellung der Mischungsentropie in Abhängigkeit der Konzentration bei $N$ Komponenten und Variation einer
     Komponente unter equimolarer Verteilung der übrigen Komponenten.
+    Das Maxima der Mischungsentropie wird erreicht, wenn alle Komponenten gleichmäßig verteilt sind.
     \imcitetwo[3]{Rost2015}}
     \label{fig:Mischungsentropie}
 \end{figure}
 
 Diese ist in \cref{fig:Mischungsentropie} dargestellt.
 Hieraus ist erneut erkennbar, dass die Mischungsentropie maximal wird, wenn alle Komponenten gleichmäßig verteilt sind.
-\autocite[3]{Rost2015}
 
 Im Bezug auf die Gibbs-Energie impliziert dies, das die für den Phasenübergang nötige Temperatur umso niedriger sein
 kann, je höher die Mischungsentropie ist.
 Für eine äquimolare Verteilung ist die geringste Temperatur notwendig, um den Phasenübergang zu erreichen.
+Aus diesem Grund wurden die Komponenten in \heo\ equimolar verteilt.
 
 \subsubsection{Ideale und reale Lösungen}
 Mithilfe der idealen Lösung konnte die Mischungsentropie von \heo\ beschrieben werden.
@@ -505,37 +527,38 @@ Die Mischungsentropie ist nach vorherigem Abschnitt gegeben durch:
     \Delta S_{\mathrm{mix}}=-R[x_{\mathrm{A}}\ln(x_{\mathrm{A}})+x_{\mathrm{B}}\ln(x_{\mathrm{B}})].
     \label{eq:Mischungsentropie3}
 \end{equation}
-Im einfachsten Modell einer realen Lösung besitzt die Mischungsenthalpie die einfache Form:
+Im einfachsten Modell einer realen Lösung besitzt die Mischungsenthalpie die Form:\autocite[8]{rost_phd}
 \begin{equation}
     \Delta H_{\mathrm{Misch}}= a x_{\mathrm{A}} x_{\mathrm{B}}.
     \label{eq:Mischungsenthalpie}
 \end{equation}
+
 Hierbei ist $a$ eine Konstante, die die Bindungsenergie der Mischung beschreibt.
 Unter dieser Annahme wird die Enthalpie eine Kompositionsfunktion.
 Je nach Vorzeichen von $a$ können entweder gleichatomige Bindungen ($a > 0$) oder ungleichatomige Bindungen
 ($a < 0$) enthalpisch bevorzugt sein.
 In den meisten Fällen ist $a > 0$, da energetisch ungünstigere Bindungen durch die Mischung entstehen.
 Der Sonderfall $a=0$ entspricht der idealen Lösung.
-Somit kann eine Erweiterung der Änderung der Gibbs-Energie gefunden werden:
+Somit kann eine Erweiterung der Änderung der Gibbs-Energie gefunden werden:\autocite[9]{rost_phd}
 
 \begin{equation}
     \Delta G_{\mathrm{Misch}}=\Delta H_{\mathrm{Misch}}-T\Delta S_{\mathrm{Misch}}=a x_{\mathrm{A}} x_{\mathrm{B}}
-    +RT[x_{\mathrm{A}}\ln(x_{\mathrm{A}})+x_{\mathrm{B}}\ln(x_{\mathrm{B}})]
+    +RT[x_{\mathrm{A}}\ln(x_{\mathrm{A}})+x_{\mathrm{B}}\ln(x_{\mathrm{B}})].
     \label{eq:mischgibbs}
 \end{equation}
 
 \begin{figure}
     \centering
     \import{../plots/theory}{mixing_properties.pgf}
-    \caption{Darstellung von Mischungsenthalpie, Mischungsentropie und Gibbs Energie der Mischung.
+    \caption{Darstellung von Mischungsenthalpie, Mischungsentropie und Gibbs Energie der Mischung in Abhängigkeit der
+    Konzentration.
     \imcitetwo[10]{rost_phd}}
     \label{fig:mixing_properties}
 \end{figure}
 
 Diese Änderung, zusammen mit Enthalpie- und Entropieänderung, ist in \cref{fig:mixing_properties} dargestellt.
 Es ist zu erkennen, dass für niedrige Temperaturen die Gibbs-Energie durch die Enthalpie dominiert wird.
-Das Minima bei $x=0$ beziehungsweise $x=1$ weißt darauf hin, dass die Gibbs-Energie minimal ist, wenn die
+Das Minima bei $x=0$ beziehungsweise $x=1$ weist darauf hin, dass die Gibbs-Energie minimal ist, wenn die
 Komponenten rein sind.
 Erst mit steigender Temperatur beginnt die Mischungsentropie zu dominieren.
 Dies sorgt für eine stabile Mischphase bei hohen Temperaturen, sodass das Minimum der Gibbs-Energie bei $x=0.5$ liegt.
-\autocite[7-9]{rost_phd}

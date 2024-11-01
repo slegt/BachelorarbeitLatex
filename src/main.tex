@@ -9,24 +9,28 @@
 \usepackage[version=4]{mhchem}
 \usepackage[style=authortitle, autocite=footnote]{biblatex}
 \usepackage[ngerman]{babel}
+\usepackage{csquotes}
+\usepackage{siunitx}
 \usepackage[justification=centering]{caption}
 \usepackage{subcaption}
 \usepackage{booktabs}
-\usepackage{siunitx}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{mathtools}
 \usepackage[hidelinks]{hyperref}
-\usepackage{cleveref}
+\usepackage[noabbrev,nameinlink]{cleveref}
 \usepackage{currfile}
 \usepackage{pgf}
 \usepackage{lmodern}
 \usepackage{import}
 \usepackage{pgffor}
 \usepackage{ifthen}
+\usepackage{makecell}
 
 
-\sisetup{separate-uncertainty=true}
+\sisetup{locale=DE,separate-uncertainty=true}
+\sisetup{range-phrase = \,bis\,}
+
 \setlength{\parindent}{0pt}
 \addbibresource{literature.bib}
 
@@ -38,6 +42,12 @@
 \newcommand{\heo}{\ce{(MgCoNiCuZn)O}}
 \newcommand{\h}{\mathrm{h}}
 \renewcommand{\c}{\mathrm{c}}
+
+\newcommand{\sampleone}{$\mathrm{P}_{0.01}$}
+\newcommand{\sampletwo}{$\mathrm{P}_{0.001}$}
+\newcommand{\samplethree}{$\mathrm{P}_{0.1}$}
+\newcommand{\samplefour}{$\mathrm{P}_{0.00005}$}
+
 
 \DeclareSIUnit\angstrom{\text {Å}}
 \DeclareSIUnit\bar{bar}

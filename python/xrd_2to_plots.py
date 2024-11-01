@@ -42,7 +42,7 @@ def create_plot(gas, temperature_array, sample_name):
                 / f'{sample_name}_XG_{gas}_{temperature}.xrdml')
         angles, intensities_relative = get_data(path)
         angles, intensities_relative = angles[::10], intensities_relative[::10]
-        axes[i].plot(angles, intensities_relative, color=cm(i))
+        axes[i].plot(angles, intensities_relative, color=cm(i), lw=0.5)
         axes[i].set_yscale("log")
         axes[i].set_xlim(angles[0], angles[-1])
         axes[i].set_ylim(25, 100)
@@ -79,7 +79,7 @@ for sample in sauerstoff_samples:
 
 vakuum_samples = ["W6821-1C", "W6822-1C", "W6823-1C", "W6824-1C"]
 vakuum_temperature_array = ["pre", "500", "600", "700", "750", "800", "875"]
-vakuum_temperature_array_23 = ["pre", "500", "600", "700", "750"]
+vakuum_temperature_array_23 = ["pre", "500", "600", "700"]
 
 for sample in vakuum_samples:
     if sample == "W6823-1C":
@@ -88,7 +88,7 @@ for sample in vakuum_samples:
         create_plot("Vakuum", vakuum_temperature_array, sample)
 
 air_samples = ["W6821-1D", "W6822-1D", "W6823-1D", "W6824-1D"]
-air_temperature_array = ["pre", "600", "700"]
+air_temperature_array = ["pre", "600", "700", "750", "800"]
 
 for sample in air_samples:
     create_plot("Luft", air_temperature_array, sample)

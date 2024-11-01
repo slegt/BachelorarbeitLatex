@@ -1,4 +1,73 @@
 \section{Auswertung}\label{sec:auswertung}
+Zentrales Thema dieser Arbeit ist das Ausheizen von \heo Dünnfilmen.
+Es wurden vier Proben in vier Prozessen einer PLD-Anlage mit Eagle XG Glassubstraten und dem in
+\cref{subsec:probenherstellung} beschriebenen Target hergestellt.
+Für jeden Prozess wurden jeweils \num{20000} Laserpulse mit einer Frequenz von \qty{20}{\hertz} und einer Energie von
+\qty{650}{\milli\joule} abgegeben.
+Dabei wurde der eingebaute Widerstandsheizer nicht verwendet.
+Der variable Parameter war der Abscheidedruck der Sauerstoffatmosphäre.
+Nach der Herstellung wurden die Proben im Profilometer und im Röntgendiffraktometer bezüglich ihrer Schichtdicke
+vermessen.
+Der jeweilige Druck und die Schichtdicken sind in \cref{tab:samples} aufgeführt.
+\begin{table}[h]
+    \centering
+    \begin{tabular}{l l l l l}
+        \toprule
+        Probenname & \makecell[l]{Abscheidedruck \\ in \unit{\milli \bar}} & \makecell[l]{Dicke in \unit{\nano\meter} \\
+        Profilometermessung} & \makecell[l]{Dicke in \unit{\nano\meter}     \\ XRR Messung}   \\
+        \midrule
+        \samplethree   & 0.1   & \num{65(4)} & 109 \\
+        \sampleone  & 0.01 & \num{95(7)} & - \\
+        \sampletwo  & 0.001 & \num{160(12)} & 142 \\
+        \samplefour  & 0.00005 & \num{135(16)} & 120 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Eigenschaften der zu untersuchenden Dünnfilme}
+    \label{tab:samples}
+\end{table}
+
+Im Anschluss an die Probenherstellung wurden die Proben gevierteilt, damit Ausheizstudien vergleichbar mit
+unterschiedlichen Atmosphären durchgeführt werden konnten.
+Dazu wurde der Dünnfilm der jeweiligen Probe mit Photolack beschichtet, um die Oberfläche vor
+mechanischen Beschädigungen beim Zersägen zu schützen.
+Anschließend wurde das Substrat mit der Dünnfilmseite nach oben auf eine Glasplatte durch Wachs geklebt und mit einer
+Diamantsäge zerteilt.
+Anschließend wurden Wachs und Photolack mit den Lösungsmitteln NMP, Wachsentferner und Ethanol entfernt.
+Es ist zu beachten, dass diese Prozedur durch die Lösungsmittel die Zusammensetzung und Oberfläche des Dünnfilms
+verändern kann.
+Optisch wurden keine Veränderungen festgestellt.
+
+Nach der Präparation wurden die Proben auf unterschiedliche Weisen ausgeheizt.
+Für die Sauerstoffserie wurde eine Vakuumkammer mit einer Sauerstoffatmosphäre von circa \qty{800}{\milli\bar}
+verwendet.
+Die Proben \samplethree, \sampleone, \sampletwo, \samplefour\ wurden einem Zyklus von Ausheizen und anschließendem
+Messen unterzogen.
+Für das Ausheizen wurden die Temperaturen \qtylist{600;700;750;800;875}{\degreeCelsius} gewählt.
+Die Proben wurden für eine Stunde bei der jeweiligen Temperatur ausgeheizt, vom Substrathalter entfernt und auf einer
+Glasplatte abgekühlt.
+Dadurch wird ein schnelles Abkühlen der Proben erreicht.
+Als Anfangstemperatur wurde \qty{600}{\degreeCelsius} gewählt, da nach der Untersuchung von Rost
+sich mehrere Phasen des \heo\ Dünnfilms bei dieser Temperatur bilden.
+Die Endtemperatur wurde auf \qty{875}{\degreeCelsius} gewählt, da dies die maximale Temperatur des Heizlasers ist.
+
+Für den Vakuumausheizvorgang wurde die gleiche Vakuumkammer wie für die Sauerstoffserie verwendet.
+Auch hier wurden die Proben \samplethree, \sampleone, \sampletwo, \samplefour\ einem Zyklus von Ausheizen und
+anschließendem Messen unterzogen.
+Die Kammer wurde auf einen Druck von \qty{4e-4}{\milli\bar} evakuiert.
+Da die Dünnfilme auf Eagle XG Glassubstraten gewachsen sind, ist deren Viskosität bei hohen
+Temperaturen gering.
+Das führt zu Verformungen der gesamten Probe bei \qty{875}{\degreeCelsius}.
+Weitere Messungen bei höheren Temeperaturen waren aus diesem Grund nicht möglich.
+
+Für den Ausheizvorgang unter Luftatmosphäre wurde der Muffelofen verwendet.
+Die Proben \samplethree, \sampleone, \sampletwo, \samplefour\ wurden einem Zyklus von Ausheizen und anschließendem
+Messen unterzogen.
+FÜr das Ausheizen wurden die Temperaturen \qtylist{600;700;750;800;875}{\degreeCelsius} gewählt.
+Die Proben wurden in einer Keramikschale für eine Stunde bei der jeweiligen Temperatur ausgeheizt anschließend
+aus dem Ofen und der Schale genommen und auf einer Glasplatte abgekühlt.
+Anders als bei den vorherigen Ausheizvorgängen wurde hier die Probe mit einer langsamen Ausheizrate von
+\qty{300}{\degreeCelsius\per\hour} auf die Endtemperatur gebracht.
+
 
 \subsection{Temperaturkalibrierung der A-Kammer}\label{subsec:temperaturkalibrierung}
 \begin{figure}
@@ -7,8 +76,8 @@
         furnace_calibration_1.pgf/{Kalibrierung des Lithografiesensors, Bild 1},
         furnace_calibration_2.pgf/{Kalibrierung des Lithografiesensors, Bild 2},
         a_chamber_calibration.pgf/{Kalibrierung der A-Kammer},
-        final_calibration.pgf/{Abhängigkeit zwischen $T_{\mathrm{Pyro}}$ und $T_{\mathrm{Lit}}$, Bild 1},
-        quenching_time.pgf/{Abschreckzeit der A-Kammer}
+        final_calibration.pgf/{Abhängigkeit zwischen $T_{\mathrm{Pyro}}$ und $T_{\mathrm{Lit}}$},
+        quenching_time.pgf/{Abkühlzeit der A-Kammer}
     }{
         \begin{subfigure}[t]{0.49\textwidth}
             \import{../plots/calibration}{\i}
@@ -20,9 +89,9 @@
     \label{fig:temperature_calibration_1}
 \end{figure}
 
-Zentrales Thema der vorliegenden Arbeit ist das Ausheizen der \heo-Dünnfilme.
-Dabei ist es wichtig, einen entsprechend großen Temperaturbereich von \qtyrange{300}{1000}{\degreeCelsius} zu erreichen
-und die Temperatur des Dünnfilms möglichst genau zu bestimmen.
+Zentrales Thema der vorliegenden Arbeit ist das Ausheizen der \heo\ Dünnfilme.
+Dabei ist es wichtig, einen entsprechend großen Temperaturbereich von \qty{300}{\degreeCelsius}
+bis \qty{1000}{\degreeCelsius} zu erreichen und die Temperatur des Dünnfilms möglichst genau zu bestimmen.
 Ein geeigneter Kandidat für diesen Prozess ist die A-Kammer, die mithilfe eines Heizlasers die Rückseite des
 Substrathalters erhitzt.
 Um die Temperatur des Dünnfilms zu bestimmen, wird ein Pyrometer verwendet, welches die Rückseite des Substrathalters
@@ -30,67 +99,67 @@ misst.
 Mithilfe eines PID-Reglers wird die Temperatur auf den eingestellten Wert geregelt.
 
 Nun stellt sich die Frage, wie genau die Temperatur des Dünnfilms bestimmt werden kann.
-Dazu wurde von Tim Düvel ein Temperatursensor durch Lithografie auf ein C-Saphir Substrat fabriziert.
-Dieser wird im folgenden als Lithografiesensor bezeichnet.
+Dazu wurde von Tim Düvel ein spezieller Temperatursensor fabriziert.
+Dieser besteht aus einem C-Saphir Substrat, auf dem ein Muster für die Platinbahnen infolge eines
+Lithografieprozesses aufgebracht wurde.
+Das Substrat wurde mit einer dünnen Schicht Platinoxid und einer Schicht Platin bedampft.
+An zwei Enden wurde Gold aufgedampft, um die Kontakte herzustellen.
+Für den Schutz wurde abschließend eine Schicht Aluminiumoxid aufgebracht.
+Dieser Sensor wird im Folgenden als Lithografiesensor bezeichnet.
 
 In Zusammenarbeit mit Tim Düvel wurde eine Kalibrierung des Lithografiesensors durchgeführt.
-Dazu wurde ein PT1000 Temperatursensor mithilfe von Wärmeleitpaste thermisch mit dem Lithografiesensor verbunden und
+Dazu wurde ein PT1000 Temperatursensor genutzt, für welchen es eine bekannte quadratische Abhängigkeit zwischen Widerstand
+$R_{\mathrm{Pt}}$ und Temperatur $T_{\mathrm{Pt}}$ gibt:
+\begin{equation}
+    R_{\mathrm{Pt}}(T_{\mathrm{Pt}})
+    =R_0 \cdot (1 + A \cdot R_{\mathrm{Pt}} + B \cdot R_{\mathrm{Pt}}^2).
+    \label{eq:pt1000_calibration}
+\end{equation}
+Hierbei ist $R_0 = \qty{1000}{\ohm}$ der Widerstand bei \qty{0}{\degreeCelsius},
+$A = \qty{3.9083e-3}{\degreeCelsius^{-1}}$ und $B = \qty{-5.775e-7}{\degreeCelsius^{-2}}$.
+Der PT1000 Temperatursensor wurde mithilfe von Wärmeleitpaste thermisch an den Lithografiesensor gekoppelt und
 im Muffelofen ausgeheizt.
-Beide Widerstände wurden in Abhängigkeit der Temperatur gemessen und sind in Abbildung \ref{fig:furnace_calibration_1}
-dargestellt.
+Beide Widerstände wurden in Abhängigkeit der Temperatur gemessen und sind in Abbildung
+\cref{fig:furnace_calibration_1.pgf} dargestellt.
 Da jedem Zeitpunkt zwei Widerstände zugeordnet werden können, kann durch diese Parametrisierung auch die Abhängigkeit
-beider Widerstände voneinander bestimmt werden, siehe \ref{fig:furnace_calibration_2}.
-Wie erwartet ist die Abhängigkeit $R_\mathrm{Lit}(R_\mathrm{Pt})$ linear und kann durch
-einen linearen Fit beschrieben werden.
+beider Widerstände voneinander bestimmt werden, siehe \cref{fig:furnace_calibration_2.pgf}.
+Aufgrund der gleichen Materialbeschaffenheit ist die Abhängigkeit $R_\mathrm{Lit}(R_\mathrm{Pt})$ linear und kann durch
+einen linearen Fit beschrieben werden, siehe \cref{fig:a_chamber_calibration.pgf}.
 
 Im nächsten Schritt wird der Lithografiesensor in den Probenhalter der A-Kammer eingebaut und eine Temperaturserie
 aufgenommen.
 Dabei wird die Temperatur des Heizlasers eingestellt und nach einer festen Zeitspanne Pyrometertemperatur
 $T_\mathrm{Pyro}$ und Lithografiewiderstand $R_\mathrm{Lit}$ gemessen.
-Auch hier ist eine lineare Abhängigkeit zwischen beiden Größen erkennbar und kann durch einen linearen Fit
+Auch hier zeigt sich eine lineare Abhängigkeit zwischen beiden Größen welche durch einen linearen Fit
 beschrieben werden.
 
-Die Temperatur des Dünnfilms $T_\mathrm{Real}$ kann nun durch folgende Gesamtfunktion bestimmt werden:
+Als Referenztemperatur, und damit als Temperatur des Dünnfilms, wird die Temperatur des PT1000 Sensors angesehen.
+Diese kann durch folgende Gesamtfunktion bestimmt werden:
 \begin{equation}
-    T_{\mathrm{Real}}=\underbrace{ T_{\mathrm{Real}}(R_{\mathrm{Pt}}) }_{ \substack{\text{quadratic} \\ \text{dependency}} }
-    =T_{\mathrm{Real}}(\underbrace{ R_{\mathrm{Pt}}(R_{\mathrm{Lit}}) }_{  \substack{\text{linear} \\ \text{dependency}}  })
-    =T_{\mathrm{Real}}(R_{\mathrm{Pt}}(\underbrace{ R_{\mathrm{Lit}}(T_{\mathrm{Pyro}}) }_{    \substack{\text{linear} \\
-    \text{dependency}}  }))
+    T_{\mathrm{Pt}}=\underbrace{ T_{\mathrm{Pt}}(R_{\mathrm{Pt}}) }_{
+        \substack{\text{quadratische} \\ \text{Abhängigkeit}}}
+    =T_{\mathrm{Pt}}(\underbrace{ R_{\mathrm{Pt}}(R_{\mathrm{Lit}}) }_{
+        \substack{\text{lineare} \\ \text{Abhängigkeit}}  })
+    =T_{\mathrm{Pt}}(R_{\mathrm{Pt}}(\underbrace{ R_{\mathrm{Lit}}(T_{\mathrm{Pyro}}) }_{
+        \substack{\text{lineare} \\ \text{Abhängigkeit}}  }))
     \label{eq:temperature_calibration}
 \end{equation}
-Da alle Funktionen bekannt sind, ergibt sich folgender Zusammenhang zwischen $T_{\mathrm{Pyro}}$ und $T_{\mathrm{Real}}$.
-Dieser ist in Abbildung \ref{fig:final_calibration} dargestellt.
+Da alle Funktionen bekannt sind, zeigt sich folgender Zusammenhang zwischen $T_{\mathrm{Pyro}}$ und $T_{\mathrm{Pt}}$
+in Abbildung \cref{fig:final_calibration.pgf}.
+Der Graph zeigt, dass die Temperatur des Dünnfilms mit einer Unsicherheit von circa \qtyrange{10}{15}{\degreeCelsius}
+der Temperatur des Pyrometers entspricht.
+Es ist zu beachten, dass dieser Sensor bestmöglich die Thermodynamik von C-Saphir Substraten erfasst.
+Da in dieser Arbeit mit EagleXG-Substraten gearbeitet wird, welche andere Kompositionen und Eigenschaften aufweisen,
+kann das Ergebnis nur als Approximation betrachtet werden.
+Hier sei vor allem auf die unterschiedlichen Wärmeleitfähigkeiten hingewiesen.
 
 Wichtig für das Ausheizen ist außerdem die Abkühlzeit der A-Kammer.
-Dazu wurde eine Zeitserie aufgenommen, die den Lithografiewiderstand in Abhängigkeit der Zeit zeigt, siehe
-Abbildung \ref{fig:quenching_time}.
-Für einen Temperaurabfall von circa \qty{350}{\degreeCelsius} auf circa \qty{25}{\degreeCelsius}
+Um diese zu untersuchen, wurde eine Zeitserie des Lithografiewiderstands aufgenommen,
+siehe \cref{fig:quenching_time.pgf}.
+Für einen Temperaturabfall von circa \qty{350}{\degreeCelsius} auf circa \qty{25}{\degreeCelsius}
 benötigt die A-Kammer etwa \qty{4}{\minute}.
-
-\subsection{Probenherstellung}\label{subsec:probenherstellung}
-- jeweils 20000 Laserpule
-- mit Frequenz 20 Hz
-- Energie von 650 mJ
-- ohne Heating power
-- QM 17
-- Exzentrität 2
-
-Unterschiede
-\begin{table}[h]
-    \centering
-    \begin{tabular}{c c c c}
-        \toprule
-        Probenname & Abscheidedruck in \unit{\milli \bar} & Dicke des Dünnfilms in \unit{\nano\meter} \\
-        \midrule
-        W6821-1    & 0.01                                 & \num{95(7)}                               \\
-        W6822-1    & 0.001                                & \num{160(12)}                             \\
-        W6823-1    & 0.1                                  & \num{65(4)}                               \\
-        W6824-1    & 0.0005                               & \num{135(16)}                             \\
-        \bottomrule
-    \end{tabular}
-    \caption{Klassifikation der verschiedenen Kristallsysteme. \imcite[65]{Hunklinger} }
-    \label{tab:samples}
-\end{table}
+Damit zeigen Temperaturbereich, Präzision des Pyrometers und Abkühlzeit, dass
+die A-Kammer ein geeigneter Kandidat für das Ausheizen der \heo\ Dünnfilme ist.
 
 \subsection{EDX Analyse}\label{subsec:edx-analyse}a
 \begin{figure}
@@ -109,7 +178,178 @@ Unterschiede
 \newcommand{\temperaturesS}{pre,600,700,750,800,875}
 \newcommand{\temperaturesV}{pre,500,600,700,750, 800}
 \newcommand{\temperaturesVV}{pre,500,600,700}
-\newcommand{\temperaturesL}{pre,600}
+\newcommand{\temperaturesL}{pre,600, 700, 750, 800}
+
+% PROBE W6823-1 %
+
+\newpage
+
+\subsection{Probe \samplethree}\label{subsec:probe-W6823-1}
+
+\subsubsection{Sauerstoff Ausheizvorgang}\label{subsubsec:W6823-1B_Sauerstoff}
+\begin{figure}
+    \centering
+    \import{../plots/XRD}{W6823-1B_Sauerstoff.pgf}
+    \caption{W6823-1B, Sauerstoff, XRD}
+    \label{fig:W6823-1B_Sauerstoff_XRD}
+\end{figure}
+\cref{fig:W6823-1B_Sauerstoff_XRD} zeigt $2\theta/\omega$-Scans der Probe \samplethree zu
+verschiedenen Temperaturen während des Sauerstoff Ausheizvorgangs.
+Bei allen Temperaturen ist ein ausgeweitetes Maximum bei circa \qty{23}{\degree} zu erkennen.
+Dieses ist auf das Eagle XG Glassubstrat zurückzuführen.
+Weiterhin ist ein scharf definierter Peak bei circa \qty{45}{\degreeCelsius} zu erkennen, welcher durch die
+Kristallstruktur des Probenhalters verursacht wird.
+Der Probenhalter sorgt für weitere, kaum sichtbare Peaks bei TODO PEAKS RAUSSUCHEN.
+Somit sind trotz der bis zu einer Temperatur von \qty{875}{\degreeCelsius} eingestellten Ausheizprozesse keine Peaks
+des \heo\ Dünnfilms zu erkennen.
+Dieser ist somit röntgenamorph.
+
+Die AFM-Topografieaufnahmen zu verschiedenen Temperaturen der Probe W6823-1 während des Sauerstoff Ausheizvorgangs sind
+in \cref{fig:W6823-1B_Sauerstoff_AFM} dargestellt.
+Die Aufnahme des Initialzustands, \cref{W6823-1B_Sauerstoff_AFM_pre}, zeigt einen ebenen Untergrund mit zahlreichen
+zufällig orientierten Erhebungen.
+Diese Erhebungen sind einzelne Kristallite des Dünnfilms.
+Die RMS Rauigkeit des Eagle XG Glassubstrats vor der Zersägung beträgt \qty{383.1}{\pico\meter}.
+Die Rauigkeit nach der Zersägung beträgt \qty{470}{\pico\meter}, während die Rauigkeit des ebenen Untergrunds des
+Dünnfilms circa \qty{2.3}{\nano\meter} entspricht.
+Die durchschnittliche Höhe der großen Kristallite beträgt \qtyrange{50}{60}{\nano\meter}
+Nach Angaben der XRR Messungen beträgt die Dicke des Films cira \qty{109}{\nano\meter}.
+Das schließt darauf, dass der ebene Untergrund ein flächig gewachsener Dünnfilm ist.
+Die Erhebungen sind somit einzelne Kristallite des Dünnfilms.
+Ein passendes Modell für die Kristallite ist das Stranski-Krastanov-Wachstum, welches
+zuerst Schichtwachstum und nach einer kritischen Schichtdicke Inselwachstum beschreibt.
+
+Nach dem ersten Ausheizschritt bei \qty{600}{\degreeCelsius}, siehe \cref{W6823-1B_Sauerstoff_AFM_600}, ist ein
+deutlicher Unterschied in der Morphologie des Dünnfilms zu erkennen.
+Die Kristallite sind in ihrer Fläche gleich geblieben, jedoch sind sie deutlich niedriger als im Initialzustand.
+Das Maximum der Höhenskala hat sich von \qty{68}{\nano\meter} auf \qty{30.7}{\nano\meter} verringert.
+Durch die erhöhte Temperatur und damit die erhöhte kinetische Energie der Dünnfilmatome können diese sich
+anders anordnen, indem sich die Kristallite flächig ausbreiten.
+Dadurch verringert sich die Höhe der Kristallite.
+Eine weitere Möglichkeit ist die Evaporation von Atomen, welche die Kristallite schrumpfen lässt.
+Außerdem sind Risse in der Oberfläche zu erkennen.
+Diese Risse werden nicht auf reinen Eagle XG Glassubstraten beobachtet und sind damit auf den Dünnfilm zurückzuführen.
+Gründe dafür können Spannungen im Dünnfilm und im Substrat sein, welche durch Temperatur und Substrathalterung
+verursacht werden.
+Da die W6823 Probe die dünnste aus der Probenserie ist, ist sie am anfälligsten für Spannungen.
+
+Die Topografieaufnahme nach Ausheizen auf \qty{700}{\degreeCelsius} in \cref{W6823-1B_Sauerstoff_AFM_700} ähnelt
+der Aufnahme bei \qty{600}{\degreeCelsius}.
+Erkennbar ist eine Verringerung der durchschnittlichen Fläche der kaum noch sichtbaren Kristallite.
+Die Risse in der Oberfläche sind weiterhin vorhanden und haben sich vergrößert.
+Auch ein großer Riss ist zu erkennen, welcher sich über die gesamte Aufnahme erstreckt.
+Nach dem Ausheizen bei \qty{750}{\degreeCelsius} in \cref{W6823-1B_Sauerstoff_AFM_750} sind die Kristallite
+vollständig verschwunden.
+Erkennbar sind deutliche Risse in der Oberfläche, welche sich weiterhin vergrößert haben.
+Auch bei \qty{800}{\degreeCelsius} in \cref{W6823-1B_Sauerstoff_AFM_800} vergrößern sich die Risse weiter.
+Auch die maximale Höhe der Skala nimmt zu.
+Bei dem finalen Ausheizschritt bei \qty{875}{\degreeCelsius} in \cref{W6823-1B_Sauerstoff_AFM_875} sind die Risse
+weiterhin vorhanden, haben sich jedoch verkleinert.
+Es prägt sich eine feingliedrige Rissstruktur aus.
+
+Die Morphologie des Dünnfilms während des Sauerstoff Ausheizvorgangs weißt signifikante Veränderungen auf,
+insbesondere auf die Höhe und Struktur der Kristallite, sowie auf die Rissbildung.
+Sie deuten auf komplexe Wechselwirkungen zwischen Temperatur, Spannungen und Kristallwachstum hin.
+
+\begin{figure}
+    \centering
+    \foreach \i in \temperaturesS{
+        \begin{subfigure}[t]{0.40\textwidth}
+            \includegraphics[width=\textwidth]
+            {../plots/AFM/XG-Sauerstoff/XG-\i/W6823-1B/W6823-1B_XG_Sauerstoff_\i_Topography_1}
+            \caption{\ifthenelse{\equal{\i}{pre}}{Initialzustand}{\qty{\i}{\degreeCelsius}}}
+            \label{W6823-1B_Sauerstoff_AFM_\i}
+        \end{subfigure}
+    }
+    \caption{W6823-1B, Sauerstoff, AFM}
+    \label{fig:W6823-1B_Sauerstoff_AFM}
+\end{figure}
+\newpage
+
+\subsubsection{Vakuum Ausheizvorgang}\label{subsubsec:W6823-1B_Vakuum}
+\begin{figure}
+    \centering
+    \import{../plots/XRD}{W6823-1C_Vakuum.pgf}
+    \caption{W6823-1C, Vakuum, XRD}
+    \label{fig:W6823-1C_Vakuum_XRD}
+\end{figure}
+\cref{fig:W6823-1C_Vakuum_XRD} zeigt die Röntgendiffraktogramme mit $2\theta\omega$ Aufnahmen der Probe W6823-1 bei
+verschiedenen Temperaturen während des Vakuum Ausheizvorgangs.
+Anstelle der sieben Temperaturen wie bei den Proben W6821-1, W6822-1 und W6824-1 wurden hier nur vier Temperaturen
+untersucht.
+Grund dafür war ein Fehler in der Substratmontage.
+Eine vorangegangene Messung der Vakuumkammer nutzte Wärmeleitpaste mit Silbernanopartikeln.
+Die trotz Reinigung verbliebenen Reste und dem umgekehrten Einbau des Substrats führten zu einer zusätzlichen
+Schicht auf der Oberfläche des Dünnfilms.
+Da sich die Paste auf der Oberfläche verfestigt, kann die Probe nicht mehr verwendet werden, da jegliche
+Vergleichbarkeit verloren geht.
+
+Die übrigen Temperaturen weisen fast identische Diffraktogramme auf, wie die aus \cref{subsubsec:W6823-1B_Sauerstoff}.
+Weiterhin sind die einzigen Peaks auf das Eagle XG Glassubstrat und den Probenhalter zurückzuführen.
+Auch dieser \heo\ Dünnfilm ist weiterhin röntgenamorph.
+
+Die AFM-Topografieaufnahmen bei verschiedenen Temperaturen der Probe W6823-1 während des Vakuum Ausheizvorgangs sind
+in Abbildung \cref{fig:W6823-1C_Vakuum_AFM} dargestellt.
+Die Aufnahme des Initialzustands in \cref{W6823-1C_Vakuum_AFM_pre} zeigt einen deutlichen Unterschied zu dem
+Initialzustand aus \cref{subsubsec:W6823-1B_Sauerstoff}.
+Anstelle der flächig verteilten Kristallite auf einem ebenen Untergrund sind hier große Unebenheiten
+über das gesamte Bild verteilt.
+Auf den Bergen des Untergrundes sind einzelne Kristallite zu erkennen.
+Es zeigt sich möglicherweise ein Inselwachstum in einer größeren Skala.
+
+Nach erstem Ausheizen auf \qty{500}{\degreeCelsius} in \cref{fig:W6823-1C_Vakuum_AFM_500} ändert sich die Morphologie
+erneut.
+Es ist kein unebener Untergrund mehr zu erkennen.
+Stattdessen sind einzelne Kristallite auf einem ebenen Untergrund zu erkennbar, ähnlich wie in
+\cref{W6823-1C_Sauerstoff_600}.
+Für die Oberflächenrauigkeit des ebenen Untergrunds findet man eine RMS Rauigkeit von \qty{350}{\nano\meter}.
+Damit liegt diese Rauigkeit im Bereich der Rauigkeit des Eagle XG Glassubstrats.
+Es liegt nahe, dass der Dünnfilm nicht flächig gewachsen ist, sondern aus einzelnen Kristalliten besteht.
+Nach dem Ausheizen auf \qty{600}{\degreeCelsius} in \cref{fig:W6823-1C_Vakuum_AFM_600} sind die Kristallite in ihrer
+Fläche deutlich kleiner.
+Auch bei \qty{700}{\degreeCelsius} in \cref{fig:W6823-1C_Vakuum_AFM_700} verkleinerten sich die Kristallite
+in ihrer Fläche und Höhe.
+Bei dem Ausheizvorgang unter Vakuumbedingungen liegt es nah, dass die Kristallite durch Evaporation von Atomen
+schrumpfen.
+Das sorgt dafür, dass kaum noch Dünnfilmatome auf der Oberfläche verbleiben.
+
+\begin{figure}
+    \centering
+    ,\foreach \i in \temperaturesVV{
+        \begin{subfigure}[t]{0.40\textwidth}
+            \includegraphics[width=\textwidth]
+            {../plots/AFM/XG-Vakuum/XG-\i/W6823-1C/W6823-1C_XG_Vakuum_\i_Topography_1}
+            \caption{\ifthenelse{\equal{\i}{pre}}{Initialzustand}{\qty{\i}{\degreeCelsius}}}
+            \label{W6823-1C_Vakuum_AFM_\i}
+        \end{subfigure}
+    }
+    \caption{AFM, Vakuum, W6823-1C}
+    \label{fig:W6823-1C_Vakuum_AFM}
+\end{figure}
+\newpage
+
+\subsubsection{Luft Ausheizvorgang}\label{subsec:luft-ausheizvorgang-1}
+\begin{figure}
+    \centering
+    \import{../plots/XRD}{W6823-1D_Luft.pgf}
+    \caption{W6823-1D, Luft, XRD}
+    \label{fig:W6823-1D, Luft, XRD}
+\end{figure}
+\begin{figure}
+    \centering
+    ,\foreach \i in \temperaturesL{
+        \begin{subfigure}[t]{0.40\textwidth}
+            \includegraphics[width=\textwidth]
+            {../plots/AFM/XG-Luft/XG-\i/W6823-1D/W6823-1D_XG_Luft_\i_Topography_1}
+            \caption{\ifthenelse{\equal{\i}{pre}}{Initialzustand}{\qty{\i}{\degreeCelsius}}}
+            \label{W6823-1D, Luft, AFM, \i}
+        \end{subfigure}
+    }
+    \caption{AFM, Luft, W6823-1D}
+    \label{fig: AFM, Luft, W6823-1D}
+\end{figure}
+\newpage
+
 
 % PROBE W6821-1 %
 
@@ -117,13 +357,48 @@ Unterschiede
 
 \subsection{Probe W6821-1}\label{subsec:probe-W6821-1}
 
-\subsubsection{Sauerstoff Ausheizvorgang}\label{subsec:sauerstoff-ausheizvorgang-1}
+\subsubsection{Sauerstoff Ausheizvorgang}\label{subsubsec:W6821-1B_Sauerstoff}
 \begin{figure}
     \centering
     \import{../plots/XRD}{W6821-1B_Sauerstoff.pgf}
     \caption{W6821-1B, Sauerstoff, XRD}
-    \label{fig:W6821-1B, Sauerstoff, XRD}
+    \label{fig:W6821-1B_Sauerstoff_XRD}
 \end{figure}
+In Abbildung \cref{fig:W6821-1B_Sauerstoff_XRD} sind die $2\theta/\omega$-Scans der Probe \sampleone zu verschiedenen
+Temperaturen der Ausheizserie in Sauerstoff dargestellt.
+Wie in den vorherigen Abschnitten, sind die Peaks auf das Eagle XG Glassubstrat und den Probenhalter zurückzuführen.
+Es sind keine Peaks des \heo\ Dünnfilms zu erkennen.
+Der Dünnfilm ist röntgenamorph.
+
+\cref{fig:W6821-1B_Sauerstoff_AFM} zeigt die AFM-Topografieaufnahmen der Probe W6821-1 zu den verschiedenen
+Temperaturen.
+Die Aufnahme des Initialzustands in \cref{W6821-1B_Sauerstoff_AFM_pre} zeigt viele zufällig angeordnete Kristallite,
+welche dicht beieinander liegen.
+Die Höhe der großen Kristallite beträgt circa \qtyrange{45}{55}{\nano\meter}.
+Da mithilfe des Profilometers eine Filmdicke von circa \qty{95}{\nano\meter} bestimmt wurde, ist es naheliegend,
+dass unterhalb der Kristallite ein flächig gewachsener Dünnfilm liegt.
+Auch hier weist die Morphologie auf ein Stranski-Krastanov-Wachstum hin.
+
+Nach dem ersten Ausheizschritt bei \qty{600}{\degreeCelsius} in \cref{W6821-1B_Sauerstoff_AFM_600} hat sich die
+Oberfläche stark verändert.
+Die einzelnen großen Kristallite sind verschwunden.
+Stattdessen sind viele deutlich kleinere Kristallite zu erkennen.
+Auch die maximale Höhe der Skala hat sich von \qty{62}{\nano\meter} auf \qty{42.7}{\nano\meter} verringert.
+Die Topografie von \qty{700}{\degreeCelsius} in \cref{W6821-1B_Sauerstoff_AFM_700} ähnelt der von
+\qty{600}{\degreeCelsius}.
+Jedoch sind deutlich weniger Kristallite zu erkennen.
+Es sind Löcher in der Oberfläche erkennbar.
+
+Die Topografie von \qty{750}{\degreeCelsius} in \cref{W6821-1B_Sauerstoff_AFM_750} und \qty{800}{\degreeCelsius}
+in \cref{W6821-1B_Sauerstoff_AFM_800} ähneln sich.
+Die Grains sind im Gegensatz zu der Aufnahme bei \qty{700}{\degreeCelsius} deutlich kleiner.
+Außerdem ist die Anzahl der Löcher in der Oberfläche gestiegen.
+Diese Löcher sind auf den Dünnfilm zurückzuführen und sind nicht auf reinen Eagle XG Glassubstraten zu beobachten.
+Es weist auf die Evaporation von Atomen hin.
+
+Die Aufnahme nach dem Ausheizen bei \qty{875}{\degreeCelsius} in \cref{W6821-1B_Sauerstoff_AFM_875} zeigt starke
+Risse in der Oberfläche.
+Durch thermische Spannungen im Dünnfilm und im Substrat entstehen Risse.
 \begin{figure}
     \centering
     \foreach \i in \temperaturesS{
@@ -131,11 +406,11 @@ Unterschiede
             \includegraphics[width=\textwidth]
             {../plots/AFM/XG-Sauerstoff/XG-\i/W6821-1B/W6821-1B_XG_Sauerstoff_\i_Topography_1}
             \caption{\ifthenelse{\equal{\i}{pre}}{Initialzustand}{\qty{\i}{\degreeCelsius}}}
-            \label{W6821-1B, Sauerstoff, AFM, \i}
+            \label{W6821-1B_Sauerstoff_AFM_\i}
         \end{subfigure}
     }
     \caption{W6821-1B, Sauerstoff, AFM}
-    \label{fig:W6821-1B, Sauerstoff, AFM}
+    \label{fig:W6821-1B_Sauerstoff_AFM}
 \end{figure}
 \newpage
 
@@ -255,77 +530,6 @@ Unterschiede
 \end{figure}
 \newpage
 
-% PROBE W6823-1 %
-
-\newpage
-
-\subsection{Probe W6823-1}\label{subsec:probe-W6823-1}
-
-\subsubsection{Sauerstoff Ausheizvorgang}\label{subsec:sauerstoff-ausheizvorgang-1}
-\begin{figure}
-    \centering
-    \import{../plots/XRD}{W6823-1B_Sauerstoff.pgf}
-    \caption{W6823-1B, Sauerstoff, XRD}
-    \label{fig:W6823-1B, Sauerstoff, XRD}
-\end{figure}
-\begin{figure}
-    \centering
-    \foreach \i in \temperaturesS{
-        \begin{subfigure}[t]{0.40\textwidth}
-            \includegraphics[width=\textwidth]
-            {../plots/AFM/XG-Sauerstoff/XG-\i/W6823-1B/W6823-1B_XG_Sauerstoff_\i_Topography_1}
-            \caption{\ifthenelse{\equal{\i}{pre}}{Initialzustand}{\qty{\i}{\degreeCelsius}}}
-            \label{W6823-1B, Sauerstoff, AFM, \i}
-        \end{subfigure}
-    }
-    \caption{W6823-1B, Sauerstoff, AFM}
-    \label{fig:W6823-1B, Sauerstoff, AFM}
-\end{figure}
-\newpage
-
-\subsubsection{Vakuum Ausheizvorgang}\label{subsec:vakuum-ausheizvorgang-1}
-\begin{figure}
-    \centering
-    \import{../plots/XRD}{W6823-1C_Vakuum.pgf}
-    \caption{W6823-1C, Vakuum, XRD}
-    \label{fig:W6823-1C, Vakuum, XRD}
-\end{figure}
-\begin{figure}
-    \centering
-    ,\foreach \i in \temperaturesVV{
-        \begin{subfigure}[t]{0.40\textwidth}
-            \includegraphics[width=\textwidth]
-            {../plots/AFM/XG-Vakuum/XG-\i/W6823-1C/W6823-1C_XG_Vakuum_\i_Topography_1}
-            \caption{\ifthenelse{\equal{\i}{pre}}{Initialzustand}{\qty{\i}{\degreeCelsius}}}
-            \label{W6823-1C, Vakuum, AFM, \i}
-        \end{subfigure}
-    }
-    \caption{AFM, Vakuum, W6823-1C}
-    \label{fig: AFM, Vakuum, W6823-1C}
-\end{figure}
-\newpage
-
-\subsubsection{Luft Ausheizvorgang}\label{subsec:luft-ausheizvorgang-1}
-\begin{figure}
-    \centering
-    \import{../plots/XRD}{W6823-1D_Luft.pgf}
-    \caption{W6823-1D, Luft, XRD}
-    \label{fig:W6823-1D, Luft, XRD}
-\end{figure}
-\begin{figure}
-    \centering
-    ,\foreach \i in \temperaturesL{
-        \begin{subfigure}[t]{0.40\textwidth}
-            \includegraphics[width=\textwidth]
-            {../plots/AFM/XG-Luft/XG-\i/W6823-1D/W6823-1D_XG_Luft_\i_Topography_1}
-            \caption{\ifthenelse{\equal{\i}{pre}}{Initialzustand}{\qty{\i}{\degreeCelsius}}}
-            \label{W6823-1D, Luft, AFM, \i}
-        \end{subfigure}
-    }
-    \caption{AFM, Luft, W6823-1D}
-    \label{fig: AFM, Luft, W6823-1D}
-\end{figure}
-\newpage
 
 % PROBE W6824-1 %
 
@@ -334,11 +538,12 @@ Unterschiede
 \subsection{Probe W6824-1}\label{subsec:probe-W6824-1}
 
 \subsubsection{Sauerstoff Ausheizvorgang}\label{subsec:sauerstoff-ausheizvorgang-1}
+
 \begin{figure}
     \centering
     \import{../plots/XRD}{W6824-1B_Sauerstoff.pgf}
     \caption{W6824-1B, Sauerstoff, XRD}
-    \label{fig:W6824-1B, Sauerstoff, XRD}
+    \label{fig:W6824-1B_Sauerstoff_XRD}
 \end{figure}
 \begin{figure}
     \centering
@@ -347,11 +552,11 @@ Unterschiede
             \includegraphics[width=\textwidth]
             {../plots/AFM/XG-Sauerstoff/XG-\i/W6824-1B/W6824-1B_XG_Sauerstoff_\i_Topography_1}
             \caption{\ifthenelse{\equal{\i}{pre}}{Initialzustand}{\qty{\i}{\degreeCelsius}}}
-            \label{W6824-1B, Sauerstoff, AFM, \i}
+            \label{W6824-1B_Sauerstoff_AFM_\i}
         \end{subfigure}
     }
     \caption{W6824-1B, Sauerstoff, AFM}
-    \label{fig:W6824-1B, Sauerstoff, AFM}
+    \label{fig:W6824-1B_Sauerstoff_AFM}
 \end{figure}
 \newpage
 

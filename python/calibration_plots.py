@@ -18,6 +18,7 @@ plt.rcParams.update({"figure.figsize": (LINEWIDTH * 0.49, LINEWIDTH * 0.35),
                      "savefig.bbox": 'tight',
                      "savefig.pad_inches": 0})
 
+
 A = 3.9083e-3
 B = -5.775e-7
 delta_A = 0.00005e-3
