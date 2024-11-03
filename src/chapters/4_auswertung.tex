@@ -1,7 +1,7 @@
 \section{Auswertung}\label{sec:auswertung}
-Zentrales Thema dieser Arbeit ist das Ausheizen von \heo Dünnfilmen.
-Es wurden vier Proben in vier Prozessen einer PLD-Anlage mit Eagle XG Glassubstraten und dem in
-\cref{subsec:probenherstellung} beschriebenen Target hergestellt.
+Von Jorrit Bredow wurden vier Proben \samplethree, \sampleone, \sampletwo, \samplefour in vier Prozessen einer
+PLD-Anlage mit $\qty{10}{\milli\meter} \times \qty{10}{\milli\meter}$ Eagle XG Glassubstraten und dem in
+\cref{subsec:pld} beschriebenen Target hergestellt.
 Für jeden Prozess wurden jeweils \num{20000} Laserpulse mit einer Frequenz von \qty{20}{\hertz} und einer Energie von
 \qty{650}{\milli\joule} abgegeben.
 Dabei wurde der eingebaute Widerstandsheizer nicht verwendet.
@@ -26,48 +26,77 @@ Der jeweilige Druck und die Schichtdicken sind in \cref{tab:samples} aufgeführt
     \label{tab:samples}
 \end{table}
 
-Im Anschluss an die Probenherstellung wurden die Proben gevierteilt, damit Ausheizstudien vergleichbar mit
-unterschiedlichen Atmosphären durchgeführt werden konnten.
+Außerdem wurde in jedem Prozess neben dem Eagle XG Glassubstrat ein c-Saphir Substrat eingebaut.
+Damit entstehen vier weitere Proben \csamplethree, \csampleone, \csampletwo, \csamplefour, welche jedoch
+ausschließlich für die Konzentrationsanalyse von \cref{subsec:edx-analyse} verwendet wurden.
+
+Im Anschluss an die Probenherstellung wurden \samplethree, \sampleone, \sampletwo, \samplefour in
+$\qty{5}{\milli\meter}\times \qty{5}{\milli\meter}$ gevierteilt, damit Ausheizstudien mit unterschiedlichen Atmosphären
+vergleichbar durchgeführt werden konnten.
 Dazu wurde der Dünnfilm der jeweiligen Probe mit Photolack beschichtet, um die Oberfläche vor
 mechanischen Beschädigungen beim Zersägen zu schützen.
-Anschließend wurde das Substrat mit der Dünnfilmseite nach oben auf eine Glasplatte durch Wachs geklebt und mit einer
+Das Substrat wurde mit der Dünnfilmseite nach oben auf eine Glasplatte mit Wachs geklebt und mit einer
 Diamantsäge zerteilt.
-Anschließend wurden Wachs und Photolack mit den Lösungsmitteln NMP, Wachsentferner und Ethanol entfernt.
+Anschließend wurden Wachs und Photolack mit Wachsentferner, NMP und Ethanol entfernt.
 Es ist zu beachten, dass diese Prozedur durch die Lösungsmittel die Zusammensetzung und Oberfläche des Dünnfilms
 verändern kann.
 Optisch wurden keine Veränderungen festgestellt.
 
-Nach der Präparation wurden die Proben auf unterschiedliche Weisen ausgeheizt.
-Für die Sauerstoffserie wurde eine Vakuumkammer mit einer Sauerstoffatmosphäre von circa \qty{800}{\milli\bar}
+Nach der Präparation wurden die Eagle XG Proben auf drei verschiedene Arten ausgeheizt:
+In der im \cref{subsec:ausheiz} vorgestellten Vakuumkammer unter Sauerstoffatmosphäre, in der Vakuumkammer unter Vakuum
+und im Muffelofen aus \cref{subsec:ausheiz} unter Luftatmosphäre.
+
+Um einen Ausgangspunkt für die Temperatur festzulegen, wurde sich an den Erkenntnissen von Rost 2015 orientiert.
+In diesem Paper wurden, wie in \cref{subsubsec:heo} beschrieben, Pellets angefangen bei \qty{750}{\degreeCelsius}
+auszuheizen.
+Bei dieser Temperatur wurden mehrere Phasen beobachtet.
+Da sich Dünnfilme nicht wie massive Proben verhalten, wurde die Temperatur auf \qty{600}{\degreeCelsius} festgelegt,
+um sicherzustellen, dass die Phasenübergangstemperatur nicht zu Beginn bereits überschritten wird.
+Um dies zu überprüfen, wurde eine der vier geviertelten Proben von \sampletwo\ in Luft auf \qty{600}{\degreeCelsius}
+für eine Stunde ausgeheizt und anschließend im Röntgendiffraktometer vermessen.
+Da keine Peaks des Dünnfilms zu erkennen waren, wurde diese Probe anschließend für drei Stunden und sonst identischen
+Bedingungen auf \qty{600}{\degreeCelsius} ausgeheizt und erneut im Röntgendiffraktometer vermessen.
+Auch hier waren keine Peaks des Dünnfilms zu erkennen, weshalb die Temperatur als Ausgangspunkt für die Ausheizstudien
+festgelegt wurde.
+
+Da die Dünnfilme auf Eagle XG Glassubstraten gewachsen sind, muss die Viskosität des Glases in Abhängigkeit der
+Temperatur beachtet werden.
+Der obere Kühlpunkt des Glases liegt bei \qty{722}{\degreeCelsius}.
+Bis zu diesem Punkt treten zwar Entspannungen auf, Formänderungen sind jedoch nicht zu erwarten.
+Erst beim Erweichungspunkt des Glases bei \qty{971}{\degreeCelsius} ist mit Formänderungen zu rechnen.
+Da die Dünnfilme im Substrathalter der Vakuumkammer unter mechanischer Spannung stehen, ist bereits bei
+\qty{875}{\degreeCelsius} eine Verformung erkennbar, sodass diese Temperatur als obere Grenze für die Ausheizstudien
+in der Vakuumkammer festgelegt wurde.
+Diese Temperatur ist außerdem die von Rost 2015 verwendete Phasenübergangstemperatur für massive equimolare Proben.
+Für den Ausheizvorgang im Muffelofen wurde die Temperatur auf \qty{950}{\degreeCelsius} festgelegt, da diese noch
+unterhalb des Erweichungspunkts des Glases liegt.
+
+Für den Sauerstoffausheizvorgang wurde die Vakuumkammer mit einer Sauerstoffatmosphäre von circa \qty{800}{\milli\bar}
 verwendet.
 Die Proben \samplethree, \sampleone, \sampletwo, \samplefour\ wurden einem Zyklus von Ausheizen und anschließendem
 Messen unterzogen.
 Für das Ausheizen wurden die Temperaturen \qtylist{600;700;750;800;875}{\degreeCelsius} gewählt.
 Die Proben wurden für eine Stunde bei der jeweiligen Temperatur ausgeheizt, vom Substrathalter entfernt und auf einer
-Glasplatte abgekühlt.
-Dadurch wird ein schnelles Abkühlen der Proben erreicht.
-Als Anfangstemperatur wurde \qty{600}{\degreeCelsius} gewählt, da nach der Untersuchung von Rost
-sich mehrere Phasen des \heo\ Dünnfilms bei dieser Temperatur bilden.
-Die Endtemperatur wurde auf \qty{875}{\degreeCelsius} gewählt, da dies die maximale Temperatur des Heizlasers ist.
+Glasplatte gelegt, um ein schnelles Abkühlen der Proben zu erreicht.
+Während des Ausheizens rotierte der Substrathalter mit einer Geschwindigkeit von \qty{3}{\per\minute}, um eine
+gleichmäßige Temperaturverteilung zu erreichen.
+\qty{750}{\degreeCelsius} dient als vergleichbare Temperatur zur Forschung von Rost 2015.
 
-Für den Vakuumausheizvorgang wurde die gleiche Vakuumkammer wie für die Sauerstoffserie verwendet.
+Für den Vakuumausheizvorgang wurde die gleiche Vakuumkammer wie für den Sauerstoffausheizvorgang verwendet.
 Auch hier wurden die Proben \samplethree, \sampleone, \sampletwo, \samplefour\ einem Zyklus von Ausheizen und
 anschließendem Messen unterzogen.
-Die Kammer wurde auf einen Druck von \qty{4e-4}{\milli\bar} evakuiert.
-Da die Dünnfilme auf Eagle XG Glassubstraten gewachsen sind, ist deren Viskosität bei hohen
-Temperaturen gering.
-Das führt zu Verformungen der gesamten Probe bei \qty{875}{\degreeCelsius}.
-Weitere Messungen bei höheren Temeperaturen waren aus diesem Grund nicht möglich.
+Die Kammer wurde auf einen Druck von \qty{4e-4}{\milli\bar} evakuiert, um Vakuumbedingungen zu erreichen,
+Dies ist die geringste Druckstufe, die der PID-Regler der Vakuumkammer zuverlässig erreicht.
+Alle anderen Parameter sind identisch zum Sauerstoffausheizvorgang.
 
-Für den Ausheizvorgang unter Luftatmosphäre wurde der Muffelofen verwendet.
+Für den Ausheizvorgang unter Luftatmosphäre wurde der Muffelofen aus \cref{subsec:ausheiz} verwendet.
 Die Proben \samplethree, \sampleone, \sampletwo, \samplefour\ wurden einem Zyklus von Ausheizen und anschließendem
 Messen unterzogen.
-FÜr das Ausheizen wurden die Temperaturen \qtylist{600;700;750;800;875}{\degreeCelsius} gewählt.
+Für das Ausheizen wurden die Temperaturen \qtylist{600;700;750;800;875;900;950}{\degreeCelsius} gewählt.
 Die Proben wurden in einer Keramikschale für eine Stunde bei der jeweiligen Temperatur ausgeheizt anschließend
 aus dem Ofen und der Schale genommen und auf einer Glasplatte abgekühlt.
 Anders als bei den vorherigen Ausheizvorgängen wurde hier die Probe mit einer langsamen Ausheizrate von
 \qty{300}{\degreeCelsius\per\hour} auf die Endtemperatur gebracht.
-
 
 \subsection{Temperaturkalibrierung der A-Kammer}\label{subsec:temperaturkalibrierung}
 \begin{figure}
@@ -85,55 +114,63 @@ Anders als bei den vorherigen Ausheizvorgängen wurde hier die Probe mit einer l
             \label{fig:\i}
         \end{subfigure}
     }
-    \caption{Abhängigkeiten zur Temperaturbestimmung der A-Kammer}
+    \caption{Abhängigkeiten zur Temperaturbestimmung der Vakuumkammer}
     \label{fig:temperature_calibration_1}
 \end{figure}
+Zentrales Thema der vorliegenden Arbeit ist das Ausheizen und anschließende Charakterisieren der \heo\ Dünnfilme.
+Dafür wird unter anderem die Vakuumkammer aus \cref{subsec:ausheiz} verwendet.
+In dieser ist ein Heizlaser verbaut, welcher auf die Rückseite des Substrathalters
+gerichtet ist.
+Durch ein Pyrometer wird die Temperatur auf der Rückseite des Substrathalters gemessen.
+Die relevante Temperatur ist jedoch die des Dünnfilms auf der Vorderseite des Substrathalters, welche durch die
+Atmosphäre, die Geometrie und Wärmeleitfähigkeit des Substrathalters und des Substrats beeinflusst wird.
 
-Zentrales Thema der vorliegenden Arbeit ist das Ausheizen der \heo\ Dünnfilme.
-Dabei ist es wichtig, einen entsprechend großen Temperaturbereich von \qty{300}{\degreeCelsius}
-bis \qty{1000}{\degreeCelsius} zu erreichen und die Temperatur des Dünnfilms möglichst genau zu bestimmen.
-Ein geeigneter Kandidat für diesen Prozess ist die A-Kammer, die mithilfe eines Heizlasers die Rückseite des
-Substrathalters erhitzt.
-Um die Temperatur des Dünnfilms zu bestimmen, wird ein Pyrometer verwendet, welches die Rückseite des Substrathalters
-misst.
-Mithilfe eines PID-Reglers wird die Temperatur auf den eingestellten Wert geregelt.
-
-Nun stellt sich die Frage, wie genau die Temperatur des Dünnfilms bestimmt werden kann.
-Dazu wurde von Tim Düvel ein spezieller Temperatursensor fabriziert.
-Dieser besteht aus einem C-Saphir Substrat, auf dem ein Muster für die Platinbahnen infolge eines
+Um diese abzuschätzen, wurde von Tim Düvel ein spezieller Temperatursensor hergestellt.
+Dieser besteht aus einem c-Saphir Substrat, auf dem eine Maske für die Platinbahnen infolge eines
 Lithografieprozesses aufgebracht wurde.
-Das Substrat wurde mit einer dünnen Schicht Platinoxid und einer Schicht Platin bedampft.
-An zwei Enden wurde Gold aufgedampft, um die Kontakte herzustellen.
-Für den Schutz wurde abschließend eine Schicht Aluminiumoxid aufgebracht.
+Das Substrat wurde zunächst für \qty{10}{\second} mit Platinoxid für und anschließend für \qty{120}{\second} mit Platin
+im Sputterverfahren beschichtet.
+Nach dem Ablösen der Maske wurde durch gleiches Verfahren Gold auf zwei Enden der Platinbahnen beschichtet, um
+Kontaktflächen für die Messung zu schaffen.
+Zum Schutz der Platinbahnen vor mechanischer Beschädigung wurde eine Schicht Aluminiumoxid aufgebracht.
 Dieser Sensor wird im Folgenden als Lithografiesensor bezeichnet.
 
 In Zusammenarbeit mit Tim Düvel wurde eine Kalibrierung des Lithografiesensors durchgeführt.
-Dazu wurde ein PT1000 Temperatursensor genutzt, für welchen es eine bekannte quadratische Abhängigkeit zwischen Widerstand
-$R_{\mathrm{Pt}}$ und Temperatur $T_{\mathrm{Pt}}$ gibt:
+Dazu wurde ein PT1000-Temperatursensor genutzt, für welchen eine bekannte quadratische Abhängigkeit zwischen Widerstand
+$R_{\mathrm{Pt}}$ und Temperatur $T_{\mathrm{Pt}}$ existiert\autocite{din_pt}:
 \begin{equation}
     R_{\mathrm{Pt}}(T_{\mathrm{Pt}})
-    =R_0 \cdot (1 + A \cdot R_{\mathrm{Pt}} + B \cdot R_{\mathrm{Pt}}^2).
+    =R_0 \cdot (1 + A \cdot T_{\mathrm{Pt}} + B \cdot T_{\mathrm{Pt}}^2).
     \label{eq:pt1000_calibration}
 \end{equation}
 Hierbei ist $R_0 = \qty{1000}{\ohm}$ der Widerstand bei \qty{0}{\degreeCelsius},
 $A = \qty{3.9083e-3}{\degreeCelsius^{-1}}$ und $B = \qty{-5.775e-7}{\degreeCelsius^{-2}}$.
-Der PT1000 Temperatursensor wurde mithilfe von Wärmeleitpaste thermisch an den Lithografiesensor gekoppelt und
-im Muffelofen ausgeheizt.
-Beide Widerstände wurden in Abhängigkeit der Temperatur gemessen und sind in Abbildung
-\cref{fig:furnace_calibration_1.pgf} dargestellt.
-Da jedem Zeitpunkt zwei Widerstände zugeordnet werden können, kann durch diese Parametrisierung auch die Abhängigkeit
-beider Widerstände voneinander bestimmt werden, siehe \cref{fig:furnace_calibration_2.pgf}.
+Der PT1000-Temperatursensor wurde mithilfe von Wärmeleitpaste thermisch an den Lithografiesensor gekoppelt und
+in einem Muffelofen ausgeheizt.
+Der Widerstand des Lithografiesensors $R_\mathrm{Lit}$ und der des PT1000-Temperatursensors $R_\mathrm{Pt}$
+wurden in Abhängigkeit der Zeit gemessen und sind in Abbildung \cref{fig:furnace_calibration_1.pgf} dargestellt.
+Aus der Parametrisierung $t \to (R_\mathrm{Lit}, R_\mathrm{Pt})$ kann die Abhängigkeit beider Widerstände voneinander
+bestimmt werden, siehe \cref{fig:furnace_calibration_2.pgf}.
 Aufgrund der gleichen Materialbeschaffenheit ist die Abhängigkeit $R_\mathrm{Lit}(R_\mathrm{Pt})$ linear und kann durch
-einen linearen Fit beschrieben werden, siehe \cref{fig:a_chamber_calibration.pgf}.
+einen linearen Fit der Form $f(x)=mx+n$ beschrieben werden, siehe \cref{fig:a_chamber_calibration.pgf}.
+Für die Fitparameter ergibt sich:
+\begin{equation*}
+    m = \num{0.501(0.0002)} \quad n = \qty{-0.176(0.001)}{\kilo\ohm}.
+\end{equation*}
 
-Im nächsten Schritt wird der Lithografiesensor in den Probenhalter der A-Kammer eingebaut und eine Temperaturserie
-aufgenommen.
-Dabei wird die Temperatur des Heizlasers eingestellt und nach einer festen Zeitspanne Pyrometertemperatur
-$T_\mathrm{Pyro}$ und Lithografiewiderstand $R_\mathrm{Lit}$ gemessen.
-Auch hier zeigt sich eine lineare Abhängigkeit zwischen beiden Größen welche durch einen linearen Fit
-beschrieben werden.
+Im nächsten Schritt wurde der Lithografiesensor in den Probenhalter der Vakuumkammer eingebaut und eine
+zweite Messung durchgeführt.
+Dabei wird die Temperatur des Heizlasers eingestellt und nach einer festen Zeitspanne die Pyrometertemperatur
+$T_\mathrm{Pyro}$ und der Lithografiewiderstand $R_\mathrm{Lit}$ gemessen, einmal bei aufsteigender und einmal bei
+fallender Temperatur.
+Auch hier zeigt sich eine lineare Abhängigkeit zwischen beiden Größen, dessen Parameter durch einen linearen Fit
+beschrieben werden können, siehe \cref{fig:a_chamber_calibration.pgf}.
+Für die Fitparameter ergibt sich:
+\begin{equation*}
+    m = \qty{0.0067(0.0002)}{\kilo\ohm\per\degreeCelsius} \quad n = \qty{2.6(0.1)}{\kilo\ohm}.
+\end{equation*}
 
-Als Referenztemperatur, und damit als Temperatur des Dünnfilms, wird die Temperatur des PT1000 Sensors angesehen.
+Als Referenztemperatur, und damit als Temperatur des Dünnfilms, wird die Temperatur des PT1000-Sensors angesehen.
 Diese kann durch folgende Gesamtfunktion bestimmt werden:
 \begin{equation}
     T_{\mathrm{Pt}}=\underbrace{ T_{\mathrm{Pt}}(R_{\mathrm{Pt}}) }_{
@@ -148,26 +185,101 @@ Da alle Funktionen bekannt sind, zeigt sich folgender Zusammenhang zwischen $T_{
 in Abbildung \cref{fig:final_calibration.pgf}.
 Der Graph zeigt, dass die Temperatur des Dünnfilms mit einer Unsicherheit von circa \qtyrange{10}{15}{\degreeCelsius}
 der Temperatur des Pyrometers entspricht.
-Es ist zu beachten, dass dieser Sensor bestmöglich die Thermodynamik von C-Saphir Substraten erfasst.
-Da in dieser Arbeit mit EagleXG-Substraten gearbeitet wird, welche andere Kompositionen und Eigenschaften aufweisen,
-kann das Ergebnis nur als Approximation betrachtet werden.
-Hier sei vor allem auf die unterschiedlichen Wärmeleitfähigkeiten hingewiesen.
 
-Wichtig für das Ausheizen ist außerdem die Abkühlzeit der A-Kammer.
-Um diese zu untersuchen, wurde eine Zeitserie des Lithografiewiderstands aufgenommen,
-siehe \cref{fig:quenching_time.pgf}.
+Wichtig für das Ausheizen ist außerdem die Abkühlzeit der Vakuumkammer.
+Um diese zu untersuchen, wurde der Lithografiesensor eingebaut und das der Heizlaser auf \qty{350}{\degreeCelsius}
+eingestellt.
+Nachdem sich ein konstanter Lithografiewiderstand eingestellt hatte, wurde der Heizlaser abgeschaltet und der
+Widerstand in Abhängigkeit der Zeit gemessen, siehe \cref{fig:quenching_time.pgf}.
 Für einen Temperaturabfall von circa \qty{350}{\degreeCelsius} auf circa \qty{25}{\degreeCelsius}
 benötigt die A-Kammer etwa \qty{4}{\minute}.
-Damit zeigen Temperaturbereich, Präzision des Pyrometers und Abkühlzeit, dass
-die A-Kammer ein geeigneter Kandidat für das Ausheizen der \heo\ Dünnfilme ist.
+Damit zeigt der Temperaturbereich, die Präzision des Pyrometers und die Abkühlzeit, dass
+die Vakuumkammer für die Ausheizstudien geeignet ist.
 
-\subsection{EDX Analyse}\label{subsec:edx-analyse}a
+Es ist zu beachten, dass dieser Sensor bestmöglich die Thermodynamik von c-Saphir Substraten erfasst.
+Die in dieser Arbeit betrachteten Dünnfilme wurden auf Eagle XG Glassubstraten abgeschieden.
+Eagle XG hat bei Raumtemperatur eine Wärmeleitfähigkeit von \qty{1.09}{\watt\per\meter\per\kelvin}, wohingegen
+c-Saphir eine Wärmeleitfähigkeit von \qty{42}{\watt\per\meter\per\kelvin} hat.
+Auch bei einer Temperatur von \qty{300}{\degreeCelsius} hat Eagle XG eine Wärmeleitfähigkeit von
+\qty{1.34}{\watt\per\meter\per\kelvin}, wohingegen c-Saphir eine Wärmeleitfähigkeit von
+\qty{20}{\watt\per\meter\per\kelvin} hat.
+Da die Wärmeleitfähigkeit von Eagle XG Glassubstraten um mehr als eine Größenordnung geringer ist als die von
+c-Saphir Substraten, ist die die Abschätzung der Temperatur des Dünnfilms durch den Lithografiesensor nur als
+Approximation zu betrachten.
+
+\subsection{Konzentrationsanalyse}\label{subsec:edx-analyse}
+Die Abscheidung mithilfe von PLD ist ein hochkomplexer Prozess, welcher nicht im thermodynamischen Gleichgewicht
+stattfindet und damit schwer analytisch zu beschreiben ist.
+Durch die komplexen Wechselwirkungen und dem Target mit sechs verschiedenen Konstituenten ist es schwer, Vorhersagen
+über die Stöchiometrie des Dünnfilms zu treffen.
+Die Komposition des Dünnfilms muss nicht der des Targets entsprechen.
+Zu diesem Anlass wurden ortsaufgelöste Konzentrationsaufnahmen der Proben \csamplethree, \csampleone, \csampletwo,
+\csamplefour\ mithilfe von SEM-EDX durchgeführt.
+
+Das Dünnfilmwachstum ist nicht nur abhängig von den Prozessparametern, sondern auch vom gewählten Substrat.
+Idealerweise sollte die Konzentrationsanalyse demnach auf demselben Substrat durchgeführt werden, die auch im
+Ausheizprozess verwendet wurde.
+Problematisch ist, dass die genaue Zusammensetzung des Eagle XG Glassubstrats nicht bekannt ist.
+Es ist jedoch bekannt, dass Magnesium ein Konstituent des Substrats ist.
+Da auch der Dünnfilm Magnesium enthält, ist es dadurch nicht möglich, das Magnesium des Dünnfilms vom Magnesium des
+Substrats zu unterscheiden.
+Daher wurde ein c-Saphir Substrat verwendet, welches keine Metallkationen des Dünnfilms enthält.
+
+Da der Dünnfilm isolierende Eigenschaften hat, wurden die c-Saphir Proben vor der Messung mit einer dünnen Schicht
+Kohlenstoff beschichtet.
+\cref{fig:edx_map} zeigt die Oberfläche der Probe \csampleone\ unter der Kohlenstoffschicht.
+Erkennbar ist eine glatte Morphologie ohne sichtbare Verunreinigungen.
+Die Aufnahmen \cref{fig:edx_Mg,fig:edx_Co,fig:edx_Ni,fig:edx_Cu,fig:edx_Zn} zeigen die Konzentrationen der
+Elemente Magnesium, Cobalt, Nickel, Kupfer und Zink in Abhängigkeit der Position.
+Über den gesamten Dünnfilm ist eine gleichmäßige Verteilung alle Elemente erkennbar.
+Es breiten sich keine erkennbaren Cluster aus, welche auf eine Phasentrennung hindeuten würden.
+Der Dünnfilm wurde erfolgreich und homogen abgeschieden.
+Hierbei ist wichtig zu betonen, dass die Konzentrationsanalyse in einer Skala von $\qty{25.6}{\micro\meter} \times
+\qty{25.6}{\micro\meter}$ durchgeführt wurde.
+Da keine atomare Auflösung erreicht wurde, können Cluster auf kleineren Skalen nicht ausgeschlossen werden.
+
+Die ortsabhängige Konzentrationsanalyse von \csampleone\ wurde hier repräsentativ für alle Proben gezeigt.
+Die Probe \csamplethree, \csampletwo, \csamplefour\ zeigen sehr ähnliche Ergebnisse und sind im Anhang zu finden.
+Auch die Konzentrationsverhältnisse der c-Saphir Proben lassen sich mithilfe dieser Aufnahmen bestimmen.
+Die Ergebnisse sind in \cref{tab:concentration} aufgeführt.
+\begin{table}[h]
+    \centering
+    \begin{tabular}{l l l l l l}
+        \toprule
+        Probe         & \ce{Mg} & \ce{Co} & \ce{Ni} & \ce{Cu} & \ce{Zn} \\
+        \midrule
+        \csamplethree & 17.62   & 19.08   & 20.06   & 22.52   & 20.72   \\
+        \csampleone   & 16.5    & 19.01   & 20.04   & 23.29   & 21.16   \\
+        \csampletwo   & 16.13   & 19.56   & 20.79   & 22.66   & 20.86   \\
+        \csamplefour  & 15.03   & 20.93   & 21.32   & 21.61   & 21.12   \\
+        \bottomrule
+    \end{tabular}
+    \caption{Konzentrationen der Elemente \ce{Mg}, \ce{Co}, \ce{Ni}, \ce{Cu} und \ce{Zn} in den Proben \csamplethree,
+        \csampleone, \csampletwo, \csamplefour}
+    \label{tab:concentration}
+\end{table}
+Erkennbar ist ist eine leichte Abweichung der Konzentrationen der Elemente in den Proben.
+Vor allem die Konzentration von \ce{Mg} ist geringer als die der anderen Elemente.
+Durch die Abweichung der Konzentration von der equimolaren Zusammensetzung ist die Mischentropie des Dünnfilms
+nicht maximal.
+Dadurch ist eine höhere Temperatur nötig, um die entropiestabilisierte Phase zu erreichen.
+
+Auch wenn Sauerstoff nicht direkt mithilfe von EDX gemessen werden kann, so liegt die Vermutung nahe, dass es
+trotzdem in den Dünnfilmen vorhanden ist.
+Wäre dies nicht der Fall, so entstände durch die Metalle ein leitender Dünnfilm.
+Da dieser jedoch isolierende Eigenschaften hat, ist davon auszugehen, dass Sauerstoff in den Dünnfilmen vorhanden ist.
+
+Mithilfe eines anderen Glassubstrates, beispielsweise \ce{SiO2}, könnten weitere Ausheizstudien durchgeführt werden.
+Dieses Substrat verspricht mit seiner bekannten Komposition sowohl eine direkte Untersuchung der Dünnfilme
+mithilfe von EDX als auch eine thermisch stabilere Plattform für die Ausheizstudien.
+
 \begin{figure}
     \centering
     \foreach \i/\desc in {map/Oberfläche, Mg/Magnesium, Co/Kobalt, Ni/Nickel), Cu/Kupfer, Zn/Zink}{
         \begin{subfigure}[t]{0.40\textwidth}
             \includegraphics[width=\textwidth]{../plots/EDX/W6821-3D/\i}
             \caption{\desc}
+            \label{fig:edx_\i}
         \end{subfigure}
     }
     \caption{EDX Aufnahmen der Probe W6821-3D}
@@ -176,9 +288,10 @@ die A-Kammer ein geeigneter Kandidat für das Ausheizen der \heo\ Dünnfilme ist
 
 % AUSHEIZVORGÄNGE %
 \newcommand{\temperaturesS}{pre,600,700,750,800,875}
-\newcommand{\temperaturesV}{pre,500,600,700,750, 800}
-\newcommand{\temperaturesVV}{pre,500,600,700}
-\newcommand{\temperaturesL}{pre,600, 700, 750, 800}
+\newcommand{\temperaturesV}{pre,500,600,700,750, 800, 875}
+\newcommand{\temperaturesVthree}{pre,500,600,700}
+\newcommand{\temperatureVfour}{pre, 500, 600, 700, 750, 800}
+\newcommand{\temperaturesL}{pre,600, 700, 750, 800, 875}
 
 % PROBE W6823-1 %
 
@@ -315,7 +428,7 @@ Das sorgt dafür, dass kaum noch Dünnfilmatome auf der Oberfläche verbleiben.
 
 \begin{figure}
     \centering
-    ,\foreach \i in \temperaturesVV{
+    ,\foreach \i in \temperaturesVthree{
         \begin{subfigure}[t]{0.40\textwidth}
             \includegraphics[width=\textwidth]
             {../plots/AFM/XG-Vakuum/XG-\i/W6823-1C/W6823-1C_XG_Vakuum_\i_Topography_1}
@@ -569,7 +682,7 @@ Durch thermische Spannungen im Dünnfilm und im Substrat entstehen Risse.
 \end{figure}
 \begin{figure}
     \centering
-    ,\foreach \i in \temperaturesV{
+    ,\foreach \i in \temperatureVfour{
         \begin{subfigure}[t]{0.40\textwidth}
             \includegraphics[width=\textwidth]
             {../plots/AFM/XG-Vakuum/XG-\i/W6824-1C/W6824-1C_XG_Vakuum_\i_Topography_1}

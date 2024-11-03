@@ -1,0 +1,12 @@
+     Element Ordnungs-      Net       Massen- Norm. Massen-         Atom-           1s      1s rel.
+                  zahl   counts konzentration Konzentration Konzentration Unsicherheit Unsicherheit
+                                           /%            /%            /%      /Masse%           /%
+ Kupfer             29   144988          4,29         25,85         22,66         0,05         1,23
+ Zink               30   113233          4,07         24,49         20,86         0,05         1,29
+ Nickel             28   167457          3,64         21,91         20,79         0,04         1,15
+ Kobalt             27   178922          3,44         20,70         19,56         0,04         1,17
+ Magnesium          12   183434          1,17          7,04         16,13         0,05         4,01
+ Kohlenstoff         6    98413          0,00          0,00          0,00         0,00         0,00
+ Sauerstoff          8  3229483          0,00          0,00          0,00         0,00         0,00
+ Aluminium          13 12628526          0,00          0,00          0,00         0,00         0,00
+                            Sum         16,60        100,00        100,00                          

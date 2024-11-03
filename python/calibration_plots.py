@@ -25,6 +25,8 @@ delta_A = 0.00005e-3
 delta_B = 0.00005e-7
 R0 = 1000
 
+def exponential(x, a, b,):
+    return a * np.exp(b * x)
 
 def linear(x, m, n):
     return m * x + n
@@ -173,10 +175,10 @@ plt.close()
 df = pd.read_csv(base_path / "quenching_time.csv", sep=',')
 df = df[df['t'].notna()]
 df = df[df["R"].notna()]
-t_multi_2 = df["t"].to_numpy()
-R_multi_2 = df["R"].to_numpy()
+t_q = df["t"].to_numpy()
+R_q = df["R"].to_numpy()
 
-plt.plot(t_multi_2 / 60 - 74, R_multi_2 / 1000)
+plt.plot(t_q / 60 - 74, R_q / 1000)
 plt.xlabel(r"$t \text{ in } \unit{\minute}$")
 plt.ylabel(r"$R \text{ in } \unit{\kilo\ohm}$")
 plt.text(2.1, 4.877, r"$T\simeq\qty{350}{\degreeCelsius}$", ha="left", va="top")
@@ -185,6 +187,13 @@ plt.ylim(3, 5)
 plt.xlim(0, 6)
 plt.savefig(base_export_path / "quenching_time.pgf")
 plt.close()
+
+min, max = np.where(t_q > 74 * 60)[0][0], np.where(t_q > 80 * 60)[0][0]
+print(min, max)
+t_q = t_q[min:max]
+print(R_q[min:max])
+print(t_q)
+
 
 
 df = pd.read_csv(base_path / "furnace_heating_rate.csv", sep=',')
@@ -197,4 +206,9 @@ plt.ylabel(r"$T \text{ in } \unit{\degreeCelsius}$")
 plt.savefig(base_export_path / "furnace_heating_rate.pgf")
 plt.close()
 
-
+print("Parameter für Fit 1")
+print(f"m = {m} +- {delta_m}")
+print(f"n = {n} +- {delta_n/1000}") # /1000 for Ohm to kOhm
+print("Parameter für Fit 2")
+print(f"m = {m2} +- {delta_m2/1000}")
+print(f"n = {n2} +- {delta_n2/1000}")
