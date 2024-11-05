@@ -7,7 +7,8 @@
 
 \usepackage{graphicx}
 \usepackage[version=4]{mhchem}
-\usepackage[style=authortitle, autocite=footnote]{biblatex}
+
+\usepackage[style=numeric,maxcitenames=2,sorting=none]{biblatex}
 \usepackage[ngerman]{babel}
 \usepackage{csquotes}
 \usepackage{siunitx}
@@ -26,12 +27,46 @@
 \usepackage{pgffor}
 \usepackage{ifthen}
 \usepackage{makecell}
+\usepackage{parskip}
 
+% Package options
+% Das löscht aus dem Literaturverzeichnis alles was da nicht rein soll, falls es in der .bib datei ist
+% also z.B. dass aus "Müller (März 2023), https://www.etc.de" ---> "Müller (2023)" wird
+\AtEveryBibitem{%
+    \clearfield{month}%
+    \clearfield{day}%
+    \clearfield{urlyear}%
+    \clearfield{urlmonth}%
+}
 
-\sisetup{locale=DE,separate-uncertainty=true}
-\sisetup{range-phrase = \,bis\,}
+% das braucht man auch, damits nicht irgendwo angezeigt wird
+\AtEveryCitekey{%
+    \clearfield{month}%
+    \clearfield{day}%
+    \clearfield{urlyear}%
+    \clearfield{urlmonth}%
+}
 
-\setlength{\parindent}{0pt}
+% das ändert den \textcite{key} command zu "Name (year) [#]"
+% dafür braucht man das xpatch package
+
+\sisetup{locale=DE,separate-uncertainty=true,range-phrase = { bis }, list-final-separator = { und }}
+\DeclareCiteCommand{\citeauthoryear}
+  {\boolfalse{citetracker}%
+   \boolfalse{pagetracker}%
+   \usebibmacro{prenote}}
+  {\ifciteindex
+     {\indexnames{labelname}\indexfield{year}}
+     {}%
+   \printtext[bibhyperref]{%
+    \printnames{labelname}%
+    \setunit{\addspace}%
+    \printtext{(}%
+    \printfield{year}%
+    \printtext{)}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
 \addbibresource{literature.bib}
 
 \newcommand{\imcite}[2][]{\\ Aus: \cite[#1]{#2}}
@@ -43,16 +78,14 @@
 \newcommand{\h}{\mathrm{h}}
 \renewcommand{\c}{\mathrm{c}}
 
-\newcommand{\sampleone}{$\mathrm{P}_{0.01}$}
-\newcommand{\sampletwo}{$\mathrm{P}_{0.001}$}
-\newcommand{\samplethree}{$\mathrm{P}_{0.1}$}
-\newcommand{\samplefour}{$\mathrm{P}_{0.00005}$}
-
-
-\newcommand{\csampleone}{$\mathrm{P}_{0.01}^{\mathrm{c}}$}
-\newcommand{\csampletwo}{$\mathrm{P}_{0.001}^{\mathrm{c}}$}
-\newcommand{\csamplethree}{$\mathrm{P}_{0.1}^{\mathrm{c}}$}
-\newcommand{\csamplefour}{$\mathrm{P}_{0.00005}^{\mathrm{c}}$}
+\newcommand{\sampleone}{$\mathrm{P}_{\num{0.01}}$}
+\newcommand{\sampletwo}{$\mathrm{P}_{\num{0.001}}$}
+\newcommand{\samplethree}{$\mathrm{P}_{\num{0.1}}$}
+\newcommand{\samplefour}{$\mathrm{P}_{\num{0.00005}}$}
+\newcommand{\csampleone}{$\mathrm{P}_{\num{0.01}}^{\mathrm{c}}$}
+\newcommand{\csampletwo}{$\mathrm{P}_{\num{0.001}}^{\mathrm{c}}$}
+\newcommand{\csamplethree}{$\mathrm{P}_{\num{0.1}}^{\mathrm{c}}$}
+\newcommand{\csamplefour}{$\mathrm{P}_{\num{0.00005}}^{\mathrm{c}}$}
 
 
 \DeclareSIUnit\angstrom{\text {Å}}
@@ -61,11 +94,16 @@
 
 % Document
 \begin{document}
+    \pagenumbering{gobble}
     \include{chapters/1_titel}
     \tableofcontents
-    \include{chapters/2_theorie}
-    \include{./chapters/3_messmethoden}
-    \input{./chapters/4_auswertung}
-    \input{./chapters/5_appendix}
+    \cleardoublepage% ensures that the page numbering will change on a recto page
+    \pagenumbering{arabic}
+    \include{chapters/2_einleitung}
+    \include{chapters/3_theorie}
+    %\include{chapters/4_messmethoden}
+    %\input{chapters/5_auswertung}
+    %\input{chapters/6_fazit}
+    %\input{chapters/7_anhang}
     \printbibliography
 \end{document}

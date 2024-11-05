@@ -8,16 +8,12 @@ from scipy.optimize import curve_fit
 
 from python._states import RC_PARAMS, LINEWIDTH
 
-
 # sixth plot
 
 
 mpl.use("pgf")
 plt.rcParams.update(RC_PARAMS)
-plt.rcParams.update({"figure.figsize": (LINEWIDTH * 0.49, LINEWIDTH * 0.35),
-                     "savefig.bbox": 'tight',
-                     "savefig.pad_inches": 0})
-
+plt.rcParams.update({"figure.figsize": (LINEWIDTH * 0.45, LINEWIDTH * 0.35)})
 
 A = 3.9083e-3
 B = -5.775e-7
@@ -25,8 +21,10 @@ delta_A = 0.00005e-3
 delta_B = 0.00005e-7
 R0 = 1000
 
-def exponential(x, a, b,):
+
+def exponential(x, a, b, ):
     return a * np.exp(b * x)
+
 
 def linear(x, m, n):
     return m * x + n
@@ -106,6 +104,7 @@ plt.ylabel(r"$R \text{ in } \unit{\kilo\ohm} $")
 plt.legend()
 export_path = base_export_path / "furnace_calibration_1.pgf"
 export_path.parent.mkdir(parents=True, exist_ok=True)
+plt.subplots_adjust(right=0.98, left=0.25)
 plt.savefig(export_path)
 print(f"Saved {export_path}")
 plt.close()
@@ -117,6 +116,7 @@ plt.ylabel(r"$R_{\text{Pt}} \text{ in } \unit{\kilo\ohm}$")
 plt.legend()
 export_path = base_export_path / "furnace_calibration_2.pgf"
 export_path.parent.mkdir(parents=True, exist_ok=True)
+plt.subplots_adjust(right=0.98, left=0.25)
 plt.savefig(export_path)
 print(f"Saved {export_path}")
 plt.close()
@@ -143,6 +143,7 @@ plt.ylabel(r"$R \text{ in } \unit{\kilo\ohm}$")
 plt.legend()
 export_path = base_export_path / "a_chamber_calibration.pgf"
 export_path.parent.mkdir(parents=True, exist_ok=True)
+plt.subplots_adjust(right=0.98, left=0.25)
 plt.savefig(export_path)
 print(f"Saved {export_path}")
 plt.close()
@@ -160,13 +161,14 @@ T_pyro = np.linspace(400, 600, 1000)
 T = T_real(A, B, m, n * 1000, m2 * 1000, n2 * 1000, T_pyro)
 dT = delta_T_real(A, B, m, n * 1000, m2 * 1000, n2 * 1000, T_pyro)
 
-plt.plot(T_pyro, T, label=r"$T_{\text{real}}$")
+plt.plot(T_pyro, T, label=r"$T_{\text{Pt}}$")
 plt.fill_between(T_pyro, T - dT, T + dT, alpha=0.5, color="orange", label=r"$\Delta T$")
 plt.xlabel(r"$T_{\text{Pyro}} \text{ in } \unit{\degreeCelsius}$")
-plt.ylabel(r"$T_{\text{real}} \text{ in } \unit{\degreeCelsius}$")
+plt.ylabel(r"$T_{\text{Pt}} \text{ in } \unit{\degreeCelsius}$")
 plt.legend()
 export_path = base_export_path / "final_calibration.pgf"
 export_path.parent.mkdir(parents=True, exist_ok=True)
+plt.subplots_adjust(right=0.98, left=0.25)
 plt.savefig(export_path)
 print(f"Saved {export_path}")
 plt.close()
@@ -185,6 +187,7 @@ plt.text(2.1, 4.877, r"$T\simeq\qty{350}{\degreeCelsius}$", ha="left", va="top")
 plt.text(5.8, 3.52, r"$T\simeq\qty{25}{\degreeCelsius}$", ha="right", va="bottom")
 plt.ylim(3, 5)
 plt.xlim(0, 6)
+plt.subplots_adjust(right=0.98, left=0.25)
 plt.savefig(base_export_path / "quenching_time.pgf")
 plt.close()
 
@@ -193,8 +196,6 @@ print(min, max)
 t_q = t_q[min:max]
 print(R_q[min:max])
 print(t_q)
-
-
 
 df = pd.read_csv(base_path / "furnace_heating_rate.csv", sep=',')
 t = df["t"].to_numpy()
@@ -208,7 +209,7 @@ plt.close()
 
 print("Parameter für Fit 1")
 print(f"m = {m} +- {delta_m}")
-print(f"n = {n} +- {delta_n/1000}") # /1000 for Ohm to kOhm
+print(f"n = {n} +- {delta_n / 1000}")  # /1000 for Ohm to kOhm
 print("Parameter für Fit 2")
-print(f"m = {m2} +- {delta_m2/1000}")
-print(f"n = {n2} +- {delta_n2/1000}")
+print(f"m = {m2} +- {delta_m2 / 1000}")
+print(f"n = {n2} +- {delta_n2 / 1000}")
