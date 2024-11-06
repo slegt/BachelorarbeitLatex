@@ -69,8 +69,8 @@
 
 \addbibresource{literature.bib}
 
-\newcommand{\imcite}[2][]{\\ Aus: \cite[#1]{#2}}
-\newcommand{\imcitetwo}[2][]{\\ Nach: \cite[#1]{#2}}
+\newcommand{\imcite}[2][]{\\ Aus \cite[#1]{#2}.}
+\newcommand{\imcitetwo}[2][]{\\ Nach \cite[#1]{#2}.}
 
 \newcommand{\integral}[4]{\int_{#1}^{#2} #3 \mathrm{d} #4}
 \newcommand{\derivative}[2]{\frac{\mathrm{d}}{\mathrm{d} #1} #2}
@@ -90,6 +90,7 @@
 
 \DeclareSIUnit\angstrom{\text {Å}}
 \DeclareSIUnit\bar{bar}
+\captionsetup{justification=centering}
 
 
 % Document
@@ -97,13 +98,13 @@
     \pagenumbering{gobble}
     \include{chapters/1_titel}
     \tableofcontents
-    \cleardoublepage% ensures that the page numbering will change on a recto page
+    \cleardoublepage
     \pagenumbering{arabic}
     \include{chapters/2_einleitung}
     \include{chapters/3_theorie}
-    %\include{chapters/4_messmethoden}
-    %\input{chapters/5_auswertung}
-    %\input{chapters/6_fazit}
-    %\input{chapters/7_anhang}
-    \printbibliography
+    \include{chapters/4_messmethoden}
+    %\include{chapters/5_auswertung}
+    %\include{chapters/6_fazit}
+    %\include{chapters/7_anhang}
+    %\printbibliography
 \end{document}

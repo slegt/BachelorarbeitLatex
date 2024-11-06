@@ -47,7 +47,7 @@ Eine Reduktion des Drucks führt damit zu einer stabileren Umgebung für die Dü
 \paragraph{Targethalter, Substrathalter, Heizer}
 In der Vakuumkammer ist ein scheibenförmiges Target an einer Halterung montiert, welches aus dem Material besteht, aus
 dem der Dünnfilm hergestellt werden soll.
-Für die \heo Proben wurden die Binäroxide im equimolaren Verhältnis abgewogen, gemahlen, gepresst und anschließend
+Für die \heo Proben wurden die Binäroxide im äquimolaren Verhältnis abgewogen, gemahlen, gepresst und anschließend
 für \qty{12}{\hour} bei \qty{1000}{\celsius} gesintert.
 Danach konnte es als Target verwendet werden.
 Da das Target durch den Laserstrahl nur an einer kleinen Stelle erhitzt wird, ist es notwendig,
@@ -215,13 +215,16 @@ Somit ist es möglich, Rückschlüsse auf die vorhandenen Kristallstrukturen im 
 \newpage
 
 \subsection{Rasterkraftmikroskopie}\label{subsec:afm}
-Nachdem die Kristallinität mithilfe von XRD-Messungen untersucht wurde, kann durch Rasterkraftmikroskopie (AFM, engl.
-\textit{Atomic Force Microscopy}) die Oberflächenstruktur der Dünnfilme charakterisiert werden.
+Dieser Abschnitt orientiert sich an den Erkenntnissen von \citeauthoryear{afm-buch} \autocite{afm-buch}.
+
+Mithilfe der Rasterkraftmikroskopie (AFM, engl. \textit{Atomic Force Microscopy}) kann die Oberflächenstruktur der
+Dünnfilme charakterisiert werden.
 Das Rasterkraftmikroskop ist ein hochpräzises Messinstrument zum Erfassen von Oberflächenstrukturen.
-Anders als bei Licht- oder Elektronenmikroskopie wird hierbei eine mechanische Funktionsweise umgesetzt.
-Dabei fährt eine Messapparatur, der Cantilever, rasterweise über eine Oberfläche und tastet diese ab.
-Die auf den Cantilever wirkenden atomaren oder magnetischen Kräfte werden gemessen, woraus eine Topographiekarte der
-Oberfläche erstellt wird.
+Anders als bei Licht- oder Elektronenmikroskopie wird hierbei eine mechanische Funktionsweise verwendet.
+Dabei fährt der Cantilever, eine Messnadel, rasterweise über eine Oberfläche und tastet diese ab.
+Die Spitze des Cantilevers ist im Nanometerbereich dimensioniert und kann so auch kleinste Strukturen erfassen.
+Die auf den Cantilever wirkenden interatomaren oder magnetischen Kräfte führen zu messbaren Auslenkungen,
+woraus eine Topographiekarte der Oberfläche erstellt wird.
 
 \subsubsection{Schematischer Aufbau und Funktionsweise}
 \begin{figure}
@@ -230,39 +233,76 @@ Oberfläche erstellt wird.
     \caption{Schematischer Aufbau eines Rasterkraftmikroskops. \imcitetwo[12]{afm-handbuch}}
     \label{fig:afm_aufbau}
 \end{figure}
+
 Die grundlegende Funktionsweise ist in \cref{fig:afm_aufbau} dargestellt.
-Markierung 1 zeigt den Cantilever, der mit einer Messspitze mit Dimensionen im Nanometerbereich ausgestattet ist.
-Fährt diese über die Probe, so wirken Kräfte auf die Spitze, welche den Cantilever auslenken.
-Diese Auslenkung wird mittels eines Auslenkungserkennungssystems, Markierung 2, ausgewertet.
-Die gemessene Auslenkung wird an das Feedback System übergeben, was Markierung 3 zeigt.
-Basierend auf dem gewählten Betriebsmodus wird versucht, die gemessene Kraft oder Amplitude konstant zu halten.
+Fährt der Cantilever über Probe, so wirken atomare Kräfte auf die Spitze, welche den Cantilever auslenken.
+Diese Auslenkung wird mithilfe eines Laserstrahls und eines Photodetektors gemessen und an ein Feedback System
+übergeben.
+Basierend auf dem gewählten Betriebsmodus wird entweder versucht die auf den Cantilever wirkende Kraft oder seine
+Schwingungsamplitude konstant zu halten.
 Mithilfe dieser Regulation wird ein Korrektursignal ausgegeben, welches die Position des Cantilevers anpasst.
-Dies geschieht mithilfe von Piezoelementen, wodurch der Cantilever in $x$, $y$ oder $z$-Richtung bewegt werden kann,
-siehe Markierung 4.
-Die z-Position des Cantilevers wird aufgezeichnet und als Topographiesignal am Computer ausgewertet, siehe Markierung 5.
-Im Folgenden werden die einzelnen Komponenten näher erläutert.\autocite[8-10]{afm-buch}
+Dies geschieht mithilfe von Piezoelementen, wodurch der Cantilever in $x$, $y$ oder $z$-Richtung bewegt werden kann.
+Die z-Position des Cantilevers wird aufgezeichnet und als Topographiesignal am Computer ausgewertet.
+Im Folgenden werden die einzelnen Komponenten näher erläutert.\autocite{afm-buch}
+
+\paragraph{Auslenkungserkennungssystem}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{../assets/messmethoden/afm/02_beam}
+    \caption{Schematischer Aufbau eines Auslenkungserkennungssystems. \imcitetwo{afm-handbuch}}
+    \label{fig:afm-beam}
+\end{figure}
+Das System zur Auslenkungserkennung ist in \cref{fig:afm-beam} dargestellt.
+Ein Laserstrahl wird aus einer Laserdiode emittiert und auf die Rückseite des Cantilevers gerichtet.
+Dieser besitzt eine reflektierende Rückseite, sodass der Strahl am Cantilever zum beweglichen Spiegel reflektiert wird.
+Über diesen lässt sich die Position des Strahls auf den Photodektor einstellen.
+Der Strahl wird durch einen letzten Spiegel auf den Photodetektor reflektiert.
+
+Dieser besitzt vier Segmente, die die Intensität des reflektierten Strahls ortsaufgelöst messen können.
+Im unausgelenkten Zustand, muss der bewegliche Spiegel so eingestellt werden, dass der Strahl mittig auf die vier
+Segmente trifft.
+Kommt es zur Auslenkung, ändert sich der Winkel des Cantilevers und damit auch die Position des Strahls auf dem
+Photodetektor.
+Über die vier Segmente können Auslenkung und Torsion des Cantilevers bestimmt werden.
+
+\paragraph{Feedback Controller}
+Damit eine genaue Topografiekarte aufgezeichnet werden kann, ist ein schnelles und präzises Regelsystem nötig.
+Durch die Regelung soll eine vorgegebene Kenngröße, beispielsweise die Auslenkung des Cantilevers, möglich konstant
+gehalten werden.
+Für diesen Zweck wird ein geschlossenes Regelkreissystem verwendet.
+Der Regler besteht aus einem Proportional-Integral-Controller (PI-Controller), der das Fehlersignal zwischen dem
+gemessenen Wert und dem Sollwert verarbeitet.
+Der Proportionalanteil reagiert direkt auf den aktuellen Fehler, während der Integralanteil konstante Störungen über
+die Zeit eliminiert.
+Die Kombination beider Anteile ermöglicht es, sowohl kurzzeitige als auch langzeitige Abweichungen effektiv zu
+korrigieren.
+
+\paragraph{Positionierung}
+Piezoelemente werden verwendet, um den Cantilever in $\mathrm{z}$-Richtung und die Probe in $\mathrm{xy}$-Richtung zu
+bewegen, basierend auf dem Piezoeffekt.
+Dieser Effekt tritt auf, wenn bestimmte Kristalle wie Quarz unter mechanischer Spannung elektrische Spannung erzeugen
+können.
+Durch Anlegen einer Spannung an Piezokristalle können umgekehrt Deformationen im Bereich von \qty{0.1}{\nano\meter}
+und damit in atomaren Dimensionen erreicht werden erreicht werden.
+Spezielle Metallbiegeelemente mit eingebetteten Piezoelementen ermöglichen gezielte Verformungen, um Bewegungen
+in verschiedenen Richtungen zu erzeugen.
+Damit kann sowohl die Probe in $\mathrm{xy}$-Richtung, als auch der Cantilever in $\mathrm{z}$-Richtung bewegt werden.
+Die Feinpositionierung und Scanbewegungen in der Rasterkraftmikroskopie werden durch Piezo-Biegeelemente gesteuert,
+während eine Grobpositionsbühne für die grobe Positionierung verwendet wird.
 
 \subsubsection{Interaktion zwischen Probe und Spitze}
-Zuerst wird die Wechselwirkung zwischen Cantileverspitze und Probe betrachtet.
 Die auf die Spitze wirkende Gesamtkraft setzt sich aus verschiedenen Komponenten zusammen.
-Der wichtigste und weitreichendste Beitrag entspringt der Van-der-Waals Wechselwirkung.
-Diese ist eine attraktive Kraft, welche durch spontane Formationen fluktuierender Dipole entsteht.
-Für einzelne Edelgasatome lässt sich das Potential der Wechselwirkungen durch
-$U_{\mathrm{vdW}}\propto-r^{-6}$ annähern.
-Obwohl diese Näherung für einzelne Atome gilt, kann sie durch Integration über das Probe-Spitze System genutzt
-werden, um es zu beschreiben.
-Für Distanzen zwischen Probe und Spitze größer als \qty{1}{\nano\meter} ist die Van-der-Waals Wechselwirkung
-dominierend.
-
+Der wichtigste und weitreichendste Beitrag entspringt der Van-der-Waals Wechselwirkung, einer attraktiven Kraft,
+die durch die spontane Ausbildung fluktuierender Dipole entsteht.
 Für kleinere Distanzen müssen zwei weitere Interaktionen berücksichtigt werden.
 Überlappen die äußeren Elektronenhüllen von Proben- und Spitzenatomen, so können chemische Bindungen entstehen, welche
-eine attraktive oder repulsive Kraft hervorrufen.
-Betrachtet man noch kleinere Distanzen, so wird die Pauli-Abstoßung zwischen den Elektronen der Atome relevant.
+attraktive oder repulsive Kräfte hervorrufen.
+Für noch kleinere Distanzen wird die Pauli-Abstoßung zwischen den Elektronen der Atome relevant.
 Da die geschlossenen Elektronenschalen der Atome nicht überlappen können, müssen die zusätzlichen Elektronen auf ein
 höheres Energieniveau gehoben werden.
 Dadurch entsteht eine effektive repulsive Kraft.
 
-Obwohl das System quantenmechanisch präzise beschrieben werden kann, ist die Lösung für solch komplexe Systeme
+Obwohl das System quantenmechanisch präzise beschrieben werden kann, ist die Lösung solch komplexer Systeme
 nicht trivial.
 Aus diesem Grund werden Modellpotentiale genutzt, die die Interaktionen zwischen Probe und Spitze approximieren.
 Ein beliebtes ist das Lennard-Jones-Potential, welches sowohl die Van-der-Waals Wechselwirkung als auch die repulsiven
@@ -274,103 +314,15 @@ Anteile berücksichtigt.
 Hierbei ist $U_{0}$ die Tiefe des Potentials, $R_{\mathrm{a}}$ der Gleichgewichtsabstand und $r$ der Abstand zwischen
 den Atomen.
 Auch wenn das Lennard-Jones-Potential für atomare Wechselwirkungen entwickelt wurde, erklärt es die relevanten
-Kräfte zwischen Probe und Spitze. \autocite[161-164]{afm-buch}
+Kräfte zwischen Probe und Spitze. \autocite{afm-buch}
 
-\subsubsection{Auslenkungserkennungssystem}
 \begin{figure}
     \centering
-    \includegraphics[width=0.6\textwidth]{../assets/messmethoden/afm/02_beam}
-    \caption{Schematischer Aufbau eines Auslenkungserkennungssystems. \imcitetwo[17]{afm-handbuch}}
-    \label{fig:afm-beam}
+    \import{../plots/messmethoden/}{lennard_jones_potential.pgf}
+    \caption{Lennard-Jones-Potential.}
+    \label{fig:afm_aufbau}
 \end{figure}
-Nachdem der Cantilever durch die Wechselwirkungskräfte ausgelenkt wurde, muss diese Auslenkung gemessen werden.
-Das System ist in \cref{fig:afm-beam} dargestellt.
-Ein Laserstrahl wird aus einer Laserdiode emittiert und auf die Rückseite des Cantilevers gerichtet.
-Dieser besitzt eine reflektierende Rückseite, sodass der Strahl am Cantilever zum beweglichen Spiegel reflektiert wird.
-Über diesen lässt sich die Potition des Strahls auf den folgenden Spiegel steuern.
-Der letzte Spiegel reflektiert den Strahl auf einen positionsabhängigen Photodetektor.
-Dieser besitzt vier Segmente, die die Intensität des reflektierten Strahls messen.
-Im unausgelenkten Zustand, muss der bewegliche Spiegel so eingestellt werden, dass der Strahl mittig auf die vier
-Segmente trifft.
-Kommt es zur Auslenkung, ändert sich der Winkel des Cantilevers und damit auch die Position des Strahls auf dem
-Photodetektor.
-Über die vier Segmente kann die Auslenkung und Torsion des Cantilevers bestimmt werden.\autocite[16-18]{afm-handbuch}
 
-\subsubsection{Feedback Controller}
-Damit eine möglichst genaue Topografiekarte aufgezeichnet werden kann, ist ein schnelles und präzises Regelsystem von
-großer Bedeutung.
-Ziel ist es, eine vorgegebene Kenngröße möglichst konstant zu halten, beispielsweise die Auslenkung des Cantilevers.
-Dafür wird ein geschlossenes Regelkreissystem verwendet, welches in \cref{fig:afm_controller} dargestellt ist.
-Der Ausgabewert des Systems $x(t)$, beispielsweise die Cantileverauslenkung, wird gemessen und mit dem
-Sollwert $w$ verglichen, damit das Fehlersignal $e(t)=w-x(t)$ berechnet werden kann.
-Dieses Fehlersignal wird an den Controller übergeben, der daraufhin ein Korrektursignal $y(t)$ ausgibt.
-Dieses Korrektursignal wird vom System aufgenommen und intrinsisch verarbeitet, sodass der Ausgabewert $x(t)$ näher am
-Sollwert $w$ liegt.\autocite[99-101]{afm-buch}
-\begin{figure}
-    \centering
-    \includegraphics[width=0.6\textwidth]{../assets/messmethoden/afm/03_controller}
-    \caption{Blockschaltbild eines Feedback-Controllers. \imcitetwo[14]{afm-buch}}
-    \label{fig:afm_controller}
-\end{figure}
-Von besonderem Interesse ist nun die genaue Gestalt der Korrekturfunktion $y(t)$.
-In der Regel wird diese durch einen Proportional-Integral-Controller (PI-Controller) realisiert und hat folgende Form:
-\begin{equation*}
-    y(t)=\underbrace{ K_{\mathrm{P}}(w-x(t)) }_{ \text{1. Proportional} }+\underbrace{ K_{\mathrm{I}}\int_{0}^{t}
-        (w-x(\tau)) \, \mathrm{d}\tau }_{ \text{2. Integral} }
-\end{equation*}\autocite[104-105]{afm-buch}
-
-\paragraph{1. Proportional:}
-Das Ausgabesignal wird Proportional zum Fehlersignal mit Proportionalitätskonstante $K_{\mathrm{P}}$ ausgegeben.
-Dies ist die einfachste Art der Regulation, welche nur auf den aktuellen Zustand reagiert.
-Der P-Regler zeichnet sich durch ein typisches Einschwingsignal aus, welches durch die Trägheit des Systems zustande
-kommt.
-Durch die Verzögerung zwischen Eingangssignal und Ausgangsreaktion des Systems entsteht oft eine Überreaktion,
-diese Überschreitung ruft eine Gegenreaktion hervor, welche sich rekursiv zu einer Schwingung entwickelt.
-Der größte Nachteil des P-Reglers ist, dass er nicht in der Lage ist, den Sollwert unter konstanter Störung
-exakt zu erreichen.
-Um diesen Nachteil zu beheben, wird zusätzlich ein I-Regler hinzugefügt.\autocite[101-102]{afm-buch}
-
-\textbf{2. Integral:}
-Der Integralanteil des Reglers reagiert auf die Summe der bisherigen Abweichungen mit Proportionalitätskonstante
-$K_{\mathrm{I}}$.
-Damit eliminiert er alle konstanten Störungen, die durch den P-Regler nicht beseitigt werden konnten.
-Da das Integral des Fehlersignals über die Zeit gebildet wird, ist der I-Regler am Anfang sehr langsam.
-In einigen Varianten wird nicht über das gesamte, sondern übern ein konstantes Zeitintervall integriert.
-\autocite[102-104]{afm-buch}
-
-Kombiniert man nun Proportional- und Integralregler, so können kurzzeitige Abweichungen durch den schnellen
-P-Regler und langzeitige Abweichungen durch den langsamen I-Regler korrigiert werden.
-
-\subsubsection{Piezoelemente und Positionierung}
-Um den Cantilever in $\mathrm{z}$, sowie die Probe in $\mathrm{xy}$-Richtung zu bewegen, werden Piezoelemente verwendet.
-Um diesen Mechanismus zu beschreiben, muss der Piezoeffekt betrachtet werden.
-Setzt man Kristalle wie Quartz, die bestimmte Symmetrieeigenschaften aufweisen, unter mechanische Spannung,
-so kann unter bestimmten Bedingungen elektrische Spannung induziert werden.
-Diesen Effekt sieht man beispielsweise in Feuerzeugen.
-Nun kann auch die Umkehrung des Effekts genutzt werden.
-Legt man eine Spannung an einen Piezokristall an, kann dieser deformiert werden.
-Für kleine Spannungen kann man so Deformationen im Bereich von \qty{0.1}{\nano\meter} erreichen.
-\autocite[35-36]{afm-buch}
-
-Um den Piezoeffekt zu nutzen, werden spezielle Metallbiegeelemente verwendet.
-Das sind Metallblöcke, die sich in einer Richtung durch kleine Einschnitte federähnlich verformen lassen, während
-sie in anderen Richtungen starr sind.
-In diese können Piezoelemente eingebettet werden, sodass sich beim Anlegen einer Spannung der Block in eine Richtung
-verformt und sich somit die Probe oder der Cantilever bewegt.
-Wie in \cref{fig:afm_stage} dargestellt, lassen sich zwei orthogonale Biegelemente kombinieren, um eine Bewegung in
-$xy$-Richtung zu erreichen.
-\begin{figure}
-    \centering
-    \includegraphics[width=0.6\textwidth]{../assets/messmethoden/afm/04_stage}
-    \caption{Aufbau eines Biegeelements. \imcitetwo[74]{afm-buch}}
-    \label{fig:afm_stage}
-\end{figure}
-\cref{fig:afm_aufbau} zeigt, zeigt eine Grobpositionsbühne, die
-mithilfe von Stellschrauben motorisiert gesteuert wird.
-Die Feinpositionierung und die Scanbewegung erfolgt dann mit den darauf montierten Piezo-Biegeelementen.
-Der Cantilever samt Detektor wird unterhalb eines Piezoelements montiert, sodass er in $\mathrm{z}$-Richtung bewegt
-werden kann.
-\autocite[79-80]{afm-buch}
 
 \subsubsection{Betriebsmodi}
 Das Rasterkraftmikroskop verfügt über unterschiedliche Betriebsmodi.
@@ -392,18 +344,40 @@ Dabei wird der Cantilever mit einer bestimmten Frequenz und Amplitude angeregt, 
 Ändert sich die Kraft, ändert die Resonanzfrequenz und damit auch die Amplitude.
 Das Topografiesignal wird durch die Forderung einer konstanten Amplitude erzeugt.\autocite[209]{afm-buch}
 
-\subsection{Energiedispersive Röntgenspektroskopie}\label{sec:energiedispersive-rontgenspektroskopie}
+\subsection{Weitere Messmethoden}\label{subsec:weitere-messmethoden}
+Die in diesem Abschnitt vorgestellten Methoden wurden für die Arbeit verwendet, werden aber
+nicht im Detail erläutert.
+
+\paragraph{Profilometer}
+Ein Profilometer ist ein Messinstrument, welches zur präzisen Messung von Oberflächenprofilen verwendet wird.
+Sowohl die Topografie als auch die Rauheit der Oberfläche können bestimmt werden.
+Im Gegensatz zum Rasterkraftmikroskop ist das Profilometer für gröbere Oberflächenstrukturen auf größeren Flächenskalen
+ausgelegt.
+Das verwendete Profilometer \textit{DektakXT} von Bruker fährt mit einer Diamantspitze über die Probe, um
+die Oberflächenstruktur zu erfassen.
+
+Die mithilfe von PLD hergestellten Dünnfilme sind durch Klemmen an den Substrathalter montiert, welche
+üblicherweise kleine Regionen des Substrats, meist die Ecken, verdecken.
+Da an diesen Stellen kein Dünnfilm abgeschieden wird, kann mithilfe dieser Regionen die Dicke des
+Dünnfilms bestimmt werden, indem die Spitze des Profilometers sowohl über Dünnfilm als auch über eine
+verdeckte Stelle fährt.
+Der Höhenunterschied zwischen beiden Stellen entspricht der Dicke des Dünnfilms.
+
+\paragraph{Energiedispersive Röntgenspektroskopie}
 Eine weitere wichtige Methode zur Charakterisierung von Dünnfilmen ist die energiedispersive Röntgenspektroskopie
-(EDX, engl. \textit{energy dispersive X-ray spectroscopy}).
-Hierbei werden die Atome des Dünnfilms durch einen Elektronenstrahl angeregt, welcher durch Stoßprozesse innere
-Elektronen aus den Atomen herausschlägt.
-Durch die anschließende Relaxation werden Röntgenstahlen emittiert, deren Energie charakteristisch für das jeweilige
+(EDX, engl. \textit{energy dispersive X-ray spectroscopy}), welche ortsaufgelöste chemische Kompositionsanalysen
+ermöglicht.
+Hierbei werden die Atome des Dünnfilms durch den Elektronenstrahl eines Rasterelektronenmikroskops (SEM, engl.
+\textit{scanning electron microscope}) angeregt, welcher durch Stoßprozesse innere Elektronen aus den Atomen
+herausschlägt.
+Durch die anschließende Relaxation werden Röntgenstrahlen emittiert, deren Energie charakteristisch für das jeweilige
 Element ist.
-Da mehrere Übergänge möglich sind, entstehen mehrere charakteristische Linien pro Element, die in einem Spektrum
-aufgezeichnet werden.
-Das Spektrum bildet die Intensität in Abhängigkeit der Energie ab.
+Die Energien der Röntgenstrahlen werden mithilfe eines Detektors aufgezeichnet und in ein Spektrum umgewandelt, welches
+die Intensität in Abhängigkeit der Energie darstellt.
+Da mehrere Elektronenübergänge bei der Relaxation möglich sind, entstehen in diesem Spektrum mehrere charakteristische
+Peaks pro Element.
 Durch die Position der Peaks können die enthaltenen Elemente ermittelt werden,
-die korrespondierende Intensität gibt Aufschluss über die Konzentration der Elemente.
-\autocite[7-11]{edx}
+die korrespondierende Intensität gibt Aufschluss über die Konzentration der Elemente \autocite{edx}.
+
 
 
