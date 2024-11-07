@@ -5,16 +5,17 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 import matplotlib.ticker as ticker
 import matplotlib.transforms as mtransforms
+from matplotlib import rc
 import numpy as np
 
 from python._states import LINEWIDTH
 
-mpl.use("pgf")
+mpl.use("pdf")
 plt.rcParams.update({
     "font.size": 12,
-    "font.family": "serif",
-    "font.serif": [],
 })
+rc('font', **{'family': 'serif', 'serif': ['Computer Modern']})
+rc('text', usetex=True)
 
 
 def get_data(path):
@@ -34,7 +35,7 @@ def get_data(path):
 def create_plot(gas, temperature_array, sample_name):
     hspace = 0.1
     cm = mpl.colormaps.get_cmap("tab10")
-    fig, axes = plt.subplots(len(temperature_array), 1, sharex=True, figsize=(0.98 * LINEWIDTH, 0.8 * LINEWIDTH))
+    fig, axes = plt.subplots(len(temperature_array), 1, sharex=True, figsize=(0.98 * LINEWIDTH, 0.7 * LINEWIDTH))
     fig.subplots_adjust(hspace=hspace, top=0.99)
     axes = axes[::-1]
 
@@ -62,7 +63,7 @@ def create_plot(gas, temperature_array, sample_name):
         ax.tick_params(bottom=False)
 
     axes[0].set_xlabel(r"$2\theta$ [°]")
-    axes[0].set_ylabel("Intensität [willk. Einheit]")
+    axes[0].set_ylabel("I [willk. Einheit]")
     axes[0].yaxis.label.set(
         x=0, y=midpoint,
         verticalalignment='bottom', horizontalalignment='center',
@@ -70,7 +71,7 @@ def create_plot(gas, temperature_array, sample_name):
         transform=mtransforms.blended_transform_factory(
             mtransforms.IdentityTransform(), axes[0].yaxis.axes.transAxes),
     )
-    export_path = pathlib.Path.cwd().parent / 'plots' / 'XRD' / f'{sample_name}_{gas}.pgf'
+    export_path = pathlib.Path.cwd().parent / 'plots' / 'XRD' / f'{sample_name}_{gas}.pdf'
     export_path.parent.mkdir(parents=True, exist_ok=True)
     fig.subplots_adjust(right=0.9, left=0.05)
     fig.savefig(export_path)

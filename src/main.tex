@@ -4,11 +4,9 @@
 \documentclass[12pt,titlepage,ngerman]{article}
 
 \usepackage[a4paper, portrait, margin=1in]{geometry}
-
 \usepackage{graphicx}
 \usepackage[version=4]{mhchem}
-
-\usepackage[style=numeric,maxcitenames=2,sorting=none]{biblatex}
+\usepackage[style=numeric,maxcitenames=2,sorting=none,doi=false,url=false,isbn=false]{biblatex}
 \usepackage[ngerman]{babel}
 \usepackage{csquotes}
 \usepackage{siunitx}
@@ -52,20 +50,20 @@
 
 \sisetup{locale=DE,separate-uncertainty=true,range-phrase = { bis }, list-final-separator = { und }}
 \DeclareCiteCommand{\citeauthoryear}
-  {\boolfalse{citetracker}%
-   \boolfalse{pagetracker}%
-   \usebibmacro{prenote}}
-  {\ifciteindex
-     {\indexnames{labelname}\indexfield{year}}
-     {}%
-   \printtext[bibhyperref]{%
+{\boolfalse{citetracker}%
+\boolfalse{pagetracker}%
+\usebibmacro{prenote}}
+{\ifciteindex
+{\indexnames{labelname}\indexfield{year}}
+{}%
+\printtext[bibhyperref]{%
     \printnames{labelname}%
     \setunit{\addspace}%
     \printtext{(}%
     \printfield{year}%
     \printtext{)}}}
-  {\multicitedelim}
-  {\usebibmacro{postnote}}
+{\multicitedelim}
+{\usebibmacro{postnote}}
 
 \addbibresource{literature.bib}
 
@@ -103,8 +101,8 @@
     \include{chapters/2_einleitung}
     \include{chapters/3_theorie}
     \include{chapters/4_messmethoden}
-    %\include{chapters/5_auswertung}
-    %\include{chapters/6_fazit}
-    %\include{chapters/7_anhang}
-    %\printbibliography
+    \include{chapters/5_auswertung}
+    \include{chapters/6_fazit}
+    \include{chapters/7_anhang}
+    \printbibliography
 \end{document}

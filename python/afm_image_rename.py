@@ -19,7 +19,10 @@ def replicate_folder_structure(src_path, dest_path):
             default = "_".join(splitted_name[1:])
             custom = splitted_name[0]
 
-            sample_name = custom[0:8]
+            if "EagleXG" in custom:
+                sample_name = custom[0:9]
+            else:
+                sample_name = custom[0:8]
 
 
             substrate_gas = src_path.rsplit("/", 3)[-3]

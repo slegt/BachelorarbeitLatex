@@ -9,7 +9,7 @@ settings['/module/linematch/direction'] = int(gwy.ORIENTATION_HORIZONTAL)
 settings['/module/linematch/do_extract'] = False
 settings['/module/linematch/do_plot'] = False
 settings['/module/linematch/method'] = 0
-settings['/module/linematch/max_degree'] = 1
+settings['/module/linematch/max_degree'] = 2
 settings['/module/linematch/trim_fraction'] = 0.05
 settings['/module/linematch/masking'] = 2
 
