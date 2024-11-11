@@ -6,7 +6,7 @@
 \usepackage[a4paper, portrait, margin=1in]{geometry}
 \usepackage{graphicx}
 \usepackage[version=4]{mhchem}
-\usepackage[style=numeric,maxcitenames=2,sorting=none,doi=false,url=false,isbn=false]{biblatex}
+\usepackage[style=numeric,maxcitenames=2,sorting=none,doi=false,url=false,isbn=false,eprint=false]{biblatex}
 \usepackage[ngerman]{babel}
 \usepackage{csquotes}
 \usepackage{siunitx}
@@ -14,6 +14,7 @@
 \usepackage{subcaption}
 \usepackage{booktabs}
 \usepackage{amsmath}
+\usepackage[nottoc]{tocbibind}
 \usepackage{amssymb}
 \usepackage{mathtools}
 \usepackage[hidelinks]{hyperref}
@@ -67,8 +68,8 @@
 
 \addbibresource{literature.bib}
 
-\newcommand{\imcite}[2][]{\\ Aus \cite[#1]{#2}.}
-\newcommand{\imcitetwo}[2][]{\\ Nach \cite[#1]{#2}.}
+\newcommand{\imcite}[2][]{Aus \cite[#1]{#2}.}
+\newcommand{\imcitetwo}[2][]{Nach \cite[#1]{#2}.}
 
 \newcommand{\integral}[4]{\int_{#1}^{#2} #3 \mathrm{d} #4}
 \newcommand{\derivative}[2]{\frac{\mathrm{d}}{\mathrm{d} #1} #2}
@@ -103,6 +104,11 @@
     \include{chapters/4_messmethoden}
     \include{chapters/5_auswertung}
     \include{chapters/6_fazit}
-    \include{chapters/7_anhang}
-    \printbibliography
+    \printbibliography[heading=bibintoc]
+    \newpage
+    \listoffigures
+    \newpage
+    \listoftables
+    \include{chapters/7_selbststaendigkeit}
+    \include{chapters/8_anhang}
 \end{document}

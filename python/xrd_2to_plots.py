@@ -36,7 +36,7 @@ def create_plot(gas, temperature_array, sample_name):
     hspace = 0.1
     cm = mpl.colormaps.get_cmap("tab10")
     fig, axes = plt.subplots(len(temperature_array), 1, sharex=True, figsize=(0.98 * LINEWIDTH, 0.7 * LINEWIDTH))
-    fig.subplots_adjust(hspace=hspace, top=0.99)
+    fig.subplots_adjust(hspace=hspace, top=0.99, left=0.2, right=0.8)
     axes = axes[::-1]
 
     midpoint = (len(temperature_array) * (1 + hspace) - hspace) / 2

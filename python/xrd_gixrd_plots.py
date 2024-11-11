@@ -35,8 +35,13 @@ def get_data(path):
 def create_plot(sample_names):
     hspace = 0.1
     cm = mpl.colormaps.get_cmap("tab10")
-    fig, axes = plt.subplots(len(sample_names), 1, sharex=True,
-                             figsize=(0.98 * LINEWIDTH, 0.8 / 5 * len(sample_names) * LINEWIDTH))
+    if len(sample_names) == 1:
+        fig, axes = plt.subplots(len(sample_names), 1, sharex=True,
+                                 figsize=(0.98 * LINEWIDTH, 1.6 / 5 * len(sample_names) * LINEWIDTH))
+    else:
+        fig, axes = plt.subplots(len(sample_names), 1, sharex=True,
+                                 figsize=(0.98 * LINEWIDTH, 0.8 / 5 * len(sample_names) * LINEWIDTH))
+
     fig.subplots_adjust(hspace=hspace, top=0.99)
 
     if len(sample_names) == 1:
@@ -81,7 +86,11 @@ def create_plot(sample_names):
     )
     export_path = pathlib.Path.cwd().parent / 'plots' / 'XRD' / f'gixrd_{sample_names[0][:5]}.pgf'
     # export_path.parent.mkdir(parents=True, exist_ok=True)
-    fig.subplots_adjust(right=0.9, left=0.05)
+    if len(sample_names) > 1:
+        fig.subplots_adjust(right=0.85, left=0.05, bottom=0.18)
+    else:
+        fig.tight_layout()
+
     fig.savefig(export_path)
     # print(f"Saved {export_path}")
 

@@ -1,0 +1,219 @@
+\section*{Anhang}\label{sec:appendix}
+\addcontentsline{toc}{section}{Anhang}
+
+\newcommand{\plotpath}{../plots/AFM}
+\newcommand{\samplesB}{W6823-1B/\samplethree, W6821-1B/\sampleone, W6822-1B/\sampletwo,  W6824-1B/\samplefour}
+\newcommand{\samplesC}{W6823-1C/\samplethree, W6821-1C/\sampleone, W6822-1C/\sampletwo,  W6824-1C/\samplefour}
+\newcommand{\samplesCC}{W6821-1C/\sampleone, W6822-1C/\sampletwo,  W6824-1C/\samplefour}
+\newcommand{\samplesCCC}{W6821-1C/\sampleone, W6822-1C/\sampletwo}
+
+
+\newcommand{\samplesD}{W6823-1D/\samplethree, W6821-1D/\sampleone, W6822-1D/\sampletwo,  W6824-1D/\samplefour}
+
+
+\subsection*{Bildvergleich der AFM-Topografieaufnahmen}\label{subsec:bildvergleich-der-topografieaufnahmen}
+\begin{figure}[ht]
+    \centering
+    \foreach \sample/\name in \samplesB {
+        \begin{subfigure}[t]{0.40\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]
+            {\plotpath/XG-Sauerstoff/XG-pre/\sample/\sample_XG_Sauerstoff_pre_Topography_1}
+            \caption{\name, Bild 1}
+        \end{subfigure}
+        \begin{subfigure}[t]{0.40\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]
+            {\plotpath/XG-Sauerstoff/XG-pre/\sample/\sample_XG_Sauerstoff_pre_Topography_3}
+            \caption{\name, Bild 2}
+        \end{subfigure}
+    }
+    \caption{Topografieaufnahmen des Sauerstoff-Ausheizvorgangs der Initialzustände.}
+    \label{fig: AFM, Sauerstoff, pre}
+\end{figure}
+\foreach \temp in {600, 700, 750, 800, 875} {
+    \begin{figure}[ht]
+        \centering
+        \foreach \sample/\name in \samplesB {
+            \begin{subfigure}[t]{0.4\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]
+                {\plotpath/XG-Sauerstoff/XG-\temp/\sample/\sample_XG_Sauerstoff_\temp_Topography_1}
+                \caption{\name, Bild 1}
+            \end{subfigure}
+            \begin{subfigure}[t]{0.4\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]
+                {\plotpath/XG-Sauerstoff/XG-\temp/\sample/\sample_XG_Sauerstoff_\temp_Topography_3}
+                \caption{\name, Bild 2}
+            \end{subfigure}
+        }
+        \caption{Topografieaufnahmen des Sauerstoff-Ausheizvorgangs bei \qty{\temp}{\degreeCelsius}.}
+        \label{fig: AFM, Sauerstoff, \temp}
+    \end{figure}
+}
+\begin{figure}[ht]
+    \centering
+    \foreach \sample/\name in \samplesC {
+        \begin{subfigure}[t]{0.40\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]
+            {\plotpath/XG-Vakuum/XG-pre/\sample/\sample_XG_Vakuum_pre_Topography_1}
+            \caption{\name, Bild 1}
+        \end{subfigure}
+        \begin{subfigure}[t]{0.40\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]
+            {\plotpath/XG-Vakuum/XG-pre/\sample/\sample_XG_Vakuum_pre_Topography_3}
+            \caption{\name, Bild 2}
+        \end{subfigure}
+    }
+    \caption{Topografieaufnahmen des Vakuum-Ausheizvorgangs der Initialzustände.}
+    \label{fig: AFM, Vakuum, pre}
+\end{figure}
+\foreach \temp in {600, 700} {
+    \begin{figure}[ht]
+        \centering
+        \foreach \sample/\name in \samplesC {
+            \begin{subfigure}[t]{0.4\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]
+                {\plotpath/XG-Vakuum/XG-\temp/\sample/\sample_XG_Vakuum_\temp_Topography_1}
+                \caption{\name, Bild 1}
+            \end{subfigure}
+            \begin{subfigure}[t]{0.4\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]
+                {\plotpath/XG-Vakuum/XG-\temp/\sample/\sample_XG_Vakuum_\temp_Topography_3}
+                \caption{\name, Bild 2}
+            \end{subfigure}
+        }
+        \caption{Topografieaufnahmen des Vakuum-Ausheizvorgangs bei \qty{\temp}{\degreeCelsius}.}
+        \label{fig: AFM, Vakuum, \temp}
+    \end{figure}
+}
+\foreach \temp in {750, 800} {
+    \begin{figure}[ht]
+        \centering
+        \foreach \sample/\name in \samplesCC {
+            \begin{subfigure}[t]{0.4\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]
+                {\plotpath/XG-Vakuum/XG-\temp/\sample/\sample_XG_Vakuum_\temp_Topography_1}
+                \caption{\name, Bild 1}
+            \end{subfigure}
+            \begin{subfigure}[t]{0.4\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]
+                {\plotpath/XG-Vakuum/XG-\temp/\sample/\sample_XG_Vakuum_\temp_Topography_3}
+                \caption{\name, Bild 2}
+            \end{subfigure}
+        }
+        \caption{Topografieaufnahmen des Vakuum-Ausheizvorgangs bei \qty{\temp}{\degreeCelsius}.}
+        \label{fig: AFM, Vakuum, \temp}
+    \end{figure}
+}
+
+\foreach \temp in {875} {
+    \begin{figure}[ht]
+        \centering
+        \foreach \sample/\name in \samplesCCC {
+            \begin{subfigure}[t]{0.4\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]
+                {\plotpath/XG-Vakuum/XG-\temp/\sample/\sample_XG_Vakuum_\temp_Topography_1}
+                \caption{\name, Bild 1}
+            \end{subfigure}
+            \begin{subfigure}[t]{0.4\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]
+                {\plotpath/XG-Vakuum/XG-\temp/\sample/\sample_XG_Vakuum_\temp_Topography_3}
+                \caption{\name, Bild 2}
+            \end{subfigure}
+        }
+        \caption{Topografieaufnahmen des Vakuum-Ausheizvorgangs bei \qty{\temp}{\degreeCelsius}.}
+        \label{fig: AFM, Vakuum, \temp}
+    \end{figure}
+}
+\begin{figure}[ht]
+    \centering
+    \foreach \sample/\name in \samplesD {
+        \begin{subfigure}[t]{0.40\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]
+            {\plotpath/XG-Luft/XG-pre/\sample/\sample_XG_Luft_pre_Topography_1}
+            \caption{\name, Bild 1}
+        \end{subfigure}
+        \begin{subfigure}[t]{0.40\textwidth}
+            \centering
+            \includegraphics[width=\textwidth]
+            {\plotpath/XG-Luft/XG-pre/\sample/\sample_XG_Luft_pre_Topography_3}
+            \caption{\name, Bild 2}
+        \end{subfigure}
+    }
+    \caption{Topografieaufnahmen des Luft-Ausheizvorgangs der Initialzustände.}
+    \label{fig: AFM, Luft, pre}
+\end{figure}
+\foreach \temp in {600, 700, 750, 800, 875} {
+    \begin{figure}[ht]
+        \centering
+        \foreach \sample/\name in \samplesD {
+            \begin{subfigure}[t]{0.4\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]
+                {\plotpath/XG-Luft/XG-\temp/\sample/\sample_XG_Luft_\temp_Topography_1}
+                \caption{\name, Bild 1}
+            \end{subfigure}
+            \begin{subfigure}[t]{0.4\textwidth}
+                \centering
+                \includegraphics[width=\textwidth]
+                {\plotpath/XG-Luft/XG-\temp/\sample/\sample_XG_Luft_\temp_Topography_3}
+                \caption{\name, Bild 2}
+            \end{subfigure}
+        }
+        \caption{Topografieaufnahmen des Luft-Ausheizvorgangs bei \qty{\temp}{\degreeCelsius}.}
+        \label{fig: AFM, Luft, \temp}
+    \end{figure}
+}
+
+\clearpage
+\subsection*{EDX-Aufnahmen}\label{subsec:edx-bilder}
+\newcommand{\samplesEDX}{W6821-3D/\csampleone ,W6822-3D/\csampletwo, W6824-3D/\csamplefour}
+
+\foreach \sample/\name in \samplesEDX {
+    \begin{figure}
+        \centering
+        \foreach \i/\desc in {map/Oberfläche, Mg/Magnesium, Co/Kobalt, Ni/Nickel, Cu/Kupfer, Zn/Zink}{
+            \begin{subfigure}[t]{0.40\textwidth}
+                \includegraphics[width=\textwidth]{../plots/EDX/\sample/\i}
+                \caption{\desc}
+            \end{subfigure}
+        }
+        \caption{Ortsaufgelöste EDX-Aufnahmen der Probe \name.}
+        \label{fig:edx_\sample}
+    \end{figure}
+}
+
+\clearpage
+\subsection*{GIXRD-Aufnahmen}\label{subsec:gixrd-bilder}
+\begin{figure}[h!]
+    \centering
+    \import{../plots/XRD/}{gixrd_W6822.pgf}
+    \caption{GIXRD-Aufnahme bei einem festen Winkel $\omega=\qty{2}{\degree}$ von Probe \sampletwo\ bei
+    \qty{875}{\degreeCelsius}.}
+    \label{fig:GIXRD_W6821}
+\end{figure}
+\begin{figure}[h!]
+    \centering
+    \import{../plots/XRD/}{gixrd_W6823.pgf}
+    \caption{GIXRD-Aufnahme bei einem festen Winkel $\omega=\qty{2}{\degree}$ von Probe \samplethree\ bei
+    \qty{875}{\degreeCelsius}.}
+    \label{fig:GIXRD_W6821}
+\end{figure}
+\begin{figure}[h!]
+    \centering
+    \import{../plots/XRD/}{gixrd_W6824.pgf}
+    \caption{GIXRD-Aufnahme bei einemfesten Winkel $\omega=\qty{2}{\degree}$ von Probe \samplefour\ bei
+    \qty{875}{\degreeCelsius}.}
+    \label{fig:GIXRD_W6821}
+\end{figure}

@@ -4,7 +4,7 @@
 \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{../assets/messmethoden/pld/aufbau}
-    \caption{Schematischer Aufbau eines PLD-Systems.}
+    \caption{Schematischer Aufbau eines PLD-Systems. \imcite{Lorenz2019}}
     \label{fig:pld}
 \end{figure}
 Die im Rahmen dieser Arbeit betrachteten Dünnfilme wurden mithilfe der gepulsten Laserabscheidung
@@ -16,87 +16,125 @@ zum Target ausbreitet.
 Die Plasmawolke expandiert in der Vakuumkammer und kann auf einem passend platzierten Substrat abgeschieden werden.
 Der schematische Aufbau eines PLD-Systems ist in \cref{fig:pld} dargestellt.
 Im Folgenden soll dieser Mechanismus genauer beschrieben werden.
+Dabei orientiert sich dieser Abschnitt an \citeauthoryear{Lorenz2019} \autocite{Lorenz2019}.
 
-Bevor ein PLD Prozess gestartet werden kann, muss ein geeignetes Target ausgewählt werden.
-Dieses besteht aus dem Material, aus dem der Dünnfilm hergestellt werden soll.
-Für die Arbeit wurde von Jorrit Bredow ein \heo-Target hergestellt.
-Für die \heo-Proben wurden die Binäroxidpulver im äquimolaren Verhältnis abgewogen, in einer Kugelmühle gemahlen,
-in eine zylindrische Form gepresst und anschließend für \qty{12}{\hour} bei \qty{1000}{\celsius} gesintert.
-Danach kann es im Targethalter montiert werden.
+Bevor ein PLD Prozess gestartet werden kann, muss ein geeignetes Target ausgewählt werden,
+indem die einzelnen Binäroxidpulver im äquimolaren Verhältnis abgewogen, in einer Kugelmühle gemahlen,
+in eine zylindrische Form gepresst und anschließend für \qty{12}{\hour} bei \qty{1000}{\celsius} gesintert werden.
+Anschließend kann es im Targethalter montiert werden.
 
-Der gesamte Prozess findet in einer Vakuumkammer statt, um den Druck und das Hintergrundgas während des PLD Prozesses zu
-kontrollieren.
-Durch Vor- und Turbomolekularpumpen kann ein Vakuum in der Größenordnung von \qty{e-4}{\milli\bar} erzeugt werden.
+Der gesamte Prozess findet in einer Vakuumkammer statt, welche exemplarisch in \cref{fig:pld_kammer} dargestellt ist.
+Durch Vor- und Turbomolekularpumpen kann ein Vakuum in der Größenordnung von \qty{e-5}{\milli\bar} erzeugt werden.
 Zusätzlich können auch Hintergrundgase, unter anderem Sauerstoff und Stickstoff, in die Kammer eingelassen werden.
 
 Um einen PLD Prozess zu starten, muss vorher das Hintergrundgas und dessen Druck in der Vakuumkammer eingestellt werden.
-Außerhalb der Vakuumkammer generiert ein \ce{KrF}-Excimerlaser mit einer Wellenlänge von \qty{248}{\nano\meter}
-Laserpulse mit einer Energie von \qty{650}{\milli\joule} und einer Pulsdauer von \qty{20}{\nano\second}.
+Außerhalb der Vakuumkammer generiert ein \ce{KrF}-Excimerlaser Laserpulse mit einer Wellenlänge von
+\qty{248}{\nano\meter}.
 Diese Laserpulse werden durch ein Fenster in die Vakuumkammer geleitet und auf das Target abgebildet.
-Die Laserpulse werden vom Target absorbiert und führen zu elektronischen Anregungen, die durch
+Sie werden anschließend vom Target absorbiert und regen Elektronen der Targetkonstituenten an, die durch
 Elektron-Phonon-Wechselwirkung in thermische, chemische und mechanische Energie umgewandelt werden.
 Das führt zur Erhitzung des Targets, welches schmilzt und verdampft.
 Da das Target durch den Laserstrahl nur an einer kleinen Stelle erhitzt wird, ist es notwendig,
 dass sich das Target relativ zum Laserstrahl bewegt, um eine gleichmäßige Abtragung zu gewährleisten.
-Um das zu gewährleisten wird eine Tranlationsbewegung des Targets relativ zum Laserstrahl durchgeführt.
-Hinzu kommt eine Rotation des Targets, um eine gleichmäßige Abtragung zu gewährleisten.
+Dies erfolgt durch Rotations- und Translationsbewegungen.
 
-Mithilfe der oben genannten Komponenten kann der Abscheidungsprozess durchgeführt werden.
-Die Laserphotonen treffen auf das Target und regen dort Elektronen an.
-Diese erfahren einen Intraband-Übergang, wodurch sie in einen angeregten Zustand übergehen.
-Durch die Elektron-Phonon-Wechselwirkung relaxiert das Elektron und gibt dabei Energie in Form von Phononen ab.
-Dies führt zur Erhitzung des Targets, welche nicht nur an der Oberfläche, sondern auch im Inneren stattfindet.
-Durch die hohe Temperatur beginnt das Target zu Verdampfen.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{../assets/messmethoden/pld/kammer}
+    \caption{Innenansicht der PLD-Kammer. \imcite{Lorenz2019}}
+    \label{fig:pld_kammer}
+\end{figure}
 
-Die verdampften Atome interagieren ebenfalls mit den Laserphotonen und bilden eine Plasmawolke, die sich in der
-Vakuumkammer ausbreitet.
-Die Plasmawolke expandiert in der Vakuumkammer senkrecht zum Target.
-Das Hintergrungas in der Vakuumkammer beeinflusst die Plasmawolke durch Stoßprozesse.
+Die verdampften Konstituenten interagieren ebenfalls mit den Laserphotonen und bilden durch Photoionisation eine
+Plasmawolke, die sich in der Vakuumkammer ausbreitet.
+Diese expandiert in der Vakuumkammer senkrecht zum Target.
+Das Hintergrundgas in der Vakuumkammer interagiert mit der Plasmawolke durch Stoßprozesse.
+Da der Substrathalter gegenüber vom Target positioniert ist, scheiden sich Anteile der Plasmawolke auf dem
+Substrat ab.
+Es beginnt ein Adsorptionsprozess, sodass sich ein Dünnfilm auf dem Substrat bildet.
 
-Gegenüber vom Target befindet sich der Substrathalter, auf dem das Substrat montiert wird.
-Hinzu kommt ein Substrathalter, auf dem das Substrat montiert wird.
-Für die Arbeit wurden Eagle-XG-Glassubstrate und C-Saphirsubstrate verwendet.
-Dieses kann durch einen Widerstandsheizer auf eine Temperatur von bis zu \qty{800}{\celsius} beziehungsweise
-mithilfe eines Laserheizers auf circa \qty{1100}{\celsius} erhitzt werden.
-Das Substrat selbst hat üblicherweise die Maße von circa \qty{10}{\milli\meter\squared}.
-
-Auch die verdampften Konstituenten des Targets wechselwirken mit den Laserphotonen.
-Durch Photoionisation werden Elektronen herausgelöst, sodass eine Plasmawolke entsteht.
-Diese breitet sich in der Vakuumkammer in Richtung Substrat aus und beginnt sich auf dem diesem abzusetzen.
-Durch Adsorptionsprozesse beginnt die Bildung eines Dünnfilms.\autocite[2299-2301]{pld}
-
-Die hier betrachteten Dünnfilmproben wurden bei Raumtemperatur und unterschiedlichen Drücken in Sauerstoffatmosphäre
-auf $\qty{10}{\milli\meter} \times \qty{10}{\milli\meter}$  Corning Eagle XG Glassubstraten abgeschieden.]
-
+Für die Arbeit wurden $\qty{10}{\milli\meter} \times \qty{10}{\milli\meter}$ Corning Eagle-XG-Glassubstrate verwendet.
+Dies ist ein amorphes Glas, welches über eine hohe thermische Stabilität verfügt.
+Da Phasenübergänge und Kristallisationsprozesse beobachtet werden sollen, ist es notwendig, ein Substrat zu wählen,
+welches möglichst wenig Struktur auf die Dünnfilme überträgt.
+\newpage
 \subsection{Ausheizmethoden}\label{subsec:ausheiz}
 
-Dabei ist es wichtig, den Temperaturbereich von \qty{600}{\degreeCelsius} bis \qty{1000}{\degreeCelsius} zu erreichen
-und die Temperatur des Dünnfilms möglichst genau zu bestimmen.
-Ein geeigneter Kandidat für diesen Prozess ist die A-Kammer, die mithilfe eines Heizlasers die Rückseite des
-Substrathalters erhitzt.
-Um die Temperatur des Dünnfilms zu bestimmen, wird ein Pyrometer verwendet, welches die Rückseite des Substrathalters
-misst.
-Mithilfe eines PID-Reglers wird die Temperatur auf den eingestellten Wert geregelt.
+\paragraph{Vakuumkammer}
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.35\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../assets/messmethoden/heiz/chamber}
+        \caption{Innenansicht der Vakuumkammer.}
+        \label{fig:vakuumkammer}
+    \end{subfigure}
+    \begin{subfigure}{0.35\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../assets/messmethoden/heiz/sample_holder}
+        \caption{Substrathalter mit montierter Probe.}
+        \label{fig:sample_holder}
+    \end{subfigure}
+    \caption{Für die Ausheizprozesse verwendete Vakuumkammer und verwendeter Substrathalter.}
+\end{figure}
+Eine für diese Arbeit verwendete Anlage zum Ausheizen der Dünnfilme ist eine Vakuumkammer, die mit einer Möglichkeit
+zur Sauerstoffzufuhr ausgestattet ist, siehe \cref{fig:vakuumkammer}.
+Die Kammer verfügt über eine Turbomolekularpumpe und eine Vorvakuumpumpe, die zusammen ein Vakuum von bis zu
+\qty{e-4}{\milli\bar} erzeugen.
+Die Proben werden auf einem Substrathalter, siehe \cref{fig:sample_holder}, montiert und in die Kammer eingesetzt.
+Ein Heizlaser ist auf die Rückseite des Substrathalters gerichtet, und die Temperatur der Rückseite des Substrathalters
+wird mittels eines Pyrometers gemessen.
+Ein PID-Regler steuert die Temperatur, indem er die Laserleistung auf Basis der Temperaturmessungen anpasst, um eine
+gleichmäßige Temperatur während des Ausheizprozesses zu gewährleisten.
 
-\newpage
+\paragraph{Muffelofen}
+\begin{figure}
+    \centering
+    \begin{subfigure}[t]{0.35\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../assets/messmethoden/heiz/ofen}
+        \caption{Innenansicht des Muffelofens.}
+        \label{fig:muffelofen}
+    \end{subfigure}
+    \begin{subfigure}[t]{0.35\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{../assets/messmethoden/heiz/schale}
+        \caption{Keramikschalen, in welcher die Proben platziert werden.}
+        \label{fig:schale}
+    \end{subfigure}
+    \caption{Für die Ausheizprozesse verwendeter Muffelofen und Keramikschalen.}
+\end{figure}
+Neben der Vakuumkammer wurde ein Muffelofen für das Ausheizen der Dünnfilme in einer Luftatmosphäre genutzt,
+siehe \cref{fig:muffelofen}.
+Der Ofen ist mit einem Temperatursensor ausgestattet, der die Temperatur im Inneren überwacht.
+Die Proben werden in einer Keramikschale platziert, siehe \cref{fig:schale}, mit einer zweite
+Keramikschale abgedeckt und in den Ofen eingesetzt.
 
-\subsection{XRD}\label{subsec:xrd}
-Nachdem die Dünnfilme hergestellt wurden, ist der nächste Schritt, ihre Struktur zu charakterisieren.
-Zwischen Dünnfilmen und ihren korrespondierenden Massivkörpern existieren signifikante Unterschiede.
-Diese resultieren vorrangig aus dem Verhältnis von Oberfläche zu Volumen, sowie den jeweiligen
-Wachstumsbedingungen, wie Temperatur, Druck und Substrat.
-Sie zeigen sich beispielsweise in der Qualität der Kristallinität, sowie in Kompositionsgradienten.
-Da Proben mit unterschiedlichen Wachstumsbedingungen hergestellt wurden und deren Eigenschaften dadurch
-maßgeblich beeinflusst werden, ist es notwendig, die Kristallinität der Dünnfilme zu charakterisieren.
+Die Temperaturkontrolle erfolgt auch hier über einen PID-Regler, der die Heizelemente des Ofens reguliert, um
+die eingestellte Temperatur konstant zu halten.
+Die Proben werden für eine festgelegte Dauer im Ofen belassen, um die gewünschten thermischen Effekte zu erzielen.
+
+\subsection{Röntgendiffraktometrie}\label{subsec:xrd}
 Röntgendiffraktometrie (XRD, engl. \textit{X-Ray diffraction}) ist eine weit verbreitete Methode, um die
 Kristallstruktur von Dünnfilmen zu bestimmen.
 Dabei wird ein Röntgendiffraktometer verwendet.
+Im Folgenden wird der Aufbau und die Funktionsweise dieses Gerätes erläutert.
+Dabei wird sich an den Erkenntnissen aus \citeauthoryear{btb-xrd} \autocite{btb-xrd} orientiert.
 
 \subsubsection{Röntgendiffraktometer}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{../assets/messmethoden/xrd/img}
+    \caption{Aufbau eines Röntgendiffraktometers. \imcite{btb-xrd}}
+    \label{fig:xrd}
+\end{figure}
+
 Das Röntgendiffraktometer besteht aus fünf Hauptkomponenten: Röntgenquelle und Detektor, Ein- und Ausfallsoptik,
 sowie dem Goniometer.
 Zusätzlich ist das Diffraktometer durch eine Strahlungsschutzverkleidung abgeschirmt und mit einer Steuerungssoftware
 verbunden.
+Ein schematischer Aufbau ist in \cref{fig:xrd} zu erkennen.
 Im Folgenden werden die einzelnen Komponenten näher erläutert.
 
 \paragraph{Röntgenquelle}
@@ -107,7 +145,7 @@ Die Anode besteht meist aus hochreinem Kupfer.
 Stromstärke und Beschleunigungsspannung der Röntgenröhre müssen so gewählt werden, dass die Energie beim Auftreffen der
 Elektronen auf die Anode ausreicht, um die gebundenen Elektronen der Atome auf das nächsthöhere Energieniveau anzuregen.
 Aufgrund der daraus resultierende Wärme muss die Anode ständig wassergekühlt werden.
-Im hauseigenen Röntgendiffraktometer wird eine Beschleunigungsspannung von \qty{40}{\kilo\volt} und eine Stromstärke
+Röntgendiffraktometer wird eine Beschleunigungsspannung von \qty{40}{\kilo\volt} und eine Stromstärke
 von \qty{40}{\milli\ampere} verwendet.
 
 Nach der Kollision zwischen Kupferatom und Elektron relaxiert das Elektron unter Bildung eines Röntgenphotons.
@@ -122,7 +160,7 @@ Die $K_{\beta}$ Strahlung ist größtenteils unerwünscht und kann durch geeigne
 Die Wolfram-Glühkathode emittiert unerwünschterweise nicht nur Elektronen, sondern auch Wolfram-Atome in kleinen Mengen.
 Über längere Zeiträume führt dies zu einer nicht mehr zu vernachlässigenden Kontamination der Anode.
 Dadurch können bei Elektronenstößen auch Wolfram-Atome angeregt werden, was zu einer zusätzlichen Wellenlänge im
-Spektrum führt
+Spektrum führt.
 In den späteren Messergebnissen sind diese Beiträge erkennbar.
 Abschließend gelangen die Röntgenstrahlen durch ein Berylliumfenster in die Einfallsoptik.
 
@@ -147,13 +185,8 @@ Bragg-Brentano-Geometrie und parallele Geometrie.
 In der Bragg-Brentano-Geometrie wird ein hochintensiver, divergierender Röntgenstrahl auf die Probe gerichtet,
 welcher unter Ausnutzung bestimmter Geometrien zurück auf den Detektor fokussiert werden kann.
 Aufgrund der Divergenz des Strahls ist diese Methode fehleranfällig und gerade für $\varphi$ und $\omega$ scans
-ist eine Parallelstrahloptik, wie in \cref{fig:xrd_parallel} gezeigt, von Vorteil.
-\begin{figure}
-    \centering
-    \includegraphics[width=0.6\textwidth]{../assets/messmethoden/xrd/paralleloptik}
-    \caption{Aufbau der Parallelstrahloptik \imcitetwo[146]{btb-xrd}}
-    \label{fig:xrd_parallel}
-\end{figure}
+ist eine Parallelstrahloptik von Vorteil.
+
 Die aus der Quelle austretenden divergierenden Strahlen werden durch einen Göbel-Spiegel
 parallelisiert und durchlaufen anschließend einen Eingangs- und Axialspalt, die den Winkelbereich
 festlegen.
@@ -164,7 +197,7 @@ Anschließend reflektiert der Strahl an der Probe und gelangt über weitere Spal
 \paragraph{Detektor}
 Der Röntgendetektor dient dazu, die Intensität der reflektierten Röntgenstrahlen zu messen und
 in elektrische Signale umzuwandeln.
-Im hauseigenen Röntgendiffraktometer wird ein Halbleiterdetektor verwendet
+Im für die Arbeit verwendeten Röntgendiffraktometer wird ein Halbleiterdetektor verwendet.
 Die Grundidee eines Halbleiterdetektors ist, das Material durch Photonen zu ionisieren und dabei freie Ladungsträger zu
 erzeugen.
 Diese werden über ein elektrisches Feld extrahiert und elektronisch gezählt.
@@ -173,7 +206,7 @@ werden.
 Somit können unterschiedliche Detektormodi realisiert werden, wie 0D Punktdetektion,
 1D Linien- oder 2D Flächendetektion.
 Wichtig ist, dass die maximale Zählrate des Detektors nicht überschritten wird.
-Das führt zu nicht linearen Antworten und kann den Sensor beschädigen.
+Das führt zu nichtlinearen Antworten und kann den Sensor beschädigen.
 Um das zu vermeiden, können Filter und Attenuatoren verwendet werden.
 
 \subsubsection{Scanmethoden}
@@ -191,14 +224,8 @@ Nun fahren Goniometer und Detektor über den angegebenen Winkelbereich mit der B
 Als Ausgabe bekommt man ein Intensitätsprofil in Abhängigkeit von $2\theta$, in denen im Idealfall charakteristische
 Peaks erkennbar sind.
 Diese Peaks entstammen der Bragg-Reflexion von Kristallebenen, die parallel zur Probenoberfläche liegen.
-Kennt man die Wellenlänge der Röntgenstrahlung, so kann mam mithilfe des Peaks den Gitterabstand bestimmen.
+Kennt man die Wellenlänge der Röntgenstrahlung, so kann man mithilfe des Peaks den Gitterabstand bestimmen.
 Somit ist es möglich, Rückschlüsse auf die vorhandenen Kristallstrukturen im Dünnfilm zu ziehen.
-
-\paragraph{$\omega$ scan}
-
-\paragraph{$\varphi$ scan}
-%%TODO
-\newpage
 
 \subsection{Rasterkraftmikroskopie}\label{subsec:afm}
 Mithilfe der Rasterkraftmikroskopie (AFM, engl. \textit{Atomic Force Microscopy}) kann die Oberflächenstruktur der
@@ -297,15 +324,16 @@ Obwohl das System quantenmechanisch präzise beschrieben werden kann, ist die L�
 nicht trivial.
 Aus diesem Grund werden Modellpotentiale genutzt, die die Interaktionen zwischen Probe und Spitze approximieren.
 Ein beliebtes ist das Lennard-Jones-Potential, welches sowohl die Van-der-Waals Wechselwirkung als auch die repulsiven
-Anteile berücksichtigt.
-\begin{equation*}
+Anteile berücksichtigt:
+\begin{equation}
     U_{\mathrm{LJ}}=4U_{0}\left[ \left( \frac{R_{\mathrm{a}}}{r} \right)^{12} -\left( \frac{R_{\mathrm{a}}}{r}
-    \right)^{6}\right]
-\end{equation*}
+    \right)^{6}\right].
+    \label{eq:lennard_jones}
+\end{equation}
 Hierbei ist $U_{0}$ die Tiefe des Potentials, $R_{\mathrm{a}}$ der Gleichgewichtsabstand und $r$ der Abstand zwischen
 den Atomen.
 Das Potential ist in \cref{fig:lennard_jones} dargestellt.
-Auch wenn das Lennard-Jones-Potential für atomare Wechselwirkungen entwickelt wurde, erklärt es die relevanten
+Auch wenn das Lennard-Jones-Potential für interatomare Wechselwirkungen entwickelt wurde, erklärt es die relevanten
 Kräfte zwischen Probe und Spitze.
 
 \begin{figure}
@@ -334,7 +362,7 @@ möglichst klein gehalten werden, da ansonsten die Spitze leicht kontaminiert od
 
 Nicht nur statische, sondern auch dynamische Betriebsmodi existieren.
 Dabei wird der Cantilever mit einer bestimmten Frequenz und Amplitude angeregt, während er über die Probe fährt.
-Ändert sich die Kraft, ändert die Resonanzfrequenz und damit auch die Amplitude.
+Ändert sich die Kraft, dann ändert sich die Resonanzfrequenz und damit auch die Amplitude.
 Das Topografiesignal wird durch die Forderung einer konstanten Amplitude erzeugt.
 
 Die in der Arbeit aufgenommenen AFM-Bilder wurden stets mit einer Scanrate von \qty{1}{\hertz}, einem
@@ -348,7 +376,7 @@ nicht im Detail erläutert.
 
 \paragraph{Profilometer}
 Ein Profilometer ist ein Messinstrument, welches zur präzisen Messung von Oberflächenprofilen verwendet wird.
-Sowohl die Topografie als auch die Rauheit der Oberfläche können bestimmt werden.
+Sowohl die Topografie als auch die Rauheit der Oberfläche können hiermit bestimmt werden.
 Im Gegensatz zum Rasterkraftmikroskop ist das Profilometer für gröbere Oberflächenstrukturen auf größeren Flächenskalen
 ausgelegt.
 Das verwendete Profilometer \textit{DektakXT} von Bruker fährt mit einer Diamantspitze über die Probe, um
